@@ -211,16 +211,6 @@
 		padding: 0.5em 0 0.5em 2em;
 	}
 
-	code {
-		background: rgba(144, 144, 144, 0.25);
-		border-radius: 3px;
-		font-family: "Courier New", monospace;
-		font-size: 0.9em;
-		letter-spacing: 0;
-		margin: 0 0.25em;
-		padding: 0.25em 0.65em;
-	}
-
 	pre {
 		-webkit-overflow-scrolling: touch;
 		font-family: "Courier New", monospace;
@@ -660,10 +650,6 @@
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -674,7 +660,7 @@
 	}
 	html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #1b2735 100%);
   overflow: hidden;
 }
 
