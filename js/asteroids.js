@@ -328,7 +328,7 @@ function Asteroids() {
 		this.updated.blink.isActive = !this.updated.blink.isActive;
 	};
 
-	addStylesheet(".asteroidBlink .asteroidFrameENEMY", "outline: 2px dotted red;");
+	addStylesheet(".asteroidBlink .asteroidFrameEnemy", "outline: 2px dotted red;");
 	
 	this.pos = new Vector(100, 100);
 	this.lastPos = false;
@@ -356,7 +356,7 @@ function Asteroids() {
 	// things to shoot is everything textual and an element of type not specified in types AND not a navigation element (see further down)
 	function updateEnemyIndex() {
 		for ( var i = 0, enemy; enemy = that.enemies[i]; i++ )
-			removeClass(enemy, "asteroidFrameENEMY");
+			removeClass(enemy, "asteroidFrameEnemy");
 			
 		var all = document.body.getElementsByTagName('*');
 		that.enemies = [];
@@ -366,7 +366,7 @@ function Asteroids() {
 				el.aSize = size(el);
 				that.enemies.push(el);
 				
-				addClass(el, "asteroidFrameENEMY");
+				addClass(el, "asteroidFrameEnemy");
 				
 				// this is only for enemycounting
 				if ( ! el.aAdded ) {
@@ -595,18 +595,6 @@ function Asteroids() {
 		right = "0px";
 		zIndex = "10000";
 	}
-	
-	// Is IE
-	if ( typeof G_vmlCanvasManager != 'undefined' ) {
-		this.canvas = G_vmlCanvasManager.initElement(this.canvas);
-		if ( ! this.canvas.getContext ) {
-			alert("So... you're using IE?  Please join me at http://github.com/erkie/erkie.github.com if you think you can help");
-		}
-	} else {
-		if ( ! this.canvas.getContext ) {
-			alert('This program does not yet support your browser. Please join me at http://github.com/erkie/erkie.github.com if you think you can help');
-		}
-	}
 
 	Array.prototype.sample = function(){
   return this[Math.floor(Math.random()*this.length)];
@@ -667,9 +655,10 @@ function Asteroids() {
 	this.ctx.strokeStyle = "white";
 	
 	// navigation wrapper element
-	if ( ! document.getElementById('asteroidsNavigation') ) {
+	if ( ! document.getElementById('asteroidNavigation') ) {
 		this.navigation = document.createElement('div');
-		this.navigation.id = "asteroidsNavigation";
+		this.navigation.id = "asteroidNavigation";
+
 		this.navigation.className = "asteroidFrame";
 		with ( this.navigation.style ) {
 			fontFamily = "Arial,sans-serif";
@@ -695,7 +684,10 @@ function Asteroids() {
 		}
 		this.points.className = "asteroidFrame";
 		this.navigation.appendChild(this.points);
+
 		
+				
+
 		// highscore link
 		this.highscoreLink = document.createElement('a');
 		this.highscoreLink.className = "asteroidFrame";
@@ -728,7 +720,7 @@ function Asteroids() {
 			return false;
 		};
 	} else {
-		this.navigation = document.getElementById('asteroidsNavigation');
+		this.navigation = document.getElementById('asteroidNavigation');
 		this.points = document.getElementById('asteroidPoints');
 	}
 	
