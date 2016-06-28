@@ -664,7 +664,7 @@ function Asteroids() {
 	this.gameContainer.appendChild(this.canvas);
 	this.ctx = this.canvas.getContext("2d");
 	
-	this.ctx.fillStyle = "black";
+	this.ctx.fillStyle = "white";
 	this.ctx.strokeStyle = "black";
 	
 	// navigation wrapper element
@@ -679,12 +679,9 @@ function Asteroids() {
 			bottom = "0px";
 			right = "10px";
 			textAlign = "left";
-			background = '#fff';
-			color = '#222';
-			padding = '2px';
-			border = '1px solid #e1e1e1';
-			boxShadow = '-2px -2px 15px #333';
-			borderRadius = "3px";
+			background = 'transparent';
+			color = '#FFF'; //Number color
+			padding = '20px';
 		}
 		this.gameContainer.appendChild(this.navigation);
 		
