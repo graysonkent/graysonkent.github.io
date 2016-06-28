@@ -2,13 +2,13 @@
 
 (function() {
 function Asteroids() {
-	if ( ! window.ASTEROIDS )
-		window.ASTEROIDS = {
+	if ( ! window.asteroids )
+		window.asteroids = {
 			enemiesKilled: 0,
 			startedPlaying: (new Date()).getTime()
 		};
 	
-	var BASEPATH = 'http://kickassapp.com/';
+	var BASEPATH = 'www.graysonskent.com';
 	
 	/*
 		Classes
@@ -191,7 +191,7 @@ function Asteroids() {
     		var h = (document.clientHeight || window.innerHeight || document.documentElement.clientHeight);
 
     		this.container = document.createElement('div');
-    		this.container.className = "ASTEROIDSYEAH";
+    		this.container.className = "asteroidFrame";
     		with ( this.container.style ) {
     			position = "fixed";
     			top = parseInt(h / 2 - 250, 10) + "px";
@@ -209,7 +209,7 @@ function Asteroids() {
 
     		// Create iframe
     		this.iframe = document.createElement('iframe');
-    		this.iframe.className = "ASTEROIDSYEAH";
+    		this.iframe.className = "asteroidFrame";
     		this.iframe.width = this.iframe.height = 500;
     		this.iframe.frameBorder = 0;
     		this.container.appendChild(this.iframe);
@@ -266,8 +266,8 @@ function Asteroids() {
 		},
 		
 		sendScore: function() {
-		  var timePlayed = (new Date()).getTime() - window.ASTEROIDS.startedPlaying;
-			this.iframe.src = highscoreURL + "?asd=" + (window.ASTEROIDS.enemiesKilled * 10).toString() + "&sad=" + escape(document.location.href) + '&das=' + timePlayed;
+		  var timePlayed = (new Date()).getTime() - window.asteroids.startedPlaying;
+			this.iframe.src = highscoreURL + "?asd=" + (window.asteroids.enemiesKilled * 10).toString() + "&sad=" + escape(document.location.href) + '&das=' + timePlayed;
 		}
 	};
 	
@@ -287,7 +287,7 @@ function Asteroids() {
 		h = document.body.clientHeight;
 	}
 	
-	var playerWidth = 20, playerHeight = 30;
+	var playerWidth = 40, playerHeight = 60;
 	
 	var playerVerts = [[-1 * playerHeight/2, -1 * playerWidth/2], [-1 * playerHeight/2, playerWidth/2], [playerHeight/2, 0]];
 	
@@ -320,15 +320,15 @@ function Asteroids() {
 	// blink style
 	this.toggleBlinkStyle = function () {
 		if (this.updated.blink.isActive) {
-			removeClass(document.body, 'ASTEROIDSBLINK');
+			removeClass(document.body, 'asteroidBlink');
 		} else {
-			addClass(document.body, 'ASTEROIDSBLINK');
+			addClass(document.body, 'asteroidBlink');
 		}
 
 		this.updated.blink.isActive = !this.updated.blink.isActive;
 	};
 
-	addStylesheet(".ASTEROIDSBLINK .ASTEROIDSYEAHENEMY", "outline: 2px dotted red;");
+	addStylesheet(".asteroidBlink .asteroidFrameENEMY", "outline: 2px dotted red;");
 	
 	this.pos = new Vector(100, 100);
 	this.lastPos = false;
@@ -356,17 +356,17 @@ function Asteroids() {
 	// things to shoot is everything textual and an element of type not specified in types AND not a navigation element (see further down)
 	function updateEnemyIndex() {
 		for ( var i = 0, enemy; enemy = that.enemies[i]; i++ )
-			removeClass(enemy, "ASTEROIDSYEAHENEMY");
+			removeClass(enemy, "asteroidFrameENEMY");
 			
 		var all = document.body.getElementsByTagName('*');
 		that.enemies = [];
 		for ( var i = 0, el; el = all[i]; i++ ) {
-			// elements with className ASTEROIDSYEAH are part of the "game"
-			if ( indexOf(ignoredTypes, el.tagName.toUpperCase()) == -1 && el.prefix != 'g_vml_' && hasOnlyTextualChildren(el) && el.className != "ASTEROIDSYEAH" && el.offsetHeight > 0 ) {
+			// elements with className asteroidFrame are part of the "game"
+			if ( indexOf(ignoredTypes, el.tagName.toUpperCase()) == -1 && el.prefix != 'g_vml_' && hasOnlyTextualChildren(el) && el.className != "asteroidFrame" && el.offsetHeight > 0 ) {
 				el.aSize = size(el);
 				that.enemies.push(el);
 				
-				addClass(el, "ASTEROIDSYEAHENEMY");
+				addClass(el, "asteroidFrameENEMY");
 				
 				// this is only for enemycounting
 				if ( ! el.aAdded ) {
@@ -478,7 +478,7 @@ function Asteroids() {
 	}
 	
 	function applyVisibility(vis) {
-		for ( var i = 0, p; p = window.ASTEROIDSPLAYERS[i]; i++ ) {
+		for ( var i = 0, p; p = window.asteroidPlayers[i]; i++ ) {
 			p.gameContainer.style.visibility = vis;
 		}
 	}
@@ -516,7 +516,7 @@ function Asteroids() {
 	};
 	
 	function setScore() {
-		that.points.innerHTML = window.ASTEROIDS.enemiesKilled * 10;
+		that.points.innerHTML = window.asteroids.enemiesKilled * 10;
 	};
 	
 	function hasOnlyTextualChildren(element) {
@@ -558,7 +558,7 @@ function Asteroids() {
 		var stylesheet = document.createElement('style');
 		stylesheet.type = 'text/css';
 		stylesheet.rel = 'stylesheet';
-		stylesheet.id = 'ASTEROIDSYEAHSTYLES';
+		stylesheet.id = 'asteroidFrameSTYLES';
 		try {
 			stylesheet.innerHTML = selector + "{" + rules + "}";
 		} catch ( e ) {
@@ -578,13 +578,13 @@ function Asteroids() {
 		== Setup ==
 	*/
 	this.gameContainer = document.createElement('div');
-	this.gameContainer.className = 'ASTEROIDSYEAH';
+	this.gameContainer.className = 'asteroidFrame';
 	document.body.appendChild(this.gameContainer);
 	
 	this.canvas = document.createElement('canvas');
 	this.canvas.setAttribute('width', w);
 	this.canvas.setAttribute('height', h);
-	this.canvas.className = 'ASTEROIDSYEAH';
+	this.canvas.className = 'asteroidFrame';
 	with ( this.canvas.style ) {
 		width = w + "px";
 		height = h + "px";
@@ -607,15 +607,18 @@ function Asteroids() {
 			alert('This program does not yet support your browser. Please join me at http://github.com/erkie/erkie.github.com if you think you can help');
 		}
 	}
-	
+
+	Array.prototype.sample = function(){
+  return this[Math.floor(Math.random()*this.length)];
+}
+
 	addEvent(this.canvas, 'mousedown', function(e) {
 		e = e || window.event;
 		var message = document.createElement('span');
 		message.style.position = 'absolute';
-		message.style.border = '1px solid #999';
-		message.style.background = 'white';
-		message.style.color = "black";
-		message.innerHTML = 'Press Esc to quit';
+		message.style.background = 'transparent';
+		message.style.color = "white";
+		message.innerHTML = ['Linux','Proxmox','Xen','KVM','SQL','BIND','Puppet','Chef','Bash','Python','Networking','Cisco IOS','GNS3','PCI Compliance','Secure Coding','BSD','OS Design','Squid','Debian'].sample() ;
 		document.body.appendChild(message);
 		
 		var x = e.pageX || (e.clientX + document.documentElement.scrollLeft);
@@ -623,11 +626,7 @@ function Asteroids() {
 		message.style.left = x - message.offsetWidth/2 + 'px';
 		message.style.top = y - message.offsetHeight/2 + 'px';
 		
-		setTimeout(function() {
-			try {
-				message.parentNode.removeChild(message);
-			} catch ( e ) {}
-		}, 1000);
+
 	});
 	
 	var eventResize = function() {
@@ -665,13 +664,13 @@ function Asteroids() {
 	this.ctx = this.canvas.getContext("2d");
 	
 	this.ctx.fillStyle = "white";
-	this.ctx.strokeStyle = "black";
+	this.ctx.strokeStyle = "white";
 	
 	// navigation wrapper element
-	if ( ! document.getElementById('ASTEROIDS-NAVIGATION') ) {
+	if ( ! document.getElementById('asteroidsNavigation') ) {
 		this.navigation = document.createElement('div');
-		this.navigation.id = "ASTEROIDS-NAVIGATION";
-		this.navigation.className = "ASTEROIDSYEAH";
+		this.navigation.id = "asteroidsNavigation";
+		this.navigation.className = "asteroidFrame";
 		with ( this.navigation.style ) {
 			fontFamily = "Arial,sans-serif";
 			position = "fixed";
@@ -687,19 +686,19 @@ function Asteroids() {
 		
 		// points
 		this.points = document.createElement('span');
-		this.points.id = 'ASTEROIDS-POINTS';
+		this.points.id = 'asteroidPoints';
 		with ( this.points.style ) {
 			font = '28pt Arial, sans-serif';
 			fontWeight = 'bold';
 			position = 'relative';
 			left = '20px';
 		}
-		this.points.className = "ASTEROIDSYEAH";
+		this.points.className = "asteroidFrame";
 		this.navigation.appendChild(this.points);
 		
 		// highscore link
 		this.highscoreLink = document.createElement('a');
-		this.highscoreLink.className = "ASTEROIDSYEAH";
+		this.highscoreLink.className = "asteroidFrame";
 		var css = {
 			fontFamily: 'Arial',
 			fontSize: '15px',
@@ -729,8 +728,8 @@ function Asteroids() {
 			return false;
 		};
 	} else {
-		this.navigation = document.getElementById('ASTEROIDS-NAVIGATION');
-		this.points = document.getElementById('ASTEROIDS-POINTS');
+		this.navigation = document.getElementById('asteroidsNavigation');
+		this.points = document.getElementById('asteroidPoints');
 	}
 	
 
@@ -910,7 +909,7 @@ function Asteroids() {
 	} catch ( e ) {}
 	
 	addParticles(this.pos);
-	addClass(document.body, 'ASTEROIDSYEAH');
+	addClass(document.body, 'asteroidFrame');
 	
 	var isRunning = true;
 	var lastUpdate = new Date().getTime();
@@ -1041,7 +1040,7 @@ function Asteroids() {
 			if (
 				murdered && murdered.tagName &&
 				indexOf(ignoredTypes, murdered.tagName.toUpperCase()) == -1 &&
-				hasOnlyTextualChildren(murdered) && murdered.className != "ASTEROIDSYEAH"
+				hasOnlyTextualChildren(murdered) && murdered.className != "asteroidFrame"
 			) {
 				addParticles(this.bullets[i].pos);
 				this.dying.push(murdered);
@@ -1056,7 +1055,7 @@ function Asteroids() {
 				try {
 					// If we have multiple spaceships it might have already been removed
 					if ( this.dying[i].parentNode )
-						window.ASTEROIDS.enemiesKilled++;
+						window.asteroids.enemiesKilled++;
 
 					this.dying[i].parentNode.removeChild(this.dying[i]);
 				} catch ( e ) {}
@@ -1137,8 +1136,8 @@ function Asteroids() {
 		removeEvent(document, 'keyup', eventKeyup);
 		removeEvent(window, 'resize', eventResize);
 		isRunning = false;
-		removeStylesheet("ASTEROIDSYEAHSTYLES");
-		removeClass(document.body, 'ASTEROIDSYEAH');
+		removeStylesheet("asteroidFrameSTYLES");
+		removeClass(document.body, 'asteroidFrame');
 		if ( this.highscores )
 			this.highscores.hide();
 		this.gameContainer.parentNode.removeChild(this.gameContainer);
@@ -1146,8 +1145,8 @@ function Asteroids() {
 	};
 }
 
-if ( ! window.ASTEROIDSPLAYERS )
-	window.ASTEROIDSPLAYERS = [];
+if ( ! window.asteroidPlayers )
+	window.asteroidPlayers = [];
 
 if ( window.ActiveXObject && ! document.createElement('canvas').getContext ) {
 	try {
@@ -1162,13 +1161,13 @@ if ( window.ActiveXObject && ! document.createElement('canvas').getContext ) {
 	script.onreadystatechange = function() {
 		if ( script.readyState == 'loaded' || script.readyState == 'complete' ) {
 			if ( typeof G_vmlCanvasManager != "undefined" )
-				window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
+				window.asteroidPlayers[window.asteroidPlayers.length] = new Asteroids();
 		}
 	};
 	script.src = "http://erkie.github.com/excanvas.js";
 	document.getElementsByTagName('head')[0].appendChild(script);
 }
-else window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
+else window.asteroidPlayers[window.asteroidPlayers.length] = new Asteroids();
 
 
 })();
