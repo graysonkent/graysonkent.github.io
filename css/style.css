@@ -76,7 +76,7 @@
 	body, input, select, textarea {
 		color: #fff;
 		font-family: "Open Sans", Helvetica, sans-serif;
-		font-size: 10pt;
+		font-size: 15pt;
 		font-weight: 400;
 		letter-spacing: 0.075em;
 		line-height: 1.65em;
@@ -463,14 +463,16 @@
 			transform: translateY(0);
 			border: none;
 			bottom: 0;
-			top: 0;
 			color: inherit;
 			font-size: 0.8em;
 			height: 8.5em;
 			left: 50%;
-			letter-spacing: 0;
+			letter-spacing: 0.225em;
+			margin-left: -8.5em;
 			opacity: 1;
 			outline: 0;
+			letter-spacing: 0.225em;
+			margin-left: -8.5em;
 			padding-left: 0.225em;
 			position: absolute;
 			text-align: center;
@@ -478,6 +480,21 @@
 			width: 16em;
 			z-index: 1;
 		}
+
+			#banner .more:after {
+				background-image: url("../images/rocket.png");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				bottom: 4em;
+				content: '';
+				display: block;
+				height: 1.5em;
+				left: 50%;
+				margin: 0 0 0 -0.75em;
+				position: absolute;
+				width: 1.5em;
+			}
 
 			
 
@@ -574,6 +591,7 @@
 		
 	}
 	html {
+		height: 100%;
   background: #1b2735;
   overflow: hidden;
 }
@@ -638,4 +656,5 @@
   to {
     transform: translateY(-2000px);
   }
+  #the-button p {display: block;color: #fff;text-shadow: 0px 1px 2px #385951;background: url(gfx/frontpage/drag-bookmark-icon1.png) center 4px no-repeat;width: 328px;text-align: center;margin: 10px auto 0;
 }
