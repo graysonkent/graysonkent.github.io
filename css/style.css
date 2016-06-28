@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
 /* IE Viewport Fix */
 
 	@-ms-viewport {
@@ -78,7 +77,7 @@
 	body, input, select, textarea {
 		color: #fff;
 		font-family: "Open Sans", Helvetica, sans-serif;
-		font-size: 15pt;
+		font-size: 10pt;
 		font-weight: 400;
 		letter-spacing: 0.075em;
 		line-height: 1.65em;
@@ -211,19 +210,6 @@
 		padding: 0.5em 0 0.5em 2em;
 	}
 
-	pre {
-		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
-		font-size: 0.9em;
-		margin: 0 0 2em 0;
-	}
-
-		pre code {
-			display: block;
-			line-height: 1.75em;
-			padding: 1em 1.5em;
-			overflow-x: auto;
-		}
 
 	.align-left {
 		text-align: left;
@@ -236,63 +222,6 @@
 	.align-right {
 		text-align: right;
 	}
-
-/* Section/Article */
-
-	section.special, article.special {
-		text-align: center;
-	}
-
-	header p {
-		color: rgba(255, 255, 255, 0.5);
-		position: relative;
-		top: -0.25em;
-	}
-
-	header h3 + p {
-		font-size: 1.1em;
-	}
-
-	header h4 + p,
-	header h5 + p,
-	header h6 + p {
-		font-size: 0.9em;
-	}
-
-	header.major {
-		margin: 0 0 3.5em 0;
-	}
-
-		header.major h2, header.major h3, header.major h4, header.major h5, header.major h6 {
-			border-bottom: solid 2px #fff;
-			display: inline-block;
-			padding-bottom: 1em;
-			position: relative;
-		}
-
-			header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
-				content: '';
-				display: block;
-				height: 1px;
-			}
-
-		header.major p {
-			color: #fff;
-			top: 0;
-		}
-
-		@media screen and (max-width: 736px) {
-			header.major {
-				margin: 0 0 2em 0;
-			}
-		}
-
-	@media screen and (max-width: 980px) {
-		header br {
-			display: none;
-		}
-	}
-
 
 /* List */
 
@@ -551,20 +480,7 @@
 			z-index: 1;
 		}
 
-			#banner .more:after {
-				background-image: url("images/arrow.svg");
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: contain;
-				bottom: 4em;
-				content: '';
-				display: block;
-				height: 1.5em;
-				left: 50%;
-				margin: 0 0 0 -0.75em;
-				position: absolute;
-				width: 1.5em;
-			}
+			
 
 		#banner:after {
 			-moz-pointer-events: none;
@@ -580,7 +496,7 @@
 			-ms-transition-delay: 1.25s;
 			transition-delay: 1.25s;
 			content: '';
-			background: #000;
+			background: #1b2735;
 			display: block;
 			width: 100%;
 			height: 100%;
