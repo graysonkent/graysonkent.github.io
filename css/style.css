@@ -431,12 +431,12 @@
 		}
 
 		body.is-mobile.landing #page-wrapper {
+			background-position: center center;
 			background: none;
 		}
 
 		body.is-mobile.landing #banner,
 		body.is-mobile.landing .wrapper.style4 {
-			padding-top: 30%;
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
