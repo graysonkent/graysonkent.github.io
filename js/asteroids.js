@@ -685,11 +685,8 @@ function Asteroids() {
 		this.points.className = "asteroidFrame";
 		this.navigation.appendChild(this.points);
 
-		
-				
-
 		// highscore link
-		this.highscoreLink = document.createElement('a');
+		this.highscoreLink = document.createElement('span');
 		this.highscoreLink.className = "asteroidFrame";
 		var css = {
 			fontFamily: 'Arial',
