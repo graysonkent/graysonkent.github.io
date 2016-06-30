@@ -1,19 +1,83 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title: Grayson Kent
+# General Settings
+name: Grayson Kent
+job_title: Linux System Engineer
 email: grayson@linux.com
-description: > # this means to ignore newlines until "baseurl:"
- I am a Linux Systems Engineer specializing in high-availability clustering, KVM virtualization, and managing large datasets. I am have a special interest in virtualized networking appliances, handling large data sets for Machine Learning, and robotics. This blog is my way to give back for all the help I have received over the years and documents some of my mistakes so others can learn from it. 
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://graysonskent.com" # the base hostname & protocol for your site
-twitter_username: graysonkent
-github_username:  graysonkent
+description:  I specialize in high-availability clustering, KVM virtualization, and managing large datasets.
+avatar: https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg
+favicon: /favicon.ico
+twitter_handler: your_handler
+analytics_code: UA-XXXXXXX-2
+disqus: your_disqus_site
 
-# Build settings
+# Social Accounts
+social_networks:
+-  { name: facebook, url: '' }
+-  { name: twitter, url: '' }
+-  { name: instagram, url: '' }
+-  { name: google-plus, url: '' }
+-  { name: linkedin, url: 'https://www.linkedin.com/in/graysonkent ' }
+-  { name: skype, url: '' }
+-  { name: github, url: 'https://github.com/graysonkent' }
+-  { name: codepen, url: '' }
+-  { name: stack-overflow, url: '' }
+-  { name: dribbble, url: '' }
+-  { name: behance, url: '' }
+-  { name: pinterest, url: '' }
+-  { name: tumblr, url: '' }
+-  { name: youtube, url: '' }
+-  { name: vimeo, url: '' }
+-  { name: vine, url: '' }
+-  { name: 500px, url: '' }
+-  { name: flickr, url: '' }
+-  { name: spotify, url: '' }
+-  { name: steam, url: '' }
+-  { name: wordpress, url: '' }
+-  { name: xing, url: '' }
+
+# Modules Settings
+show_categories: 1
+show_tags: 1
+show_mood: 1
+show_email: 1
+show_rss: 1
+show_comments: 1
+show_menu: 0
+fixed_sidebar: 1
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: "true"
+
+# Serving
+url: ""
+baseurl: "/_site/"
+
+# Includes
+include: ["_pages"]
+
+# Outputting
+permalink: /:month-:day-:year/:title.html
+category_dir: categories
+
+# Plugins
+gems: ['jekyll-paginate']
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Conversion
 markdown: kramdown
+
+# Post Settings
+excerpt_separator: <!--more-->
+
+# Assets Settings
+sass:
+  sass_dir: assets/partials
+  style: compressed
