@@ -3,8 +3,8 @@ name: Grayson Kent
 job_title: Linux System Engineer
 email: grayson@linux.com
 description:  Linux, Networking, Security, Virtualization
-avatar: ../images/face.jpg
-favicon: ../images/rocket.png
+avatar: ../../images/face.jpg
+favicon: ../../images/rocket.png
 twitter_handler: your_handler
 analytics_code: UA-79927650-1
 disqus: grayson
