@@ -382,7 +382,7 @@
 
 			@media screen and (max-width: 736px) {
 				#banner {
-					padding: 0em 3em 5em 3em;
+					padding: 7em 3em 5em 3em;
 					height: auto;
 					min-height: 0;
 				}
@@ -431,7 +431,6 @@
 		}
 
 		body.is-mobile.landing #page-wrapper {
-			background-position: center center;
 			background: none;
 		}
 
@@ -441,6 +440,9 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
+		body.is-mobile.landing #footer {
+		
+	}
 
 		html {
 			height: 100%;
