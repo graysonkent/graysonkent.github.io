@@ -119,7 +119,7 @@
 			.aligncenter { clear: both; margin: 0 auto 20px; }
 			figcaption { color: $grey-color-light; font-size: 13px; font-style: italic; padding-top: 10px; }
 
-			@import "syntax";
+			@import "../partials/_syntax";
 		}
 
 		.post-footer { position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid $grey-color-lightest; background: lighten($grey-color-lightest, 5%);
