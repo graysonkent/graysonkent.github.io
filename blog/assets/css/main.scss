@@ -119,9 +119,9 @@
 			.aligncenter { clear: both; margin: 0 auto 20px; }
 			figcaption { color: $grey-color-light; font-size: 13px; font-style: italic; padding-top: 10px; }
 
-			@import "../partials/_syntax";
 		}
 
+	@import "syntax";
 		.post-footer { position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid $grey-color-lightest; background: lighten($grey-color-lightest, 5%);
 			div { float: left; min-height: 48px; border-right: 1px solid $grey-color-lightest; font-size: 11px; line-height: 48px; text-transform: uppercase; color: $grey-color-light;
 				&.mood { padding: 0 40px 0 20px; z-index: 10; background: lighten($grey-color-lightest, 5%);
