@@ -3,6 +3,8 @@
 
 @import "vars", "reset", "mixins";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+@import "responsive";
+@import "syntax";
 
 .wrapper { max-width: $default-width; margin: 0 auto; padding: 100px 20px; }
 
@@ -121,7 +123,6 @@
 
 		}
 
-	@import "syntax";
 		.post-footer { position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid $grey-color-lightest; background: lighten($grey-color-lightest, 5%);
 			div { float: left; min-height: 48px; border-right: 1px solid $grey-color-lightest; font-size: 11px; line-height: 48px; text-transform: uppercase; color: $grey-color-light;
 				&.mood { padding: 0 40px 0 20px; z-index: 10; background: lighten($grey-color-lightest, 5%);
@@ -177,4 +178,3 @@
 	&.post { padding: 40px; font-size: 16px; }
 }
 
-@import "responsive";
