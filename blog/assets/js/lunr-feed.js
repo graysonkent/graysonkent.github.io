@@ -10,11 +10,20 @@ var index = lunr(function () {
 
 
     index.add({
+      title: "How to Insert Multiple Lines in Word's Find and Replace",
+      category: ["word"],
+      content: "An issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets a little trickier. \r\n\r\nUsing Word's Find and Replace feature, replace the target line with your new lines seperated by ^p and turn on wilcard matching. \r\n\r\nExample:\r\n\r\n    \r\n",
+      tags: ["word","replace","regex"],
+      id: 0
+    });
+    
+
+    index.add({
       title: "Stopping Cisco IOS Domain Name Translation",
       category: ["errors","cisco"],
       content: "I often switch between Cisco IOS and Bash so I absent-mindedly type ‘ls’ into a IOS prompt and have to wait 30 seconds on this error:\n\nrouter#ls\nTranslating \"ls\"...domain server (255.255.255.255)\n% Unknown command or computer name, or unable to find computer address\n\nTo stop this, you can just press ‘CTRL+Shift+6’. But for more long-term fixes, see the options below:\n\nOption 1:\nStop router from starting connection without telnet keyword:\n\nrouter(config)#ip domain lookup\n\nrouter(config-line)#line con 0\n\nrouter(config-line)#transport preferred none\n\nOption 2:\nShorten TCP Connection Timeout:\n\nrouter(config)#ip tcp synwait-time 10\n\nThis isn’t preferable as it can affect things like handshakes for Multicast/BGP\n\nOption 3:\nDisable Domain Lookup:\n\nrouter(config)#no ip domain lookup\n\nI hesitate to recommend this one, though as it might affect the 1% of sites that need it. You can also disable per session Domain Lookup like so:\n\n#terminal no domain-lookup\n\n",
       tags: ["cisco","errors","lookup"],
-      id: 0
+      id: 1
     });
     
 
@@ -23,12 +32,19 @@ var index = lunr(function () {
       category: ["errors","ruby"],
       content: "While building out this site, I ran into a Ruby error I hadn’t seen before\n\n1\n2\n3\n4\n5\n6Building native extensions.  This could take a while...\nERROR:  Error installing json:\n        ERROR: Failed to build gem native extension.\n\n/usr/bin/ruby extconf.rb\nmkmf.rb can't find header files for ruby at /usr/lib/ruby/ruby.h\n\n\nThis is solved by just installing ruby-dev like so:\n\n1sudo apt-get install ruby-dev\n\n\n",
       tags: ["ruby","errors","headers"],
-      id: 1
+      id: 2
     });
     
 
 
 var store = [{
+    "title": "How to Insert Multiple Lines in Word's Find and Replace",
+    "link": "/07-05-2016/how-to-insert-multiple-lines-in-words-find-and-replace,md.html",
+    "image": null,
+    "date": "July 5, 2016",
+    "category": ["word"],
+    "excerpt": "An issue arose at work where we had 300 documents where we needed to replace a line with 2 lines..."
+},{
     "title": "Stopping Cisco IOS Domain Name Translation",
     "link": "/07-01-2016/stopping-cisco-domain-name-translation.html",
     "image": null,
