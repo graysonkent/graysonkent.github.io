@@ -5,14 +5,14 @@
     <description>Linux, Networking, Security, Virtualization</description>
     <link>/blog/</link>
     <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Jul 2016 17:38:23 -0400</pubDate>
-    <lastBuildDate>Tue, 05 Jul 2016 17:38:23 -0400</lastBuildDate>
+    <pubDate>Tue, 05 Jul 2016 17:45:01 -0400</pubDate>
+    <lastBuildDate>Tue, 05 Jul 2016 17:45:01 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>How to Insert Multiple Lines in Word</title>
         <description>&lt;h1 id=&quot;the-problem&quot;&gt;The Problem&lt;/h1&gt;
-&lt;p&gt;An issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets a little trickier.&lt;/p&gt;
+&lt;p&gt;An issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets more manual.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-solution&quot;&gt;The Solution&lt;/h1&gt;
 &lt;p&gt;Using Word’s Find and Replace feature, replace the target line with your new lines separated by ^p and turn on wildcard matching.&lt;/p&gt;

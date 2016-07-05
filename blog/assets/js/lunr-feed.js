@@ -12,7 +12,7 @@ var index = lunr(function () {
     index.add({
       title: "How to Insert Multiple Lines in Word",
       category: ["word"],
-      content: "The Problem\nAn issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets a little trickier.\n\nThe Solution\nUsing Word’s Find and Replace feature, replace the target line with your new lines separated by ^p and turn on wildcard matching.\n\nExample:\n\n\nSimple, but it took me a while to find an answer\n",
+      content: "The Problem\nAn issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets more manual.\n\nThe Solution\nUsing Word’s Find and Replace feature, replace the target line with your new lines separated by ^p and turn on wildcard matching.\n\nExample:\n\n\nSimple, but it took me a while to find an answer\n",
       tags: ["word","replace","regex"],
       id: 0
     });
