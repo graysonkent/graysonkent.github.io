@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> Grayson Kent &mdash; Systems Engineer </title>
-    <meta property="og:title" content=" Grayson Kent &mdash; Systems Engineer " />
-    <meta name="twitter:title" content=" Grayson Kent &mdash; Systems Engineer " />
+    <title>Posts Tagged &amp;ldquo;cisco&amp;rdquo; | Grayson Kent &mdash; Systems Engineer </title>
+    <meta property="og:title" content="Posts Tagged &amp;ldquo;cisco&amp;rdquo; | Grayson Kent &mdash; Systems Engineer " />
+    <meta name="twitter:title" content="Posts Tagged &amp;ldquo;cisco&amp;rdquo; | Grayson Kent &mdash; Systems Engineer " />
 
     <meta name="description" content="Linux, Networking, Security, Virtualization">
     <meta name="description" property="og:description" content="Linux, Networking, Security, Virtualization" />
@@ -17,7 +17,7 @@
     
     <meta name="twitter:site" content="@your_handler" />
     
-    <meta property="og:url" content="/404" />
+    <meta property="og:url" content="/tag/cisco/" />
 
     <meta property="og:image" content="" />
     <meta name="twitter:image" content="" />
@@ -96,7 +96,7 @@
     
     <link rel="stylesheet" href="/assets/css/main.css">
 
-    <link rel="canonical" href="/404">
+    <link rel="canonical" href="/tag/cisco/">
 
     <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 </head>
@@ -137,7 +137,114 @@
 </div>
 
 
-                <div class="not-found post">Oops! There is nothing here.</div>
+                <h1>Posts Tagged &ldquo;cisco&rdquo;</h1>
+
+
+    
+        
+        <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header">
+                <ul class="clear">
+                    <li><time datetime="2016-07-01T13:00:00-04:00" itemprop="datePublished">1 Jul, 2016</time></li>
+                    
+                    <li class="cats">
+                        
+                            <a href="/categories/errors/">errors</a>
+                        
+                            <a href="/categories/cisco/">cisco</a>
+                        
+                    </li>
+                    
+                </ul>
+                <h2 itemprop="name headline"><a href="/07-01-2016/stopping-cisco-domain-name-translation.html">Stopping Cisco IOS Domain Name Translation</a></h2>
+            </header>
+
+            <div class="post-content">
+                <p>I often switch between Cisco IOS and Bash so I absent-mindedly type ‘ls’ into a IOS prompt and have to wait 30 seconds on this error:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router#ls
+Translating <span class="s2">"ls"</span>...domain server <span class="o">(</span>255.255.255.255<span class="o">)</span>
+<span class="gp">% </span>Unknown <span class="nb">command </span>or computer name, or unable to find computer address</code></pre></figure>
+
+<p>To stop this, you can just press ‘CTRL+Shift+6’. But for more long-term fixes, see the options below:</p>
+
+<h1 id="option-1">Option 1:</h1>
+<p>Stop router from starting connection without telnet keyword:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip domain lookup
+</span>
+router<span class="o">(</span>config-line<span class="o">)</span><span class="c">#line con 0
+</span>
+router<span class="o">(</span>config-line<span class="o">)</span><span class="c">#transport preferred none</span></code></pre></figure>
+
+<h1 id="option-2">Option 2:</h1>
+<p>Shorten TCP Connection Timeout:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip tcp synwait-time 10</span></code></pre></figure>
+
+<p>This isn’t preferable as it can affect things like handshakes for Multicast/BGP</p>
+
+<h1 id="option-3">Option 3:</h1>
+<p>Disable Domain Lookup:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#no ip domain lookup</span></code></pre></figure>
+
+<p>I hesitate to recommend this one, though as it might affect the 1% of sites that need it. You can also disable per session Domain Lookup like so:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#terminal no domain-lookup</span></code></pre></figure>
+
+
+                
+                
+                
+                    <p><a href="/07-01-2016/stopping-cisco-domain-name-translation.html" role="button">Read More</a></p>
+                
+            </div>
+
+            <footer class="post-footer">
+                
+                <div class="share">Share
+                    <ul class="social-networks">
+                        <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Stopping Cisco IOS Domain Name Translation&p[summary]=I often switch between Cisco IOS and Bash so I absent-mindedly type ‘ls’ into a IOS prompt and have to wait 30 seconds on this error:
+
+ro...&p[url]=/07-01-2016/stopping-cisco-domain-name-translation.html" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                        <li class="share-twitter"><a href="http://twitter.com/share?url=/07-01-2016/stopping-cisco-domain-name-translation.html&text=I often switch between Cisco IOS and Bash so I absent-mindedly type ‘ls’ into a IOS prompt and have to wait 30 seconds on this error:
+
+ro...&hashtags=cisco,errors,lookup," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+                    </ul>
+                </div>
+                
+                <div class="tags">
+                    <ul>
+                        
+                        <li><a href="/tag/cisco">cisco</a></li>
+                        
+                        <li><a href="/tag/errors">errors</a></li>
+                        
+                        <li><a href="/tag/lookup">lookup</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </footer>
+        </article>
+        
+    
+        
+    
+        
+    
+
+    
+        
+    
+        
+    
+        
+    
+
+
+
             </main>
         </div>
 
