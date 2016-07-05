@@ -10,9 +10,9 @@ var index = lunr(function () {
 
 
     index.add({
-      title: "How to Insert Multiple Lines in Word's Find and Replace",
+      title: "How to Insert Multiple Lines in Word",
       category: ["word"],
-      content: "The Problem\nAn issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets a little trickier.\n\nThe Solution\nUsing Word’s Find and Replace feature, replace the target line with your new lines seperated by ^p and turn on wildcard matching.\n\nExample:\n\n    \n\n",
+      content: "The Problem\nAn issue arose at work where we had 300 documents where we needed to replace a line with 2 lines of text. Normally I would use sed+regex to knock that out quickly, but since they were Word files it gets a little trickier.\n\nThe Solution\nUsing Word’s Find and Replace feature, replace the target line with your new lines separated by ^p and turn on wildcard matching.\n\nExample:\n\n    \n\n\nSimple, but it took me a while to find an answer\n",
       tags: ["word","replace","regex"],
       id: 0
     });
@@ -38,7 +38,7 @@ var index = lunr(function () {
 
 
 var store = [{
-    "title": "How to Insert Multiple Lines in Word's Find and Replace",
+    "title": "How to Insert Multiple Lines in Word",
     "link": "/07-05-2016/how-to-insert-multiple-lines-in-words-find-and-replace.html",
     "image": null,
     "date": "July 5, 2016",
