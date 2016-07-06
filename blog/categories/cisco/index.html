@@ -167,7 +167,7 @@ Translating <span class="s2">"ls"</span>...domain server <span class="o">(</span
 <h1 id="option-1">Option 1:</h1>
 <p>Stop router from starting connection without telnet keyword:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip domain lookup
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip domain lookup
 </span>
 router<span class="o">(</span>config-line<span class="o">)</span><span class="c">#line con 0
 </span>
@@ -176,18 +176,18 @@ router<span class="o">(</span>config-line<span class="o">)</span><span class="c"
 <h1 id="option-2">Option 2:</h1>
 <p>Shorten TCP Connection Timeout:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip tcp synwait-time 10</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip tcp synwait-time 10</span></code></pre></figure>
 
 <p>This isn’t preferable as it can affect things like handshakes for Multicast/BGP</p>
 
 <h1 id="option-3">Option 3:</h1>
 <p>Disable Domain Lookup:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#no ip domain lookup</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router<span class="o">(</span>config<span class="o">)</span><span class="c">#no ip domain lookup</span></code></pre></figure>
 
 <p>I hesitate to recommend this one, though as it might affect the 1% of sites that need it. You can also disable per session Domain Lookup like so:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#terminal no domain-lookup</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c">#terminal no domain-lookup</span></code></pre></figure>
 
 
         

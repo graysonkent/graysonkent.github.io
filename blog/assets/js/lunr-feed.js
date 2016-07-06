@@ -30,7 +30,7 @@ var index = lunr(function () {
     index.add({
       title: "Fixing Ruby Header File Error",
       category: ["errors","ruby"],
-      content: "While building out this site, I ran into a Ruby error I hadn’t seen before\n\n1\n2\n3\n4\n5\n6\n7Building native extensions.  This could take a while...\nERROR:  Error installing json:\n        ERROR: Failed to build gem native extension.\n\n/usr/bin/ruby extconf.rb\nmkmf.rb can't find header files for ruby at \n/usr/lib/ruby/ruby.h\n\n\nThis is solved by just installing ruby-dev like so:\n\n1sudo apt-get install ruby-dev\n\n\n",
+      content: "While building out this site, I ran into a Ruby error I hadn’t seen before\n\nBuilding native extensions.  This could take a while...\nERROR:  Error installing json:\n        ERROR: Failed to build gem native extension.\n\n/usr/bin/ruby extconf.rb\nmkmf.rb can't find header files for ruby at /usr/lib/ruby/ruby.h\n\nThis is solved by just installing ruby-dev like so:\n\nsudo apt-get install ruby-dev\n\n",
       tags: ["ruby","errors","headers"],
       id: 2
     });
@@ -57,7 +57,7 @@ var store = [{
     "image": null,
     "date": "July 1, 2016",
     "category": ["errors","ruby"],
-    "excerpt": "While building out this site, I ran into a Ruby error I hadn’t seen before 1 2 3 4 5..."
+    "excerpt": "While building out this site, I ran into a Ruby error I hadn’t seen before Building native extensions. This could..."
 }]
 
 $(document).ready(function() {

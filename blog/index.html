@@ -223,7 +223,7 @@ Translating <span class="s2">"ls"</span>...domain server <span class="o">(</span
 <h1 id="option-1">Option 1:</h1>
 <p>Stop router from starting connection without telnet keyword:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip domain lookup
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip domain lookup
 </span>
 router<span class="o">(</span>config-line<span class="o">)</span><span class="c">#line con 0
 </span>
@@ -232,18 +232,18 @@ router<span class="o">(</span>config-line<span class="o">)</span><span class="c"
 <h1 id="option-2">Option 2:</h1>
 <p>Shorten TCP Connection Timeout:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip tcp synwait-time 10</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router<span class="o">(</span>config<span class="o">)</span><span class="c">#ip tcp synwait-time 10</span></code></pre></figure>
 
 <p>This isn’t preferable as it can affect things like handshakes for Multicast/BGP</p>
 
 <h1 id="option-3">Option 3:</h1>
 <p>Disable Domain Lookup:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">router<span class="o">(</span>config<span class="o">)</span><span class="c">#no ip domain lookup</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">router<span class="o">(</span>config<span class="o">)</span><span class="c">#no ip domain lookup</span></code></pre></figure>
 
 <p>I hesitate to recommend this one, though as it might affect the 1% of sites that need it. You can also disable per session Domain Lookup like so:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#terminal no domain-lookup</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c">#terminal no domain-lookup</span></code></pre></figure>
 
 
         
@@ -299,25 +299,16 @@ ro...&hashtags=cisco,errors,lookup," rel="noreferrer" target="_blank" onclick="w
     <div class="post-content">
         <p>While building out this site, I ran into a Ruby error I hadn’t seen before</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7</pre></td><td class="code"><pre><span class="no">Building</span> <span class="n">native</span> <span class="n">extensions</span><span class="o">.</span>  <span class="no">This</span> <span class="n">could</span> <span class="n">take</span> <span class="n">a</span> <span class="k">while</span><span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Building</span> <span class="n">native</span> <span class="n">extensions</span><span class="o">.</span>  <span class="no">This</span> <span class="n">could</span> <span class="n">take</span> <span class="n">a</span> <span class="k">while</span><span class="p">.</span><span class="nf">.</span><span class="o">.</span>
 <span class="no">ERROR</span><span class="p">:</span>  <span class="no">Error</span> <span class="n">installing</span> <span class="ss">json:
         </span><span class="no">ERROR</span><span class="p">:</span> <span class="no">Failed</span> <span class="n">to</span> <span class="n">build</span> <span class="n">gem</span> <span class="n">native</span> <span class="n">extension</span><span class="p">.</span>
 
 <span class="nf">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">ruby</span> <span class="n">extconf</span><span class="p">.</span><span class="nf">rb</span>
-<span class="n">mkmf</span><span class="p">.</span><span class="nf">rb</span> <span class="n">can</span><span class="err">'</span><span class="n">t</span> <span class="n">find</span> <span class="n">header</span> <span class="n">files</span> <span class="k">for</span> <span class="n">ruby</span> <span class="n">at</span> 
-<span class="sr">/usr/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="n">ruby</span><span class="p">.</span><span class="nf">h</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="n">mkmf</span><span class="p">.</span><span class="nf">rb</span> <span class="n">can</span><span class="err">'</span><span class="n">t</span> <span class="n">find</span> <span class="n">header</span> <span class="n">files</span> <span class="k">for</span> <span class="n">ruby</span> <span class="n">at</span> <span class="sr">/usr/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="n">ruby</span><span class="p">.</span><span class="nf">h</span></code></pre></figure>
 
 <p>This is solved by just installing ruby-dev like so:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>sudo apt-get install ruby-dev<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">sudo apt-get install ruby-dev</code></pre></figure>
 
 
         
@@ -331,22 +322,12 @@ ro...&hashtags=cisco,errors,lookup," rel="noreferrer" target="_blank" onclick="w
             <ul class="social-networks">
                 <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Fixing Ruby Header File Error&p[summary]=While building out this site, I ran into a Ruby error I hadn’t seen before
 
-1
-2
-3
-4
-5
-6
-7Building native extensions.  This could take a w...&p[url]=/blog/07-01-2016/fixing-ruby-header-file-errors.html" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/blog/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+Building native extensions.  This could take a while...
+ERROR...&p[url]=/blog/07-01-2016/fixing-ruby-header-file-errors.html" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/blog/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
                 <li class="share-twitter"><a href="http://twitter.com/share?url=/07-01-2016/fixing-ruby-header-file-errors.html&text=While building out this site, I ran into a Ruby error I hadn’t seen before
 
-1
-2
-3
-4
-5
-6
-7Building native extensions.  This could take a w...&hashtags=ruby,errors,headers," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/blog/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+Building native extensions.  This could take a while...
+ERROR...&hashtags=ruby,errors,headers," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/blog/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
             </ul>
         </div>
         
