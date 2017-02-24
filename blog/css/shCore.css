@@ -50,8 +50,15 @@
   font-size: 1em !important;
   min-height: inherit !important;
   min-height: auto !important;
+  word-break: break-word;
+  white-space: normal;
 }
-
+			@media screen and (max-width: 736px) {
+				.syntaxhighlighter {
+					font-size: 2em;
+					line-height: .25em;	
+				}
+			}
 .syntaxhighlighter {
   width: 100% !important;
   margin: 1em 0 1em 0 !important;
@@ -79,7 +86,8 @@
   padding: .5em 0 0.5em 1em !important;
 }
 .syntaxhighlighter table td.code {
-  width: 100% !important;
+  width: 90% !important;
+  background-color: black;
 }
 .syntaxhighlighter table td.code .container {
   position: relative !important;
@@ -95,12 +103,18 @@
   background: white !important;
   padding-left: 1em !important;
   overflow: hidden !important;
-  white-space: pre !important;
+  white-space: normal !important;
 }
 .syntaxhighlighter table td.gutter .line {
   text-align: right !important;
   padding: 0 0.5em 0 1em !important;
 }
+			@media screen and (max-width: 736px) {
+				.syntaxhighlighter table td.gutter {
+					display:none;
+					padding: 0 20em 0 1em !important;
+				}
+			}
 .syntaxhighlighter table td.code .line {
   padding: 0 1em !important;
 }
