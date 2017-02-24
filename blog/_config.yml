@@ -1,83 +1,47 @@
-# General Settings
-name: Grayson Test
-job_title: Test System Engineer
-email: grayson@linux.com
-description:  Personal blog focusing on high-availability clustering, KVM virtualization, and other tech adventures
-avatar: ../images/face.jpg
-favicon: ../images/rocket.png
-twitter_handler: your_handler
-analytics_code: UA-XXXXXXX-2
-disqus: your_disqus_site
+# Built with Jekyll 3.2.0
 
-# Social Accounts
-social_networks:
--  { name: facebook, url: '' }
--  { name: twitter, url: '' }
--  { name: instagram, url: '' }
--  { name: google-plus, url: '' }
--  { name: linkedin, url: 'https://www.linkedin.com/in/graysonkent ' }
--  { name: skype, url: '' }
--  { name: github, url: 'https://github.com/graysonkent' }
--  { name: codepen, url: '' }
--  { name: stack-overflow, url: '' }
--  { name: dribbble, url: '' }
--  { name: behance, url: '' }
--  { name: pinterest, url: '' }
--  { name: tumblr, url: '' }
--  { name: youtube, url: '' }
--  { name: vimeo, url: '' }
--  { name: vine, url: '' }
--  { name: 500px, url: '' }
--  { name: flickr, url: '' }
--  { name: spotify, url: '' }
--  { name: steam, url: '' }
--  { name: wordpress, url: '' }
--  { name: xing, url: '' }
+# Setup
+title:               Ed.
+tagline:             'A Jekyll theme for minimal editions'
+description:         'Ed is a Jekyll theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.'
+url:                 'http://elotroalex.github.io'
+baseurl:             '/ed'
 
-# Modules Settings
-show_categories: 1
-show_tags: 1
-show_mood: 0
-show_email: 1
-show_rss: 1
-show_comments: 1
-show_menu: 0
-fixed_sidebar: 1
+# About/contact
+author:
+  name:              Alex Gil
+  url:               https://twitter.com/elotroalex
+  email:             colibri.alex@gmail.com
 
-# Defaults
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      comments: "true"
+# Permalinks
 
-# Serving
-#url: ""
-baseurl: "./"
+permalink: pretty
+permalink: /:title/
 
-# Includes
-include: ["_pages"]
+# Set encoding to UTF-8
+encoding: utf-8
 
-# Outputting
-permalink: /:month-:day-:year/:title.html
-category_dir: categories
+# Collections for texts
+collections:
+  texts:
+    output: true
 
-# Plugins
-gems: ['jekyll-paginate']
-
-# Pagination
-paginate: 10
-paginate_path: "/page:num/"
-
-# Conversion
+# Markdown specs
 markdown: kramdown
 
-# Post Settings
-excerpt_separator: <!--more-->
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  footnote_backlink: "&#x21a9;&#xfe0e;"
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
-# Assets Settings
-sass:
-  sass_dir: assets/partials
-  style: compressed
+# Custom vars
+version:             0.0.6
+
+# Exclusions from the final site
+exclude: [optional, vendor]
+
+
