@@ -181,7 +181,7 @@
 					font-size: 1.25em;
 				}
 		}
-		canvas {
+		img {
 			display: -moz-flex;
 			display: -webkit-flex;
 			display: -ms-flex;
@@ -199,10 +199,12 @@
 			text-align: center;
 			display: block;
 			margin: 0 auto;	
+			width: 936px;
+			height: 250px;
 
 		}
 			@media screen and (max-width: 736px) {
-				canvas {
+				img {
 					display: none;
 				}
 		}
