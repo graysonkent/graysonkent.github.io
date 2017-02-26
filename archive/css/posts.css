@@ -106,14 +106,14 @@ img {
 	margin-bottom: 1.5rem;
 }
 
-footer {
+.footer {
 	text-align: center;
-	margin-bottom: 1.5rem;
+	padding-top: 20px;
 }
 
 ul, ol, li {
-	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-bottom: 0px;
+	margin-top: 2.5px;
 }
 
 em.sc {
@@ -140,6 +140,7 @@ header > p.byline {
 
 p {
 	font-size: 18px;
+	padding-left: 10px;
 }
 
 #header {
@@ -180,7 +181,7 @@ li a {
 					padding-right: 10px;
 				}
 				li {
-						width: 33%;
+						width: 25%;
 						right: -50%;
 						font-size: 15px;
 						overflow: hidden;
@@ -204,9 +205,9 @@ li a {
 					padding-right: 10px;				
 				}
 				li {
-						width: 33%;
+						width: 25%;
 						right: -50%;
-						font-size: 15px;
+						font-size: 12px;
 						overflow: hidden;
 						padding-right: 10px;
 						margin-top: 0px;
@@ -228,4 +229,27 @@ li a:hover {
 	border-bottom: medium simple black;
 	border-color: firebrick;
 }
-
+.stepTitle {
+	font-family: sans-serif;
+	font-size: 22px;
+	color: black;
+	padding-left: 5px;
+	padding-bottom: 2px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.step {
+	font-size: 17px;
+	padding-left: 30px;
+	line-height: 1.0;
+}
+.question {
+	font-family: sans-serif;
+	font-size: 20px;
+	color: black;
+	padding-left: 5px;
+	padding-top: 1px;
+}
+.answer {
+	padding-left: 20px;
+}

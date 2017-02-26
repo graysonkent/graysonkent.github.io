@@ -13,8 +13,9 @@
 		<link rel="icon" type="image/png" href="../../images/tux.png">
 	</head>
 		<ul id="header">
-			<li><a href="../index.html" class="button">Archives</a></li>
 			<li><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
+			<li><a href="../about.html" class="button">About</a></li>
+			<li><a href="../index.html" class="button">Archive</a></li>
 			<li><a href="../../index.html" class="button">Home</a></li>
 		</ul>
 	<body>
@@ -52,6 +53,7 @@
 						TST=`grep -w $line $PERM_LOC/id_processing.txt`
 						USER=`echo $TST | grep -w $line | awk -F '"' '{print $10}'`
 			</pre>
+		<div class="footer"></div>
 	</body>
 	<script type="text/javascript">SyntaxHighlighter.all()</script>
 </html>
