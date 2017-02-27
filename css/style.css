@@ -178,7 +178,7 @@
 				    vertical-align: middle;
 				}
 				section h2 {
-					font-size: 1.25em;
+					font-size: 1.75em;
 				}
 		}
 		img {
@@ -205,7 +205,9 @@
 		}
 			@media screen and (max-width: 736px) {
 				img {
-					display: none;
+					padding-top: 35px;
+					width: 312px;
+					height: 83px;
 				}
 		}
 
