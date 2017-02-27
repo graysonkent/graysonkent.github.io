@@ -9,6 +9,7 @@
 		<meta charset="utf-8"/> 
 		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
 		<script type="text/javascript" src="../../js/SyntaxHighlight/Bash.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/XML.js"></script>
 		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
 		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
 		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
@@ -45,10 +46,10 @@ Interface: IVirtualBox {0169423f-46b4-cde9-91af-1e9d5b6cd945}</pre>
 				<h3 class="stepTitle">Option 2: Manually edit the .vbox file</h3> 
 					<p class="step">1. Close all running VMs and VirtualBox Managers. Your changes will be not be written otherwise</p>
 					<p class="step">2. Navigate to the folder that the offending VM is stored in. Typically C:\Users\username\VirtualBox VMs unless you manually changed it for Vagrant or portable use</p>
-					<p class="step">3. Edit the file name.vbox where "name" is the name of your VM. Also, typically a blue icon on Windows</p>				
-					<p class="step">4. Delete everything inside the "DVDImages" tag, located under the XML tree of VirtualBox > Machine > MediaRegistry > DVDImages</p>
-					<p class="step">5. Save the file and start the VirtualBox Manager. It should open without errors now</p>
-					
+					<p class="step">3. Edit the file VMname.vbox where "VMname" is the name of your VM. Also, it is typically a blue icon on Windows</p>				
+					<p class="step">4. Delete everything inside the "DVDImages" tag, located under the XML tree of VirtualBox > Machine > MediaRegistry > DVDImages. It should be just &lt;DVDImages&gt;&lt;/DVDImages&gt; after this</p>
+					<p class="step">5. Save the file and start the VirtualBox Manager</p>
+					<p>Enjoy your VM again!</p>
 			<div class="footer"></div>	
 		</body>
 	<script type="text/javascript">SyntaxHighlighter.all()</script>
