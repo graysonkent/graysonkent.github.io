@@ -188,6 +188,18 @@ li a {
 	border-bottom: medium simple black;
 	padding-bottom: 2px;
 }
+.date {
+	font-family: sans-serif;
+	font-size: 15px;
+	color: grey;
+	padding-left: 40px;
+	padding-top: 0px;
+}
+.links {
+	border-bottom: medium simple black;	
+	padding-bottom: 0px;
+	border-bottom: none;
+}
 	
 			@media screen and (max-width: 1000px) {
 				p {
@@ -210,7 +222,35 @@ li a {
 				}
 				h2 {
 						margin-top: 0px;
+						font-size: 20px;
 					}
+					
+				h3 {
+					font-family: sans-serif;
+					font-size: 18px;
+					color: FireBrick;
+					padding-left: 5px;
+					padding-bottom: 2px;
+					margin: 0 auto;
+					padding-top: 20px;
+					}
+			h4 {
+					font-family: sans-serif;
+					font-size: 14px;
+					color: black;
+					padding-left: 13px;	
+					padding-bottom: 0px;
+					margin: 0 auto;
+				}
+			.links {
+				font-size: 13px;
+				overflow: hidden;
+			}
+			.date {
+					font-size: 15px;
+					padding-left: 15px;
+								
+				  }
 			}
 			@media screen and (max-width: 700px) {
 				p {
@@ -236,6 +276,32 @@ li a {
 						margin-top: 0px;
 						font-size: 17px;
 					}
+				h3 {
+					font-family: sans-serif;
+					font-size: 16px;
+					color: FireBrick;
+					padding-left: 5px;
+					padding-bottom: 2px;
+					margin: 0 auto;
+					padding-top: 20px;
+					}
+			h4 {
+					font-family: sans-serif;
+					font-size: 12px;
+					color: black;
+					padding-left: 12px;	
+					padding-bottom: 0px;
+					margin: 0 auto;
+				}
+			.links {
+				font-size: 11px;
+				overflow: hidden;
+			}
+			.date {
+					font-size: 11px;	
+					padding-left: 15px;
+								
+				  }
 			}
 			
 li a:hover {
@@ -244,16 +310,4 @@ li a:hover {
     text-decoration: none;
 	border-bottom: medium simple black;
 	border-color: firebrick;
-}
-date {
-	font-family: sans-serif;
-	font-size: 15px;
-	color: grey;
-	padding-left: 40px;
-	padding-top: 0px;
-}
-.links {
-	border-bottom: medium simple black;	
-	padding-bottom: 0px;
-	border-bottom: none;
 }
