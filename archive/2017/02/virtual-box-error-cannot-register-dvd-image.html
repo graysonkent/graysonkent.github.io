@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VirtualBox Error: Cannot register the DVD image 'XXX' {XXX} because a CD/DVD image 'XXX' with UUID {XXX} already exists. Result Code: E_INVALIDARG (0x80070057)</title>
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Blog for Grayson Kent - Linux,Security,Networking,Virtualization">
+	    <meta name="author" content="Grayson Kent" />
+		<meta charset="utf-8"/> 
+		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/Bash.js"></script>
+		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" type="image/png" href="../../../images/tux.png">
+	</head>
+		<ul id="header">
+			<li class="navbar"><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
+			<li class="navbar"><a href="../../about.html" class="button">About</a></li>
+			<li class="navbar"><a href="../../index.html" class="button">Archive</a></li>
+			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
+		</ul>
+		<body>
+			<h2>VirtualBox Error: Cannot register the image because the UUID already exists<span class="date">2/27/2017</span></h2>
+					<p>This is an error I ran into in VirtualBox. Here is the full error code:</p>
+						<pre class="brush: bash">
+Failed to open virtual machine located in 
+F:/VMs/GNS3 WorkBench/GNS3 WorkBench.vbox. 					
+Cannot register the DVD image 
+'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso' 
+{29e469b5-852d-4364-b6fa-53f47dddb305} because a CD/DVD image 
+'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso' with UUID 
+{15684b2d-b6c1-4826-8a98-8619739dc681} already exists. 
+Result Code: E_INVALIDARG (0x80070057) 
+Component: VirtualBoxWrap 
+Interface: IVirtualBox {0169423f-46b4-cde9-91af-1e9d5b6cd945}</pre>
+					<p>Obviously the filenames and UUIDs will be different for you, but that doesn't matter. 
+					In my case the issue was that multiple VMs were using the VBox Guest tools iso and it locked and corrupted one VM.</p>
+					<p>Here is how to fix it:</p>
+				<h3 class="stepTitle">Option 1: From the VirtualBox Manager</h3> 
+					<p>This is the easiest way if VirtualBox will even let you open the Manager. Mine would error out too much to manipulate anything</p>
+					<p class="step">1. Right Click and select "Settings" on the VM it is throwing the error about</p>
+					<p class="step">2. Navigate to the Storage option and Right Click on the iso and select "Remove Attachment"</p>
+					<p>You should now at least be able to start the VM properly and figure out which one you want to give the iso to.</p>
+				<h3 class="stepTitle">Option 2: Manually edit the .vbox file</h3> 
+					<p class="step">1. Close all running VMs and VirtualBox Managers. Your changes will be not be written otherwise</p>
+					<p class="step">2. Navigate to the folder that the offending VM is stored in. Typically C:\Users\username\VirtualBox VMs unless you manually changed it for Vagrant or portable use</p>
+					<p class="step">3. Edit the file name.vbox where "name" is the name of your VM. Also, typically a blue icon on Windows</p>				
+					<p class="step">4. Delete everything inside the "DVDImages" tag, located under the XML tree of VirtualBox > Machine > MediaRegistry > DVDImages</p>
+					<p class="step">5. Save the file and start the VirtualBox Manager. It should open without errors now</p>
+					
+			<div class="footer"></div>	
+		</body>
+	<script type="text/javascript">SyntaxHighlighter.all()</script>
+</html>
