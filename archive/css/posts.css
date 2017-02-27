@@ -63,13 +63,6 @@ dt {
 	margin-bottom: 0.5rem;
 }
 
-.date {
-	padding-left: 5px;
-	color: lightgray;
-	font-size: 15px;
-	vertical-align: middle;
-}
-
 blockquote {
 	width: 75%;
 	margin-left: 2rem;
@@ -109,10 +102,7 @@ img {
 	margin-bottom: 1.5rem;
 }
 
-.footer {
-	text-align: center;
-	padding-top: 20px;
-}
+
 
 ul, ol, li {
 	margin-bottom: 0px;
@@ -125,16 +115,9 @@ em.sc {
 	text-transform: lowercase;
 }
 
-.highlight {
-	background-color: yellow;
-}
 
 figcaption {
 	font-size: 8;
-}
-
-.strikethrough {
-	text-decoration: line-through;
 }
 
 header > p.byline {
@@ -157,7 +140,7 @@ p {
 	z-index: 1;
 }
 
-li {
+.navbar {
     float: right;
 	width: 17%;
 	border-bottom: none;
@@ -166,8 +149,10 @@ li {
 	right: -80%;
 	text-align: center;
 	padding-right: 30px;
+	margin-bottom: 0px;
+	margin-top: 2.5px;
 }
-li a {
+.navbar a {
     display: inline-block;
     color: black;
     padding: 10px;
@@ -183,7 +168,7 @@ li a {
 				pre {
 					padding-right: 10px;
 				}
-				li {
+				.navbar {
 						width: 25%;
 						right: -50%;
 						font-size: 15px;
@@ -207,7 +192,7 @@ li a {
 				pre {
 					padding-right: 10px;				
 				}
-				li {
+				.navbar {
 						width: 25%;
 						right: -50%;
 						font-size: 12px;
@@ -225,13 +210,27 @@ li a {
 					}
 			}
 			
-li a:hover {
+.navbar a:hover {
     display: inline-block;
     color: firebrick;
     text-decoration: none;
 	border-bottom: medium simple black;
 	border-color: firebrick;
 }
+
+.footer {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.highlight {
+	background-color: yellow;
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
 .stepTitle {
 	font-family: sans-serif;
 	font-size: 22px;
@@ -258,4 +257,28 @@ li a:hover {
 }
 .title {
 	font-size: 16px;
+}
+.referenceH2 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+.referenceList{
+	list-style-type: disc;
+	font-size:14px;
+	padding-top: 0px;
+}
+
+.reference {
+	color: blue;
+	display: list-item;
+    padding: 0px;
+    text-decoration: none;
+	border-bottom: none;
+
+}
+.date {
+	padding-left: 5px;
+	color: lightgray;
+	font-size: 15px;
+	vertical-align: middle;
 }
