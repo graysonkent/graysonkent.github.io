@@ -28,7 +28,7 @@ body {
 }
 header, h1, h2, h5, h6 {
 	font-family: sans-serif;
-	font-size: 28px;
+	font-size: 24px;
 	color: FireBrick;
 }
 h3 {
@@ -55,7 +55,7 @@ article > footer {
 }
 
 h2 {
-	margin-top: 2px;
+	margin-top: 0px;
 }
 
 
@@ -157,6 +157,7 @@ header > p.byline {
 
 p {
 	font-size: 18px;
+	padding-left: 10px;
 }
 
 #header {
@@ -170,17 +171,18 @@ p {
 	z-index: 1;
 }
 
-li {
+.navbar {
     float: right;
-	width: 17%; /*17 */
+	width: 17%;
 	border-bottom: none;
 	position: relative;
 	font-size:20px;
 	right: -80%;
 	text-align: center;
-	padding-right: 30px;
+	padding-right: 47px;
+	margin-bottom: 0px;
 }
-li a {
+.navbar a {
     display: inline-block;
     color: black;
     padding: 10px;
@@ -208,7 +210,7 @@ li a {
 				pre {
 					padding-right: 10px;
 				}
-				li {
+				.navbar {
 						width: 25%;
 						right: -50%;
 						font-size: 15px;
@@ -260,7 +262,7 @@ li a {
 				pre {
 					padding-right: 10px;				
 				}
-				li {
+				.navbar {
 						width: 25%;
 						right: -50%;
 						font-size: 12px;
@@ -304,7 +306,7 @@ li a {
 				  }
 			}
 			
-li a:hover {
+navbar a:hover {
     display: inline-block;
     color: firebrick;
     text-decoration: none;
