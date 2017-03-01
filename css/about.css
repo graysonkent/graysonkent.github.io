@@ -30,15 +30,19 @@
 	
 	header, h1, h2, h5, h6 {
 		font-family: sans-serif;
-		font-size: 28px;
+		font-size: 48px;
 		color: FireBrick;
+		padding-bottom: 0px;
+		padding-top: 90px;
+		text-align: center;
+		line-height: .1;
 	}
 	
 	h3 {
 		font-family: sans-serif;
 		font-size: 22px;
 		color: FireBrick;
-		padding-left: 10px;
+		padding-left: 20px;
 		padding-bottom: 2px;
 		margin: 0 auto;
 		padding-top: 20px;
@@ -48,7 +52,7 @@
 		font-family: sans-serif;
 		font-size: 18px;
 		color: black;
-		padding-left: 25px;
+		padding-left: 35px;
 		padding-bottom: 0px;
 		margin: 0 auto;
 		font-weight: normal;
@@ -122,9 +126,27 @@
 	}
 	
 	img {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
 		display: block;
 		margin: 0 auto;
 		margin-bottom: 1.5rem;
+		margin-top: 0px;
+		width: 332px;
+		height: 336px;
 	}
 	
 	.footer {
@@ -241,8 +263,7 @@
 		text-decoration: none;
 		border-bottom: medium simple black;
 		border-color: firebrick;
-	}
-	
+	}	
 	@media screen and (max-width: 1000px) {
 		p {
 			padding: 5px;
@@ -332,7 +353,8 @@
 		}
 		h2 {
 			margin-top: 0px;
-			font-size: 17px;
+			font-size: 28px;
+			padding-top: 60px;
 		}
 		h3 {
 			font-family: sans-serif;
@@ -350,6 +372,7 @@
 			padding-left: 12px;
 			padding-bottom: 0px;
 			margin: 0 auto;
+			padding-right: 10px;
 		}
 		.links {
 			font-size: 11px;
@@ -377,5 +400,9 @@
 			margin: 0 auto;
 			text-decoration: none;
 			border-bottom: none;
+		}
+		img {
+			width: 166px;
+			height: 168px;
 		}
 	}
