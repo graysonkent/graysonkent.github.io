@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculating the odds of a SHA-1 Collision</title>
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Calculating the odds of a SHA1 Collision">
+	    <meta name="author" content="Grayson Kent" />
+		<meta charset="utf-8"/> 
+		<style>
+		rect.bordered {
+			stroke: #E6E6E6;
+			stroke-width:2px;   
+		}
+	
+		text.mono {
+			font-size: 9pt;
+			font-family: Consolas, courier;
+			fill: #aaa;
+		}
+	
+		text.axis-workweek {
+			fill: #000;
+		}
+	
+		text.axis-worktime {
+			fill: #000;
+		}
+		</style>
+		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../../css/katex.css" type="text/css" >
+		<link rel="icon" type="image/png" href="../../../images/tux.png">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script type="text/javascript" src="../../js/katex/autorender.js"></script>
+		<script type="text/javascript" src="../../js/katex/katex.min.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/Bash.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/JS.js"></script>
+	</head>
+		<ul id="header">
+			<li class="navbar"><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
+			<li class="navbar"><a href="../../../about.html" class="button">About</a></li>
+			<li class="navbar"><a href="../../index.html" class="button">Archive</a></li>
+			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
+		</ul>
+	<body>
+			<h2>Calculating the odds of a SHA-1 Collision<span class="date">3/10/2017</span></h2>
+				<p>
+					With the announcement that <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Google has developed a technique to generate SHA-1 collisions</a>, albeit with huge computational loads, I thought it would be topical to figure out the odds of a SHA-1 collision in the wild using the Birthday Paradox. 
+				</p>
+				<p> But first, some background:</p>
+				
+				<h2>The Birthday Problem</h2>
+					<p>This famously counter-intuitive paradox states that in a room of 23 people there is a 50% chance that two people would share a birthday. If you up the amount of people to 75, then your odds go up to 99.9%</p>
+					<p>It's probably up there with the <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a> for most argued about popular probability puzzle, but it actually makes a lot of sense when you break it down.</p>
+					<p>The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of <b><i>not</i></b> getting a match in a pair, of which we have: $$  \frac{23\times22}{2}=253 \text { Combinations} $$</p>
+					<p>Ignoring messy real-world statistics like how birthdays tend to group together:</p></br>
+					   <div id="chart"></div>
+    <script type="text/javascript">
+      var margin = { top: 50, right: 0, bottom: 1000, left: 40 },
+          width = 960 - margin.left - margin.right,
+          height = 430 - margin.top - margin.bottom,
+          gridSize = Math.floor(width / 34),
+          legendElementWidth = gridSize*2,
+          buckets = 9,
+          colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"],
+          month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+          times = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
+          datasets = ["births.csv"];
+
+      var svg = d3.select("#chart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var dayLabels = svg.selectAll(".dayLabel")
+          .data(month)
+          .enter().append("text")
+            .text(function (d) { return d; })
+            .attr("x", 0)
+            .attr("y", function (d, i) { return i * gridSize; })
+            .style("text-anchor", "end")
+            .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+            .attr("class", "dayLabel mono axis axis-workweek");
+
+      var timeLabels = svg.selectAll(".timeLabel")
+          .data(times)
+          .enter().append("text")
+            .text(function(d) { return d; })
+            .attr("x", function(d, i) { return i * gridSize; })
+            .attr("y", 0)
+            .style("text-anchor", "middle")
+            .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+            .attr("class","timeLabel mono axis axis-worktime");
+
+      var heatmapChart = function(tsvFile) {
+        d3.csv(tsvFile,
+        function(d) {
+          return {
+            month: +d.month,
+            day: +d.day,
+            births: +d.births
+          };
+        },
+        function(error, data) {
+          var colorScale = d3.scale.quantile()
+              .domain([10000, 180000, d3.max(data, function (d) { return d.births; })])
+              .range(colors);
+
+          var cards = svg.selectAll(".day")
+              .data(data, function(d) {return d.month+':'+d.day;});
+
+          cards.append("title");
+
+          cards.enter().append("rect")
+              .attr("x", function(d) { return (d.day - 1) * gridSize; })
+              .attr("y", function(d) { return (d.month - 1) * gridSize; })
+              .attr("rx", 4)
+              .attr("ry", 4)
+              .attr("class", "day bordered")
+              .attr("width", gridSize)
+              .attr("height", gridSize)
+              .style("fill", colors[0]);
+
+          cards.transition().duration(1000)
+              .style("fill", function(d) { return colorScale(d.births); });
+
+          cards.select("title").text(function(d) { return d.births; });
+          
+          cards.exit().remove();
+
+          var legend = svg.selectAll(".legend")
+              .data([0].concat(colorScale.quantiles()), function(d) { return d; });
+
+          legend.enter().append("g")
+              .attr("class", "legend");
+
+          legend.append("rect")
+            .attr("x", function(d, i) { return legendElementWidth * i; })
+            .attr("y", height)
+            .attr("width", legendElementWidth)
+            .attr("height", gridSize / 2)
+            .style("fill", function(d, i) { return colors[i]; });
+
+          legend.append("text")
+            .attr("class", "mono")
+            .text(function(d) { 
+            	if (Math.round(d) === 0) { return "≥ 0"; }; return "≥ " + Math.round(d) + "00"; })
+            .attr("x", function(d, i) { return legendElementWidth * i; })
+            .attr("y", height + gridSize);
+
+          legend.exit().remove();
+
+		  svg.append("text")
+			.attr("x", "285px" )
+			.attr("y", "-30px" )
+			.attr("text-anchor", "right")
+			.style("font", "Arial")
+			.style("font-weight", "bold")
+			.style("font-size", "25px")
+			.style("text-decoration", "none")
+			.style('fill', '#081d58')
+			.text("Distribution of Birthdays");		  
+			
+			svg.append("text")
+			.attr("x", "555px" )
+			.attr("y", "345px" )
+			.attr("text-anchor", "right")
+			.style("font", "Arial")
+			.style("font-weight", "bold")
+			.style("font-size", "15px")
+			.style("text-decoration", "none")
+			.style('fill', 'grey')
+			.text("Source: Google's Big Query Natality Dataset");
+        });  
+      };
+
+      heatmapChart(datasets[0]);
+      
+    </script>
+	<p> Then you can calculate the probability of two people not having the same birthday with some simple math: $$ p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2}  $$</p>
+					<p>Where X=23 people, we get .500477154 or just over 50% chance of a match.</p> 
+				<h2>SHA-1 Background</h2>
+	
+				<h2>The Birthday Paradox Applied </h2>
+				
+				<h2>Conclusion</h2>
+			
+<div class="footer"></div>
+	</body>
+	<script type="text/javascript">SyntaxHighlighter.all(document.body);renderMathInElement(document.body);</script>
+</html>
