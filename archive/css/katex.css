@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'KaTeX_AMS';
   src: url('fonts/KaTeX_AMS-Regular.eot');
   src: url('fonts/KaTeX_AMS-Regular.eot#iefix') format('embedded-opentype'), url('fonts/KaTeX_AMS-Regular.woff2') format('woff2'), url('fonts/KaTeX_AMS-Regular.woff') format('woff'), url('fonts/KaTeX_AMS-Regular.ttf') format('truetype');
@@ -109,7 +109,7 @@
   src: url('fonts/KaTeX_Typewriter-Regular.eot#iefix') format('embedded-opentype'), url('fonts/KaTeX_Typewriter-Regular.woff2') format('woff2'), url('fonts/KaTeX_Typewriter-Regular.woff') format('woff'), url('fonts/KaTeX_Typewriter-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
+} */
 .katex-display {
   display: block;
   margin: 1em 0;

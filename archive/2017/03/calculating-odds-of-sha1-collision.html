@@ -26,18 +26,72 @@
 		text.axis-worktime {
 			fill: #000;
 		}
+		.d3-tip {
+			line-height: 1;
+			font-weight: bold;
+			padding: 12px;
+			background: rgba(0, 0, 0, 0.8);
+			color: #fff;
+			border-radius: 2px;
+			}
+
+		.d3-tip:after {
+			box-sizing: border-box;
+			display: inline;
+			font-size: 10px;
+			width: 100%;
+			line-height: 1;
+			color: rgba(0, 0, 0, 0.8);
+			content: "\25BC";
+			position: absolute;
+			text-align: center;
+			}
+			
+		.d3-tip.n:after {
+			margin: -1px 0 0 0;
+			top: 100%;
+			left: 0;
+			}
+		#digest {
+			min-width: 22em;
+		}
+
 		</style>
 		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
 		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
 		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="../../css/katex.css" type="text/css" >
 		<link rel="icon" type="image/png" href="../../../images/tux.png">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script type="text/javascript" src="../../js/d3/d3.min.js"></script>
+		<script type="text/javascript" src="../../js/d3/sha1.js"></script>
+		<script type="text/javascript" src="../../js/d3/tooltip.js"></script>
 		<script type="text/javascript" src="../../js/katex/autorender.js"></script>
 		<script type="text/javascript" src="../../js/katex/katex.min.js"></script>
 		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
 		<script type="text/javascript" src="../../js/SyntaxHighlight/Bash.js"></script>
 		<script type="text/javascript" src="../../js/SyntaxHighlight/JS.js"></script>
+	       <script>
+        'use strict';
+        var doc = document; doc.qrySel = doc.querySelector; doc.qrySelAll = doc.querySelectorAll; // shorthand
+
+        document.addEventListener('click', function(event) {
+            doc.qrySel('#message').oninput = function() {
+                var t1 = performance.now();
+                var hash = Sha1.hash(this.value);
+                var t2 = performance.now();
+
+                doc.qrySel('#digest').value = hash;
+            };        
+            doc.qrySel('#message').select();
+            doc.qrySel('#message').oninput(); // trigger initial hash
+
+            // show source code
+            fetch('//cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha1.js')
+                .then(function(res) { return res.ok ? res.text() : res.status+' '+res.statusText; })
+                .then(function(txt) { doc.qrySel('#src-code').textContent = txt; prettyPrint(); })
+                .catch(function(err) { doc.qrySel('#error').textContent = err.message; });
+        });
+    </script>
 	</head>
 		<ul id="header">
 			<li class="navbar"><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
@@ -46,9 +100,9 @@
 			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
 		</ul>
 	<body>
-			<h2>Calculating the odds of a SHA-1 Collision<span class="date">3/10/2017</span></h2>
+			<h2>Calculating the odds of a SHA-1 Collision<span class="date">3/13/2017</span></h2>
 				<p>
-					With the announcement that <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Google has developed a technique to generate SHA-1 collisions</a>, albeit with huge computational loads, I thought it would be topical to figure out the odds of a SHA-1 collision in the wild using the Birthday Paradox. 
+					With the announcement that <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Google has developed a technique to generate SHA-1 collisions</a>, albeit with huge computational loads, I thought it would be topical to figure out the odds of a SHA-1 collision in the wild using the Birthday Problem. 
 				</p>
 				<p> But first, some background:</p>
 				
@@ -56,9 +110,9 @@
 					<p>This famously counter-intuitive paradox states that in a room of 23 people there is a 50% chance that two people would share a birthday. If you up the amount of people to 75, then your odds go up to 99.9%</p>
 					<p>It's probably up there with the <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a> for most argued about popular probability puzzle, but it actually makes a lot of sense when you break it down.</p>
 					<p>The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of <b><i>not</i></b> getting a match in a pair, of which we have: $$  \frac{23\times22}{2}=253 \text { Combinations} $$</p>
-					<p>Ignoring messy real-world statistics like how birthdays tend to group together:</p></br>
+					<p>Ignoring messy, real-world statistics like how birthdays tend to group together:</p></br>
 					   <div id="chart"></div>
-    <script type="text/javascript">
+      <script type="text/javascript">
       var margin = { top: 50, right: 0, bottom: 1000, left: 40 },
           width = 960 - margin.left - margin.right,
           height = 430 - margin.top - margin.bottom,
@@ -95,7 +149,14 @@
             .style("text-anchor", "middle")
             .attr("transform", "translate(" + gridSize / 2 + ", -6)")
             .attr("class","timeLabel mono axis axis-worktime");
-
+			
+	var tip = d3.tip()
+		.attr('class', 'd3-tip')
+		.offset([-10, 0])
+		.html(function(d) {
+			return "<strong>2015 Births:</strong> <span style='color:red'>" +d.births + "</span>";
+		})
+  
       var heatmapChart = function(tsvFile) {
         d3.csv(tsvFile,
         function(d) {
@@ -105,6 +166,8 @@
             births: +d.births
           };
         },
+
+  
         function(error, data) {
           var colorScale = d3.scale.quantile()
               .domain([10000, 180000, d3.max(data, function (d) { return d.births; })])
@@ -123,9 +186,11 @@
               .attr("class", "day bordered")
               .attr("width", gridSize)
               .attr("height", gridSize)
+			  .on('mouseover', tip.show)
+			  .on('mouseout', tip.hide)
               .style("fill", colors[0]);
 
-          cards.transition().duration(1000)
+          cards.transition().duration(2000)
               .style("fill", function(d) { return colorScale(d.births); });
 
           cards.select("title").text(function(d) { return d.births; });
@@ -153,9 +218,10 @@
             .attr("y", height + gridSize);
 
           legend.exit().remove();
-
+			
+		  
 		  svg.append("text")
-			.attr("x", "285px" )
+			.attr("x", "265px" )
 			.attr("y", "-30px" )
 			.attr("text-anchor", "right")
 			.style("font", "Arial")
@@ -163,7 +229,7 @@
 			.style("font-size", "25px")
 			.style("text-decoration", "none")
 			.style('fill', '#081d58')
-			.text("Distribution of Birthdays");		  
+			.text("Distribution of US Birthdays");		  
 			
 			svg.append("text")
 			.attr("x", "555px" )
@@ -173,22 +239,45 @@
 			.style("font-weight", "bold")
 			.style("font-size", "15px")
 			.style("text-decoration", "none")
-			.style('fill', 'grey')
-			.text("Source: Google's Big Query Natality Dataset");
+			.on("click", function() { window.open("https://cloud.google.com/bigquery/sample-tables"); })      
+			.append("svg:tspan").style("fill", "grey").text("Source: ")
+			.append("svg:tspan").style("fill", "blue").text("Google's Big Query Natality Dataset");
         });  
       };
 
       heatmapChart(datasets[0]);
-      
+      svg.call(tip);
     </script>
-	<p> Then you can calculate the probability of two people not having the same birthday with some simple math: $$ p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2}  $$</p>
-					<p>Where X=23 people, we get .500477154 or just over 50% chance of a match.</p> 
+	<p>Then, you can calculate the probability of two people not having the same birthday with: $$ p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2}  $$</p>
+					<p>Where x = 23 people, we get .500477154 or just over 50% chance of a match.</p> 
 				<h2>SHA-1 Background</h2>
-	
-				<h2>The Birthday Paradox Applied </h2>
-				
+					<p>Secure Hash Algorithm 1 (SHA-1) was developed by the NSA in 1995 and it is used commonly in security protocols and version control systems, although it is being phased out in favor of more secure hash functions.</p>
+					<p>In a <b>very</b> simplified way it works by padding, appending, expanding, compressing, and splitting the input data into blocks and then adding the result to a hash state that generates the 160-bit final hash known as a Message Digest.</p>
+					<p>This hash is often represented as a 40 digit hexadecimal number. See below for an example or input your own text to see the hash:</p>
+						<div align="center">		                
+							<label for="message">
+							 <b><span class="label">Input Text:</span></label></b>
+								<input id="message" value="SHA-1 is Outdated"></input>
+							<b><label for="digest">Hash:</label></b>
+								<input id="digest" readonly="readonly" value="bd6ccd94ba309828d2b0ce4b37bdb635f0c9b731" type="text">
+						</div>
+					<p>You can read the <a href="https://tools.ietf.org/html/rfc3174">full RFC</a> if you want to dive deeper into the internals of SHA-1</p>
+				<h2>The Birthday Problem Applied </h2>
+					<p>So how does the Birthday Problem relate to SHA-1 collisions? Instead of finding matches between people's birthdays, now you can find matches in 160 bit hashes.</p>
+					<p>Diverging from the math we did in first section, we are going to cheat and use an approximation for the finding the amount of files needed for a 50% chance of a match or 'collision' in SHA-1.</p>
+					<p>A good approximation of a 50% chance of a match is the square root of (d) where d is 365. That gives us 19 people needed for a 50% chance at a match. Kind of close to the actual answer of 23, but it doesn't really matter much when dealing with huge numbers like the SHA-1 domain.</p>
+					<p>Using that approximation for SHA-1 with a 160-bit hash:</p>
+						$$ \sqrt{{2}^{160}}  \approx  1,208,925,819,614,629,174,706,176 $$
+					<p>To put that into perspective, Facebook and Twitter could decide to store posts using SHA-1 and it would still take them over <b>3,400</b> years of data, assuming no growth and always unique messages, before they even had to worry about a 50% chance of a collision.</p>
+					<p>An upgrade to SHA3-512 or even SHA-256 algorithms and they would need to worry more about the heat death of the universe than a collision.</p>
+				<h3>Q&A</h3>
+				<h3 class="question">Q: So how was Google able to brute-force a collision?</h3>
+					<p class="answer">A: They didn't. At least not entirely. They found a break allowing them to get the domain down to below 2^63 and then throw all their might at "one of the largest computations ever completed." </p>
+				<h3 class="question">Q: Does this mean I should stop using Git?</h3>
+					<p class="answer">A: Only if you want to. <a href="https://plus.google.com/+LinusTorvalds/posts/7tp2gYWQugL">Linus isn't worried</a> and neither am I. Git doesn't rely on SHA-1 for security of authentication, more so just identifying files. Beyond that, <a href="https://gist.github.com/masak/2415865">it goes through a lot of extra steps before check-in.</a> From the perspective of attacking the Linux Kernel, to pull off an attack like Google's you would need a blackbox like pdf files or binary blobs to obfuscate the code and then you would have to switch out the matching document at a distribution point. All in, probably costing you at least a million. And it all still hinges on the repo owner accepting your code. Heck, it would be easier to spend that million to pick up a few people at <a href="http://www.ioccc.org/">The International Obfuscated C Code Contest</a> , clone an evil Andrew Morton or work on exploits for <a href="https://boingboing.net/2016/06/15/intel-x86-processors-ship-with.html">Intel's hidden CPU.</a></p>
+					<p class="answer">That's not to say that they shouldn't migrate to a better algorithm, but it isn't a dire situation.</p>
 				<h2>Conclusion</h2>
-			
+					<p>With society so reliant upon the security of our algorithms, it will be interesting to see which ones survive. SHA-1 took over 10 years for theoretical attacks, and 21 years for a proven one and that was with an incredible amount of power on the mathematically flawed Message Digest algorithm family. SHA-3 is promising with its <a href="https://www.fbi.h-da.de/fileadmin/personal/h.baier/Lectures-summer-13/SS-13-Cryptography/lecture_crypto_ss13_chapter09-sha3-handout.pdf">sponge</a> design to add another layer of complexity, but who knows? It might also prove trivial to AI in the future.</p>
 <div class="footer"></div>
 	</body>
 	<script type="text/javascript">SyntaxHighlighter.all(document.body);renderMathInElement(document.body);</script>
