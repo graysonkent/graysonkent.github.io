@@ -100,9 +100,9 @@
 			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
 		</ul>
 	<body>
-			<h2>Calculating the odds of a SHA-1 Collision<span class="date">3/13/2017</span></h2>
+			<h2>Calculating the odds of a SHA-1 Collision <span class="date">3/13/2017</span></h2>
 				<p>
-					With the announcement that <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Google has developed a technique to generate SHA-1 collisions</a>, albeit with huge computational loads, I thought it would be topical to figure out the odds of a SHA-1 collision in the wild using the Birthday Problem. 
+					With the announcement that <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Google has developed a technique to generate SHA-1 collisions</a>, albeit with huge computational loads, I thought it would be topical to show the odds of a SHA-1 collision in the wild using the Birthday Problem. 
 				</p>
 				<p> But first, some background:</p>
 				
@@ -267,18 +267,17 @@
 					<p>Diverging from the math we did in first section, we are going to cheat and use an approximation for the finding the amount of files needed for a 50% chance of a match or 'collision' in SHA-1.</p>
 					<p>A good approximation of a 50% chance of a match is the square root of (d) where d is 365. That gives us 19 people needed for a 50% chance at a match. Kind of close to the actual answer of 23, but it doesn't really matter much when dealing with huge numbers like the SHA-1 domain.</p>
 					<p>Using that approximation for SHA-1 with a 160-bit hash:</p>
-						$$ \sqrt{{2}^{160}}  \approx  1,208,925,819,614,629,174,706,176 $$
-					<p>To put that into perspective, Facebook and Twitter could decide to store posts using SHA-1 and it would still take them over <b>3,400</b> years of data, assuming no growth and always unique messages, before they even had to worry about a 50% chance of a collision.</p>
+						$$ \sqrt{{2}^{160}} = {{2}^{80}} \approx  1,208,925,819,614,629,174,706,176 $$
+					<p>To put that into perspective, Facebook and Twitter could decide to identify posts using SHA-1 and it would still take them over <b>3,400</b> years of data, assuming no growth and always unique messages, before they even had to worry about a 50% chance of a collision.</p>
 					<p>An upgrade to SHA3-512 or even SHA-256 algorithms and they would need to worry more about the heat death of the universe than a collision.</p>
 				<h3>Q&A</h3>
 				<h3 class="question">Q: So how was Google able to brute-force a collision?</h3>
 					<p class="answer">A: They didn't. At least not entirely. They found a break allowing them to get the domain down to below 2^63 and then throw all their might at "one of the largest computations ever completed." </p>
 				<h3 class="question">Q: Does this mean I should stop using Git?</h3>
-					<p class="answer">A: Only if you want to. <a href="https://plus.google.com/+LinusTorvalds/posts/7tp2gYWQugL">Linus isn't worried</a> and neither am I. Git doesn't rely on SHA-1 for security of authentication, more so just identifying files. Beyond that, <a href="https://gist.github.com/masak/2415865">it goes through a lot of extra steps before check-in.</a> From the perspective of attacking the Linux Kernel, to pull off an attack like Google's you would need a blackbox like pdf files or binary blobs to obfuscate the code and then you would have to switch out the matching document at a distribution point. All in, probably costing you at least a million. And it all still hinges on the repo owner accepting your code. Heck, it would be easier to spend that million to pick up a few people at <a href="http://www.ioccc.org/">The International Obfuscated C Code Contest</a> , clone an evil Andrew Morton or work on exploits for <a href="https://boingboing.net/2016/06/15/intel-x86-processors-ship-with.html">Intel's hidden CPU.</a></p>
+					<p class="answer">A: Only if you want to. <a href="https://plus.google.com/+LinusTorvalds/posts/7tp2gYWQugL">Linus isn't worried</a> and neither am I. Git doesn't rely on SHA-1 for security of authentication, more so just identifying files. Beyond that, <a href="https://gist.github.com/masak/2415865">it goes through a lot of extra steps before check-in.</a></p>
+					<p class="answer">From the perspective of attacking the Linux Kernel, to pull off an attack like Google's you would need a blackbox like pdf files or binary blobs to obfuscate the code and then you would have to switch out the matching document at a distribution point. All in, probably costing you at least a million. And it all still hinges on the repo owner accepting your code. Heck, it would be easier to spend that million to pick up a few people at <a href="http://www.ioccc.org/">The International Obfuscated C Code Contest</a>, clone an evil Andrew Morton or work on exploits for <a href="https://boingboing.net/2016/06/15/intel-x86-processors-ship-with.html">Intel's hidden CPU.</a></p>
 					<p class="answer">That's not to say that they shouldn't migrate to a better algorithm, but it isn't a dire situation.</p>
 				<h2>Conclusion</h2>
-					<p>With society so reliant upon the security of our algorithms, it will be interesting to see which ones survive. SHA-1 took over 10 years for theoretical attacks, and 21 years for a proven one and that was with an incredible amount of power on the mathematically flawed Message Digest algorithm family. SHA-3 is promising with its <a href="https://www.fbi.h-da.de/fileadmin/personal/h.baier/Lectures-summer-13/SS-13-Cryptography/lecture_crypto_ss13_chapter09-sha3-handout.pdf">sponge</a> design to add another layer of complexity, but who knows? It might also prove trivial to AI in the future.</p>
-<div class="footer"></div>
-	</body>
+					<p>With society so reliant on algorithms, it will be interesting to see which ones are proven secure. SHA-1 took over 10 years for theoretical attacks, and over 20 years for a proven one and that was with an nearly unfathomable amount of power on the mathematically flawed Message Digest algorithm family. SHA-3 is promising with its <a href="https://www.fbi.h-da.de/fileadmin/personal/h.baier/Lectures-summer-13/SS-13-Cryptography/lecture_crypto_ss13_chapter09-sha3-handout.pdf">sponge</a> design to add another layer of complexity, but it might also prove trivial to the computers of the future.</p>
 	<script type="text/javascript">SyntaxHighlighter.all(document.body);renderMathInElement(document.body);</script>
 </html>
