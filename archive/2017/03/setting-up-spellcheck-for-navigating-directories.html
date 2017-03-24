@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8"/> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Working with directories that start with a -</title>
+		<title>Setting up spell check for navigating directories</title>
 		<meta name="robots" content="index, follow">
 		<meta name="description" content="Blog for Grayson Kent - Linux,Security,Networking,Virtualization">
 	    <meta name="author" content="Grayson Kent" />
@@ -21,18 +21,27 @@
 			<li class="navbar"><a href="../../index.html" class="button">Archive</a></li>
 			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
 		</ul>
-			<h2>Working with directories that start with a - character <span class="date">3/21/2017</span></h2>
-					<p>If you ever have the misfortune of working with an application that starts its directories with a '-' character, then you will know the pain of pretty much every standard bash tool breaking as they all expect '-' to be used for flags like so:</p>
+			<h2>Setting up spell check for navigating directories <span class="date">3/24/2017</span></h2>
+					<p>This is a neat trick I somehow just learned about. By running:</p>
 						<pre class="brush: bash">
-cd -test 
-bash: cd: -t: invalid option cd: usage: cd [-L|[-P [-e]] [-@]] [dir]</pre>
-					<p>Intuitively, you would think that escaping the string with "-test" would work, but that produces the same error.</p>
-					<p>To solve this, I had to dive into some <a href="http://pubs.opengroup.org/onlinepubs/007904875/utilities/xcu_chap01.html#tag_01_11">POSIX standards </a>and discovered that the following is how you safely discard the first argument and not trigger bash into thinking that -test is your flag:</p>
+gkent@CE7node04:~$ shopt -s cdspell
+</pre>
+					<p>You can set Bash to fix minor spelling errors in cd commands. Here is an example:</p>
 						<pre class="brush: bash">
-cd -- -test</pre>				
-				<p>Easy enough once you know that trick. You can also cheat and define the path explicitly, but that isn't as fun to whip out at parties:</p>
-										<pre class="brush: bash">
-cd ./-test</pre>				
+gkent@CE7node04:~$ mkdir spellingIsHard
+gkent@CE7node04:~$ cd spelingIsHard
+bash: cd: spelingIsHard: No such file or directory
+gkent@CE7node04:~$ shopt -s cdspell
+gkent@CE7node04:~$ cd spelingIsHard
+spellingIsHard
+gkent@CE7node04:~/spellingIsHard$ 				
+</pre>				
+					<p>This only works in the interactive shell (for good reason) and I wish there was a 'set' equivalent so it would be more portable, but overall this a very handy option.</p>
+			<h2>Further Reading:</h2>
+				<ul class="referenceList">
+					<li><a href="http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html" class="reference">shopt builtin man page</a></li>
+					<li><a href="https://bash.cyberciti.biz/guide/Shopt" class="reference">Other Example Usages -cyberciti (Mar 2016)</a></li>
+				</ul>
 			<div class="footer"/>	
 	<script type="text/javascript">SyntaxHighlighter.all()</script>
 </html>

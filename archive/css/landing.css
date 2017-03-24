@@ -161,6 +161,9 @@ p {
 	font-size: 18px;
 	padding-left: 10px;
 }
+br {
+	line-height:0px;
+}
 
 #header {
 	list-style-type: none;
@@ -198,11 +201,17 @@ p {
 	color: grey;
 	padding-left: 40px;
 	padding-top: 0px;
+	margin-bottom: 0px;
 }
 .links {
 	border-bottom: medium simple black;	
 	padding-bottom: 0px;
+	padding-top: 0px;
 	border-bottom: none;
+}
+span {
+		padding-bottom: 0px;
+			padding-top: 0px;
 }
 	
 			@media screen and (max-width: 1000px) {
