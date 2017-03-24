@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html  lang="en">
+	<head>
+		<meta charset="utf-8"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>How to get the last argument of any previous command</title>
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="Blog for Grayson Kent - Linux,Security,Networking,Virtualization">
+	    <meta name="author" content="Grayson Kent" />
+		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/bash.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/plain.js"></script>
+		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" type="image/png" href="../../../images/tux.png">
+	</head>
+		<ul id="header">
+			<li class="navbar"><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
+			<li class="navbar"><a href="../../../about.html" class="button">About</a></li>
+			<li class="navbar"><a href="../../index.html" class="button">Archive</a></li>
+			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
+		</ul>
+			<h2>How to get the last argument of any previous command <span class="date">3/24/2017</span></h2>
+				<p>One of my favorite time-saving commands in Bash is <span class="highlight">!$</span> which recalls the last argument of the last entered command. This is incredibly useful in situations like this: </p>
+													<pre class="brush: bash">
+gkent@CE7node04:~$ mkdir superlongnamethatidontwanttotypeout
+gkent@CE7node04:~$ cd !$
+gkent@CE7node04:~/superlongnamethatidontwanttotypeout$ 
+</pre>							
+				
+				<p>Similarly, <span class="highlight">!!</span> recalls the entirety of the last command and <span class="highlight">!-2</span> recalls the next to last command from history like so: </p> 
+			
+									<pre class="brush: bash">
+gkent@CE7node04:~$ touch example1
+gkent@CE7node04:~$ touch example2
+gkent@CE7node04:~$ !-2
+touch example1								
+</pre>				
+
+<p>This can be extended out with negative integers to go back lines in Bash history, or a positive integer to start from beginning. </p>
+<p style="padding-left:30px;background-color: lightyellow;"><b>Note: </b>If you need more functionality, you should really learn the <span class="highlight">fc</span> builtin command. It lets you yank a range of commands from history like <span class="highlight">fc -2 -4</span>, throws it in your $EDITOR for review, and then execute the command on exit.</p>
+
+<p>With the <span class="highlight">!-2</span> logic in mind, I thought <span class="highlight">!$-2</span> would work but you get the following result:</p>
+<pre class="brush: bash">
+gkent@CE7node04:~$ touch example1
+gkent@CE7node04:~$ touch example2
+gkent@CE7node04:~$ vim !$-2
+vim example2-2								
+</pre>
+<p>As you can see, that expands the last argument and then just inserts <span class="highlight">-2</span> instead of interpreting it as a negative line number as I want. I thought this was odd so I researched more and realized that I had a fundamental misunderstanding of how <span class="highlight">!$</span> works.</p>		
+<p style="padding-left:30px;">The <a href="https://www.gnu.org/software/bash/manual/bashref.html#Word-Designators">Bash Manual</a> says:		
+<pre class="brush: plain">
+!!:$ designates the last argument of the preceding command. 
+This may be shortened to !$.						
+</pre>	
+<p>So <span class="highlight">$</span> is actually an event specification on <span class="highlight">!!</span> and thus <span class="highlight">!$</span> is not a completely separate word designator from <span class="highlight">!!</span> as I thought. Knowing that, we just need to use <span class="highlight">!-2$</span> like so:</p> 
+<pre class="brush: bash">
+gkent@CE7node04:~$ touch example1
+gkent@CE7node04:~$ touch example2
+gkent@CE7node04:~$ vim !-2$
+vim example1				
+</pre>
+<p>This gets us the last argument of the next to last command and can also be modified to grab different lines like the <span class="highlight">!-2</span> command.</p>
+<p style="padding-left:30px;background-color: lightyellow;"><b>Note:</b> <span class="highlight">$_</span> is another beast entirely as it works on <b>executed</b> commands and not <b>entered</b> commands like <span class="highlight">!$</span> who needs something to be in history for it to work.</p>
+<h3>Conclusion</h3>
+<p>Bash History is an incredibly deep topic with a lot of interesting shortcuts. If you want to deeper, I would suggest setting <span class="highlight">shopt -s histverify</span> to get a better picture of how the shell interprets your commands.</p>
+<div class="footer"/>	
+<script type="text/javascript">SyntaxHighlighter.all()</script>
+</html>

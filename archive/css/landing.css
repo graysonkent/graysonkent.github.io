@@ -161,10 +161,6 @@ p {
 	font-size: 18px;
 	padding-left: 10px;
 }
-br {
-	line-height:0px;
-}
-
 #header {
 	list-style-type: none;
     overflow: visible;
@@ -200,11 +196,8 @@ br {
 	font-size: 15px;
 	color: grey;
 	padding-left: 40px;
-	padding-top: 0px;
-	margin-bottom: 0px;
 }
 .links {
-	border-bottom: medium simple black;	
 	padding-bottom: 0px;
 	padding-top: 0px;
 	border-bottom: none;
