@@ -39,7 +39,7 @@ touch example1
 </pre>				
 
 <p>This can be extended out with negative integers to go back lines in Bash history, or a positive integer to start from beginning. </p>
-<p style="padding-left:30px;background-color: lightyellow;"><b>Note: </b>If you need more functionality, you should really learn the <span class="highlight">fc</span> builtin command. It lets you yank a range of commands from history like <span class="highlight">fc -2 -4</span>, throws it in your $EDITOR for review, and then execute the command on exit.</p>
+<p style="padding-left:30px;padding-right:30px;background-color: lightyellow;"><b>Note: </b>If you need more functionality, you should really learn the <span class="highlight">fc</span> builtin command. It lets you yank a range of commands from history like <span class="highlight">fc -2 -4</span>, throws it in your $EDITOR for review, and then execute the command on exit.</p>
 
 <p>With the <span class="highlight">!-2</span> logic in mind, I thought <span class="highlight">!$-2</span> would work but you get the following result:</p>
 <pre class="brush: bash">
@@ -62,7 +62,7 @@ gkent@CE7node04:~$ vim !-2$
 vim example1				
 </pre>
 <p>This gets us the last argument of the next to last command and can also be modified to grab different lines like the <span class="highlight">!-2</span> command.</p>
-<p style="padding-left:30px;background-color: lightyellow;"><b>Note:</b> <span class="highlight">$_</span> is another beast entirely as it works on <b>executed</b> commands and not <b>entered</b> commands like <span class="highlight">!$</span> who needs something to be in history for it to work.</p>
+<p style="padding-left:30px;padding-right:30px;background-color: lightyellow;"><b>Note:</b> <span class="highlight">$_</span> is another beast entirely as it works on <b>executed</b> commands and not <b>entered</b> commands like <span class="highlight">!$</span> who needs something to be in history for it to work.</p>
 <h3>Conclusion</h3>
 <p>Bash History is an incredibly deep topic with a lot of interesting shortcuts. If you want to deeper, I would suggest setting <span class="highlight">shopt -s histverify</span> to get a better picture of how the shell interprets your commands.</p>
 <div class="footer"/>	
