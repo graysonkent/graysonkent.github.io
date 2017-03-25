@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  lang="en">
+	<head>
+		<meta charset="utf-8"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Should I use cp -a or cp -r when fully mirroring a directory?</title>
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="Blog for Grayson Kent - Linux,Security,Networking,Virtualization">
+	    <meta name="author" content="Grayson Kent" />
+		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/Cpp.js"></script>
+		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" type="image/png" href="../../../images/tux.png">
+	</head>
+		<ul id="header">
+			<li class="navbar"><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
+			<li class="navbar"><a href="../../../about.html" class="button">About</a></li>
+			<li class="navbar"><a href="../../index.html" class="button">Archive</a></li>
+			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
+		</ul>
+			<h2>Should I use <i>cp -a</i> or <i>cp -r</i> when fully mirroring a directory? <span class="date">3/22/2017</span></h2>
+					<p>This comes up a surprising amount in forums and mailing lists, probably because cp's man page isn't too descriptive, so I thought it would be a good idea to break down the differences.</p>
+			<h3 class="stepTitle">High Level:</h3>
+					<p><i>cp</i> works by copying everything in a directory to a new location. By default it skips directories and the metadata comes from the command execution and not the original file. So the date is the time of the copy and not the original time created. The owner is the user that triggers 'cp' and not the original owner and so on. </p>
+					<p><i>cp -r</i> or <i>cp --recursive</i> adds the ability to also copy directories and is the same as <i>cp -R</i> on most Linux installations. The issue then, is that you still have the metadata changing from the copy. You can add <i>-p</i> to fix these issues, but that doesn't give you the fullest preservation options.</p>
+					<p><i>cp -a</i> or <i>cp --archive</i> is essentially <i>cp -r</i> with a full suite of preservation options. It is the same as <i>cp -dR</i>.					
+			<h3 class="stepTitle">Low Level:</h3>
+					<p>Ignoring a lot of the extra features added to <i>cp</i> for legacy or edge case systems, it starts off by</p>
+					<pre class="brush: cpp">
+cd -- -test</pre>				
+				<p>Easy enough once you know that trick. You can also cheat and define the path explicitly, but that isn't as fun to whip out at parties:</p>
+										<pre class="brush: cpp">
+cd ./-test</pre>				
+			<div class="footer"/>	
+	<script type="text/javascript">SyntaxHighlighter.all()</script>
+</html>
