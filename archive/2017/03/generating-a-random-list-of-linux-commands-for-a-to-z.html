@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html  lang="en">
+	<head>
+		<meta charset="utf-8"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Generating a random list of Linux commands for A-Z</title>
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="Blog for Grayson Kent - Linux,Security,Networking,Virtualization">
+	    <meta name="author" content="Grayson Kent" />
+		<script type="text/javascript" src="../../js/SyntaxHighlight/shCore.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/Plain.js"></script>
+		<script type="text/javascript" src="../../js/SyntaxHighlight/Bash.js"></script>
+		<link href="../../css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/posts.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" type="image/png" href="../../../images/tux.png">
+	</head>
+		<ul id="header">
+			<li class="navbar"><a href="mailto:grayson@linux.com" class="button">Contact</a></li>
+			<li class="navbar"><a href="../../../about.html" class="button">About</a></li>
+			<li class="navbar"><a href="../../index.html" class="button">Archive</a></li>
+			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
+		</ul>
+			<h2>Generating a random list of Linux commands for A-Z <span class="date">3/26/2017</span></h2>
+					<p>I was out at lunch with a friend who has been interviewing for Senior Linux Engineer positions, and he mentioned one of the interview problems he had was to "Write down a list of Linux commands for each letter in the alphabet"</p>
+					<p>Pretty easy for someone with 20+ years experience, but the interesting aspect to this question was that they said they asked this because "It was impossible to program out an answer"</p>
+					<p>I was immediately skeptical as there has been very few things I haven't been able to <i>eventually</i> script out.</p>
+					<p>Sure enough, it was a very simple one-liner when I remembered the <span class="highlight"><a href="https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html">compgen</a></span> built-in:</p>
+					
+					<pre class="brush: bash">
+					for i in {a..z}; do compgen -c "$i" | shuf -n 1; done
+</pre>				
+				<p>Will generate a random list of commands A-Z. For one example:</p>
+									<pre class="brush: bash">
+apt-cdrom
+bluez-test-audio
+cpgr
+dmsetup
+expr
+from
+gnome-thumbnail-font
+hpljP1007
+iptables-xml
+jockey-text
+koi8rxterm
+lodraw
+mcomp
+nm-tool
+orca
+pod2text
+quote_readline
+readlink
+sleep
+totem-video-indexer
+ucfq
+validlocale
+wmctrl
+xzcat
+yelp
+zgrep									
+</pre>
+											<p>I would have preferred to stick to only built-ins, but you wouldn't have been able to complete the problem that way:</p>
+					<pre class="brush: bash">
+$ for i in {a..z}; do compgen -b "$i" | shuf -n 1; done
+alias
+bind
+cd
+disown
+export
+fg
+getopts
+hash
+jobs
+kill
+local
+mapfile
+popd
+read
+shift
+trap
+unalias
+wait
+</pre>						
+<p>So apparently there are no built-ins starting with "I,N,O,Q,V,X,Y,Z". Now <i>that</i> would have been a hard interview question.</p>									
+			<div class="footer"/>	
+	<script type="text/javascript">SyntaxHighlighter.all()</script>
+</html>
