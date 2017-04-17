@@ -22,30 +22,28 @@
 			<li class="navbar"><a href="../../../index.html" class="button">Home</a></li>
 		</ul>
 			<h2>Find which Linux commands can make words out of their options <span class="date">3/27/2017</span></h2>
+    			<p style="text-align: center; background-color: lightyellow;"><b>Update 4/17:</b> Cleaned up the code after some help from the gurus on codereview.stackexchange.com</p>
 				<p>I noticed that I always prefer using commands with options that spell out common words like <span class="highlight">ps -elf</span> or <span class="highlight">ls -cat</span> as they are easier to remember, so I decided to write a script to find out where other instances like this can happen:</p>
 					<pre class="brush: bash">
 #!/bin/bash
 
 # Pull in a list of common Linux commands
-commandList=( $( 
+commandList=( $(
   curl 'http://www.thegeekstuff.com/2010/11/50-linux-commands/' 2> /dev/null \
-    | grep -o '&#60;h3&#62;\([0-9].*[a-z][a-z][a-z].*\)&#60;/h3&#62;' \
-    | awk '{ print $(NF-2) }' \
-    | sed -nr '/rm|wget|less|shutdown|&#60;h3&#62;/!p'
-) ); 
+    | grep -o '<h3>\([0-9].*[a-z][a-z][a-z].*\)</h3>' \
+    | awk '{ print $2 }' \
+    | grep -vE 'rm|wget|less|shutdown|<h3>'
+) );
 
-# Pipe successful "$command -$option" pairs to 'an' to generate anagrams 
-for command in ${commandList[@]} ; do 
-	(for option in {a..z} ; do
-		timeout -k 5 5 "$command" -"$option" > /dev/null 2>&1;
-			if (($? == 0)); then
-				printf "$option" | tr -d '\n'
-			else
-        			:
-			fi
-	done) | xargs an -w -d saneWordlist -m 3 2> /dev/null \
-          | sed 's/^/\ '$command' -/' >> commandOptions.log
-done				
+# Pipe successful "$command -$option" pairs to 'an' to generate anagrams
+for command in $commandList ; do
+        (for option in {a..z} ; do
+                if timeout -k 5 5 "$command" -$option &> /dev/null; then
+                                printf $option
+                fi
+        done) | xargs an -w -d saneWordlist -m 3 2> /dev/null \
+              | sed "s/^/ '$command' -/" >> commandOptions.log
+done
 </pre>				
 				<p>Ugly, and not something I would ever put my name on professionally, but it gets the job done. It produces over 12,000 <i>command -word</i> combinations with the 50 sample input Linux commands. Here are some of my favorites it found:</p>
 				<pre class="brush: bash">
