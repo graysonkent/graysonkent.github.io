@@ -217,11 +217,11 @@ p {
 }
 
 .highlight {
-    background-color: lightgrey;
+    background-color: #eff0f1;
 }
 
 /* Mobile Handling */
-@media screen and (max-width: 1000px) {
+
     p {
         padding: 5px;
     }
@@ -250,7 +250,6 @@ p {
     body {
         max-width: 800px;
     }
-}
 
 @media screen and (max-width: 736px) {
     body {

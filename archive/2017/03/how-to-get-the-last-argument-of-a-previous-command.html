@@ -24,17 +24,17 @@
 			<h2>How to get the last argument of any previous command <span class="date">3/24/2017</span></h2>
 				<p>One of my favorite time-saving commands in Bash is <span class="highlight">!$</span> which recalls the last argument of the last entered command. This is incredibly useful in situations like this: </p>
 													<pre class="brush: bash">
-gkent@CE7node04:~$ mkdir superlongnamethatidontwanttotypeout
-gkent@CE7node04:~$ cd !$
-gkent@CE7node04:~/superlongnamethatidontwanttotypeout$ 
+$ mkdir superlongnamethatidontwanttotypeout
+$ cd !$ && pwd
+superlongnamethatidontwanttotypeout
 </pre>							
 				
 				<p>Similarly, <span class="highlight">!!</span> recalls the entirety of the last command and <span class="highlight">!-2</span> recalls the next to last command from history like so: </p> 
 			
 									<pre class="brush: bash">
-gkent@CE7node04:~$ touch example1
-gkent@CE7node04:~$ touch example2
-gkent@CE7node04:~$ !-2
+$ touch example1
+$ touch example2
+$ !-2
 touch example1								
 </pre>				
 
@@ -43,9 +43,9 @@ touch example1
 
 <p>With the <span class="highlight">!-2</span> logic in mind, I thought <span class="highlight">!$-2</span> would work but you get the following result:</p>
 <pre class="brush: bash">
-gkent@CE7node04:~$ touch example1
-gkent@CE7node04:~$ touch example2
-gkent@CE7node04:~$ vim !$-2
+$ touch example1
+$ touch example2
+$ vim !$-2
 vim example2-2								
 </pre>
 <p>As you can see, that expands the last argument and then just inserts <span class="highlight">-2</span> instead of interpreting it as a negative line number as I want. I thought this was odd so I researched more and realized that I had a fundamental misunderstanding of how <span class="highlight">!$</span> works.</p>		
@@ -56,9 +56,9 @@ This may be shortened to !$.
 </pre>	
 <p>So <span class="highlight">$</span> is actually an event specification on <span class="highlight">!!</span> and thus <span class="highlight">!$</span> is not a completely separate word designator from <span class="highlight">!!</span> as I thought. Knowing that, we just need to use <span class="highlight">!-2$</span> like so:</p> 
 <pre class="brush: bash">
-gkent@CE7node04:~$ touch example1
-gkent@CE7node04:~$ touch example2
-gkent@CE7node04:~$ vim !-2$
+$ touch example1
+$ touch example2
+$ vim !-2$
 vim example1				
 </pre>
 <p>This gets us the last argument of the next to last command and can also be modified to grab different lines like the <span class="highlight">!-2</span> command.</p>
