@@ -19,6 +19,7 @@ I would never personally rely on this matching behavior, but it is interesting t
 
 
     <a href="#">Hello world</a>
+    
 > Any additional arguments following directory are ignored.
 
 What changed?
