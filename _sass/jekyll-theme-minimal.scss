@@ -201,6 +201,10 @@ footer {
 
 @media print, screen and (max-width: 960px) {
 
+  body {
+    padding:15px;
+  }
+
   div.wrapper {
     width:auto;
     margin:0;
@@ -219,7 +223,7 @@ footer {
   section {
     border:1px solid #e5e5e5;
     border-width:1px 0;
-    padding:20px 0;
+    padding:20px 10;
     margin:0 0 20px;
   }
 
@@ -237,6 +241,7 @@ footer {
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
+    padding: 15px;
   }
 
   header {
