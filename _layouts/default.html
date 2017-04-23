@@ -15,11 +15,11 @@
   <body>
     <div class="wrapper">
       <header>
-          <h2>{{ page.title }} - <h2>{{ page.date }}</h2></h2>
+          {% include header.html %}
       </header>
       <section>
-
-      {{ content }}
+          <h2>{{ page.title }} - <h2>{{ page.date }}</h2></h2>
+            {{ content }}
 
       </section>
    </div>
