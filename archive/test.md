@@ -17,19 +17,18 @@ This stopped working with an upgrade to Ubuntu 17.04 (and subsequently Bash-4.4-
 
 I would never personally rely on this matching behavior, but it is interesting that it is saying cd is having an issue with multiple arguments as the [Bash manual's cd section](https://www.gnu.org/software/bash/manual/bash.html#index-cd) even says that:
 
-`​`` html
-<a href="#">Hello world</a>
-`​``
+
+    <a href="#">Hello world</a>
 > Any additional arguments following directory are ignored.
 
 What changed?
 -------------
 Looking through the [Bash Source Code](https://ftp.gnu.org/gnu/bash/), I noticed [one interesting commit](http://git.savannah.gnu.org/cgit/bash.git/commit/config-top.h?id=a0c0a00fc419b7bc08202a79134fcd5bc0427071) that added the following to [`config-top.h`](http://git.savannah.gnu.org/cgit/bash.git/tree/config-top.h#n30):
 
-```C
+
     /* Define CD_COMPLAINS if you want the non-standard, but sometimes-desired
        error messages about multiple directory arguments to `cd'. */
-```  
+    
     #define CD_COMPLAINS
 
 And the specific error message from the question is mentioned in [`builtins/cd.def`](http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/cd.def#n326):
