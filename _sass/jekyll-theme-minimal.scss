@@ -108,23 +108,24 @@ img {
 }
 
 header {
-  width:860px;
+  width: 100%;
   position:fixed;
+  background: #fff;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
 header ul {
   list-style:none;
   height:40px;
+  position: relative;
   padding: 10px;
-  background: #fff;
   width: 100%;
 }
 
 header li {
-  width:89px;
+  width: 25%;
   float:left;
-  border-right:1px solid #e0e0e0;
+  text-align: center;
   height:40px;
 }
 
@@ -146,17 +147,6 @@ header li a:hover, header ul a:focus {
 strong {
   color:#222;
   font-weight:700;
-}
-
-header ul li + li + li {
-  border-right:none;
-  width:89px;
-}
-
-header ul a strong {
-  font-size:14px;
-  display:block;
-  color:#222;
 }
 
 section {
