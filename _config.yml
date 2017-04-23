@@ -1,7 +1,48 @@
-title: Minimal theme
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
+# General Settings
+name: Grayson Kent
+job_title: Linux System Engineer
+email: grayson@linux.com
+description:  Personal blog focusing on high-availability clustering, KVM virtualization, and other tech adventures
+avatar: ../images/face.jpg
+favicon: ../images/rocket.png
+twitter_handler: your_handler
+analytics_code: UA-XXXXXXX-2
+disqus: your_disqus_site
 google_analytics:
 markdown: kramdown
 highlighter: rouge
-theme:
+
+# Social Accounts
+social_networks:
+-  { name: facebook, url: '' }
+-  { name: twitter, url: '' }
+-  { name: instagram, url: '' }
+-  { name: google-plus, url: '' }
+-  { name: linkedin, url: 'https://www.linkedin.com/in/graysonkent ' }
+-  { name: skype, url: '' }
+-  { name: github, url: 'https://github.com/graysonkent' }
+-  { name: codepen, url: '' }
+-  { name: stack-overflow, url: '' }
+-  { name: dribbble, url: '' }
+-  { name: behance, url: '' }
+-  { name: pinterest, url: '' }
+-  { name: tumblr, url: '' }
+-  { name: youtube, url: '' }
+-  { name: vimeo, url: '' }
+-  { name: vine, url: '' }
+-  { name: 500px, url: '' }
+-  { name: flickr, url: '' }
+-  { name: spotify, url: '' }
+-  { name: steam, url: '' }
+-  { name: wordpress, url: '' }
+-  { name: xing, url: '' }
+
+# Modules Settings
+show_categories: 1
+show_tags: 1
+show_email: 1
+show_rss: 1
+show_menu: 0
+fixed_sidebar: 1
+
+category_dir: categories
