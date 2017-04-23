@@ -33,7 +33,7 @@ Looking through the [Bash Source Code](https://ftp.gnu.org/gnu/bash/), I noticed
 
 And the specific error message from the question is mentioned in [`builtins/cd.def`](http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/cd.def#n326):
 
-```C
+
     #if defined (CD_COMPLAINS)
       else if (list->next)
         {
@@ -41,7 +41,8 @@ And the specific error message from the question is mentioned in [`builtins/cd.d
           return (EXECUTION_FAILURE);
         }
     #endif
-```
+
+And bash:
 
     #!/bin/bash
      
@@ -64,32 +65,13 @@ And the specific error message from the question is mentioned in [`builtins/cd.d
     done
 
 
-```bash
-#!/bin/bash
- 
-# Pull in a list of common Linux commands
-commandList=( $(
-  curl 'http://www.thegeekstuff.com/2010/11/50-linux-commands/' 2> /dev/null \
-    | grep -o '<h3>\([0-9].*[a-z][a-z][a-z].*\)</h3>' \
-    | awk '{ print $2 }' \
-    | grep -vE 'rm|wget|less|shutdown|<h3>'
-) );
- 
-# Pipe successful "$command -$option" pairs to 'an' to generate anagrams
-for command in $commandList ; do
-        (for option in {a..z} ; do
-                if timeout -k 5 5 "$command" -$option &> /dev/null; then
-                                printf $option
-                fi
-        done) | xargs an -w -d saneWordlist -m 3 2> /dev/null \
-              | sed "s/^/ '$command' -/" >> commandOptions.log
-done
-```
+
 Proving it
 ----------
 
 Bash 4.4 Beta where it still works:
 
+```bash
     #Pulling and unpacking source
     $ wget https://ftp.gnu.org/gnu/bash/bash-4.4-beta.tar.gz
     $ tar -xzvf bash-4.4-beta.tar.gz
@@ -110,9 +92,11 @@ Bash 4.4 Beta where it still works:
     bash-4.4$ mkdir album-0{1..2}
     bash-4.4$ cd album* && pwd
     /home/gkent/bash-4.4-beta/album0-1
+```
 
 Bash 4.4 Stable Release where it doesn't work:
 
+```bash
     #Pulling and unpacking source
     $ wget https://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz
     $ tar -zxvf bash-4.4.tar.gz
@@ -133,6 +117,7 @@ Bash 4.4 Stable Release where it doesn't work:
     bash-4.4$ mkdir album-0{1..2}
     bash-4.4$ cd album*
     bash: cd: too many arguments
+```
 
 So what now?
 ------------
