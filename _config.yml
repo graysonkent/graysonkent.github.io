@@ -3,7 +3,7 @@ name: Grayson Kent
 job_title: Linux System Engineer
 email: grayson@linux.com
 description:  Personal blog focusing on high-availability clustering, KVM virtualization, and other tech adventures
-avatar: ../images/face.jpg
+avatar: /images/face.jpg
 favicon: ../images/rocket.png
 twitter_handler: your_handler
 analytics_code: UA-XXXXXXX-2
@@ -22,7 +22,7 @@ social_networks:
 -  { name: skype, url: '' }
 -  { name: github, url: 'https://github.com/graysonkent' }
 -  { name: codepen, url: '' }
--  { name: stack-overflow, url: '' }
+-  { name: stack-overflow, url: 'http://stackexchange.com/users/8499248/grayson-kent?tab=accounts' }
 -  { name: dribbble, url: '' }
 -  { name: behance, url: '' }
 -  { name: pinterest, url: '' }

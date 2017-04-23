@@ -1,21 +1,14 @@
 <aside class="user-profile {% if site.fixed_sidebar == 1 %}fixed{% endif %}" role="complementary">
-    <a href="{{ site.baseurl | prepend: site.url }}"><img class="avatar" src="{% if site.avatar %}{{site.avatar}}{% else %}{{ site.email | to_gravatar:140 }}{% endif %}" /></a>
+    <a href="{{ site.baseurl | prepend: site.url }}"><img class="avatar" src="{{site.avatar}}" /></a>
     <strong class="my-name">{{ site.name }}</strong>
     <span class="my-job-title">{{ site.job_title }}</span>
 
     {% if site.show_menu == 1 %}
         {% if site.pages %}
         <div class="mainmenu">
-            {% for p in site.pages %}
-                {% if p.layout == 'page' %}
+
                     <a href="{{ site.baseurl | prepend: site.url }}">Home</a>
-                    {% if page.url == p.url %}
-                        <a href="{{p.url}}" class="active">{{ p.title }}</a>
-                    {% else %}
-                        <a href="{{p.url}}">{{ p.title }}</a>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
+
         </div>
         {% endif %}
     {% endif %}
