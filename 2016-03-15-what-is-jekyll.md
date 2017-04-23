@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 date: 2016-03-15 22:00
 title:  "What is Jekyll?"
 mood: speechless
