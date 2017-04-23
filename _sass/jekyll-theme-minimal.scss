@@ -63,7 +63,7 @@ a:hover small {
 }
 
 blockquote {
-  border-left:1px solid #e5e5e5;
+  border-left:2px solid #e5e5e5;
   margin:0;
   background-color: #FFF8DC;
   padding:0 0 0 20px;
@@ -110,7 +110,7 @@ img {
 
 header {
   float: left;
-  width:270px;
+  width: 10%;
   position:fixed;
   background: #fff;
   -webkit-font-smoothing:subpixel-antialiased;
@@ -144,7 +144,7 @@ strong {
 }
 
 section {
-  width:900px;
+  width: 90%;
   float: right;
   padding-bottom:50px;
 }
