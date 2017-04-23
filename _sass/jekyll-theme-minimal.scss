@@ -108,7 +108,7 @@ img {
 }
 
 header {
-  width: 100%;
+  width: 20%;
   position:fixed;
   background: #fff;
   -webkit-font-smoothing:subpixel-antialiased;
@@ -123,12 +123,10 @@ header ul {
 }
 
 header li {
-  width: 25%;
-  float:left;
+  float: left;
   text-align: center;
   height:40px;
 }
-
 
 header li a {
   display: inline-block;
@@ -140,7 +138,6 @@ header li a {
 
 header li a:hover, header ul a:focus {
   color: firebrick;
-  text-decoration: none;
   border-color: firebrick;
 }
 
