@@ -145,7 +145,7 @@ footer {
   .my-name { font-size: 24px; font-weight: 700; line-height: 30px; color: white; }
   .my-job-title { font-size: 14px; font-weight: 300; margin: 5px 0 0; }
   .mainmenu { margin: 40px 0; text-align: center;
-    a { display: block; max-width: 300px; margin: 0 auto; padding: 15px 0; border: 1px solid lightgrey; background:#fcfcfc; box-shadow: 0 2px 3px rgba(black,.05); @include transition(all, .1s, linear);
+    a { display: block; max-width: 300px; margin: 0 auto; padding: 15px 0; border: 1px solid lightgrey; background:#fcfcfc; box-shadow: 0 2px 3px rgba(black,.05);
       &:hover, &.active { background: darken(#fcfcfc, 1%); border-left: 4px solid lightgrey; }
     }
   }
