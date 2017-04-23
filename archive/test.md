@@ -6,8 +6,7 @@ category:
 - docs
 ---
 
-Bash 4.4 'cd' Pattern Matching Regression -  4/17/2017
------------------------------------------
+
 [This question](https://askubuntu.com/q/905832/668095) popped up on StackOverflow last night and I thought it was interesting that `cd` initially looks like it doesn't behave like `ls` in regards to pattern matching, even though they are both builtins.
 
 The person was using `cd album*` to move into the first directory out of a set of `album-0{1..2}` directories.
