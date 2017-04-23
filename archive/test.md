@@ -27,10 +27,10 @@ What changed?
 -------------
 Looking through the [Bash Source Code](https://ftp.gnu.org/gnu/bash/), I noticed [one interesting commit](http://git.savannah.gnu.org/cgit/bash.git/commit/config-top.h?id=a0c0a00fc419b7bc08202a79134fcd5bc0427071) that added the following to [`config-top.h`](http://git.savannah.gnu.org/cgit/bash.git/tree/config-top.h#n30):
 
-
+```C
     /* Define CD_COMPLAINS if you want the non-standard, but sometimes-desired
        error messages about multiple directory arguments to `cd'. */
-     
+```  
     #define CD_COMPLAINS
 
 And the specific error message from the question is mentioned in [`builtins/cd.def`](http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/cd.def#n326):
