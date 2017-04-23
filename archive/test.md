@@ -33,6 +33,7 @@ Looking through the [Bash Source Code](https://ftp.gnu.org/gnu/bash/), I noticed
 
 And the specific error message from the question is mentioned in [`builtins/cd.def`](http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/cd.def#n326):
 
+```C
     #if defined (CD_COMPLAINS)
       else if (list->next)
         {
@@ -40,6 +41,7 @@ And the specific error message from the question is mentioned in [`builtins/cd.d
           return (EXECUTION_FAILURE);
         }
     #endif
+```
 
 Proving it
 ----------
