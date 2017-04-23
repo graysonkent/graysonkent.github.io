@@ -1,3 +1,11 @@
+---
+layout: default 
+date: 2016-03-15 22:00
+title:  "Bash 4.4 Reg?"
+category: 
+- docs
+---
+
 Bash 4.4 'cd' Pattern Matching Regression -  4/17/2017
 -----------------------------------------
 [This question](https://askubuntu.com/q/905832/668095) popped up on StackOverflow last night and I thought it was interesting that `cd` initially looks like it doesn't behave like `ls` in regards to pattern matching, even though they are both builtins.
