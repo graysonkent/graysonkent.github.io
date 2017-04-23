@@ -1,5 +1,5 @@
 @import "fonts";
-@import "rouge-github";
+@import "solarized-dark";
 
 body {
   background-color: #fff;
@@ -40,7 +40,6 @@ a {
 
 a:hover, a:focus {
   color:#069;
-  font-weight: bold;
 }
 
 a small {
@@ -69,7 +68,7 @@ blockquote {
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color:#333;
-  background-color: rgba(0, 0, 0, 0.04);
+  //background-color: rgba(0, 0, 0, 0.04);
   font-size:12px;
 }
 
