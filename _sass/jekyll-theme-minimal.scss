@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-  color:#393939;
+  color: firebrick;
 }
 
 h3, h4, h5, h6 {
@@ -70,6 +70,7 @@ blockquote {
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color:#333;
+  background-color: rgba(0, 0, 0, 0.04);
   font-size:12px;
 }
 
