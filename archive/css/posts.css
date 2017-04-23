@@ -93,7 +93,14 @@ p {
     font-size: 18px;
     padding-left: 10px;
 }
-
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.04);
+    white-space: nowrap;
+    border-radius: 4px;
+}
 #header {
     list-style-type: none;
     overflow: visible;
