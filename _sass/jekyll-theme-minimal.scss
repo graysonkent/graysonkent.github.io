@@ -1,7 +1,7 @@
 @import "fonts";
 
 body {
-  background-color: lightgrey;
+  background-color: #f9f9f9;
   padding: 50px;
   font: 18px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:400;
@@ -138,13 +138,13 @@ footer {
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
-.user-profile { position: fixed; float: left; width: 10%; margin-right: 4%; text-align: center;
+.user-profile { position: fixed; float: left; width: 7%; margin-right: 4%; text-align: center;
   & > * { display: block; }
-  .avatar { max-width: 140px; max-height: 140px; border-radius: 50%; margin: 0 auto 25px; }
+  .avatar { max-width: 140px; max-height: 120px; border-radius: 50%; margin: 0 auto 15px; }
   .my-name { font-size: 24px; font-weight: 700; line-height: 30px; color: black; }
   .my-job-title { font-size: 14px; font-weight: 300; margin: 5px 0 0; }
   .mainmenu { margin: 40px 0; text-align: center;
-    a { display: block; max-width: 300px; margin: 0 auto; padding: 15px 0; border: 1px solid lightgrey; background:#fcfcfc; box-shadow: 0 2px 3px rgba(black,.05);
+    a { display: block; max-width: 300px; margin: 0 auto; padding: 15px 0; border: 1px solid lightgrey; background:#f9f9f9; box-shadow: 0 2px 3px rgba(black,.05);
       &:hover, &.active { background: darken(#fcfcfc, 1%); border-left: 4px solid lightgrey; }
     }
   }

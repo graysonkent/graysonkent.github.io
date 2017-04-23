@@ -12,7 +12,7 @@
         {% endif %}
     {% endif %}
 
-    <p class="about-me">{{ site.description }}</p>
+   <!-- <p class="about-me">{{ site.description }}</p> -->
 
     <ul>
         {% for social in site.social_networks %}{% if social.url != '' %}<li><a href="{{social.url}}"><svg title="{{social.name}}" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#{{social.name}}-icon"></use></svg></a></li>{% endif %}{% endfor %}
