@@ -97,7 +97,7 @@ bash-4.4$ cd album* && pwd
 Bash 4.4 Stable Release where it doesn't work:
 
 ```bash
-Pulling and unpacking source
+#Pulling and unpacking source
 $ wget https://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz
 $ tar -zxvf bash-4.4.tar.gz
 $ cd bash-4.4/
