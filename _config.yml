@@ -42,7 +42,7 @@ show_categories: 1
 show_tags: 1
 show_email: 1
 show_rss: 1
-show_menu: 0
+show_menu: 1
 fixed_sidebar: 1
 
 category_dir: categories
