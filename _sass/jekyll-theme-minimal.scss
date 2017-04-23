@@ -109,6 +109,7 @@ img {
 }
 
 header {
+  list-style: none;
   float: left;
   width: 10%;
   position:fixed;
@@ -119,7 +120,6 @@ header {
 header ul {
   height: 40px;
   padding: 10px;
-  width: 100%;
 }
 
 header li {
