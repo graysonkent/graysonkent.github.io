@@ -1,6 +1,5 @@
 ---
-layout: post 
-date: 4/23/2017 
+layout: archive 
 title: Bash
 category: blog
 tags: linux
