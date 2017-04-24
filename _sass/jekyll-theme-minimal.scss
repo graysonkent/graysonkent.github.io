@@ -180,10 +180,7 @@ footer {
     position:static;
     width:auto;
   }
-
-  .user-profile {
-    padding-right:320px;
-  }
+  
 
   section {
     border:1px solid #e5e5e5;
@@ -225,16 +222,12 @@ footer {
     padding:15px;
   }
 
-  header ul {
-    width:99%;
+  .user-profile  {
+    position:static;
+    padding:0;
   }
-
   .user-profile ul {
     display:none;
-  }
-
-  .user-profile  li, .user-profile  ul li + li + li {
-    width:33%;
   }
 
 }
