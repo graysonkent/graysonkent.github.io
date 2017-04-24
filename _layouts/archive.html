@@ -37,7 +37,7 @@
           <h2>Talks</h2>
                 <ul>
                     {% for category in site.categories %}
-                        <h3>{{ category | capitalize }}</h3>
+                        <h3>{{ category[0] | capitalize }}</h3>
                     {% endfor %}
 
                     {% for post in site.categories.security %}
