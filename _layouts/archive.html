@@ -17,10 +17,10 @@
           {% include sidebar.html %}
       </header>
       <section>
-        {% for post in site.blog %}
+        {% for post in site.posts %}
             <li>
               <a href="{{ post.url }}">{{ post.title }}</a>
-              <span>{{ post.date | date: '%b %d, %Y' }}</span>
+              <span>{{ post.date }}</span>
             </li>
         {% endfor %}
 
