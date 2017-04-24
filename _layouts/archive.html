@@ -39,6 +39,9 @@
 -->
                     {% for category in site.categories %}
                         <h2>{{ category[0] | capitalize }}s</h2>
+                        {% for tag in site.tags %}
+                            <p>{{ tag[0] | capitalize }}</p>
+                        {% endfor %}
                     {% endfor %}
 
                 <ul>
