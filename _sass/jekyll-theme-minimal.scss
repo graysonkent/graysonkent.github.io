@@ -168,6 +168,7 @@ footer {
 
   body {
     padding:15px;
+    width:auto;
   }
 
   div.wrapper {
@@ -178,7 +179,9 @@ footer {
   .user-profile, .user-profile .mainmenu, section, footer {
     float:none;
     position:static;
-    width:auto;
+    width: 50%;
+    margin: 0 auto;
+
   }
 
   section {
@@ -201,11 +204,13 @@ footer {
   body {
     word-wrap:break-word;
     padding: 15px;
+    width:auto;
   }
 
   .user-profile, .user-profile .mainmenu  {
     position:static;
-    padding:0;
+    width: 50%;
+    margin: 0 auto;
     float: none;
   }
   .user-profile ul {
@@ -220,11 +225,13 @@ footer {
 @media print, screen and (max-width: 480px) {
   body {
     padding:15px;
+    width:auto;
   }
 
   .user-profile, .user-profile .mainmenu   {
     position:static;
-    padding:0;
+    width: 50%;
+    margin: 0 auto;
     float: none;
   }
   .user-profile ul {
