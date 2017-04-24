@@ -48,7 +48,7 @@
                                             <li><b>{{ posts[0].tags }}</b></li>
                                         </ul>
                                 {% endif %}
-          {% assign tag_list = posts[1].tags %}
+          {% assign tag_list = posts[0].tags %}
                                   {% for post in tag_list %}
                                     <ul style="list-style-type: none; margin: 0 35px; padding: 0;">
                                         {% if post.title != null %}
