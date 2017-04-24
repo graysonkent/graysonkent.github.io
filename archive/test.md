@@ -1,7 +1,7 @@
 ---
 layout: post 
 date: 4/23/2017 
-title:  "Bash"
+title: Bash
 category: linux
 ---
 
