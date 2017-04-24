@@ -1,6 +1,6 @@
 ---
 layout: post 
-date: 4/23/2017 
+date: 4/22/2017 
 title: Bash
 slug: Bash
 category: linux
