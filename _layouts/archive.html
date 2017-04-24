@@ -43,7 +43,7 @@
                          {% endif %}
 
                             {% for posts in category %}
-                                {% if posts[0].tags != '' %}
+                                {% if posts[0].tags != null %}
                                     <b>{{ posts[0].tags }}</b>
                                  {% endif %}
 
