@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: post 
 date: 4/23/2017 
 title:  "Bash 4.4 'cd' Pattern Matching Regression"
 category: linux
