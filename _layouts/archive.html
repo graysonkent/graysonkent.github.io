@@ -38,7 +38,9 @@
           <h2>Talks</h2>
 -->
                     {% for category in site.categories %}
-                        <h2>{{ category[0] | capitalize }}s</h2>
+                        {% if category[0] != null %}
+                            <h2>{{ category[0] | capitalize }}s</h2>
+                         {% endif %}
                             {% for posts in category %}
                                 <b>{{ posts[0].tags }}</b>
                                   {% for post in posts %}
