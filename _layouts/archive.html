@@ -18,6 +18,7 @@
       </header>
       <section>
           <h2>Blogs</h2>
+          <!--List all posts in _blog-->
                 {% for post in site.blog %}
                     <li>
                       <a href="{{ post.url }}">{{ post.title }}</a>
@@ -25,6 +26,15 @@
                     </li>
                 {% endfor %}
 
+          <!--List all categories-->
+                {% for category in site.categories %}
+                      "{{ category | first }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+
+          <!--List all tags-->
+                {% for tag in site.tags %}
+                     "{{ tag | first }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
       </section>
    </div>
    <!-- <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> -->
