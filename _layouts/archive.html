@@ -17,9 +17,14 @@
           {% include sidebar.html %}
       </header>
       <section>
-          <h2> {{ page.title }}</h2>
-                <hr>
-            {{ content }}
+
+        {% assign archives = site.archive | sort: 'date' | reverse %}
+        {% for post in archives limit:3 %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span class="post-meta">{{ post.date | date: '%b %d, %Y' }}</span>
+            </li>
+        {% endfor %}
 
       </section>
    </div>
