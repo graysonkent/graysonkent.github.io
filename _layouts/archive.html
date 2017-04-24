@@ -44,7 +44,9 @@
 
                             {% for posts in category %}
                                 {% if posts[0].tags != null %}
-                                    <b>{{ posts[0].tags }}</b>
+                                        <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
+                                            <li><b>{{ posts[0].tags }}</b></li>
+                                       </ul>
                                  {% endif %}
 
                                   {% for post in posts %}
@@ -54,6 +56,7 @@
                                         {% endif %}
                                     </ul>
                                       {% endfor %}
+                                    <br>
                             {% endfor %}
                     {% endfor %}
 
