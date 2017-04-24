@@ -38,13 +38,11 @@
           <h2>Talks</h2>
 -->
                     {% for category in site.categories %}
-                        <h2>{{ category[0].tags | capitalize }}s</h2>
+                        <h2>{{ category[0] | capitalize }}s</h2>
                             {% for posts in category %}
-                                <p>{{ posts[0].tags }}</p>
+                                <p>{{ posts[0].tags | capitalize }}</p>
                                   {% for post in posts %}
-                                        <li>
-                                            <p>{{ post.title | capitalize }} {{ post.tags }}</p>
-                                        </li>
+                                            <p>{{ post.title | capitalize }} {{ post.date |  date: "%m/%d/%Y" }}</p>
                                 {% endfor %}
                             {% endfor %}
                     {% endfor %}
