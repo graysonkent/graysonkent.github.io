@@ -50,7 +50,7 @@
                                   {% for post in posts %}
                                     <ul>
                                         {% if post.title != null %}
-                                            <li><a href="{{ post.url }}">{{ post.title | capitalize }}</a> {{ post.date |  date: "%m/%d/%Y" }}</li>
+                                        <li><h4>{{ post.date |  date: "%m/%d/%Y" }}</h4> - <a href="{{ post.url }}">{{ post.title | capitalize }}</a> </li>
                                         {% endif %}
                                     </ul>
                                       {% endfor %}
