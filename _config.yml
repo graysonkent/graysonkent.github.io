@@ -47,9 +47,3 @@ show_menu: 1
 fixed_sidebar: 1
 
 category_dir: categories
-
-# Collections
-collections:
-  blog:
-    output: true
-    permalink: /blog/:title/
