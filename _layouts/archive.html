@@ -38,9 +38,9 @@
           <h2>Talks</h2>
 -->
                     {% for category in site.categories %}
-                        <h2>{{ category[0] | capitalize }}s</h2>
+                        <h2>{{ category[0].tags | capitalize }}s</h2>
                             {% for posts in category %}
-                                <p>{{ posts.tags }}</p>
+                                <p>{{ posts[0].tags }}</p>
                                   {% for post in posts %}
                                         <li>
                                             <p>{{ post.title | capitalize }} {{ post.tags }}</p>
