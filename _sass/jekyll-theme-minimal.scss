@@ -175,7 +175,7 @@ footer {
     margin:0;
   }
 
-  .user-profile, .user-profile.div, section, footer {
+  .user-profile, header, section, footer {
     float:none;
     position:static;
     width:auto;
@@ -203,7 +203,7 @@ footer {
     padding: 15px;
   }
 
-  .user-profile, .user-profile.div {
+  .user-profile, header {
     position:static;
     padding:0;
     float: none;
@@ -222,7 +222,7 @@ footer {
     padding:15px;
   }
 
-  .user-profile, .user-profile.div  {
+  .user-profile, header  {
     position:static;
     padding:0;
     float: none;
