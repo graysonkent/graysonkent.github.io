@@ -1,9 +1,9 @@
 ---
 layout: post 
 date: 4/23/2017 
-title:  "Bash 4.4 'cd' Pattern Matching Regression"
+title:  "Bash"
 category: linux
-permalink: title.html
+permalink: /archive/:title
 ---
 
 
