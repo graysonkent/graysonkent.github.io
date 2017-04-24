@@ -40,22 +40,22 @@
                     {% for category in site.categories %}
                         {% if category != '' %}
                             <h2>{{ category[0] | capitalize }}s</h2>
-                         {% endif %}
+                        {% endif %}
 
                             {% for posts in category %}
-                                {% if posts[0].tags != null %}
+                                {% if posts[1].tags != null %}
                                         <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
                                             <li><b>{{ posts[0].tags }}</b></li>
-                                       </ul>
-                                 {% endif %}
-
+                                        </ul>
+                                {% endif %}
+          {% assign pages_list = posts[1].tags %}
                                   {% for post in posts %}
                                     <ul style="list-style-type: none; margin: 0 35px; padding: 0;">
                                         {% if post.title != null %}
-                                        <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
+                                            <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
                                         {% endif %}
                                     </ul>
-                                      {% endfor %}
+                                  {% endfor %}
                             {% endfor %}
                     {% endfor %}
 
