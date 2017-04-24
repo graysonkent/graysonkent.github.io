@@ -40,7 +40,7 @@
                     {% for category in site.categories %}
                         <h2>{{ category[0] | capitalize }}s</h2>
                             {% for posts in category %}
-                                <p>{{ posts.tags[0] | capitalize }}</p>
+                                <b>{{ posts[0].tags }}</b>
                                   {% for post in posts %}
                                             <p>{{ post.title | capitalize }} {{ post.date |  date: "%m/%d/%Y" }}</p>
                                 {% endfor %}
