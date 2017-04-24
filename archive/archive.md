@@ -1,8 +1,7 @@
 ---
 layout: archive 
 title: Bash
-category: blog
-tags: linux
+permalink: /archive/
 ---
 
 
