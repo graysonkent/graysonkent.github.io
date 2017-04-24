@@ -19,7 +19,7 @@
       </header>
       <section>
           {% assign words = content | number_of_words %}
-          <h4> {{ page.date}} • {{ page.category  | upcase }} • {% include readtime.html %}</h4>
+          <h4> {{ page.date}} • {% include readtime.html %}</h4>
           <h2> {{ page.title }}</h2>
           <hr>
           {{ content }}
