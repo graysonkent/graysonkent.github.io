@@ -43,13 +43,13 @@
                         {% endif %}
 
                             {% for posts in category %}
-                                {% if posts[1].tags != null %}
+                                {% if posts[0].tags != null %}
                                         <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                            <li><b>{{ posts[0].tags }}</b></li>
+                                            <li><b>{{ posts[1].tags }}</b></li>
                                         </ul>
                                 {% endif %}
-          {% assign pages_list = posts[1].tags %}
-                                  {% for post in posts %}
+          {% assign tag_list = posts[1].tags %}
+                                  {% for post in tag_list %}
                                     <ul style="list-style-type: none; margin: 0 35px; padding: 0;">
                                         {% if post.title != null %}
                                             <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
