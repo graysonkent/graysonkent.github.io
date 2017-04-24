@@ -40,8 +40,11 @@
                     {% for category in site.categories %}
                         <h2>{{ category[0] | capitalize }}s</h2>
                             {% for posts in category %}
+                                <p>{{ posts.tags }}</p>
                                   {% for post in posts %}
-                                        <p>{{ post.title | capitalize }}</p>
+                                        <li>
+                                            <p>{{ post.title | capitalize }} {{ post.tags }}</p>
+                                        </li>
                                 {% endfor %}
                             {% endfor %}
                     {% endfor %}
