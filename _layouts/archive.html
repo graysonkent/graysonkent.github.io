@@ -19,7 +19,7 @@
       <section>
           <h2>Blogs</h2>
           <!--List all posts in _blog-->
-                {% for post in site.blog %}
+                {% for post in site.posts %}
                     <li>
                       <a href="{{ post.url }}">{{ post.title }}</a>
                       <span>{{ post.date }}</span>
@@ -30,12 +30,14 @@
           <ul>
               {% assign categories_list = site.categories %}
                  {% if categories_list.first[0] == null %}
+
               {% for category in categories_list %}
-                <li>{{ category | capitalize }} ({{ site.tags[category].size }})</a></li>
+                <li>{{ category | capitalize }} ({{ site.tags[category].size }})</li>
               {% endfor %}
                 {% else %}
+
               {% for category in categories_list %}
-                <li><a href="#{{ tag[0] }}">{{ category[0] | capitalize }} ({{ category[1].size }})</a></li>
+                <li>{{ category[0] | capitalize }} ({{ category[1].size }})</li>
               {% endfor %}
               {% endif %}
               {% assign categories_list = nil %}
@@ -48,7 +50,7 @@
               {% for post in pages_list %}
               {% if post.title != null %}
               {% if group == null or group == post.group %}
-              <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
+              <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><span> • </span><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
               {% endif %}
               {% endif %}
               {% endfor %}
