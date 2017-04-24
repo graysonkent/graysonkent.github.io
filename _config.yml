@@ -11,7 +11,7 @@ disqus: your_disqus_site
 google_analytics:
 markdown: kramdown
 highlighter: rouge
-permalink: /archive/:title
+permalink: /archive/:slug
 
 # Social Accounts
 social_networks:
