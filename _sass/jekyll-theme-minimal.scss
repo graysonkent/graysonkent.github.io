@@ -175,12 +175,11 @@ footer {
     margin:0;
   }
 
-  .user-profile, section, footer {
+  .user-profile, .user-profile.mainmenu, section, footer {
     float:none;
     position:static;
     width:auto;
   }
-  
 
   section {
     border:1px solid #e5e5e5;
@@ -204,7 +203,7 @@ footer {
     padding: 15px;
   }
 
-  .user-profile  {
+  .user-profile, .user-profile.mainmenu {
     position:static;
     padding:0;
   }
@@ -222,7 +221,7 @@ footer {
     padding:15px;
   }
 
-  .user-profile  {
+  .user-profile, .user-profile.mainmenu  {
     position:static;
     padding:0;
   }
