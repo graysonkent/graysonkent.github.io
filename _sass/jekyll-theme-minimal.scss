@@ -73,7 +73,7 @@ code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   //color:#333;
   //background-color: #002b36; //rgba(0, 0, 0, 0.04);
-  font-size:18px;
+  font-size:16px;
 }
 
 pre {
@@ -143,14 +143,14 @@ footer {
   .avatar { max-width: 140px; max-height: 120px; border-radius: 50%; margin: 0 auto 15px; }
   .my-name { font-size: 24px; font-weight: 700; line-height: 30px; color: black; }
   .my-job-title { font-size: 14px; font-weight: 300; margin: 5px 0 0; }
-  .mainmenu { padding: 20px; text-align: center;
+  .mainmenu { padding: 20px 20px 0; text-align: center;
     a { display: block; max-width: 300px; color: black; padding: 15px; border: 1px solid lightgrey; background:#f9f9f9; box-shadow: 0 2px 3px rgba(black,.05);
       &:hover, &.active { background: darken(#f9f9f9, 10%); border-left: 4px solid firebrick; }
     }
   }
-.about-me { font-size: 16px; line-height: 26px; padding: 20px; color: black; }
+.about-me { font-size: 16px; line-height: 26px; padding: 20px 20px 0; color: black; }
   ul { font-size: 0; padding: 20px;
-    li { display: inline-block; padding: 5px;
+    li { display: inline-block; padding: 3px;
       a { position: relative; display: block; width: 40px; height: 40px; line-height: 40px; background: black; border-radius: 50%;
         &:hover { background: firebrick; }
         svg { display: inline-block; vertical-align: middle;
