@@ -17,7 +17,7 @@ p, ul, ol, table, pre, dl {
 }
 
 h1, h2, h3 {
-  line-height:1.1;
+    line-height:1.1;
 }
 
 h1 {
@@ -32,6 +32,7 @@ h2 {
 h4 {
   color: grey;
   margin: 0;
+  line-height: .8;
 }
 
 h5, h6 {
