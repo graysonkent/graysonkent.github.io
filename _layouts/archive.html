@@ -19,7 +19,7 @@
       <section>
           <h2>Blogs</h2>
                 {% for tag in site.categories %}
-                <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }} ({{ site.tags[category].size }})</h3>
+                <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
                 <ul>
                     {% assign pages_list = tag[1] %}
                     {% for post in pages_list %}
