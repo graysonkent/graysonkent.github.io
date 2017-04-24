@@ -3,7 +3,6 @@ layout: post
 date: 4/23/2017 
 title:  "Bash"
 category: linux
-permalink: /archive/:title
 ---
 
 
