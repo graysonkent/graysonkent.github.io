@@ -39,8 +39,10 @@
 -->
                     {% for category in site.categories %}
                         <h2>{{ category[0] | capitalize }}s</h2>
-                            {% for post in category %}
-                                <p>{{ post.tag | capitalize }}</p>
+                            {% for posts in category %}
+                                  {% for post in posts %}
+                                        <p>{{ post.title | capitalize }}</p>
+                                {% endfor %}
                             {% endfor %}
                     {% endfor %}
 
@@ -51,6 +53,7 @@
                     </li>
                     {% endfor %}
                 </ul>
+
       </section>
    </div>
    <!-- <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> -->
