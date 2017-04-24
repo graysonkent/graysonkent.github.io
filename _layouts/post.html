@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -19,8 +19,8 @@
       </header>
       <section>
           {% assign words = content | number_of_words %}
-          <h4> {{ page.date}} • {% include readtime.html %}</h4> <br>
           <h2> {{ page.title }}</h2>
+          <h4> {{ page.date}} • {% include readtime.html %}</h4> <br>
           <hr>
           {{ content }}
 
