@@ -6,7 +6,7 @@ description:  Personal blog focusing on high-availability clustering, KVM virtua
 avatar: /images/face.jpg
 favicon: ../images/rocket.png
 twitter_handler: your_handler
-analytics_code: UA-XXXXXXX-2
+analytics_code: UA-79927650-1
 disqus: your_disqus_site
 google_analytics:
 markdown: kramdown
