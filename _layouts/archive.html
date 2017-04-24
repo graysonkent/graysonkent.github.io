@@ -48,9 +48,9 @@
                                  {% endif %}
 
                                   {% for post in posts %}
-                                    <ul>
+                                    <ul style="list-style-type: none;">
                                         {% if post.title != null %}
-                                        <li><h4>{{ post.date |  date: "%m/%d/%Y" }}</h4> - <a href="{{ post.url }}">{{ post.title | capitalize }}</a> </li>
+                                        <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
                                         {% endif %}
                                     </ul>
                                       {% endfor %}
