@@ -46,11 +46,12 @@
                         {% endif %}
 
                             <!-- Upper level tags. Linux, Security, etc. -->
+                            {% assign tag_list = category in site.categories %}
                             {% for posts in category %}
                                 <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                {% if posts[0].tags != null %}
-                                            <li><b>{{ posts[0].tags }}</b></li>
-                                {% endif %}
+
+                                            <li><b>{{ posts.tags }}</b></li>
+
                                 </ul>
 
                                   <!-- List of posts per tag, within a category -->
