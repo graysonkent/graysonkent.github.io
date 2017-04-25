@@ -45,15 +45,12 @@
                             <!-- Upper level tags. Linux, Security, etc. -->
                             {% for posts in category %}
                                  {% for post in posts %}
-                                     {% assign tag_index = post.tag[0] %]
                                         <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-
                                                 <li><b>{{ post.tag }}</b>
-
                                                     <ul>
-                                                                {% if post.title != null %}
-                                                                        <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
-                                                                {% endif %}
+                                                        {% if post.title != null %}
+                                                            <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
+                                                        {% endif %}
                                                     </ul>
                                                 </li>
                                     </ul>
