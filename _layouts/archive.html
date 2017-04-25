@@ -64,7 +64,6 @@
           {% assign current_cat = category[0] %}
           {% assign sorted_tags = site.tags | sort %}
           {% for tag in sorted_tags %}
-          <p>{{ tag[1].tags }}</p>
           {% assign zz = tag[1] | where: "category",current_cat | sort %}
           {% if zz != empty %}
           <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
