@@ -41,15 +41,15 @@
 
                     <!-- Blogs, Talks, etc. -->
                     {% for category in site.categories %}
-                        {% if category != '' %}
+                        {% if category != null %}
                             <h2>{{ category[0] | capitalize }}s</h2>
                         {% endif %}
 
                             <!-- Upper level tags. Linux, Security, etc. -->
-                            {% for posts in category %}
+                            {% for posts in site.categories %}
                                 <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                {% if posts[0].tags != null %}
-                                            <li><b>{{ posts[0].tags }}</b></li>
+                                {% if posts.tags != null %}
+                                            <li><b>{{ posts.tags }}</b></li>
                                 {% endif %}
                                 </ul>
 
