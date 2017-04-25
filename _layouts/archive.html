@@ -41,19 +41,14 @@
 
                     <!-- Blogs, Talks, etc. -->
                     {% for category in site.categories %}
-                        {% if category != null %}
                             <h2>{{ category[0] | capitalize }}s</h2>
-                        {% endif %}
-
                             <!-- Upper level tags. Linux, Security, etc. -->
-                            {% for posts in category %}
-                                 {% for post in posts %}
-                                    {% for tag in site.tags %}
+                            {% for post in category %}
+
                                         <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                        {% if tag == post.tag %}
-                                                <li><b>{{ tag }}</b>
-                                        {% endif %}
-                                    {% endfor %}
+
+                                                <li><b>{{ post.tag }}</b>
+                                        
                                                     <ul>
                                                                 {% if post.title != null %}
                                                                         <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
@@ -61,8 +56,16 @@
                                                     </ul>
                                                 </li>
                                     </ul>
-                                {% endfor %}
+
                             {% endfor %}
+                    {% endfor %}
+
+
+
+
+
+
+
 
                                   <!-- List of posts per tag, within a category
                                   {% assign tag_list = posts[0].tags %}
@@ -73,7 +76,7 @@
                                         {% endif %}
                                     </ul>
                                   {% endfor %} -->
-                            {% endfor %}
+
 
 <!--
                 <ul>
