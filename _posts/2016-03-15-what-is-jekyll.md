@@ -2,7 +2,6 @@
 layout: post
 date: 2016-03-15 22:00
 title:  "Blog Test"
-mood: speechless
 category: visualization
 tags: d3
 ---
