@@ -60,10 +60,14 @@
 
 
 
+<h2>Holders:</h2>
+          {% for category in site.categories %}
+            <h3>Category is {{ category }}</h3>
+          {% endfor %}
 
-
-
-
+          {% for tag in site.tags %}
+            <h3>Tag is {{ tag }}</h3>
+          {% endfor %}
 
                                   <!-- List of posts per tag, within a category
                                   {% assign tag_list = posts[0].tags %}
