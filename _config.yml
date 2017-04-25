@@ -6,8 +6,8 @@ job_title: Linux Systems Engineer
 email: grayson@linux.com
 description:  Personal blog focusing on high-availability clustering, KVM virtualization, and other tech adventures
 avatar: /images/face.jpg
-analytics_code: UA-79927650-1
-google_analytics:
+analytics_code:
+google_analytics: UA-79927650-1
 markdown: kramdown
 highlighter: rouge
 permalink: /archive/:title
@@ -24,7 +24,7 @@ show_rss: 1
 show_menu: 1
 fixed_sidebar: 1
 
-# Gems
+# Plugins
 gems:
   - jekyll-feed
 
