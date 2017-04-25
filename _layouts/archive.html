@@ -49,7 +49,7 @@
                             {% for posts in category %}
                                  {% for post in posts %}
                                     <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                                <li><b>{{ post.tags }}</b>
+                                                <li><b>{{ post.tags | uniq }}</b>
                                                     <ul>
                                                                 {% if post.title != null %}
                                                                         <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
