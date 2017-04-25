@@ -48,9 +48,10 @@
                             <!-- Upper level tags. Linux, Security, etc. -->
                             {% for posts in category %}
                                  {% for post in posts %}
-                                    <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                        {% if post.category == category[0] %}
-                                                <li><b>{{ site.tags[0] }}</b>
+                                    {% for tag in site.tags %}
+                                        <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
+                                        {% if tag[0] == post[0].tag %}
+                                                <li><b>{{ tag[0] }}</b>
                                         {% endif %}
                                                     <ul>
                                                                 {% if post.title != null %}
