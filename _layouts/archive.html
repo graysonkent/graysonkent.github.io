@@ -18,7 +18,7 @@
       </header>
       <section>
           {% for category in site.categories %}
-          {% assign reverse_cat = category | split: ", " | reverse | join: ", " %}
+          {% assign reverse_cat = category |  reverse %}
           <h2>{{ reverse_cat[0] | capitalize }}s</h2>
                 {% assign current_cat = category[0] %}
                 {% assign sorted_tags = site.tags | sort %}
