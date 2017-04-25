@@ -50,7 +50,7 @@
                                  {% for post in posts %}
                                     <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
                                         {% if post.category == category[0] %}
-                                                <li><b>{{ post.tags }}</b>
+                                                <li><b>{{ post.tags[0] }}</b>
                                         {% endif %}
                                                     <ul>
                                                                 {% if post.title != null %}
