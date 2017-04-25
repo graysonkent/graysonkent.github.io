@@ -61,14 +61,18 @@
 
 
 <h2>Holders:</h2>
-          {% for category in site.categories %}
-            <h3>Category is {{ category }}</h3>
-          {% endfor %}
-
-          {% for tag in site.tags %}
-            {% for post in tag %}
-                 <h3>Tag is {{ post.tag }}</h3>
-            {% endfor %}
+          {% assign sorted_tags = site.tags | sort %}
+          {% for tag in sorted_tags %}
+          {% assign zz = tag[1] | where: "category", "blog" | sort %}
+          {% if zz != empty %}
+          <li><span class="tag">{{ tag[0] }}</span>
+              <ul>
+                  {% for p in zz %}
+                  <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+                  {% endfor %}
+              </ul>
+          </li>
+          {% endif %}
           {% endfor %}
 
                                   <!-- List of posts per tag, within a category
