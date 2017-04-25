@@ -53,6 +53,7 @@
                                         {% if tag[0] == post[0].tag %}
                                                 <li><b>{{ tag[0] }}</b>
                                         {% endif %}
+                                    {% endfor %}
                                                     <ul>
                                                                 {% if post.title != null %}
                                                                         <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
