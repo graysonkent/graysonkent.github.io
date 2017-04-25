@@ -60,18 +60,20 @@
 
 
 
-<h2>Holders:</h2>
+<h2>Blogs</h2>
           {% assign sorted_tags = site.tags | sort %}
           {% for tag in sorted_tags %}
           {% assign zz = tag[1] | where: "category", "blog" | sort %}
           {% if zz != empty %}
-          <li><span class="tag">{{ tag[0] }}</span>
+          <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
+              <li><b><span class="tag">{{ tag[0] | capitalize }}</span></b>
               <ul>
                   {% for p in zz %}
-                  <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+                     <li><a href="{{ p.url }}">{{ p.title }}</a></li>
                   {% endfor %}
               </ul>
-          </li>
+             </li>
+          </ul>
           {% endif %}
           {% endfor %}
 
