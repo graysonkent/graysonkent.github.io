@@ -37,18 +37,24 @@
 
           <h2>Talks</h2>
 -->
+
+
+                    <!-- Blogs, Talks, etc. -->
                     {% for category in site.categories %}
                         {% if category != '' %}
                             <h2>{{ category[0] | capitalize }}s</h2>
                         {% endif %}
 
+                            <!-- Upper level tags. Linux, Security, etc. -->
                             {% for posts in category %}
+                                <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
                                 {% if posts[0].tags != null %}
-                                        <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
                                             <li><b>{{ posts[0].tags }}</b></li>
-                                        </ul>
                                 {% endif %}
-          {% assign tag_list = posts[0].tags %}
+                                </ul>
+
+                                  <!-- List of posts per tag, within a category -->
+                                  {% assign tag_list = posts[0].tags %}
                                   {% for post in tag_list %}
                                     <ul style="list-style-type: none; margin: 0 35px; padding: 0;">
                                         {% if post.title != null %}
