@@ -1,6 +1,8 @@
 # General Settings
 name: Grayson Kent
 author: Grayson Kent
+title: Grayson Kent's Personal Website
+logo: /images/branch.png
 url: https://graysonskent.com
 job_title: Linux Systems Engineer
 email: grayson@linux.com
@@ -29,6 +31,7 @@ gems:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-seo-tag
 
 whitelist:
   - jekyll-redirect-from
