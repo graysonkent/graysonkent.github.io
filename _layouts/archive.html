@@ -17,9 +17,9 @@
           {% include sidebar.html %}
       </header>
       <section>
-          {% assign reverse_cat = site.categories | split: ", " | reverse | join: ", " %}
-          {% for category in reverse_cat %}
-            <h2>{{ category[0] | capitalize }}s</h2>
+          {% for category in site.categories %}
+          {% assign reverse_cat = category | split: ", " | reverse | join: ", " %}
+          <h2>{{ reverse_cat[0] | capitalize }}s</h2>
                 {% assign current_cat = category[0] %}
                 {% assign sorted_tags = site.tags | sort %}
                 {% for tag in sorted_tags %}
