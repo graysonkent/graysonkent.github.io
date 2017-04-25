@@ -46,10 +46,10 @@
                         {% endif %}
 
                             <!-- Upper level tags. Linux, Security, etc. -->
-                            {% for posts in site.categories %}
+                            {% for post in site.categories %}
                                 <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                {% if posts.tags != null %}
-                                            <li><b>{{ posts.tags }}</b></li>
+                                {% if post.tags != null %}
+                                            <li><b>{{ post.tags }}</b></li>
                                 {% endif %}
                                 </ul>
 
