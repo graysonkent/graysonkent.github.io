@@ -50,8 +50,8 @@
                                  {% for post in posts %}
                                     {% for tag in site.tags %}
                                         <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
-                                        {% if tag[0] == post[0].tag %}
-                                                <li><b>{{ tag[0] }}</b>
+                                        {% if tag == post.tag %}
+                                                <li><b>{{ tag }}</b>
                                         {% endif %}
                                     {% endfor %}
                                                     <ul>
