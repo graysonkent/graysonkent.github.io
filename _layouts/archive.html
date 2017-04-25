@@ -47,10 +47,10 @@
 
                             <!-- Upper level tags. Linux, Security, etc. -->
                             {% assign tag_list = category in site.categories %}
-                            {% for posts in category %}
+                            {% for tag in site.tags %}
                                 <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
 
-                                            <li><b>{{ posts.tags }}</b></li>
+                                            <li><b>{{ tag }}</b></li>
 
                                 </ul>
 
