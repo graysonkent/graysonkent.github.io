@@ -27,6 +27,7 @@ fixed_sidebar: 1
 # Plugins
 gems:
   - jekyll-feed
+  - jekyll-sitemap
 
 
 # Not currently used
