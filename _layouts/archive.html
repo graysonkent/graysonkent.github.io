@@ -60,9 +60,11 @@
 
 
 <h2>Blogs</h2>
+          {% for category in site.categories %}
+          <h2>{{ category[0] | capitalize }}s</h2>
           {% assign sorted_tags = site.tags | sort %}
           {% for tag in sorted_tags %}
-          {% assign zz = tag[1] | where: "category", "blog" | sort %}
+          {% assign zz = tag[1] | where: "category", "category[0]" | sort %}
           {% if zz != empty %}
           <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
               <li><b><span class="tag">{{ tag[0] | capitalize }}</span></b>
@@ -74,6 +76,7 @@
              </li>
           </ul>
           {% endif %}
+          {% endfor %}
           {% endfor %}
 
                                   <!-- List of posts per tag, within a category
