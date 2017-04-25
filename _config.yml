@@ -28,7 +28,10 @@ fixed_sidebar: 1
 gems:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
+whitelist:
+  - jekyll-redirect-from
 
 # Not currently used
 #
