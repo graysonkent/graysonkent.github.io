@@ -63,6 +63,7 @@
           <h2>{{ category[0] | capitalize }}s</h2>
           {% assign current_cat = category[0] %}
           {% assign sorted_tags = site.tags | sort %}
+          <p>{{ sorted_tags }}</p>
           {% for tag in sorted_tags %}
           {% assign zz = tag[1] | where: "category",current_cat | sort %}
           {% if zz != empty %}
