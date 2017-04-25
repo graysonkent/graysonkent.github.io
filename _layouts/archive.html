@@ -49,13 +49,13 @@
                             {% for posts in category %}
                                 <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
                                 {% if posts[0].tags != null %}
-                                            <li><b>{{ posts[0].tags }}</b></li>
+                                            <li><b>{{ posts.tags }}</b></li>
                                 {% endif %}
                                 </ul>
 
                                   <!-- List of posts per tag, within a category -->
                                   {% assign tag_list = posts[0].tags %}
-                                  {% for post in tag_list %}
+                                  {% for post in posts %}
                                     <ul style="list-style-type: none; margin: 0 35px; padding: 0;">
                                         {% if post.title != null %}
                                             <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title | capitalize }}</a></h4></li>
