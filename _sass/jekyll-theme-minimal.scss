@@ -166,7 +166,25 @@ footer {
     }
   }
 }
+@media print, screen and (max-width: 1131px) {
 
+  body {
+    padding:15px;
+    width:auto;
+  }
+
+  div.wrapper {
+    width:auto;
+    margin:0;
+  }
+
+  .user-profile, .user-profile .mainmenu  {
+    font-size: 14px;
+    paddding: 20px 10px 0;
+  }
+
+
+}
 @media print, screen and (max-width: 960px) {
 
   body {
