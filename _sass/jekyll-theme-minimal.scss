@@ -245,6 +245,9 @@ footer {
     }
   }
 }
+.scroll-content {
+  overflow-x: hidden;
+}
 @media print, screen and (max-width: 1131px) {
 
   body {
@@ -312,7 +315,7 @@ footer {
     z-index: 1;
     display: block;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
@@ -363,7 +366,7 @@ footer {
     z-index: 1;
     display: block;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
@@ -414,7 +417,7 @@ footer {
     z-index: 1;
     display: block;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
