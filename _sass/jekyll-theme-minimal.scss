@@ -210,8 +210,6 @@ footer {
   opacity: 0.7;
 }
 
-
-
 .icon {
   margin: 0;
   padding-top: 4px;
@@ -270,6 +268,7 @@ footer {
     padding:15px;
     width:90%;
     position: fixed;
+    background-color: #fff;
   }
 
   div.wrapper {
@@ -301,11 +300,11 @@ footer {
   }
 
   .scroll-content {
-    width: 75%;
+    width: 100%;
     float: right;
     padding: 30px;
     background-color: #FFF;
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -317,6 +316,8 @@ footer {
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
+    border: none;
+    padding-bottom: 20%;
   }
 
 }
@@ -327,6 +328,7 @@ footer {
     padding: 15px;
     width: 90%;
     position: fixed;
+    background-color: #fff;
   }
 
   div.wrapper {
@@ -334,12 +336,6 @@ footer {
     margin:0;
   }
 
-
-  section, footer {
-    width: auto;
-    float:none;
-    position:static;
-  }
 
   header {
     display:none;
@@ -356,11 +352,11 @@ footer {
   }
 
   .scroll-content {
-    width: 75%;
+    width: 100%;
     float: right;
     padding: 30px;
     background-color: #FFF;
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -372,6 +368,8 @@ footer {
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
+    border: none;
+    padding-bottom: 20%;
   }
 
 }
@@ -381,6 +379,7 @@ footer {
     padding:15px;
     width:90%;
     position: fixed;
+    background-color: #fff;
   }
 
   div.wrapper {
@@ -405,11 +404,11 @@ footer {
   }
 
   .scroll-content {
-    width: 75%;
+    width: 100%;
     float: right;
     padding: 30px;
     background-color: #FFF;
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -421,6 +420,8 @@ footer {
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
+    border: none;
+    padding-bottom: 20%;
   }
 
 }
@@ -429,7 +430,7 @@ footer {
   body {
     padding:0.4in;
     font-size:12pt;
-    color:#444;
+    background-color: #fff;
   }
   header {
     display:none;
