@@ -245,6 +245,11 @@ footer {
 }
 @media print, screen and (max-width: 1131px) {
 
+  body {
+    padding:15px;
+    width:90%;
+  }
+
   div.wrapper {
     width:95%;
     margin:0;
@@ -260,6 +265,8 @@ footer {
 @media print, screen and (max-width: 960px) {
 
   body {
+    padding:15px;
+    width:90%;
     position: fixed;
     background-color: #fff;
   }
@@ -293,6 +300,7 @@ footer {
   }
 
   .scroll-content {
+    width: 75%;
     float: right;
     padding: 30px;
     background-color: #FFF;
@@ -317,6 +325,8 @@ footer {
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
+    padding: 15px;
+    width: 90%;
     position: fixed;
     background-color: #fff;
   }
@@ -342,6 +352,7 @@ footer {
   }
 
   .scroll-content {
+    width: 75%;
     float: right;
     padding: 30px;
     background-color: #FFF;
@@ -365,6 +376,8 @@ footer {
 
 @media print, screen and (max-width: 480px) {
   body {
+    padding:15px;
+    width:90%;
     position: fixed;
     background-color: #fff;
   }
@@ -391,6 +404,7 @@ footer {
   }
 
   .scroll-content {
+    width: 75%;
     float: right;
     padding: 30px;
     background-color: #FFF;
