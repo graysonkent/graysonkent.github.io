@@ -73,14 +73,12 @@ blockquote {
 
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  //color:#333;
-  background-color: #eff0f1; //rgba(0, 0, 0, 0.04);
+  background-color: #eff0f1;
   font-size:16px;
 }
 
 pre {
   padding:8px 15px;
-  //background: #002b36; //#f8f8f8;
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
@@ -170,11 +168,11 @@ footer {
 
   body {
     padding:15px;
-    width:auto;
+    width:90%;
   }
 
   div.wrapper {
-    width:auto;
+    width:95%;
     margin:0;
   }
 
@@ -183,7 +181,7 @@ footer {
     padding: 20px 10px 0;
   }
   .user-profile .mainmenu a {
-    
+
   }
 
 
@@ -192,11 +190,11 @@ footer {
 
   body {
     padding:15px;
-    width:auto;
+    width:90%;
   }
 
   div.wrapper {
-    width:auto;
+    width:95%;
     margin:0;
   }
 
@@ -235,7 +233,12 @@ footer {
   body {
     word-wrap:break-word;
     padding: 15px;
-    width: auto;
+    width: 90%;
+  }
+
+  div.wrapper {
+    width:95%;
+    margin:0;
   }
 
   .user-profile, .user-profile .mainmenu  {
@@ -264,7 +267,12 @@ footer {
 @media print, screen and (max-width: 480px) {
   body {
     padding:15px;
-    width:auto;
+    width:90%;
+  }
+
+  div.wrapper {
+    width:95%;
+    margin:0;
   }
 
   .user-profile, .user-profile .mainmenu   {
