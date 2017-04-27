@@ -16,7 +16,12 @@
       <header>
           {% include sidebar.html %}
       </header>
-      <section>
+        <div class="tabbar" style="bottom: 0px;">
+            <a class="tab-button"><img src="/assets/icons/home.svg" class="icon"><span class="tab-button-text">Home</span></a>
+            <a class="tab-button"><img src="/images/face.jpg" width="24" height="24" class="about-icon"><span class="tab-button-text">About</span></a>
+            <a class="tab-button"><img src="/assets/icons/list.svg" class="icon"><span class="tab-button-text">Archive</span></a>
+        </div>
+      <section class="scroll-content">
           {% for category in site.categories %}
           <h2>{{ category[0] | capitalize }}s</h2>
                 {% assign current_cat = category[0] %}
