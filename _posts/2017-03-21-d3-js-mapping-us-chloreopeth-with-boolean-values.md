@@ -25,7 +25,7 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 				.translate([width / 2.3, height / 2.2]);
 			var path = d3.geo.path()
 				.projection(projection);
-			var svg = d3.select("#chart").append("svg")
+			var svg = d3.select(".chart").append("svg")
 				.attr("width", width)
 				.attr("height", height);
 			queue()
