@@ -222,7 +222,6 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 </script>
 </div>
 
-
 > **Note:** This normally wouldn't be so blinding, because counties tend to group together.
 
 County Fill Portion
@@ -248,7 +247,7 @@ You use an id instead of county name because counties are assigned by [FIPS Code
 
 One interesting aspect of all this is that now you have the framework in place to do a lot of comparisons between columns, although I would recommend to do that in something more suited to it like R or even SQL and then feed the results to D3. For a hypothetical example, you could add a column for population and then add qualifiers to it like so:
 
-```JavaScript
+```js
 if (d.companyAin > 0 && d.population > 29000) d.color = "green";
 ```
 
