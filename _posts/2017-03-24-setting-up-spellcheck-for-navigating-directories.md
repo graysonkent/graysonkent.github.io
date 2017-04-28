@@ -24,7 +24,7 @@ spellingIsHard
 /spellingIsHard$
 ```
 
-This only works in the interactive shell (for good reason) and I wish there was a 'set' equivalent so it would be more portable, but overall this a very handy option.
+This only works in the interactive shell (for good reason) and I wish there was a `set` equivalent so it would be more portable, but overall this a very handy option.
 
 Further Reading:
 ----------------
