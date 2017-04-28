@@ -17,7 +17,7 @@ County Fill Portion
 -------------------
 This example is comparing whether we have a store in that county. Since this involves "owning" coverage of counties, it doesn't make sense to rate color by population like in Mike's map. Instead we are looking for a value of 0 or not 0 to indicate if a Company is in this county. This is the piece of code involved:
 
-```JavaScript
+```js
 .defer(d3.csv, "CompetitorStores.csv", function(d) {
     if (d.companyAin > 0 && d.companyBin > 0) d.color = "saddlebrown";
     else if (d.companyAin > 0) d.color = "green";
@@ -36,7 +36,7 @@ You use an id instead of county name because counties are assigned by [FIPS Code
 
 One interesting aspect of all this is that now you have the framework in place to do a lot of comparisons between columns, although I would recommend to do that in something more suited to it like R or even SQL and then feed the results to D3. For a hypothetical example, you could add a column for population and then add qualifiers to it like so:
 
-```JavaScript
+```js
 if (d.companyAin > 0 && d.population > 29000) d.color = "green";
 ```
 
@@ -46,7 +46,7 @@ Add a Legend
 ------------
 This just takes in values for labels and colors and then sets up the squares and text:
 
-```JavaScript
+```js
 var legend_labels = ["Competitor Only", "Both In", "Our Company only"]
 var color = ["saddlebrown", "green", "mediumpurple"];
 var steps = [];
@@ -77,7 +77,7 @@ The `steps` array is there so we don't have to hardcode the number of categories
 
 Here is how to add the title below the graph:
 
-```JavaScript
+```js
 svg.append("text")
     .attr("x", width - 450 * printMultiplier)
     .attr("y", height - 30 * printMultiplier)
@@ -97,7 +97,7 @@ This is just taken from eligrey's great [filesaver.js library](https://github.co
 
 One point of interest though:
 
-```JavaScript
+```js
 var printMultiplier = 1
 ```
 Simplest thing ever, but every dimension gets multiplied by this. This was necessary because we print at ridiculous sizes so we needed huge rendering sizes. At one point the print multiplier was 10 and we had to offload blocks to gpu. But that is a topic for another blog post.
