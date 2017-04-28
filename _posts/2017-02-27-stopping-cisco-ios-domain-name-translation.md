@@ -10,7 +10,7 @@ redirect_from:
 I often switch between Cisco IOS and Bash so I absentmindedly type `ls` into a IOS prompt and have to wait 30 seconds on this error:
 
 > Translating "ls"...domain server (255.255.255.255)  
->  % Unknown command or computer name, or unable to find computer address
+> % Unknown command or computer name, or unable to find computer address
 
 To stop this, you can just press `CTRL+Shift+6`. But for more long-term fixes, see the options below:
 

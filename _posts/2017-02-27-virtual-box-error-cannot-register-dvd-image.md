@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2017-02-27 22:00
+date: 2017-02-26 22:00
 title:  "VirtualBox Error: Cannot register the image because the UUID already exists"
 category: blog
 tags: virtualization
