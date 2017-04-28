@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2017-03-24 28:00
+date: 2017-03-24 21:00
 title:  "How to get the last argument of any previous command"
 category: blog
 tags: linux
