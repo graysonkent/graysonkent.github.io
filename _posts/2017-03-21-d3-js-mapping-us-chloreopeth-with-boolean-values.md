@@ -13,7 +13,7 @@ This originated as a business need to compare competitors in counties to see who
 Below are selected code snippets and [here](https://gist.github.com/graysonkent/d26150fbb0e0bde1db1920fe5e21a8a9) is the full code to follow along. This is the map filled with random data:
 
 <div><button id='saveButton'>Export to Image</button></div>
-<div class="chart" style="width:auto; max-width:100%;">
+<div class="chart" style="width:auto; max-width:100%;overflow-x: scroll;">
 <script>
 			var printMultiplier = .8
 			var width = 960 * printMultiplier, // 1280 or 3840 or 920
