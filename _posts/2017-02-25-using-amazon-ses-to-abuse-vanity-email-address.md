@@ -5,7 +5,7 @@ title:  "Using Amazon SES to abuse Vanity Email Addresses Forwarding Addresses"
 category: blog
 tags: cloud
 redirect_from:
-  - https://www.graysonskent.com/archive/2017/02/how-to-use-amazon-ses-to-abuse-vanity-email-addresses.html
+  - /archive/2017/02/how-to-use-amazon-ses-to-abuse-vanity-email-addresses.html
 ---
 
 A Vanity Email Forwarding service address is one that that gives you an email address (you@desirabledomain.com) and lets you forward it to your personal email. See my email address for an example.
