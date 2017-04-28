@@ -4,8 +4,6 @@ date: 2017-03-01 21:00
 title:  "Generating a random list of Linux commands for A-Z"
 category: visualization
 tags: D3
-redirect_from:
-  - /archive/2017/03/d3-js-mapping-us-chloreopeth-with-boolean-values.html
 ---
 This originated as a business need to compare competitors in counties to see who has coverage there. It is essentially [this map](https://bl.ocks.org/mbostock/4060606) from Mike Bostock(creator of D3) but we are coloring by Boolean values and adding a legend/export function.
 
