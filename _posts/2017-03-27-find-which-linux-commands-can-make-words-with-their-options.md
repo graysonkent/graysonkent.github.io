@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-27 21:00
 title:  "Find which Linux commands can make words out of their options"
 category: blog
-tags: linux
+tags: bash
 redirect_from:
   - /archive/2017/03/find-which-linux-commands-can-make-words-with-their-options.html
 ---
@@ -137,7 +137,7 @@ Areas for Improvement
 
 - If I did it again, I would have written this in Python just for the array options.
 
-- I abused sed and awk in places where I should have just used a more robust regex match
+- I abused sed and awk in places where I should have just used a more robust regex match.
 
 - If you wanted to play Russian roulette with your computer, you could switch out the command from commandList with `compgen -cb`. I would write a log file to a remote location and add in `trap`s in case one of the commands brought down your machine.
 

@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-24 20:00
 title:  "Setting up spell check for navigating directories"
 category: blog
-tags: linux
+tags: bash
 redirect_from:
   - /archive/2017/03/setting-up-spellcheck-for-navigating-directories.html
 ---

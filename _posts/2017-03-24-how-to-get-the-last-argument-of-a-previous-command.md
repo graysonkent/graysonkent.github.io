@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-24 21:00
 title:  "How to get the last argument of any previous command"
 category: blog
-tags: linux
+tags: bash
 redirect_from:
   - /archive/2017/03/how-to-get-the-last-argument-of-a-previous-command.html
 ---
