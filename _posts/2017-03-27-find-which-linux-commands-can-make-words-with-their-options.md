@@ -94,7 +94,8 @@ Each of the 50 example commands are now stored in commandList like so:
 
 ```bash
 commandList=( $(
-  curl 'http://www.thegeekstuff.com/2010/11/50-linux-commands/' 2> /dev/null \
+  curl 'http://www.thegeekstuff.com/2010/11/50-linux-commands/' \
+   2> /dev/null \
     | grep -o '<h3>\([0-9].*[a-z][a-z][a-z].*\)</h3>' \
     | awk '{ print $2 }' \
     | grep -vE 'rm|wget|less|shutdown|<h3>'
