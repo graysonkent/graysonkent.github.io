@@ -26,6 +26,9 @@
         <hr>
         {{ content }}
 
+        {% if post.tag.size > 0 %}
+        <p>There are more than 10 products in this collection!</p>
+        {% endif %}
     </section>
 </div>
 <!-- <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> -->
