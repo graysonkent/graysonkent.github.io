@@ -15,8 +15,7 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 <div><button id='saveButton'>Export to Image</button></div>
 <div class="chart" style="width:auto; max-width:100%;">
 <script>
-
-			var printMultiplier = .7
+			var printMultiplier = .8
 			var width = 960 * printMultiplier, // 1280 or 3840 or 920
 				height = 680 * printMultiplier; //720 or 2160 or 680
 			var rateById = d3.map();
