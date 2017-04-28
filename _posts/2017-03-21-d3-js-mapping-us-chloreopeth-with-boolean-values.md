@@ -25,8 +25,6 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 			var path = d3.geo.path()
 				.projection(projection);
 			var svg = d3.select(".chart").append("svg")
-				.attr("width", width)
-				.attr("height", height);
 			queue()
 				.defer(d3.json, "https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/us.json")
 				.defer(d3.csv, "/datasets/CompetitorStores.csv", function(d) {
