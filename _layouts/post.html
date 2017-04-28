@@ -33,7 +33,7 @@
         <hr>
         {{ content }}
 
-        {% assign pageTag = page.tag %}
+        {% assign pageTag == page.tag %}
         {% if site.tags.pageTag.size > 0 %}
         <p>There are more than 10 products in this collection!</p>
         {% endif %}
