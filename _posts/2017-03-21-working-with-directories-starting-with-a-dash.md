@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2017-03-03 20:00
-title:  "Stopping Cisco IOS Domain Name Translation"
+date: 2017-03-21 20:00
+title:  "Working with directories that start with a - character"
 category: blog
 tags: linux
 redirect_from:
