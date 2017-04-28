@@ -18,7 +18,8 @@
     <header>
         {% include sidebar.html %}
     </header>
-    <section class="desktop">
+        {% include mobileHeader.html %}
+    <section class="scroll-content">
         {% assign words = content | number_of_words %}
         <h2> {{ page.title }}</h2>
         <h4> {{ page.date | date: "%m/%d/%Y"}} • {% include readtime.html %}</h4>
@@ -26,11 +27,6 @@
         {{ content }}
 
     </section>
-
-    <section class="mobile">
-
-    </section>
-
 </div>
 <!-- <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> -->
 
