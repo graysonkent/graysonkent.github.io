@@ -2,8 +2,8 @@
  * Created by gkent on 4/29/2017.
  */
 var margin = {top: 50, right: 0, bottom: 1000, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 430 - margin.top - margin.bottom,
+    width = 860 - margin.left - margin.right,
+    height = 330 - margin.top - margin.bottom,
     gridSize = Math.floor(width / 34),
     legendElementWidth = gridSize * 2,
     buckets = 9,
@@ -142,7 +142,7 @@ var heatmapChart = function (tsvFile) {
 
 
             svg.append("text")
-                .attr("x", "265px")
+                .attr("x", "165px")
                 .attr("y", "-30px")
                 .attr("text-anchor", "right")
                 .style("font", "Arial")
@@ -153,8 +153,8 @@ var heatmapChart = function (tsvFile) {
                 .text("Distribution of US Birthdays");
 
             svg.append("text")
-                .attr("x", "555px")
-                .attr("y", "345px")
+                .attr("x", "505px")
+                .attr("y", "245px")
                 .attr("text-anchor", "right")
                 .style("font", "Arial")
                 .style("font-weight", "bold")
