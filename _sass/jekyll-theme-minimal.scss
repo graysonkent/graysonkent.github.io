@@ -429,8 +429,8 @@ footer {
     z-index: 1;
     display: block;
     overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
     contain: size style layout;
     border: none;
