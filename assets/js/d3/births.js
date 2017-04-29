@@ -50,7 +50,7 @@ var tip = d3.tip()
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function (d) {
-        return "<strong style='color:white'>2015 Births:</strong> <span style='color:red'>" + d.births + "</span>";
+        return "<strong>2015 Births:</strong> <span style='color:red'>" + d.births + "</span>";
     })
 
 var heatmapChart = function (tsvFile) {
