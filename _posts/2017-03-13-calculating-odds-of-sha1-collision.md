@@ -20,7 +20,7 @@ This famously counter-intuitive paradox states that in a room of 23 people there
 
 It's probably up there with the [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) for most argued about popular probability puzzle, but it actually makes a lot of sense when you break it down.
 
-The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of not getting a match in a pair, of which we have:
+The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of not getting a match in a pair, of which we have 
 $$\frac{23\times22}{2}=253 \text { Combinations}$$
 
 Ignoring messy, real-world statistics like how birthdays tend to group together:
@@ -31,8 +31,8 @@ Ignoring messy, real-world statistics like how birthdays tend to group together:
 
 Then, you can calculate the probability of two people not having the same birthday with:
 
-$$ p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2} $$
-​​ 
+$$ p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2} $$ 
+​​ <br>
 Where x = 23 people, we get .500477154 or just over 50% chance of a match.
 
 SHA-1 Background
