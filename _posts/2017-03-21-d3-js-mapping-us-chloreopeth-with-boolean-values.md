@@ -4,7 +4,7 @@ date: 2017-03-01 20:00
 title:  "US Choropleth by County with Boolean Values"
 category: visualization
 tags: D3
-d3: yes
+d3Load: true
 redirect_from:
   - /archive/2017/d3-js-mapping-us-chloreopeth-with-boolean-values.html
 ---
