@@ -3,6 +3,43 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
 <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
 <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+
+{% if page.sha == true %}
+<script type="text/javascript" src="/assets/js/d3/sha1.js"></script>
+<script type="text/javascript" src="/assets/js/d3/tooltip.js"></script>
+<script>
+    'use strict';
+    var doc = document;
+    doc.qrySel = doc.querySelector;
+    doc.qrySelAll = doc.querySelectorAll; // shorthand
+
+    document.addEventListener('click', function (event) {
+        doc.qrySel('#message').oninput = function () {
+            var t1 = performance.now();
+            var hash = Sha1.hash(this.value);
+            var t2 = performance.now();
+
+            doc.qrySel('#digest').value = hash;
+        };
+        doc.qrySel('#message').select();
+        doc.qrySel('#message').oninput(); // trigger initial hash
+
+        // show source code
+        fetch('//cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha1.js')
+            .then(function (res) {
+                return res.ok ? res.text() : res.status + ' ' + res.statusText;
+            })
+            .then(function (txt) {
+                doc.qrySel('#src-code').textContent = txt;
+                prettyPrint();
+            })
+            .catch(function (err) {
+                doc.qrySel('#error').textContent = err.message;
+            });
+    });
+</script>
+{% endif %}
+
 <style>
     .states {
         fill: none;
@@ -13,5 +50,54 @@
         fill: #d3d3d3; //d3d3d3
     stroke: #FFF;
         stroke-linejoin: round;
+    }
+    rect.bordered {
+        stroke: #E6E6E6;
+        stroke-width: 2px;
+    }
+
+    text.mono {
+        font-size: 9pt;
+        font-family: Consolas, courier;
+        fill: #aaa;
+    }
+
+    text.axis-workweek {
+        fill: #000;
+    }
+
+    text.axis-worktime {
+        fill: #000;
+    }
+
+    .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+    }
+
+    .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+    }
+
+    .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+    }
+
+    #digest {
+        min-width: 22em;
     }
 </style>
