@@ -1,7 +1,7 @@
 /**
  * Created by gkent on 4/29/2017.
  */
-var printMultiplier = .75
+var printMultiplier = 1
 var width = 960 * printMultiplier, // 1280 or 3840 or 920
     height = 680 * printMultiplier; //720 or 2160 or 680
 var rateById = d3.map();
