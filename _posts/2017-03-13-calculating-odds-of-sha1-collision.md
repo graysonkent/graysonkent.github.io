@@ -33,7 +33,7 @@ Then, you can calculate the probability of two people not having the same birthd
 
 $$ {p} \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2} $$
 
-Where x = 23 people, we get .500477154 or just over 50% chance of a match.
+Where \\( x = 23 \\) people, we get .500477154 or just over 50% chance of a match.
 
 SHA-1 Background
 ----------------
@@ -67,7 +67,7 @@ Q&A
 **So how was Google able to brute-force a collision?**
 
 > They didn't. At least not entirely. They found a break allowing them
-> to get the domain down to below \\( 2^63 \\) and then throw all their might at
+> to get the domain down to below \\( 2^{63} \\) and then throw all their might at
 > "one of the largest computations ever completed."
 
 **Does this mean I should stop using Git?**
