@@ -85,7 +85,7 @@ pre {
   padding:8px 15px;
   border-radius:5px;
   border:1px solid #e5e5e5;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 pre code {
@@ -191,11 +191,6 @@ footer {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-pre.highlight,
-.highlight pre {
-  width: 100px;
 }
 
 .tab-button-text         {
