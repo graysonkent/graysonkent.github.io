@@ -25,7 +25,7 @@ $$\frac{23\times22}{2}=253 \text { Combinations}$$
 
 Ignoring messy, real-world statistics like how birthdays tend to group together:
 
-<div id="chart"></div>
+<div class="chart"></div>
 <script type="text/javascript" src="/assets/js/d3/births.js"></script>
 
 
