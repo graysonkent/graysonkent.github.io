@@ -15,7 +15,7 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 
 <div><button id='saveButton'>Export to Image</button></div>
 <div class="chart" style="width:auto; max-width:100%;overflow-x: auto;">
-<script src="\assets\js\d3\usmap.js"></script>
+<script async src="\assets\js\d3\usmap.js"></script>
 </div>
 
 > **Note:** This normally wouldn't be so blinding, because counties tend to group together.
