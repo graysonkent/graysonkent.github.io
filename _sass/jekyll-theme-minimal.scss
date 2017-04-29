@@ -193,6 +193,10 @@ footer {
   user-select: none;
 }
 
+pre.highlight,
+.highlight pre {
+  width: 100px;
+}
 
 .tab-button-text         {
   overflow: hidden;
