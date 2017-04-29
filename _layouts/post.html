@@ -12,24 +12,8 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% seo %}
-    {% if page.tag == D3 %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
-    <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
-    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
-    <style>
-        .states {
-            fill: none;
-            stroke: #FFF;
-            stroke-linejoin: round;
-        }
-        .counties {
-            fill: #d3d3d3; //d3d3d3
-        stroke: #FFF;
-            stroke-linejoin: round;
-        }
-    </style>
+    {% if page.d3 == yes %}
+        {% include d3Libs %}
     {% endif %}
 </head>
 <body>
