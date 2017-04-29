@@ -21,7 +21,7 @@ This famously counter-intuitive paradox states that in a room of 23 people there
 It's probably up there with the [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) for most argued about popular probability puzzle, but it actually makes a lot of sense when you break it down.
 
 The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of not getting a match in a pair, of which we have 
-$$\frac{23\times22}{2}=253 \text { Combinations}$$
+$$\frac{23\times22}{2}=253 $$combinations
 
 Ignoring messy, real-world statistics like how birthdays tend to group together:
 
