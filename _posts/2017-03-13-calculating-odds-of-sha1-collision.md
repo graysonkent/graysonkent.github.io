@@ -56,7 +56,7 @@ A good approximation of a 50% chance of a match is the square root of number of 
 
 Using that approximation for SHA-1 with a 160-bit hash:
 
-$$ \sqrt{ {2}^{160} } = \sqrt{ {2}^{80} }  $$
+$$ \sqrt{ {2}^{160} } = \sqrt{ {2}^{80} }  {\approx 1,208,925,819,614,629,174,706,17} $$
 
 To put that into perspective, Facebook and Twitter could decide to identify posts using SHA-1 and it would still take them over 3,400 years of data, assuming no growth and always unique messages, before they even had to worry about a 50% chance of a collision.
 
