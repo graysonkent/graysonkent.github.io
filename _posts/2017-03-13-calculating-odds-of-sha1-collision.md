@@ -31,7 +31,7 @@ Ignoring messy, real-world statistics like how birthdays tend to group together:
 
 Then, you can calculate the probability of two people not having the same birthday with:
 
-$$ \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2} $$
+$$ \p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2} $$
 
 Where x = 23 people, we get .500477154 or just over 50% chance of a match.
 
