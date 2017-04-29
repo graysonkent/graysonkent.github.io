@@ -60,7 +60,7 @@ pre.highlight,
 .highlight .nf { color: #268bd2 } /* Name.Function */
 .highlight .nl { color: #93a1a1 } /* Name.Label */
 .highlight .nn { color: #93a1a1 } /* Name.Namespace */
-.highlight .nx { color: #93a1a1 } /* Name.Other */
+.highlight .nx { color: lightgrey } /* Name.Other */
 .highlight .py { color: #93a1a1 } /* Name.Property */
 .highlight .nt { color: #268bd2 } /* Name.Tag */
 .highlight .nv { color: #268bd2 } /* Name.Variable */
