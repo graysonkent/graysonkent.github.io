@@ -52,7 +52,7 @@ So how does the Birthday Problem relate to SHA-1 collisions? Instead of finding 
 
 Diverging from the math we did in first section, we are going to cheat and use an approximation for the finding the amount of files needed for a 50% chance of a match or 'collision' in SHA-1.
 
-A good approximation of a 50% chance of a match is \\( \sqrt{365} \approx 19 \\). Kind of close to the actual answer of 23, but it doesn't really matter much when dealing with huge numbers like the SHA-1 domain.
+A good approximation of a 50% chance of a match is the square root of number of days in the year \\( \sqrt{365} \approx 19 \\). Kind of close to the actual answer of 23, but it doesn't really matter much when dealing with huge numbers like the SHA-1 domain.
 
 Using that approximation for SHA-1 with a 160-bit hash:
 
