@@ -6,7 +6,6 @@ category: blog
 tags: security
 d3Load: true
 math: true
-sha: true
 redirect_from:
   - /archive/2017/03/calculating-odds-of-sha1-collision.html
 ---
@@ -31,7 +30,8 @@ Ignoring messy, real-world statistics like how birthdays tend to group together:
 
 
 Then, you can calculate the probability of two people not having the same birthday with:
-$$p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2}$$
+
+$$ p \approx 1 -\left (\dfrac{364}{365}\right)^{x(x-1)/2} $$
 ​​ 
 Where x = 23 people, we get .500477154 or just over 50% chance of a match.
 
@@ -42,16 +42,7 @@ Secure Hash Algorithm 1 (SHA-1) was developed by the NSA in 1995 and it is used 
 
 In a **very** simplified way it works by padding, appending, expanding, compressing, and splitting the input data into blocks and then adding the result to a hash state that generates the 160-bit final hash known as a Message Digest.
 
-This hash is often represented as a 40 digit hexadecimal number. See below for an example or input your own text to see the hash:
-
-<div align="center">
-	<label for="message">
-		<b><span class="label">Input Text:</span></label></b>
-	<input id="message" value="SHA-1 is Outdated"></input>
-	<b><label for="digest">Hash:</label></b>
-	<input id="digest" readonly="readonly" value="bd6ccd94ba309828d2b0ce4b37bdb635f0c9b731" type="text">
-</div>
-
+This hash is often represented as a 40 digit hexadecimal number. 
 
 You can read the [full RFC](https://tools.ietf.org/html/rfc3174) if you want to dive deeper into the internals of SHA-1
 
@@ -66,6 +57,7 @@ A good approximation of a 50% chance of a match is the square root of (d) where 
 Using that approximation for SHA-1 with a 160-bit hash:
 
 $$ \sqrt({2}^{160}) = ({2}^{80}) \approx 1,208,925,819,614,629,174,706,176 $$
+
 To put that into perspective, Facebook and Twitter could decide to identify posts using SHA-1 and it would still take them over 3,400 years of data, assuming no growth and always unique messages, before they even had to worry about a 50% chance of a collision.
 
 An upgrade to SHA3-512 or even SHA-256 algorithms and they would need to worry more about the heat death of the universe than a collision.
