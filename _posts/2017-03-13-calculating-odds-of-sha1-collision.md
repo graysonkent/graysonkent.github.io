@@ -26,7 +26,7 @@ $$\frac{23\times22}{2}=253 $$ combinations.
 Ignoring messy, real-world statistics like how birthdays tend to group together:
 
 <div class="chart"></div>
-<script type="text/javascript" src="/assets/js/d3/births.js"></script>
+<script async type="text/javascript" src="/assets/js/d3/births.js"></script>
 
 
 Then, you can calculate the probability of two people not having the same birthday with:
