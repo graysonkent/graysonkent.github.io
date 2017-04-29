@@ -2,8 +2,8 @@
  * Created by gkent on 4/29/2017.
  */
 var margin = {top: 50, right: 0, bottom: 1000, left: 40},
-    width = 660 - margin.left - margin.right,
-    height = 230 - margin.top - margin.bottom,
+    width = 860 - margin.left - margin.right,
+    height = 330 - margin.top - margin.bottom,
     gridSize = Math.floor(width / 34),
     legendElementWidth = gridSize * 2,
     buckets = 9,
@@ -51,7 +51,7 @@ var tip = d3.tip()
     .offset([-10, 0])
     .html(function (d) {
         return "<strong>2015 Births:</strong> <span style='color:red'>" + d.births + "</span>";
-    });
+    })
 
 var heatmapChart = function (tsvFile) {
     d3.csv(tsvFile,
@@ -142,7 +142,7 @@ var heatmapChart = function (tsvFile) {
 
 
             svg.append("text")
-                .attr("x", "265px")
+                .attr("x", "165px")
                 .attr("y", "-30px")
                 .attr("text-anchor", "right")
                 .style("font", "Arial")
@@ -153,8 +153,8 @@ var heatmapChart = function (tsvFile) {
                 .text("Distribution of US Birthdays");
 
             svg.append("text")
-                .attr("x", "555px")
-                .attr("y", "345px")
+                .attr("x", "505px")
+                .attr("y", "245px")
                 .attr("text-anchor", "right")
                 .style("font", "Arial")
                 .style("font-weight", "bold")
@@ -170,3 +170,5 @@ var heatmapChart = function (tsvFile) {
 
 heatmapChart(datasets[0]);
 svg.call(tip);
+
+860 330
