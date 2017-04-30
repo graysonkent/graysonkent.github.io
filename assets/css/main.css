@@ -1,98 +1,138 @@
-@font-face { font-family: 'Noto Sans'; font-weight: 400; font-style: normal; src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot"); src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix") format("embedded-opentype"), local("Noto Sans"), local("Noto-Sans-regular"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff2") format("woff2"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff") format("woff"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.ttf") format("truetype"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.svg#NotoSans") format("svg"); }
-@font-face { font-family: 'Noto Sans'; font-weight: 700; font-style: normal; src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot"); src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold"), local("Noto-Sans-700"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff2") format("woff2"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff") format("woff"), url("../fonts/Noto-Sans-700/Noto-Sans-700.ttf") format("truetype"), url("../fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans") format("svg"); }
-@font-face { font-family: 'Noto Sans'; font-weight: 400; font-style: italic; src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot"); src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Italic"), local("Noto-Sans-italic"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff2") format("woff2"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff") format("woff"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.ttf") format("truetype"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.svg#NotoSans") format("svg"); }
-@font-face { font-family: 'Noto Sans'; font-weight: 700; font-style: italic; src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot"); src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold Italic"), local("Noto-Sans-700italic"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff2") format("woff2"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff") format("woff"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf") format("truetype"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans") format("svg"); }
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot");
+    src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix") format("embedded-opentype"), local("Noto Sans"), local("Noto-Sans-regular"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff2") format("woff2"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff") format("woff"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.ttf") format("truetype"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.svg#NotoSans") format("svg");
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot");
+    src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold"), local("Noto-Sans-700"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff2") format("woff2"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff") format("woff"), url("../fonts/Noto-Sans-700/Noto-Sans-700.ttf") format("truetype"), url("../fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans") format("svg");
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: 400;
+    font-style: italic;
+    src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot");
+    src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Italic"), local("Noto-Sans-italic"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff2") format("woff2"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff") format("woff"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.ttf") format("truetype"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.svg#NotoSans") format("svg");
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: 700;
+    font-style: italic;
+    src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot");
+    src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold Italic"), local("Noto-Sans-700italic"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff2") format("woff2"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff") format("woff"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf") format("truetype"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans") format("svg");
+}
 
 body {
     background-color: #f9f9f9;
     padding: 50px;
     font: 18px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:400;
+    font-weight: 400;
     width: auto;
     max-width: 100%;
     height: 100%;
     max-height: 100%;
 }
 
-h1, h3, h5, h6 {
-    color:#222;
-    margin:0 0 20px;
+h1,
+h3,
+h5,
+h6 {
+    color: #222;
+    margin: 0 0 20px;
 }
 
-p, ul, ol, table, pre, dl {
-    margin:0 0 20px;
+p,
+ul,
+ol,
+table,
+pre,
+dl {
+    margin: 0 0 20px;
 }
 
-h1, h2, h3 {
-    line-height:1.1;
+h1,
+h2,
+h3 {
+    line-height: 1.1;
 }
 
 h1 {
-    font-size:28px;
+    font-size: 28px;
 }
 
 h2 {
-    margin:0 0 5px;
+    margin: 0 0 5px;
     color: firebrick;
 }
 
 h4 {
     color: grey;
     font-size: 14px;
-    margin:0 0 2px;
+    margin: 0 0 2px;
 }
 
-h5, h6 {
-    color:#494949;
+h5,
+h6 {
+    color: #494949;
 }
 
 a {
-    color:#267CB9;
-    text-decoration:none;
+    color: #267CB9;
+    text-decoration: none;
 }
 
-a:hover, a:focus {
-    color:#069;
+a:hover,
+a:focus {
+    color: #069;
 }
 
 a small {
-    font-size:11px;
-    color:#777;
-    margin-top:-0.3em;
-    display:block;
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.3em;
+    display: block;
 }
 
 a:hover small {
-    color:#777;
+    color: #777;
 }
 
 .wrapper {
-    width:1250px;
-    margin:0 auto;
+    width: 1250px;
+    margin: 0 auto;
 }
 
 blockquote {
-    border-left:2px solid #e5e5e5;
-    margin:0;
+    border-left: 2px solid #e5e5e5;
+    margin: 0;
     background-color: #FFF8DC;
-    padding:3px 0 0 20px;
+    padding: 3px 0 0 20px;
 }
 
-code, pre {
-    font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+code,
+pre {
+    font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
     background-color: #eff0f1;
-    font-size:16px;
-    white-space: pre-wrap; /* CSS3 */
-    white-space: -moz-pre-wrap; /* Mozilla, post millennium */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    font-size: 16px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 
 pre {
-    padding:8px 15px;
-    border-radius:5px;
-    border:1px solid #e5e5e5;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
     overflow-x: auto;
 }
 
@@ -101,32 +141,33 @@ pre code {
 }
 
 table {
-    width:100%;
-    border-collapse:collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-th, td {
-    text-align:left;
-    padding:5px 10px;
-    border-bottom:1px solid #e5e5e5;
+th,
+td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 dt {
-    color:#444;
-    font-weight:700;
+    color: #444;
+    font-weight: 700;
 }
 
 th {
-    color:#444;
+    color: #444;
 }
 
 img {
-    max-width:100%;
+    max-width: 100%;
 }
 
 strong {
-    color:#222;
-    font-weight:700;
+    color: #222;
+    font-weight: 700;
 }
 
 section {
@@ -137,22 +178,22 @@ section {
 }
 
 small {
-    font-size:11px;
+    font-size: 11px;
 }
 
 hr {
-    border:0;
-    background:#e5e5e5;
-    height:1px;
-    margin:0 0 20px;
+    border: 0;
+    background: #e5e5e5;
+    height: 1px;
+    margin: 0 0 20px;
 }
 
 footer {
-    width:270px;
-    float:left;
-    position:fixed;
-    bottom:50px;
-    -webkit-font-smoothing:subpixel-antialiased;
+    width: 270px;
+    float: left;
+    position: fixed;
+    bottom: 50px;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .tabbar {
@@ -160,13 +201,12 @@ footer {
     bottom: 0;
     left: 0;
     z-index: 10;
-    display:none;
+    display: none;
     width: 100%;
     background: #f9f9f9;
     opacity: 1;
     padding-bottom: 7px;
 }
-
 
 .tab-button {
     position: relative;
@@ -201,7 +241,7 @@ footer {
     user-select: none;
 }
 
-.tab-button-text         {
+.tab-button-text {
     overflow: hidden;
     font-size: 80%;
     -webkit-align-self: center;
@@ -209,7 +249,7 @@ footer {
     -ms-grid-row-align: center;
     align-self: center;
     min-width: 26px;
-    display:block;
+    display: block;
     max-width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -223,100 +263,164 @@ footer {
     margin: 0;
     padding-top: 4px;
 }
+
 .about-icon {
     margin: 0;
     padding-top: 4px;
-    padding-bottom:2px;
-    border-radius: 50%
+    padding-bottom: 2px;
+    border-radius: 50%;
 }
 
-.user-profile { position: fixed; float: left; width: 10%; padding-right: 4%; text-align: center;
-& > * { display: block; }
-.avatar { max-width: 140px; max-height: 120px; border-radius: 50%; margin: 0 auto 15px; }
-.my-name { font-size: 24px; font-weight: 700; line-height: 30px; color: black; }
-.my-job-title { font-size: 14px; font-weight: 300; margin: 5px 0 0; }
-.mainmenu { padding: 20px 20px 0; text-align: center;
-a { display: block; max-width: 300px; color: black; padding: 15px; border: 1px solid lightgrey; background:#f9f9f9; box-shadow: 0 2px 3px rgba(black,.05);
-&:hover, &.active { background: darken(#f9f9f9, 10%); border-left: 4px solid firebrick; }
+.user-profile {
+    position: fixed;
+    float: left;
+    width: 10%;
+    padding-right: 4%;
+    text-align: center;
 }
+
+.user-profile>* {
+    display: block;
 }
-.about-me { font-size: 16px; line-height: 26px; padding: 20px 20px 0; color: black; }
-ul { font-size: 0; padding: 20px;
-li { display: inline-block; padding: 3px;
-a { position: relative; display: block; width: 40px; height: 40px; line-height: 40px; background: #dfdfdf; border-radius: 50%;
-&:hover { background: firebrick; }
-svg { display: inline-block; vertical-align: middle;
-* { fill: white;  }
+
+.user-profile .avatar {
+    max-width: 140px;
+    max-height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
 }
+
+.user-profile .my-name {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    color: black;
 }
+
+.user-profile .my-job-title {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 5px 0 0;
 }
+
+.user-profile .mainmenu {
+    padding: 20px 20px 0;
+    text-align: center;
 }
+
+.user-profile .mainmenu a {
+    display: block;
+    max-width: 300px;
+    color: black;
+    padding: 15px;
+    border: 1px solid lightgrey;
+    background: #f9f9f9;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
+
+.user-profile .mainmenu a:hover,
+.user-profile .mainmenu a.active {
+    background: #e0e0e0;
+    border-left: 4px solid firebrick;
+}
+
+.user-profile .about-me {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 20px 20px 0;
+    color: black;
+}
+
+.user-profile ul {
+    font-size: 0;
+    padding: 20px;
+}
+
+.user-profile ul li {
+    display: inline-block;
+    padding: 3px;
+}
+
+.user-profile ul li a {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #dfdfdf;
+    border-radius: 50%;
+}
+
+.user-profile ul li a:hover {
+    background: firebrick;
+}
+
+.user-profile ul li a svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.user-profile ul li a svg * {
+    fill: white;
+}
+
 .scroll-content {
     overflow-x: hidden;
 }
+
 .chart {
-    width:auto;
-    max-width:100%;
+    width: auto;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
 @media screen and (max-width: 1131px) {
-
     body {
-        padding:15px;
+        padding: 15px;
     }
-
     div.wrapper {
-        width:95%;
-        margin:0;
+        width: 95%;
+        margin: 0;
     }
-
-    .user-profile, .user-profile .mainmenu  {
+    .user-profile,
+    .user-profile .mainmenu {
         font-size: 14px;
         padding: 20px 10px 0;
     }
-
-
 }
-@media screen and (max-width: 960px) {
 
+@media screen and (max-width: 960px) {
     body {
-        padding:15px;
-        margin:0;
+        padding: 15px;
+        margin: 0;
         position: fixed;
         background-color: #fff;
         width: 100%;
     }
-
     div.wrapper {
-        width:95%;
-        margin:0;
+        width: 95%;
+        margin: 0;
     }
-
     header {
-        display:none;
+        display: none;
     }
-
-    section, footer {
+    section,
+    footer {
         width: auto;
-        float:none;
-        position:static;
+        float: none;
+        position: static;
     }
-
     section {
-        border:1px solid #e5e5e5;
-        border-width:1px 0;
+        border: 1px solid #e5e5e5;
+        border-width: 1px 0;
         padding: 20px;
-        margin:0 0 20px;
+        margin: 0 0 20px;
     }
-
     .tabbar {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
     }
-
     .scroll-content {
         width: 80%;
         float: right;
@@ -337,40 +441,34 @@ svg { display: inline-block; vertical-align: middle;
         border: none;
         padding-bottom: 20%;
     }
-
 }
 
 @media screen and (max-width: 720px) {
     body {
-        word-wrap:break-word;
+        word-wrap: break-word;
         padding: 15px;
         position: fixed;
-        margin:0;
+        margin: 0;
         background-color: #fff;
         width: 100%;
     }
-
     div.wrapper {
-        width:95%;
-        margin:0;
+        width: 95%;
+        margin: 0;
     }
-
-
     header {
-        display:none;
+        display: none;
     }
-
-    pre, code {
-        word-wrap:normal;
+    pre,
+    code {
+        word-wrap: normal;
         font-size: 14px;
     }
-
     .tabbar {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
     }
-
     .scroll-content {
         width: 80%;
         float: right;
@@ -391,39 +489,34 @@ svg { display: inline-block; vertical-align: middle;
         border: none;
         padding-bottom: 20%;
     }
-
 }
 
 @media screen and (max-width: 480px) {
     body {
-        padding:15px;
+        padding: 15px;
         position: fixed;
         background-color: #fff;
-        margin:0;
+        margin: 0;
         width: 100%;
     }
-
     div.wrapper {
-        width:95%;
-        margin:0;
+        width: 95%;
+        margin: 0;
     }
-
-    section, footer {
+    section,
+    footer {
         width: auto;
-        float:none;
-        position:static;
+        float: none;
+        position: static;
     }
-
     header {
-        display:none;
+        display: none;
     }
-
     .tabbar {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
     }
-
     .scroll-content {
         width: 80%;
         float: right;
@@ -444,106 +537,295 @@ svg { display: inline-block; vertical-align: middle;
         border: none;
         padding-bottom: 20%;
     }
-
-
 }
 
 @media print {
     body {
-        font-size:16pt;
+        font-size: 16pt;
         width: 100%;
         position: absolute;
     }
     header {
-        display:none;
+        display: none;
     }
 }
 
-/* Solarized Dark
-
-For use with Jekyll and Pygments
-
-http://ethanschoonover.com/solarized
-
-SOLARIZED HEX      ROLE
---------- -------- ------------------------------------------
-base03    #002b36  background
-base01    #586e75  comments / secondary content
-base1     #93a1a1  body text / default code / primary content
-orange    #cb4b16  constants
-red       #dc322f  regex, special keywords
-blue      #268bd2  reserved keywords
-cyan      #2aa198  strings, numbers
-green     #859900  operators, other keywords
-*/
-
 pre.highlight,
-.highlight pre { background-color: #002b36; color: lightgrey }
-.highlight .c { color: #586e75 } /* Comment */
-.highlight .err { color: #93a1a1 } /* Error */
-.highlight .g { color: #93a1a1 } /* Generic */
-.highlight .k { color: #859900 } /* Keyword */
-.highlight .l { color: #93a1a1 } /* Literal */
-.highlight .n { color: #93a1a1 } /* Name */
-.highlight .o { color: #859900 } /* Operator */
-.highlight .x { color: #cb4b16 } /* Other */
-.highlight .p { color: #93a1a1 } /* Punctuation */
-.highlight .cm { color: #586e75 } /* Comment.Multiline */
-.highlight .cp { color: #859900 } /* Comment.Preproc */
-.highlight .c1 { color: #586e75 } /* Comment.Single */
-.highlight .cs { color: #859900 } /* Comment.Special */
-.highlight .gd { color: #2aa198 } /* Generic.Deleted */
-.highlight .ge { color: #93a1a1; font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #dc322f } /* Generic.Error */
-.highlight .gh { color: #cb4b16 } /* Generic.Heading */
-.highlight .gi { color: #859900 } /* Generic.Inserted */
-.highlight .go { color: #93a1a1 } /* Generic.Output */
-.highlight .gp { color: #93a1a1 } /* Generic.Prompt */
-.highlight .gs { color: #93a1a1; font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #cb4b16 } /* Generic.Subheading */
-.highlight .gt { color: #93a1a1 } /* Generic.Traceback */
-.highlight .kc { color: #cb4b16 } /* Keyword.Constant */
-.highlight .kd { color: #268bd2 } /* Keyword.Declaration */
-.highlight .kn { color: #859900 } /* Keyword.Namespace */
-.highlight .kp { color: #859900 } /* Keyword.Pseudo */
-.highlight .kr { color: #268bd2 } /* Keyword.Reserved */
-.highlight .kt { color: #dc322f } /* Keyword.Type */
-.highlight .ld { color: #93a1a1 } /* Literal.Date */
-.highlight .m { color: #2aa198 } /* Literal.Number */
-.highlight .s { color: #2aa198 } /* Literal.String */
-.highlight .na { color: #93a1a1 } /* Name.Attribute */
-.highlight .nb { color: #B58900 } /* Name.Builtin */
-.highlight .nc { color: #268bd2 } /* Name.Class */
-.highlight .no { color: #cb4b16 } /* Name.Constant */
-.highlight .nd { color: #268bd2 } /* Name.Decorator */
-.highlight .ni { color: #cb4b16 } /* Name.Entity */
-.highlight .ne { color: #cb4b16 } /* Name.Exception */
-.highlight .nf { color: #268bd2 } /* Name.Function */
-.highlight .nl { color: #93a1a1 } /* Name.Label */
-.highlight .nn { color: #93a1a1 } /* Name.Namespace */
-.highlight .nx { color: lightgrey } /* Name.Other */
-.highlight .py { color: #93a1a1 } /* Name.Property */
-.highlight .nt { color: #268bd2 } /* Name.Tag */
-.highlight .nv { color: #268bd2 } /* Name.Variable */
-.highlight .ow { color: #859900 } /* Operator.Word */
-.highlight .w { color: #93a1a1 } /* Text.Whitespace */
-.highlight .mf { color: #2aa198 } /* Literal.Number.Float */
-.highlight .mh { color: #2aa198 } /* Literal.Number.Hex */
-.highlight .mi { color: #2aa198 } /* Literal.Number.Integer */
-.highlight .mo { color: #2aa198 } /* Literal.Number.Oct */
-.highlight .sb { color: #586e75 } /* Literal.String.Backtick */
-.highlight .sc { color: #2aa198 } /* Literal.String.Char */
-.highlight .sd { color: #93a1a1 } /* Literal.String.Doc */
-.highlight .s2 { color: #2aa198 } /* Literal.String.Double */
-.highlight .se { color: #cb4b16 } /* Literal.String.Escape */
-.highlight .sh { color: #93a1a1 } /* Literal.String.Heredoc */
-.highlight .si { color: #2aa198 } /* Literal.String.Interpol */
-.highlight .sx { color: #2aa198 } /* Literal.String.Other */
-.highlight .sr { color: #dc322f } /* Literal.String.Regex */
-.highlight .s1 { color: #2aa198 } /* Literal.String.Single */
-.highlight .ss { color: #2aa198 } /* Literal.String.Symbol */
-.highlight .bp { color: #268bd2 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #268bd2 } /* Name.Variable.Class */
-.highlight .vg { color: #268bd2 } /* Name.Variable.Global */
-.highlight .vi { color: #268bd2 } /* Name.Variable.Instance */
-.highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */
+.highlight pre {
+    background-color: #002b36;
+    color: lightgrey;
+}
+
+.highlight .c {
+    color: #586e75;
+}
+
+.highlight .err {
+    color: #93a1a1;
+}
+
+.highlight .g {
+    color: #93a1a1;
+}
+
+.highlight .k {
+    color: #859900;
+}
+
+.highlight .l {
+    color: #93a1a1;
+}
+
+.highlight .n {
+    color: #93a1a1;
+}
+
+.highlight .o {
+    color: #859900;
+}
+
+.highlight .x {
+    color: #cb4b16;
+}
+
+.highlight .p {
+    color: #93a1a1;
+}
+
+.highlight .cm {
+    color: #586e75;
+}
+
+.highlight .cp {
+    color: #859900;
+}
+
+.highlight .c1 {
+    color: #586e75;
+}
+
+.highlight .cs {
+    color: #859900;
+}
+
+.highlight .gd {
+    color: #2aa198;
+}
+
+.highlight .ge {
+    color: #93a1a1;
+    font-style: italic;
+}
+
+.highlight .gr {
+    color: #dc322f;
+}
+
+.highlight .gh {
+    color: #cb4b16;
+}
+
+.highlight .gi {
+    color: #859900;
+}
+
+.highlight .go {
+    color: #93a1a1;
+}
+
+.highlight .gp {
+    color: #93a1a1;
+}
+
+.highlight .gs {
+    color: #93a1a1;
+    font-weight: bold;
+}
+
+.highlight .gu {
+    color: #cb4b16;
+}
+
+.highlight .gt {
+    color: #93a1a1;
+}
+
+.highlight .kc {
+    color: #cb4b16;
+}
+
+.highlight .kd {
+    color: #268bd2;
+}
+
+.highlight .kn {
+    color: #859900;
+}
+
+.highlight .kp {
+    color: #859900;
+}
+
+.highlight .kr {
+    color: #268bd2;
+}
+
+.highlight .kt {
+    color: #dc322f;
+}
+
+.highlight .ld {
+    color: #93a1a1;
+}
+
+.highlight .m {
+    color: #2aa198;
+}
+
+.highlight .s {
+    color: #2aa198;
+}
+
+.highlight .na {
+    color: #93a1a1;
+}
+
+.highlight .nb {
+    color: #B58900;
+}
+
+.highlight .nc {
+    color: #268bd2;
+}
+
+.highlight .no {
+    color: #cb4b16;
+}
+
+.highlight .nd {
+    color: #268bd2;
+}
+
+.highlight .ni {
+    color: #cb4b16;
+}
+
+.highlight .ne {
+    color: #cb4b16;
+}
+
+.highlight .nf {
+    color: #268bd2;
+}
+
+.highlight .nl {
+    color: #93a1a1;
+}
+
+.highlight .nn {
+    color: #93a1a1;
+}
+
+.highlight .nx {
+    color: lightgrey;
+}
+
+.highlight .py {
+    color: #93a1a1;
+}
+
+.highlight .nt {
+    color: #268bd2;
+}
+
+.highlight .nv {
+    color: #268bd2;
+}
+
+.highlight .ow {
+    color: #859900;
+}
+
+.highlight .w {
+    color: #93a1a1;
+}
+
+.highlight .mf {
+    color: #2aa198;
+}
+
+.highlight .mh {
+    color: #2aa198;
+}
+
+.highlight .mi {
+    color: #2aa198;
+}
+
+.highlight .mo {
+    color: #2aa198;
+}
+
+.highlight .sb {
+    color: #586e75;
+}
+
+.highlight .sc {
+    color: #2aa198;
+}
+
+.highlight .sd {
+    color: #93a1a1;
+}
+
+.highlight .s2 {
+    color: #2aa198;
+}
+
+.highlight .se {
+    color: #cb4b16;
+}
+
+.highlight .sh {
+    color: #93a1a1;
+}
+
+.highlight .si {
+    color: #2aa198;
+}
+
+.highlight .sx {
+    color: #2aa198;
+}
+
+.highlight .sr {
+    color: #dc322f;
+}
+
+.highlight .s1 {
+    color: #2aa198;
+}
+
+.highlight .ss {
+    color: #2aa198;
+}
+
+.highlight .bp {
+    color: #268bd2;
+}
+
+.highlight .vc {
+    color: #268bd2;
+}
+
+.highlight .vg {
+    color: #268bd2;
+}
+
+.highlight .vi {
+    color: #268bd2;
+}
+
+.highlight .il {
+    color: #2aa198;
+}
