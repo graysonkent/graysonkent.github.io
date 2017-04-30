@@ -460,16 +460,19 @@
 
 
     @media print {
-        body {
+        body, .wrapper {
             font-size: 16pt;
             width: 100%;
             position: absolute;
             display: block;
-            margin: 0;
+            margin: 0 5%;
+            padding: 0;
+            float: none !important;
         }
         header {
             display: none;
         }
+        h2,code,pre {page-break-before: always;}
     }
 
     pre.highlight,.highlight pre {
