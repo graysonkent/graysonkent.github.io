@@ -279,7 +279,7 @@ footer {
     text-align: center;
 }
 
-.user-profile>* {
+.user-profile {
     display: block;
 }
 
@@ -386,6 +386,9 @@ footer {
     .user-profile .mainmenu {
         font-size: 14px;
         padding: 20px 10px 0;
+    }
+    .highlight .nx {
+        color: white;
     }
 }
 
