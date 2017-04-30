@@ -12,7 +12,7 @@ analytics_code:
 google_analytics: UA-79927650-1
 markdown: kramdown
 highlighter: rouge
-permalink: /:category/:title
+permalink: /:categories/:title
 
 # Social Accounts
 social_networks:
