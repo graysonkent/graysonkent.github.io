@@ -68,4 +68,4 @@ This gets us the last argument of the next to last command and can also be modif
 
 Conclusion
 ----------
-Bash History is an incredibly deep topic with a lot of interesting shortcuts. If you want to deeper, I would suggest setting `shopt -s histverify` to get a better picture of how the shell interprets your commands.
+Bash History is an incredibly deep topic with a lot of interesting shortcuts. If you want learn more, I would suggest setting `shopt -s histverify` to get a better picture of how the shell interprets your commands.
