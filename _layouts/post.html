@@ -30,7 +30,8 @@
         <h4> {{ page.date | date: "%m/%d/%Y"}} • {% include readtime.html %}</h4>
         <hr>
         {{ content }}
-
+        <hr>
+        {% include related.html %}
     </section>
 </div>
 <!-- <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> -->
