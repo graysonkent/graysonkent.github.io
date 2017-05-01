@@ -1,7 +1,9 @@
     <h4>You May Also Enjoy</h4>
-    {% assign related = page.tags %}
+    {% assign ptags = page.tags %}
+    {% assign stags = site.tags %}
+    {% assign related = stags | append: '.' | append: stags %}
     <ul>
-    {% for post in site.tags.[related] %}
+    {% for post in {{ related }} %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
