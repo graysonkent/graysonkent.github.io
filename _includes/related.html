@@ -23,7 +23,7 @@
 
     {% if sameTagCount >= minCommonTags %}
     <div>
-        <h5>{{ p.date |  date: "%m/%d/%Y" }} - <a href="{{ p.url }}">{{ p.title }}</a></h5>
+        <h5>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title }}</a></h5>
     </div>
     {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
     {% if maxRelatedCounter >= maxRelated %}
