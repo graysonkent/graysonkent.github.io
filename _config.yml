@@ -14,11 +14,23 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title
 
-# Social Accounts
+# Social Accounts for sidebar
 social_networks:
 -  { name: linkedin, url: 'https://www.linkedin.com/in/graysonkent ' }
 -  { name: github, url: 'https://github.com/graysonkent' }
 -  { name: stack-overflow, url: 'http://stackexchange.com/users/8499248/grayson-kent?tab=accounts' }
+
+# Social Accounts for SEO tags
+social:
+name: Grayson Kent
+links:
+  - https://www.linkedin.com/in/BenBalter
+  - https://github.com/graysonkent
+  - http://stackexchange.com/users/8499248/grayson-kent?tab=accountst
+
+# Webmaster verifications
+webmaster_verifications:
+  google: 2b2yT0SglsoaAwDhn8EZ6nM6DRWdlvjpYcJuPfFC8iE
 
 # Modules Settings
 show_email: 1
