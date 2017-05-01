@@ -48,6 +48,13 @@ gems:
 whitelist:
   - jekyll-redirect-from
 
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/branch.png
+
 # Not currently used
 #
 # disqus: your_disqus_site
