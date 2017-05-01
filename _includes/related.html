@@ -1,5 +1,5 @@
     <h4>You May Also Enjoy</h4>
-    {% assign related = page.tags %}
+    {% assign related = post.tags %}
     <ul>
     {% for post in site.tags.{{ related }} %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
