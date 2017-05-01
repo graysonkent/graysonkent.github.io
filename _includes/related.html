@@ -1,10 +1,9 @@
-    <h4>You May Also Enjoy</h4>
     {% assign n_posts = 0 %}
     {% for post in site.posts %}
     {%if post.id == page.id %}{% continue %}{% endif %}
     {% for this_tag in page.tags %}
     {% if post.tags contains this_tag%}
-    {% if n_posts == 0 %}<ul style="list-style-type: disc; margin: 5px 10px; padding: 0;">{% endif %}
+    {% if n_posts == 0 %}<h4>You May Also Enjoy</h4><ul style="list-style-type: disc; margin: 5px 10px; padding: 0;">{% endif %}
         <li><h5><a href="{{ post.url }}">{{ post.title }}</a></h5></li>
         {% assign n_posts = n_posts | plus: 1 %}
         {% break %}
