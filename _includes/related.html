@@ -1,6 +1,8 @@
-<h2>Other {{ page.tags | capitalize }} posts:</h2>
-{% for post in site.tags.{{ page.tags }} %}
+<h4>Other {{ page.tags }}</h4>
+{% for tag in page.tags %}
 <ul style="margin: 0 35px; padding: 2px;">
-    <li><h4><a href="{{ post.url }}">{{ post.title }}</a></h4></li>
+{% for post in tag %}
+    <li><h4>{{ post.date |  date: "%m/%d/%Y" }} - <a href="{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endfor %}
 </ul>
 {% endfor %}
