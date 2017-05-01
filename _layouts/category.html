@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>{{ page.title }}</title>
+    <link rel="icon" type="image/png" href="/assets/images/tux.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {% include maincss.html %}
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        {% include sidebar.html %}
+    </header>
+    {% include mobileHeader.html %}
+    <section class="scroll-content">
+        {% assign sorted_cats = site.categories.[page.category] | sort %}
+        {% for category in sorted_cats %}
+        <h2>{{ category[0] | capitalize }}s</h2>
+        {% assign current_cat = category[0] %}
+        {% assign sorted_tags = site.tags | sort %}
+        {% for tag in sorted_tags %}
+        {% assign zz = tag[1] | where: "category",current_cat %}
+        {% if zz != empty %}
+        <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
+            <li><b><span class="tag">{{ tag[0] | capitalize }}</span></b>
+                <ul style="margin: 0 35px; padding: 2px;">
+                    {% for p in zz %}
+                    <li><h4>{{ p.date |  date: "%m/%d/%Y" }} - <a href="{{ p.url }}">{{ p.title }}</a></h4></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </section>
+</div>
+<!-- <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> -->
+
+{% if site.google_analytics %}
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('send', 'pageview');
+</script>
+{% endif %}
+</body>
+</html>
