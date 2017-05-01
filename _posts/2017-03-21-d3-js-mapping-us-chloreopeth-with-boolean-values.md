@@ -18,6 +18,10 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 <script src="\assets\js\d3\usmap.js"></script>
 </div>
 
+<blockquote class="mobile-note">
+<p>Mobile users can scroll left/right to see whole image</p>
+</blockquote>
+
 > **Note:** This normally wouldn't be so blinding, because counties tend to group together.
 
 County Fill Portion

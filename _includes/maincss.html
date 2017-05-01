@@ -372,6 +372,9 @@
         max-width: 100%;
         overflow-x: hidden;
     }
+    .mobile-note {
+        display:none;
+    }
 
     @media screen and (max-width: 1131px) {
         body {
@@ -410,6 +413,12 @@
             border-width: 1px 0;
             padding: 20px;
             margin: 0 0 20px;
+        }
+        .mobile-note {
+            display:block;
+        }
+        .chart {
+            overflow-x: scroll;
         }
     .tabbar {
             display: -webkit-flex;
