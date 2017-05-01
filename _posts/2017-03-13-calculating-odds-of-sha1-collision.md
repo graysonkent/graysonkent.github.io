@@ -28,7 +28,7 @@ Ignoring messy, real-world statistics like how birthdays tend to group together:
 <div class="chart"></div>
 <script async type="text/javascript" src="/assets/js/d3/births.js"></script>
 <blockquote class="mobile-note">
-<p><strong>Note:</strong>Mobile users can scroll left/right to see whole image</p>
+<p><strong>Note: </strong>Mobile users can scroll left/right to see whole image</p>
 </blockquote>
 
 Then, you can calculate the probability of two people not having the same birthday with:
