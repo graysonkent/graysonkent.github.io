@@ -18,7 +18,7 @@
     </header>
     {% include mobileHeader.html %}
     <section class="scroll-content">
-        <h2>{{ page.category | capitalize }}s</h2>
+        <h2>{{ post.category | capitalize }}</h2>
         {% assign sorted_tags = site.tags | sort %}
         {% for tag in sorted_tags %}
         {% assign zz = tag[1] | where: "category",page.category %}
