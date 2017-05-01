@@ -1,4 +1,4 @@
-<h2>Related Posts for {{ page.tags }} {{ site.related_posts }}or :</h2>
+<h2>Other {{ page.tags | capitalize }} posts:</h2>
 {% for post in site.tags.{{ page.tags }} %}
 <ul style="margin: 0 35px; padding: 2px;">
     <li><h4><a href="{{ post.url }}">{{ post.title }}</a></h4></li>
