@@ -5,21 +5,18 @@ title:  "How to fix npm hung on addRemoteTarball"
 category: blog
 tags: npm
 ---
-I was trying to install a package today and `npm` just kept spinning and never finished. It is usually slow at work, but not this bad. I ran it with `--verbose` and got the following:
+I was trying to install a package today and `npm` just kept spinning and never finished. It is usually slow at work, but not this bad. I ran it with `--verbose` and got a line like the following:
 
 ```bash
 $ npm install -g gulp --verbose
----Hundreds of lines of config---
-npm verb addRemoteTarball https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz not in flight; adding
-npm verb addRemoteTarball [ 'https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz',
-npm verb addRemoteTarball   'd557e0a7283eb4136491969b0497767972f1d28a' ]
+npm verb addRemoteTarball   'xxxx' ]
 ```
 
 And then it wouldn't continue.
 
 The Problem
 ------------
-For my issue, I had two paths set in my `TMP` variable on Windows. You can check your `npm` config with `npm config ls -l`. Here is the line that was giving me issues:
+For my issue, I had two paths set in my `TMP` variable on Windows. You can check your `npm` config with `npm config ls -l`. Here is the line that was giving me trouble:
 
 ```bash
 $ npm config ls -l
@@ -30,7 +27,6 @@ Note the second path of `C:\\ffmpeg\\bin` separated by a `;`.
 The Solution (For Windows)
 ------------
 Change your `TMP` path to only have 1 location like so:
-
  1. From the desktop, right click the Computer icon. 
  2. Choose Properties from the context menu. 
  3. Click the Advanced system settings link.
@@ -40,3 +36,5 @@ Change your `TMP` path to only have 1 location like so:
  7. Delete the second string after the `;`
  8. Click OK. 
  9. Restart your `cmd` prompt or program you are using to access `npm`
+ 
+Now you can install packages like normal, but just remember to set the path of `TMP` back if you need it for a program like I do.

@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-21 20:00
 title:  "Working with directories that start with a - character"
 category: blog
-tags: linux
+tags: Linux
 redirect_from:
   - /archive/2017/03/working-with-directories-starting-with-a-dash.html
 ---

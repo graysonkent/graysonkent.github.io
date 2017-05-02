@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-27 21:00
 title:  "Find which Linux commands can make words out of their options"
 category: blog
-tags: bash
+tags: Linux
 redirect_from:
   - /archive/2017/03/find-which-linux-commands-can-make-words-with-their-options.html
 ---
