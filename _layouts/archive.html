@@ -22,7 +22,7 @@
           {% for category in sorted_cats %}
           <h2>{{ category[0] | capitalize }}s</h2>
                 {% assign current_cat = category[0] %}
-                {% assign sorted_tags = site.tags | sort:"site.tags.size" %}
+                {% assign sorted_tags = site.tags | sort:"site.tags[0].size" %}
                 {% for tag in sorted_tags %}
                 {% assign zz = tag[1] | where: "category",current_cat %}
                     {% if zz != empty %}
