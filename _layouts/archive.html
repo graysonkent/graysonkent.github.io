@@ -22,9 +22,9 @@
           {% for category in sorted_cats %}
           <h2>{{ category[0] | capitalize }}s</h2>
                 {% assign current_cat = category[0] %}
-                {% assign sorted_tags = site.tags  %}
+                {% assign sorted_tags = site.tags %}
                 {% for tag in sorted_tags %}
-                {% assign zz = tag[1] | where: "category",current_cat | sort:"tag.size" %}
+                {% assign zz = tag[1] | where: "category",current_cat | sort: "weight" %}
                     {% if zz != empty %}
                         <ul style="list-style-type: none; margin: 5px 10px; padding: 0;">
                             <li><b><span class="tag">{{ tag[0] }}</span></b>
