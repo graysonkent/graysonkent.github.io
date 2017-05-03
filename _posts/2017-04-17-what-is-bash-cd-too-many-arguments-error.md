@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-17 21:00
-title:  "Bash 4.4 cd Pattern Matching Regression"
+title:  "What is 'bash: cd: too many arguments' error?"
 category: blog
 tags: Linux
 redirect_from:
