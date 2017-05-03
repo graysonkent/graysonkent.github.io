@@ -18,7 +18,7 @@ The Problem
 ------------
 I had two paths set in my `TMP` variable on Windows. You can check your full `npm` config with `npm config ls -l`, but here is the line that was giving me trouble:
 
-```bash
+```terminal
 > npm config get tmp
 C:\Users\gkent\AppData\Local\Temp;C:\ffmpeg\bin
 ```
@@ -28,7 +28,7 @@ Option 1: Specify the TMP dir
 ------------
 You can add the real `TMP` location to your user config:
 
-```bash
+```terminal
 > npm config set tmp %USERPROFILE%\AppData\Local\Temp
 ```
 
@@ -36,7 +36,7 @@ To apply it globally, run the command with a `-g` flag at the end.
 
 You can also set `TMP` dir on each `npm` command like so:
 
-```bash
+```terminal
 > npm install --tmp %USERPROFILE%\AppData\Local\Temp -g gulp
 ```
 This is fine temporarily, but annoying to remember to do.

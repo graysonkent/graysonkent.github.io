@@ -7,7 +7,7 @@ tags: Ionic
 ---
 I got this error today why trying to build for Android using Ionic:
 
-```bash
+```terminal
 > ionic build android
 ANDROID_HOME=C:\Users\gkent\AppData\Local\Android\sdk
 
