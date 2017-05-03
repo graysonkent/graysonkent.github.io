@@ -1,31 +1,48 @@
 ---
 layout: post
 date: 2017-05-02 21:00
-title:  "How to fix npm hung on addRemoteTarball"
+title:  "How to fix npm hung on `addRemoteTarball`"
 category: blog
 tags: npm
 ---
 I was trying to install a package today and `npm` just kept spinning and never finished. It is usually slow at work, but not this bad. I ran it with `--verbose` and got a line like the following:
 
 ```bash
-$ npm install -g gulp --verbose
-npm verb addRemoteTarball   'xxxx' ]
+> npm install -g gulp --verbose
+npm verb addRemoteTarball   'xxxx' 
 ```
 
 And then it wouldn't continue.
 
 The Problem
 ------------
-For my issue, I had two paths set in my `TMP` variable on Windows. You can check your `npm` config with `npm config ls -l`. Here is the line that was giving me trouble:
+I had two paths set in my `TMP` variable on Windows. You can check your `npm` config with `npm config ls -l`. Here is the line that was giving me trouble:
 
 ```bash
-$ npm config ls -l
-tmp = "C:\\Users\\gkent\\AppData\\Local\\Temp;C:\\ffmpeg\\bin"
+> npm config get tmp
+C:\Users\gkent\AppData\Local\Temp;C:\ffmpeg\bin
 ```
 Note the second path of `C:\\ffmpeg\\bin` separated by a `;`.
 
-The Solution (For Windows)
+Option 1: Specify your `TMP` dir
 ------------
+You can add the real `TMP` location to your user config:
+
+```bash
+> npm config set tmp %USERPROFILE%\AppData\Local\Temp
+```
+
+To apply it globally, run the command with a `-g` flag at the end.
+
+You can also set `TMP` dir on each `npm` command like so:
+
+```bash
+> npm install --tmp %USERPROFILE%\AppData\Local\Temp -g gulp
+```
+This is fine temporarily, but annoying to remember to do.
+
+Option 2: Change the `TMP` env var
+-----
 Change your `TMP` path to only have 1 location like so:
  1. From the desktop, right click the Computer icon. 
  2. Choose Properties from the context menu. 
