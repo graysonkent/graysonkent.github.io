@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-02 21:00
-title:  "How to fix npm hung on `addRemoteTarball`"
+title:  "How to fix an npm install that is hung on addRemoteTarball"
 category: blog
 tags: npm
 ---
@@ -16,7 +16,7 @@ And then it wouldn't continue.
 
 The Problem
 ------------
-I had two paths set in my `TMP` variable on Windows. You can check your `npm` config with `npm config ls -l`. Here is the line that was giving me trouble:
+I had two paths set in my `TMP` variable on Windows. You can check your full `npm` config with `npm config ls -l`, but here is the line that was giving me trouble:
 
 ```bash
 > npm config get tmp
@@ -24,7 +24,7 @@ C:\Users\gkent\AppData\Local\Temp;C:\ffmpeg\bin
 ```
 Note the second path of `C:\\ffmpeg\\bin` separated by a `;`.
 
-Option 1: Specify your `TMP` dir
+Option 1: Specify the TMP dir
 ------------
 You can add the real `TMP` location to your user config:
 
@@ -41,7 +41,7 @@ You can also set `TMP` dir on each `npm` command like so:
 ```
 This is fine temporarily, but annoying to remember to do.
 
-Option 2: Change the `TMP` env var
+Option 2: Change the TMP environment variable
 -----
 Change your `TMP` path to only have 1 location like so:
  1. From the desktop, right click the Computer icon. 
