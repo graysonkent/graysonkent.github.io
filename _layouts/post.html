@@ -25,7 +25,7 @@
     </header>
         {% include mobileHeader.html %}
     <section itemscope itemtype ="http://schema.org/Blog" class="scroll-content">
-        {% assign words = content | number_of_words %}
+        {% assign words = content | strip_html | number_of_words %}
         <h2> {{ page.title }}</h2>
         <h4> {{ page.date | date: "%m/%d/%Y"}} • {% include readtime.html %}</h4>
         <hr>
