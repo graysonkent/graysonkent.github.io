@@ -11,9 +11,9 @@ This was buried surprisingly deep in the Jekyll documentation. To escape a block
 {% raw %}
 
 ```js
-{% raw %}
+{{ "{% raw " }}%}
 {{ page.tags }}
-{% endraw %}
+{{ "{% endraw " }}%}
 ```
 
 {% endraw %}
