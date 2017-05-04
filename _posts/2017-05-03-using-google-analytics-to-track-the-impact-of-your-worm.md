@@ -32,4 +32,6 @@ On the now defunct website of the worm author, you can read the code they used. 
 
 That just made my day. What's next? Using Google Analytics to track your phishing campaign that is a website on Google Cloud attacking Gmail users?
 
-If you are interested, [here](https://hastebin.com/gubegaqusi.xml) is an  archive of one their files. You can see they even leave the comments from the Google API example guide. It makes you wonder how much damage a more experienced dev could have done.
+If you are interested, [here](https://hastebin.com/gubegaqusi.xml) is an  archive of one of their files. They even leave the comments from the Google API example guide.
+ 
+It makes you wonder how much damage a more experienced dev could have done.
