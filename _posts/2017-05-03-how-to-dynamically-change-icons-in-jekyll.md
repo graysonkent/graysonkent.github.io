@@ -9,9 +9,12 @@ This is just a neat trick I picked up while building this site. Since I group by
 
 Here is the relevant part of my `post.html` in my `_layouts` folder that all posts pull their layout from:
 
+{% raw  %}
 ```html
 <link rel="icon" type="image/png" href="/assets/icons/{{ page.tags | first | downcase | strip | default: 'linux' }}.png">
 ```
+{% endraw %}
+
 This allows me to place icons for each tag, named in the format of the tag name and `.png` in my `/assets/icons/xxx.png` dir. It just grabs the first item in the tag array, so it won't work as well if you have a lot of tags. 
 
 > **Note:** You should specify the default logo in case you forget to add one.
