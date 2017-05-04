@@ -10,7 +10,7 @@ This was buried surprisingly deep in the Jekyll documentation. To escape a block
 
 ```js
 {{ "{% raw " }}%} 
-   {{ page.tags }}
+   {{ "{{ page.tags " }}}}
 {{ "{% endraw " }}%} 
 ```
 
