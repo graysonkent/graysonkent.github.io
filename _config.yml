@@ -4,9 +4,9 @@ author: Grayson Kent
 title: Grayson Kent's Personal Website
 logo: /assets/images/branch.png
 url: https://graysonskent.com
-job_title: Linux Systems Engineer
+job_title: Systems Engineer
 email: grayson@linux.com
-description:  Personal blog focusing on high-availability clustering, KVM virtualization, and other tech adventures
+description:  Personal blog focusing on Linux, Networking, Security, Virtualization, and other tech adventures
 avatar: /assets/images/face.jpg
 analytics_code:
 google_analytics: UA-79927650-1
