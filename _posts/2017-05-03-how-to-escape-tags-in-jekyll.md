@@ -9,11 +9,13 @@ description: "How to escape tags in Jekyll or Liquid to output literal curly bra
 This was buried surprisingly deep in the Jekyll documentation. To escape a block of code or tags, use the `{{ "{% raw " }}%}` tag like so:
 
 {% raw  %}
+
 ```js
-{{ "{% raw " }}%}
-{{ page.tags }}
-{{ "{% endraw " }}%}
+&#123;% raw  %&#125;
+   {{ page.tags }}
+&#123;% endraw %&#125;
 ```
+
 {% endraw %}
 
 Which will output the unformatted string of `{{ "{{ page.tags " }}}}`
