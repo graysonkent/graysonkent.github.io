@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-17 21:00
-title:  "What is 'bash: cd: too many arguments' error?"
+title:  "What is the 'bash: cd: too many arguments' error?"
 category: blog
 tags: Linux
 redirect_from:
