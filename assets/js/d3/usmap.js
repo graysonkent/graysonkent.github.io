@@ -15,7 +15,7 @@ var svg = d3.select(".chart").append("svg")
     .attr("height", height);
 queue()
     .defer(d3.json, "https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/us.json")
-    .defer(d3.csv, "/datasets/CompetitorStores.csv", function(d) {
+    .defer(d3.csv, "/assets/datasets/CompetitorStores.csv", function(d) {
         if (d.companyAin > 0 && d.companyBin > 0) d.color = "saddlebrown";
         else if (d.companyAin > 0) d.color = "green";
         else if (d.companyBin > 0) d.color = "mediumpurple";

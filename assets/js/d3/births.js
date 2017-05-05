@@ -10,7 +10,7 @@ var margin = {top: 50, right: 0, bottom: 1000, left: 40},
     colors = ["#ffffd9", "#edf8b1", "#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494", "#081d58"],
     month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
     times = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
-datasets = ["/datasets/births.csv"];
+datasets = ["/assets/datasets/births.csv"];
 
 var svg = d3.select(".chart").append("svg")
     .attr("width", width + margin.left + margin.right)
