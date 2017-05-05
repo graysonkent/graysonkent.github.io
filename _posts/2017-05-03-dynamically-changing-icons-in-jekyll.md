@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-03 4:00
-title:  "How to dynamically change icons in Jekyll"
+title:  "Dynamically changing icons in Jekyll"
 category: blog
 tags: Jekyll
 ---
@@ -17,7 +17,7 @@ Here is the relevant part of my `post.html` in my `_layouts` folder that all pos
 
 This allows me to place icons for each tag, named in the format of the tag name and `.png` in my `/assets/icons/xxx.png` dir. It just grabs the first item in the tag array, so it won't work as well if you have a lot of tags. 
 
-> **Note:** You should specify the default logo in case you forget to add one.
+>**Note:** You should specify the default logo in case you forget to add one.
 
 Improvements
 ----
