@@ -15,14 +15,14 @@ Handle Mode
 ------------
 In Handle Mode, activated by pressing the button circled in red, the top window shows active processes and the bottom shows handles opened by the process. 
 <p align="center">
-<img src="/assets/images/ProcessExplorer/HandleMode.png"/>
+<img src="/assets/images/ProcessExplorer/HandleMode.PNG"/>
 </p>
 
 DLL Mode
 ---------
 This is closer to what I was looking for. In this mode, the processes show the libraries and memory mapped files they have opened.
 <p align="center">
-<img src="/assets/images/ProcessExplorer/DLLMode.png"/>
+<img src="/assets/images/ProcessExplorer/DLLMode.PNG"/>
 </p>
 
 > **Side Note:** SysWOW64 is *actually* the folder for 32-bit applications on a 64-bit Windows install. It's a redirect for `%windir%System32`. Aptly named because you say "Wow" when you think about what decisions lead to that naming choice \s.
@@ -32,7 +32,7 @@ Search
 You can perform a lookup based on DLL or Handle name by navigating to **Find -> Find Handle or DLL** or pressing CTRL+F.
 
 <p align="center">
-<img src="/assets/images/ProcessExplorer/Search.png"/>
+<img src="/assets/images/ProcessExplorer/Search.PNG"/>
 </p>
 
 This could be useful for times when you can't delete a file because Windows says a process has a lock on it. So you can search by that file name and kill the associated process.
@@ -42,20 +42,20 @@ System Information Dashboard
 This was one of the most unexpected features for me. A beautiful (in my opinion) and simplistic performance dashboard.
 
 <p align="center">
-<img src="/assets/images/ProcessExplorer/Dashboard.png"/>
+<img src="/assets/images/ProcessExplorer/Dashboard.PNG"/>
 </p>
 
 The CPU detail View
 <p align="center">
-<img src="/assets/images/ProcessExplorer/CPUView.png"/>
+<img src="/assets/images/ProcessExplorer/CPUView.PNG"/>
 </p>
 
 Compare that with the dashboard in Task Manager
 <p align="center">
-<img src="/assets/images/ProcessExplorer/TaskManager.png"/>
+<img src="/assets/images/ProcessExplorer/TaskManager.PNG"/>
 </p>
 
-Replacing Task Manager Entirely
+Replacing Task Manager
 -------------------------------
 If I have won you over that Process Explorer is better than Task Manager, you can replace it on your system by choosing **Options -> Replace Task Manager**.
 
