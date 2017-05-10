@@ -5,6 +5,8 @@ title:  "Windows Process Explorer: A better Task Manager"
 category: blog
 tags: Windows
 ---
+> **Update:** A friend reminded me that Resource Monitor can do all of this, but I stand by Process Explorer for its simplicity and looks.
+
 I was playing around trying to port some device drivers on Windows 7 for fun and got really frustrated with the options for viewing library calls.  Compared to [`ltrace`](https://www.freebsd.org/cgi/man.cgi?query=ltrace&manpath=SuSE%20Linux/i386%2011.3) on UNIX-like platforms, there wasn't a readily apparent way to quickly view library calls in realtime that didn't involve writing some wrapper code.
 
 My issue, like most of my Microsoft problems, was solved by downloading a random .exe buried in the Microsoft Technet; this time [Process Explorer v16.2](https://technet.microsoft.com/en-us/sysinternals/bb896653.aspx). 
