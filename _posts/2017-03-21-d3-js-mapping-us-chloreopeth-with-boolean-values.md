@@ -2,7 +2,7 @@
 layout: post
 date: 2017-03-01 20:00
 title:  "US Choropleth by County with Boolean Values"
-category: visualization
+category: blog
 tags: D3
 d3Load: true
 redirect_from:

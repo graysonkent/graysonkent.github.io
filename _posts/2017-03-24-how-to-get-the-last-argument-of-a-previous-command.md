@@ -7,14 +7,6 @@ tags: Linux
 redirect_from:
   - /archive/2017/03/how-to-get-the-last-argument-of-a-previous-command.html
 ---
-**Short Answer**
-
-    !-2$
-    
-Where -2 is any integer describing how far back in history you want to go for the last command. So -3 would the third to last command you entered.
-
-**Long Answer**
-
 One of my favorite time-saving commands in Bash is `!$` which recalls the last argument of the last entered command. This is incredibly useful in situations like this:
 
 ```bash
