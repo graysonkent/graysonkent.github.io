@@ -134,7 +134,7 @@ You can make your own insults by modifying `plugins/sudoers/insults.h` to includ
     
     };
 
-
+ 
 Then make the file `plugins/sudoers/ins_glados.h` look something like this with some insults from GLaDOS:
 
 
