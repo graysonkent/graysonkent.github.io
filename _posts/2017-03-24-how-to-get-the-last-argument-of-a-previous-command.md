@@ -7,57 +7,153 @@ tags: Linux
 redirect_from:
   - /archive/2017/03/how-to-get-the-last-argument-of-a-previous-command.html
 ---
-One of my favorite time-saving commands in Bash is `!$` which recalls the last argument of the last entered command. This is incredibly useful in situations like this:
+You can spice up your day a little bit by enabling `sudo`'s insult option by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:
 
 ```bash
-$ mkdir superlongnamethatidontwanttotypeout
-$ cd !$ && pwd
-superlongnamethatidontwanttotypeout
+$ sudo su
+[sudo] password for gkent: 
+No soap, honkie-lips.
+[sudo] password for gkent: 
+You speak an infinite deal of nothing
+[sudo] password for gkent: 
+Take a stress pill and think things over.
 ```
 
-Similarly, `!!` recalls the entirety of the last command and `!-2` recalls the next to last command from history like so:
+Viewing them all
+----------------
+I wanted to see what the rest of the stored insults were, and didn't want to enter wrong passwords all day so I went looking for where the insults are stored.
 
 ```bash
-$ touch example1
-$ touch example2
-$ !-2
-touch example1    
-```                         
-This can be extended out with negative integers to go back lines in Bash history, or a positive integer to start from beginning.
+$ find /usr/lib/sudo -type f | xargs grep "Take a stress pill and think things over."
+Binary file /usr/lib/sudo/sudoers.so matches
+```
 
-> **Note:** If you need more functionality, you should really learn the [`fc` builtin command](https://www.systutorials.com/docs/linux/man/1p-fc/).  
-> It lets you yank a range of commands from history like `fc -2 -4`, throws it
-> in your `$EDITOR` for review, and then execute the command on exit.
-
-With the `!-2` logic in mind, I thought `!$-2` would work but you get the following result:
+Tells me that they are in `/usr/bin/sudo/sudoers.so`. That is a binary file though and not very human readable, so you have a few options to view them.
 
 ```bash
-$ touch example1
-$ touch example2
-$ vim !$-2
-vim example2-2
-```                           
-As you can see, that expands the last argument and then just inserts -2 instead of interpreting it as a negative line number as I want. I thought this was odd so I researched more and realized that I had a fundamental misunderstanding of how `!$` works.
+$ strings /usr/lib/sudo/sudoers.so | less
+```
 
-The [Bash Manual](https://www.gnu.org/software/bash/manual/bashref.html#Word-Designators) says:
-
-> `!!:$` designates the last argument of the preceding command.  
-> This may be shortened to `!$`.
-
-                    
-So `$` is actually an event specification on `!!` and thus `!$` is **not** a completely separate word designator from `!!` as I thought. Knowing that, we just need to use `!-2$` like so:
+Works but that is still 1594 lines of messy output to read through. For a cleaner view, download the `sudo` package and examine the `plugins/sudoers` file:
 
 ```bash
-$ touch example1
-$ touch example2
-$ vim !-2$
-vim example1      
-```         
-This gets us the last argument of the next to last command and can also be modified to grab different lines like the !-2 command.
+$ apt-get source sudo
+$ cat sudo*/plugins/sudoers/ins_*.h
+```
+    
+And you can see all of the insults:
 
-> **Note:** `$_` is another beast entirely as it works on executed commands and not entered commands like `!$` who needs something to be
-> in history for it to work.
+**HAL Insults:**
 
-Conclusion
-----------
-Bash History is an incredibly deep topic with a lot of interesting shortcuts. If you want learn more, I would suggest setting `shopt -s histverify` to get a better picture of how the shell interprets your commands.
+ - Just what do you think you're doing Dave?
+ - It can only be attributed to human error.
+ - That's something I cannot allow to happen.
+ - My mind is going. I can feel it.
+ - Sorry about this I know it's a bit silly.
+ - Take a stress pill and think things over.
+ - This mission is too important for me to allow you to jeopardize it.
+ - I feel much better now.
+
+**Classic Insults:**
+
+- And you call yourself a Rocket Scientist!
+- No soap honkie-lips.
+- Where did you learn to type?
+- Are you on drugs?
+- My pet ferret can type better than you!
+- You type like I drive.
+- Do you think like you type?
+- Your mind just hasn't been the same since the electro-shock has it?
+
+**CSOps Insults:**
+
+- Maybe if you used more than just two fingers...
+- BOB says:  You seem to have forgotten your passwd enter another!
+- stty: unknown mode: doofus
+- I can't hear you -- I'm using the scrambler.
+- The more you drive -- the dumber you get.
+- Listen, broccoli brains, I don't have time to listen to this trash.
+- Listen, burrito brains, I don't have time to listen to this trash.
+- I've seen penguins that can type better than that.
+- Have you considered trying to match wits with a rutabaga?
+- You speak an infinite deal of nothing
+
+**Goon Show Insults:**
+
+- You silly twisted boy you.
+- He has fallen in the water!
+- We'll all be murdered in our beds!
+- You can't come in. Our tiger has got flu
+- I don't wish to know that.
+- What what what what what what what what what what?
+- You can't get the wood you know.
+- You'll starve!
+- ... and it used to be so popular...
+- Pauses for audience applause not a sausage
+- Hold it up to the light --- not a brain in sight!
+- Have a gorilla...
+- There must be cure for it!
+- There's a lot of it about you know.
+- You do that again and see what happens...
+- Ying Tong Iddle I Po
+- Harm can come to a young lad like that!
+- And with that remarks folks the case of the Crown vs yourself was proven.
+- Speak English you fool --- there are no subtitles in this scene.
+- You gotta go owwwww!
+- I have been called worse.
+- It's only your word against mine.
+- I think ... err ... I think ... I think I'll go home
+
+Building your own insults
+-------------------------
+You can make your own insults by modifying `plugins/sudoers/insults.h` to include the following section in the `insults[]` array where your insults are called `glados`:
+
+```c
+char *insults[] = {
+
+# ifdef HAL_INSULTS
+#  include "ins_2001.h"
+# endif
+
+# ifdef GOONS_INSULTS
+#  include "ins_goons.h"
+# endif
+
+# ifdef CLASSIC_INSULTS
+#  include "ins_classic.h"
+# endif
+
+# ifdef CSOPS_INSULTS
+#  include "ins_csops.h"
+# endif
+
+# ifdef GLADOS_INSULTS
+#  include "ins_glados.h"
+# endif
+
+    (char *) 0
+
+};
+```
+
+Then make the file `plugins/sudoers/ins_glados.h` look something like this with some insults from GLaDOS:
+
+```c
+#ifndef _SUDO_INS_GLADOS_H
+#define _SUDO_INS_GLADOS_H
+
+    /*
+     * Custom Insult Examples from GLaDOS and Portal 2
+     */
+
+"Science has now validated your birth mother's decision to abandon you on a doorstep.",
+"Well done. Here come the test results: 'You are a horrible person.' That's what it says. We weren't even testing for that.",
+"Remember before when I was talking about smelly garbage standing around being useless? That was a metaphor. I was actually talking about you. And I'm sorry. You didn't react at the time so I was worried it sailed right over your head. That's why I had to call you garbage a second time just now.",
+"I honestly, truly didn't think you'd fall for that trap. In fact, I designed a much more elaborate trap further ahead for when you got through with this easy one. If I'd known you'd let yourself get captured this easily, I'd have dangled a turkey leg on a rope from the ceiling.",
+"He's not just a regular moron. He's the product of the greatest minds of a generation working together with the express purpose of building the dumbest moron who ever lived.",
+
+    
+#endif /* _SUDO_INS_GLADOS_H */
+```
+
+Now recompile `sudo` and you will be insulted however you like when you forget your password!
