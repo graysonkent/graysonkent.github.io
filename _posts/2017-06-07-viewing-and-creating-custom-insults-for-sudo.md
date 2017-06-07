@@ -5,31 +5,39 @@ title:  "Viewing and creating custom insults for sudo"
 category: blog
 tags: Linux
 ---
-You can spice up your day a little bit by enabling `sudo`'s insult option by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:
+You can spice up your day a little bit with `sudo`'s option to insult you when you enter a password wrong. You can set this by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:
 
-    $ sudo su
-    [sudo] password for gkent: 
-    No soap, honkie-lips.
-    [sudo] password for gkent: 
-    You speak an infinite deal of nothing
-    [sudo] password for gkent: 
-    Take a stress pill and think things over.
+```bash
+$ sudo su
+[sudo] password for gkent: 
+No soap, honkie-lips.
+[sudo] password for gkent: 
+You speak an infinite deal of nothing
+[sudo] password for gkent: 
+Take a stress pill and think things over.
+```
 
 Viewing them all
 ----------------
 I wanted to see what the rest of the stored insults were, and didn't want to enter wrong passwords all day so I went looking for where the insults are stored.
 
-    $ find /usr/lib/sudo -type f | xargs grep "Take a stress pill and think things over."
-    Binary file /usr/lib/sudo/sudoers.so matches
+```bash
+$ find /usr/lib/sudo -type f | xargs grep "Take a stress pill and think things over."
+Binary file /usr/lib/sudo/sudoers.so matches
+```
 
 Tells me that they are in `/usr/bin/sudo/sudoers.so`. That is a binary file though and not very human readable, so you have a few options to view them.
 
-    $ strings /usr/lib/sudo/sudoers.so | less
-    
+```bash
+$ strings /usr/lib/sudo/sudoers.so | less
+```
+
 Works but that is still 1594 lines of messy output to read through. For a cleaner view, download the `sudo` package and examine the `plugins/sudoers` file:
 
-    $ apt-get source sudo
-    $ cat sudo*/plugins/sudoers/ins_*.h
+```bash
+$ apt-get source sudo
+$ cat sudo*/plugins/sudoers/ins_*.h
+```
     
 And you can see all of the insults:
 
@@ -123,7 +131,10 @@ You can make your own insults by modifying `plugins/sudoers/insults.h` to includ
         (char *) 0
     
     };
+
+ 
 Then make the file `plugins/sudoers/ins_glados.h` look something like this with some insults from GLaDOS:
+
 
     #ifndef _SUDO_INS_GLADOS_H
     #define _SUDO_INS_GLADOS_H
@@ -140,5 +151,6 @@ Then make the file `plugins/sudoers/ins_glados.h` look something like this with 
     
         
     #endif /* _SUDO_INS_GLADOS_H */
+
 
 Now recompile `sudo` and you will be insulted however you like when you forget your password!
