@@ -7,7 +7,7 @@ tags: Linux
 redirect_from:
   - /archive/2017/03/how-to-get-the-last-argument-of-a-previous-command.html
 ---
-You can spice up your day a little bit by enabling `sudo`'s insult option by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:
+You can spice up your day a little bit with `sudo`'s option to insult you when you enter a password wrong. You can set this by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:
 
 ```bash
 $ sudo su
@@ -108,52 +108,51 @@ Building your own insults
 -------------------------
 You can make your own insults by modifying `plugins/sudoers/insults.h` to include the following section in the `insults[]` array where your insults are called `glados`:
 
-```c
-char *insults[] = {
+    char *insults[] = {
+    
+    # ifdef HAL_INSULTS
+    #  include "ins_2001.h"
+    # endif
+    
+    # ifdef GOONS_INSULTS
+    #  include "ins_goons.h"
+    # endif
+    
+    # ifdef CLASSIC_INSULTS
+    #  include "ins_classic.h"
+    # endif
+    
+    # ifdef CSOPS_INSULTS
+    #  include "ins_csops.h"
+    # endif
+    
+    # ifdef GLADOS_INSULTS
+    #  include "ins_glados.h"
+    # endif
+    
+        (char *) 0
+    
+    };
 
-# ifdef HAL_INSULTS
-#  include "ins_2001.h"
-# endif
-
-# ifdef GOONS_INSULTS
-#  include "ins_goons.h"
-# endif
-
-# ifdef CLASSIC_INSULTS
-#  include "ins_classic.h"
-# endif
-
-# ifdef CSOPS_INSULTS
-#  include "ins_csops.h"
-# endif
-
-# ifdef GLADOS_INSULTS
-#  include "ins_glados.h"
-# endif
-
-    (char *) 0
-
-};
-```
 
 Then make the file `plugins/sudoers/ins_glados.h` look something like this with some insults from GLaDOS:
 
-```c
-#ifndef _SUDO_INS_GLADOS_H
-#define _SUDO_INS_GLADOS_H
 
-    /*
-     * Custom Insult Examples from GLaDOS and Portal 2
-     */
-
-"Science has now validated your birth mother's decision to abandon you on a doorstep.",
-"Well done. Here come the test results: 'You are a horrible person.' That's what it says. We weren't even testing for that.",
-"Remember before when I was talking about smelly garbage standing around being useless? That was a metaphor. I was actually talking about you. And I'm sorry. You didn't react at the time so I was worried it sailed right over your head. That's why I had to call you garbage a second time just now.",
-"I honestly, truly didn't think you'd fall for that trap. In fact, I designed a much more elaborate trap further ahead for when you got through with this easy one. If I'd known you'd let yourself get captured this easily, I'd have dangled a turkey leg on a rope from the ceiling.",
-"He's not just a regular moron. He's the product of the greatest minds of a generation working together with the express purpose of building the dumbest moron who ever lived.",
-
+    #ifndef _SUDO_INS_GLADOS_H
+    #define _SUDO_INS_GLADOS_H
     
-#endif /* _SUDO_INS_GLADOS_H */
-```
+        /*
+         * Custom Insult Examples from GLaDOS and Portal 2
+         */
+    
+    "Science has now validated your birth mother's decision to abandon you on a doorstep.",
+    "Well done. Here come the test results: 'You are a horrible person.' That's what it says. We weren't even testing for that.",
+    "Remember before when I was talking about smelly garbage standing around being useless? That was a metaphor. I was actually talking about you. And I'm sorry. You didn't react at the time so I was worried it sailed right over your head. That's why I had to call you garbage a second time just now.",
+    "I honestly, truly didn't think you'd fall for that trap. In fact, I designed a much more elaborate trap further ahead for when you got through with this easy one. If I'd known you'd let yourself get captured this easily, I'd have dangled a turkey leg on a rope from the ceiling.",
+    "He's not just a regular moron. He's the product of the greatest minds of a generation working together with the express purpose of building the dumbest moron who ever lived.",
+    
+        
+    #endif /* _SUDO_INS_GLADOS_H */
+
 
 Now recompile `sudo` and you will be insulted however you like when you forget your password!
