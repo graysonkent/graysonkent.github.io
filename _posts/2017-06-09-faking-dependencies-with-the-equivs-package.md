@@ -9,10 +9,10 @@ Let's say a package you are trying to install has a crazy list of dependencies t
 
 One way to get around these requirements is to create a dummy package using [`equivs`](https://packages.ubuntu.com/trusty/equivs). 
 
-Creating a dummy package using `equivs`
+Creating a dummy package using equivs
 ---------------------------------------
 
- - Install it via `sudo apt-get install -y equivs` or your package manager
+ - Install via `sudo apt-get install -y equivs` or your package manager
  - Generate the control file using `equivs-control <packageToFake>`. This will generate a text file that looks something like this:
 
 ```bash
@@ -61,6 +61,4 @@ Description: fake package
 
 Please note that the Package name has to match what you are trying to replace, and the Version should be higher than the real package. The 1 in "1:50" refers to the [epoch number](http://www.fifi.org/doc/debian-policy/policy.html/ch-versions.html), which defaults to 0. 
 
- - Now you just need to build the dummy package with `equivs-build
-   packageToFake`. This will generate your `packagetofake_1.5_all.deb`
-   which you can now install like normal with `dpkg -i`
+Now you just need to build the dummy package with `equivs-build packageToFake`. This will generate your `packagetofake_1.5_all.deb` which you can now install like normal with `dpkg -i`
