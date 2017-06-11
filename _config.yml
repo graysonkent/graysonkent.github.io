@@ -1,15 +1,15 @@
 # General Settings
 name: Grayson Kent
 author: Grayson Kent
-title: Grayson Kent's Personal Website
+title: Grayson Kent
 logo: /assets/images/branch.png
 url: https://graysonskent.com
 job_title: Linux Systems Engineer
 email: grayson@linux.com
-description:  Personal blog focusing on Linux, Networking, Security, Virtualization, and other tech adventures
+description:  Grayson Kent's blog focusing on Linux, Networking, Security, Virtualization
 avatar: /assets/images/face.jpg
 analytics_code:
-google_analytics: UA-79927650-1
+google_analytics:
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title
@@ -26,7 +26,7 @@ name: Grayson Kent
 links:
   - https://www.linkedin.com/in/graysonkent
   - https://github.com/graysonkent
-  - http://stackexchange.com/users/8499248/grayson-kent?tab=accountst
+  - http://stackexchange.com/users/8499248/grayson-kent?tab=accounts
 
 # Webmaster verifications
 webmaster_verifications:
