@@ -5,9 +5,9 @@ title:  "How I won the Ionic 2017 Easter Egg hunt in under 5 minutes"
 category: blog
 tags: Miscellaneous
 ---
-On March 9th, Ionic posted announcing their [new beta and an easter egg hunt](http://blog.ionic.io/ionic-cli-v3-beta/). I didn't see it until the 13th and I love puzzles, so the hunt was on.
+On March 9th, Ionic announced their [new beta and an easter egg hunt](http://blog.ionic.io/ionic-cli-v3-beta/). I didn't see it until the 13th and I love puzzles, so the hunt was on.
 
-Step 1: Download and Unpack beta
+Step 1: Download and Unpack the beta
 ---------------------------------------------
 I downloaded the new beta with `npm install -g ionic@beta` and extracted the source:
 
@@ -56,9 +56,9 @@ diff --git a/source/package/dist/commands/ionitron.ts b/ionic-cli/packages/ionic
 Now, I can't convert hexadecimal in my head on the fly, but I have participated in enough "[underhanded](https://codegolf.stackexchange.com/questions/tagged/underhanded)" coding challenges on [codegolf.stackexchange.com](https://codegolf.stackexchange.com/) back in the day to recognize an attempt at obfuscation. 
 
 Sure enough, if I try `ionic ionitron`, I get the following: 
-![Ionitron Easter Egg](assets/images/easteregg.PNG)
+![Ionitron Easter Egg](../assets/images/easteregg.PNG)
 
 Conclusion
 ----------
 Hats off to the Ionic team for putting together a fun challenge, and I did end up getting a shirt out of it so I am happy:
-![Ionitron tshirt](assets/images/tshirt.jpg)
+![Ionitron tshirt](../assets/images/tshirt.jpg)
