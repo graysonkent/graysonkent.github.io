@@ -56,9 +56,15 @@ diff --git a/source/package/dist/commands/ionitron.ts b/ionic-cli/packages/ionic
 Now, I can't convert hexadecimal in my head on the fly, but I have participated in enough "[underhanded](https://codegolf.stackexchange.com/questions/tagged/underhanded)" coding challenges on [codegolf.stackexchange.com](https://codegolf.stackexchange.com/) back in the day to recognize an attempt at obfuscation. 
 
 Sure enough, if I try `ionic ionitron`, I get the following: 
-![Ionitron Easter Egg](../assets/images/easteregg.PNG)
+
+<p align="center">
+<img src="../assets/images/easteregg.PNG"/>
+</p>
 
 Conclusion
 ----------
 Hats off to the Ionic team for putting together a fun challenge, and I did end up getting a shirt out of it so I am happy:
-![Ionitron tshirt](../assets/images/tshirt.jpg)
+
+<p align="center">
+<img src="../assets/images/tshirt.jpg"/>
+</p>
