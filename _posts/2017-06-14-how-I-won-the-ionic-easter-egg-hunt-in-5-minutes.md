@@ -59,7 +59,7 @@ Now, I can't convert hexadecimal in my head on the fly, but I have participated 
 Sure enough, if I try `ionic ionitron`, I get the following: 
 
 <p align="center">
-<img src="../assets/images/easteregg.PNG"/>
+    <img src="../assets/images/easteregg.PNG" alt="Picture of the final easter egg with the Ionic Robot"/>
 </p>
 
 Conclusion
@@ -67,5 +67,5 @@ Conclusion
 Hats off to the Ionic team for putting together a fun challenge, and I did end up getting a shirt out of it so I am happy:
 
 <p align="center">
-<img src="../assets/images/tshirt.jpg"/>
+    <img src="../assets/images/tshirt.jpg" alt="Picture of the T-shirt I won with the Ionic Robot on it"/>
 </p>
