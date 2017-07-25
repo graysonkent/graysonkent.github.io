@@ -41,22 +41,22 @@ vue: true
     <p>With 8tracks.com's recent changes (limiting free listening to an hour, disabling international playback, etc.), I figured it was a good time to release this.</p>
     <p>Put in your 8tracks username to get a list of your favorited tracks. You can also use my <a href="https://github.com/graysonkent/misc-scripts/blob/master/bash/8tracks.sh">command-line version</a> if that is more your speed.</p>
     
-  </br>
+</br>
 
 <div style="font-size:40px; text-align:center">
-   <span>Username:</span>
-   <input type="text" v-model="username">
-   <a href="#" style="text-decoration:none;" @click.stop="fetchData">Load Favorites</a>
+  <span>Username:</span>
+  <input type="text" v-model="username">
+  <a href="#" style="text-decoration:none;" @click.stop="fetchData">Load Favorites</a>
 </div>
 
     
 <div contenteditable="true" v-if="tracks != null">
-   <table>
-     <tr align="left">
+<table>
+<tr align="left">
        <th>Song</th>
        <th>Artist</th>
      </tr>
-     <tr v-for="(item, index) in tracks" :key="item.name"/>
+<tr v-for="(item, index) in tracks" :key="item.name"/>
        <td>{{ item.name }}</td>
        <td>{{ item.performer }}</td>
      </tr>
