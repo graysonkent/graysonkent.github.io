@@ -46,21 +46,20 @@ window.onload = function () {
 <a href="#" style="text-decoration:none;" v-on:click="fetchData">Load Favorites</a>
 </div>
 
-    
 <div contenteditable="true" v-if="tracks != null">
 <table>
 <tr align="left">
-   <th>Song</th>
-   <th>Artist</th>
+<th>Song</th>
+<th>Artist</th>
 </tr>
 
 <tr v-for="(item, index) in tracks" :key="item.name"/>
-    <td>{{ item.name }}</td>
-    <td>{{ item.performer }}</td>
+<td>{{ item.name }}</td>
+<td>{{ item.performer }}</td>
 </tr>
-   </table>
+</table>
 
-   </div>
+</div>
      <h2>FAQ's</h2>
      <p><strong>Can I export the track list of my favorited mixes?</strong></p>
      <blockquote><p>No. That is near impossible as 8tracks.com very strongly protects the track list for each mix.</p></blockquote>
