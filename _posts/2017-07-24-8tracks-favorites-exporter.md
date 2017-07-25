@@ -9,7 +9,7 @@ vue: true
 <script type="text/javascript">
 window.onload = function () {
   var demo = new Vue({
-    el: '.scroll-content',
+    el: '.container',
     data: {
       username: 'therealginger',
       exportType: 'favorite_tracks',
