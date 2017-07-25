@@ -53,8 +53,8 @@ window.onload = function () {
 <th>Artist</th>
 </tr>
 <tr v-for="(item, index) in tracks" :key="item.name">
-<td>{{ item.name }}</td>
-<td>{{ item.performer }}</td>
+<td>{{ item[0].name }}</td>
+<td>{{ item[0].performer }}</td>
 </tr>
 </table>
 </div>
