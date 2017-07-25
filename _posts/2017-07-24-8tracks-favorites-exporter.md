@@ -52,13 +52,11 @@ window.onload = function () {
 <th>Song</th>
 <th>Artist</th>
 </tr>
-
-<tr v-for="(item, index) in tracks" :key="item.name"/>
+<tr v-for="(item, index) in tracks" :key="item.name">
 <td>{{ item.name }}</td>
 <td>{{ item.performer }}</td>
 </tr>
 </table>
-
 </div>
      <h2>FAQ's</h2>
      <p><strong>Can I export the track list of my favorited mixes?</strong></p>
