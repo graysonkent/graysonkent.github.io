@@ -24,11 +24,12 @@ vue: true
 <tr align="left">
    <th>Song</th>
    <th>Artist</th>
- </tr>
-<tr v-for="(item, index) in tracks" :key="item.name"/>
+</tr>
+
+<tr v-for="(item, index) in tracks" :key="item.name">
     <td>{{ item.name }}</td>
     <td>{{ item.performer }}</td>
- </tr>
+</tr>
    </table>
 
    </div>
