@@ -50,17 +50,17 @@ vue: true
 </div>
 
     
-  <div contenteditable="true" v-if="tracks != null">
-     <table>
-       <tr align="left">
-         <th>Song</th>
-         <th>Artist</th>
-       </tr>
-       <tr v-for="(item, index) in tracks" :key="item.name"/>
-         <td>{{ item.name }}</td>
-         <td>{{ item.performer }}</td>
-       </tr>
-     </table>
+<div contenteditable="true" v-if="tracks != null">
+   <table>
+     <tr align="left">
+       <th>Song</th>
+       <th>Artist</th>
+     </tr>
+     <tr v-for="(item, index) in tracks" :key="item.name"/>
+       <td>{{ item.name }}</td>
+       <td>{{ item.performer }}</td>
+     </tr>
+   </table>
 
    </div>
      <h2>FAQ's</h2>
