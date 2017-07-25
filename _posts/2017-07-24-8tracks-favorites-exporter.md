@@ -6,35 +6,7 @@ category: project
 tags: ['Web Apps']
 vue: true
 ---
-<script type="text/javascript">
-  window.onload = function () {
-    var demo = new Vue({
-      el: '.container',
-      data: {
-        username: 'therealginger',
-        exportType: 'favorite_tracks',
-        generaltracks: null,
-        tracks: null
-      },
-     watch: {
-        username: 'fetchData'
-      },
-      methods: {
-        fetchData: function () {
-          var xhr = new XMLHttpRequest()
-          var self = this
-          xhr.open('GET', 'https://8tracks.com/users/' + self.username + '/favorite_tracks?per_page=300&format=jsonh')
-          xhr.onload = function () {
-            self.generaltracks = JSON.parse(xhr.responseText)
-            self.tracks = self.generaltracks.favorite_tracks
-          }
-          xhr.send()
-        }
-      }
-    })
-  }
-
-</script>
+<script  src="\assets\js\vue\8tracks.js"></script>
 
   <div class="container">
     <p>Ever since Grooveshark shut down, I have been really cautious about storing all my music online.</p>
@@ -71,5 +43,5 @@ vue: true
      <p><strong>Can you provide the link for each song instead?</strong></p>
      <blockquote><p>No. 8tracks hooks into the youtube api to do that (poorly) and that would cost me money, so you will have to find links on your own.</p></blockquote>
      <p><strong>What will you do with my data?</strong></p>
-     <blockquote><p>Nothing. I don't even have Google analytics turned on for this website and I don't log anything. Feel free to look at the <a href="">source</a> or view my <a href="https://github.com/graysonkent/misc-scripts/blob/master/bash/8tracks.sh">command-line version</a></p></blockquote>
+     <blockquote><p>Nothing. I don't even have Google analytics turned on for this website and I don't log anything. Feel free to look at the <a href="https://github.com/graysonkent/graysonkent.github.io/blob/master/_posts/2017-07-24-8tracks-favorites-exporter.md">source</a> or view my <a href="https://github.com/graysonkent/misc-scripts/blob/master/bash/8tracks.sh">command-line version</a></p></blockquote>
   </div>
