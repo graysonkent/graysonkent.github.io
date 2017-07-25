@@ -83,7 +83,7 @@ To rebuild `sudo` without the `--without-lecture` flag:
     ```
  3. Follow the steps from the Easy Method above to finish the process.
  
-	Now you can re-alias your new `sudo` and proudly display your work!
+ Now you can re-alias your new `sudo` and proudly display your work!
 	
 The Hardest Way
 ---------------
@@ -101,14 +101,14 @@ Since you have to rebuild `sudo` anyway, you can override the default lecture wi
  2. Edit the file containing the default lecture prompt. (Hint: `grep -nR lecture .`)(Further hint: `plugins/sudoers/check.c`)
  3. Change the following block to your desired message:
  
- ```c
- #define DEFAULT_LECTURE "\n" \
-    "We trust you have received the usual lecture from the local System\n" \
-    "Administrator. It usually boils down to these three things:\n\n" \
-    "    #1) Respect the privacy of others.\n" \
-    "    #2) Think before you type.\n" \
-    "    #3) With great power comes great responsibility.\n\n"
-```
+    ```c
+     #define DEFAULT_LECTURE "\n" \
+        "We trust you have received the usual lecture from the local System\n" \
+        "Administrator. It usually boils down to these three things:\n\n" \
+        "    #1) Respect the privacy of others.\n" \
+        "    #2) Think before you type.\n" \
+        "    #3) With great power comes great responsibility.\n\n"
+    ```
 
  4. Make `sudo`
  
