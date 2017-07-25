@@ -28,6 +28,7 @@ window.onload = function () {
           self.generaltracks = JSON.parse(xhr.responseText);
           self.tracks = self.generaltracks.favorite_tracks;
           console.log(self.tracks);
+          console.log(self.generaltracks);
         };
         xhr.send()
       }
