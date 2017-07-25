@@ -41,5 +41,5 @@ vue: true
      <p><strong>Can you provide the link for each song instead?</strong></p>
      <blockquote><p>No. 8tracks hooks into the youtube api to do that (poorly) and that would cost me money, so you will have to find links on your own.</p></blockquote>
      <p><strong>What will you do with my data?</strong></p>
-     <blockquote><p>Nothing. I don't even have Google analytics turned on for this website and I don't log anything. Feel free to look at the <a href="https://github.com/graysonkent/graysonkent.github.io/blob/master/_posts/2017-07-24-8tracks-favorites-exporter.md">source</a> or view my <a href="https://github.com/graysonkent/misc-scripts/blob/master/bash/8tracks.sh">command-line version</a></p></blockquote>
+     <blockquote><p>Nothing. I don't even have Google analytics turned on for this website and I don't log anything. Feel free to look at the <a href="https://github.com/graysonkent/graysonkent.github.io/blob/master/assets/js/vue/8tracks.js">source</a> or view my <a href="https://github.com/graysonkent/misc-scripts/blob/master/bash/8tracks.sh">command-line version</a></p></blockquote>
   </div>
