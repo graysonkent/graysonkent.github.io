@@ -8,16 +8,14 @@ vue: true
 ---
 <script  src="\assets\js\vue\8tracks.js"></script>
 
-  <div class="container">
+<div class="container">
     <p>Ever since Grooveshark shut down, I have been really cautious about storing all my music online.</p>
     <p>With 8tracks.com's recent changes (limiting free listening to an hour, disabling international playback, etc.), I figured it was a good time to release this.</p>
     <p>Put in your 8tracks username to get a list of your favorited tracks. You can also use my <a href="https://github.com/graysonkent/misc-scripts/blob/master/bash/8tracks.sh">command-line version</a> if that is more your speed.</p>
-    
-
 <div style="font-size:40px; text-align:center">
 <span>Username:</span>
 <input type="text" v-model="username"></input>
-<a href="#" style="text-decoration:none;" @click.stop="fetchData">Load Favorites</a>
+<!--<a href="#" style="text-decoration:none;" @click.stop="fetchData">Load Favorites</a>-->
 </div>
 
     
