@@ -15,7 +15,7 @@ vue: true
 <div style="font-size:40px; text-align:center">
 <span>Username:</span>
 <input type="text" v-model="username">
-<a href="#" @click.stop="fetchData">Load Favorites</a>
+<a href="#" style="text-decoration:none;">Load Favorites</a>
 </div>
 
     
