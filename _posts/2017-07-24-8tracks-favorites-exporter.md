@@ -3,7 +3,7 @@ layout: post
 date: 2017-07-24 20:00
 title:  "8tracks.com Favorites Exporter"
 category: project
-tags: 'Web Apps'
+tags: ['Web Apps']
 vue: true
 ---
 <script type="text/javascript">
