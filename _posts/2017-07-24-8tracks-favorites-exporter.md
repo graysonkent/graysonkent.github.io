@@ -43,7 +43,7 @@ window.onload = function () {
 <div style="font-size:40px; text-align:center">
 <span>Username:</span>
 <input type="text" v-model="username">
-<a href="#" style="text-decoration:none;" v-on:click="fetchData">Load Favorites</a>
+<a href="#" style="text-decoration:none;" @click="fetchData">Load Favorites</a>
 </div>
 
 <div contenteditable="true" v-if="tracks != null">
