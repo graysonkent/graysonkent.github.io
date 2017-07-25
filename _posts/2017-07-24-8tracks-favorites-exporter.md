@@ -22,13 +22,13 @@ vue: true
 <div contenteditable="true" v-if="tracks != null">
 <table>
 <tr align="left">
-       <th>Song</th>
-       <th>Artist</th>
-     </tr>
+   <th>Song</th>
+   <th>Artist</th>
+ </tr>
 <tr v-for="(item, index) in tracks" :key="item.name"/>
-       <td>{{ item.name }}</td>
-       <td>{{ item.performer }}</td>
-     </tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.performer }}</td>
+ </tr>
    </table>
 
    </div>
