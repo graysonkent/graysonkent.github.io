@@ -6,7 +6,35 @@ category: project
 tags: ['Web Apps']
 vue: true
 ---
-<script  src="\assets\js\vue\8tracks.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+  var demo = new Vue({
+    el: '.container',
+    data: {
+      username: 'therealginger',
+      exportType: 'favorite_tracks',
+      generaltracks: null,
+      tracks: null
+    },
+    watch: {
+      username: 'fetchData'
+    },
+    methods: {
+      fetchData: function () {
+        var xhr = new XMLHttpRequest();
+        var self = this;
+        xhr.open('GET', 'https://8tracks.com/users/' + self.username + '/favorite_tracks?per_page=300&format=jsonh')
+        xhr.onload = function () {
+          self.generaltracks = JSON.parse(xhr.responseText);
+          self.tracks = self.generaltracks.favorite_tracks;
+          console.log(self.tracks);
+        };
+        xhr.send()
+      }
+    }
+  })
+};
+</script>
 
 <div class="container">
     <p>Ever since Grooveshark shut down, I have been really cautious about storing all my music online.</p>
