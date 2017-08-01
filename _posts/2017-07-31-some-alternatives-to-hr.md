@@ -78,7 +78,7 @@ Restrictions:
 -----------------
 I am trying to keep feature-parity with `hr` so my program needs to print the 32767 required characters. It will default to the `#` character to fill the screen if no other character is supplied as the first argument. 
 
-I am trying for speed, not readability or maintainability. I will use `GNU time 1.7` with an average of 3 tries to control for the I/O cache. 
+I am trying for speed, not readability or maintainability. I will use `Bash time` with an average of 3 tries to control for the I/O cache. 
 
 My first (naive) one-liner attempt
 ---------------------------------
@@ -97,19 +97,19 @@ Doing 25 seconds better so far,  but I want faster.
 
 Seq to tr
 ------------
-Let's cut out printing statements entirely and trust my reliable builtin friends:
+Let's cut out printing statements entirely:
 
 ```bash
 seq -s"${*:-#}" "$(tput cols)"|tr -d '[:digit:]'
 ```
 
 ```bash
-$ time ./olreliables
+$ time ./sequenced
 real	0m0.039s
 user	0m0.009s
 sys	0m0.005s
 ```
-Much better! But I bet we can get it faster
+Much better! But I bet we can get it faster.
 
 /dev/zero Speedup
 ---------------------------
