@@ -83,7 +83,7 @@ I am trying for speed, not readability or maintainability. I will use `GNU time 
 My first (naive) one-liner attempt
 ---------------------------------
 ```bash
-CHARS=${*:-#};printf -v LINES'%*s' "$(tput cols)";echo "${LINES// /$CHARS}"
+printf -v LINES '%*s' "$(tput cols)";echo "${LINES// /${*:-#}}"
 ```
 I tried to avoid the loops entirely and went for an approach combining `echo` and `printf`. 
 
@@ -100,7 +100,7 @@ Seq to tr
 Let's cut out printing statements entirely and trust my reliable builtin friends:
 
 ```bash
-CHARS=${*:-#};LINES="$(tput cols)";seq -s"$CHARS" "$LINES"|tr -d '[:digit:]'
+seq -s"${*:-#}" "$(tput cols)"|tr -d '[:digit:]'
 ```
 
 ```bash
@@ -116,7 +116,7 @@ Much better! But I bet we can get it faster
 A favorite trick of mine when needing to generate anything quickly is abusing `/dev/zero`:
 
 ```bash
-CHARS=${*:-#};LINES="$(tput cols)";head -c "$LINES" /dev/zero | tr '\0' "$CHARS"
+head -c "$(tput cols)" /dev/zero | tr '\0' "${*:-#}"
 ```
 
 ```bash
@@ -127,10 +127,10 @@ sys	0m0.003s
 ```
 Great! Saving that crucial .009s of runtime. Critics might point out that this isn't POSIX because of the `head -c` part, so let's fix that. 
 
-POSIXy Way
+POSIX-ish Way
 ----------------
 ```bash
-CHARS=${*:-#};LINES="$(tput cols)";printf '%*s' "$LINES" | tr ' ' "$CHARS"
+printf '%*s' "$(tput cols)" | tr ' ' "${*:-#}"
 ```
 ```bash
 $ time ./funpolice
@@ -138,19 +138,19 @@ real	0m0.030s
 user	0m0.000s
 sys	0m0.003s
 ```
-Perfect. Now it is fast and can satisfy everyone. Here is the code-golfed version:
+Perfect. Now it is fast and can satisfy everyone. Here is the code-golfed (and unsafe )version:
 
 ```bash
-C=${*:-#};L=`tput cols`;printf '%*s' $L|tr ' ' $C
+printf '%*s' `tput cols`|tr ' ' ${*:-#}
 ```
-49 bytes of fast code. But that got me thinking: "Since we are manipulating text, won't `perl` be faster?"
+39 bytes of fast code. But that got me thinking: "Since we are manipulating text, won't `perl` be faster?"
 
 Perl 5 way
 --------------
 Obviously, there are about 500 different ways to write this in `Perl` so I am not going to try them all, but here is the first one I wrote:
 
 ```bash
-$ARGV[0]||='#';$K=`tput cols`;print"$ARGV[0]"x$K;
+printf"${ARGV[0]||='#'}"x`tput cols`
 ```
 This gets me:
 ```bash
@@ -159,7 +159,7 @@ real	0m0.029s
 user	0m0.009s
 sys	0m0.002s
 ```
-So a .001s savings. Not as much as I thought it would be. 
+So a .001s savings, but in only 36 Bytes. Not as much as I thought it would be. 
 
 Conclusion
 ---------------
