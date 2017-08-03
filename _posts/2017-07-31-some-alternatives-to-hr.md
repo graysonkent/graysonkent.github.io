@@ -3,7 +3,7 @@ layout: post
 date: 2017-07-31 23:00
 title:  "Some alternatives to the terminal hr"
 category: blog
-tags: Miscellaneous
+tags: Linux
 ---
 I was helping my friend track down a bug in their spider webs of Bash scripts when I ran across a library named [hr](https://github.com/LuRsT/hr). I had never heard of it, but it bills itself as  "A horizontal ruler for your terminal". This works by outputting characters (default is #) to the length of your terminal screen. Not something I see the need for, but apparently over 1,000 people on Github do.
 
@@ -179,7 +179,7 @@ C Method
 --------
 [Galaktos](https://www.reddit.com/user/galaktos), on my Reddit [post](https://www.reddit.com/r/bash/comments/6qvwlg/some_alternatives_the_hr_library/), suggested this solution:
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
