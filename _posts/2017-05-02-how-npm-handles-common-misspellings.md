@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-02 23:00
-title:  "How npm handles common misspellings"
+title:  "The way npm handles common misspellings"
 category: blog
 tags: npm
 ---

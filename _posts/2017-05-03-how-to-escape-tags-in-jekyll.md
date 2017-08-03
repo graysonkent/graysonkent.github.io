@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-03 6:00
-title:  "How to escape tags in Jekyll"
+title:  "Escaping tags in Jekyll"
 category: blog
 tags: Jekyll
 description: "How to escape tags in Jekyll or Liquid to output literal curly braces"
