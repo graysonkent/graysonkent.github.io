@@ -87,7 +87,7 @@ $ seq 15 |factor | sed 's/.*3 * 5.*/FizzBuzz/g'
 14: 2 7
 FizzBuzz
 ```
-> I am kind of cheating here. Since 15 isn't a prime number, it can't be included in `factor`, but instead I can look to see if 3 and 5 appear on the same line. If these were any other number pairs I might have to worry, but since anything ending with a 3 is divisible by 3 and the same for 5, then I am good to just ignore the `??: ` output from `factor`.
+> **Note:** I am kind of cheating here. Since 15 isn't a prime number, it can't be included in `factor`, but instead I can look to see if 3 and 5 appear on the same line. If these were any other number pairs I might have to worry, but since anything ending with a 3 is divisible by 3 and the same for 5, then I am good to just ignore the `??: ` output from `factor`.
 
 Alright, let's add in the tests for 3 and 5:
 
