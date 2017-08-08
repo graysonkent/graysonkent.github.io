@@ -63,6 +63,8 @@ I'll handle the non-prime (15) in the next step.
 
 Step 3: Formatting our lines
 ----------------------------------------
+First off, I want to say thank you to [/u/neilmoore](https://www.reddit.com/user/neilmoore) for fixing some issues with my first script.
+
 Alright, we have our list and our factors. Let's start FizzBuzzing.
 
 I chose `sed` over my preferred tool for this kind of job (`awk`) because of the modulus operator issue again.
@@ -92,7 +94,7 @@ FizzBuzz
 Alright, let's add in the tests for 3 and 5:
 
 ```bash
-$ seq 100 | factor | sed 's/.*3 * 5.*/FizzBuzz/g; s/.* 5.*/Buzz/g; s/.* 3.*/Fizz/g;'
+$ seq 100 | factor | sed 's/.*3 * 5.*/FizzBuzz/g; s/.* 5\( .*\|$\)/Buzz/g; s/.* 3\( .*\|$\)/Fizz/g'
 1:
 2: 2
 Fizz
@@ -115,7 +117,7 @@ FizzBuzz
 We're getting there now. The last remaining issue is to get rid of the `factor` output of primes after the `:` sign with one more chained `sed` command:
 
 ```bash
-$ seq 100 | factor | sed 's/.*3 * 5.*/FizzBuzz/g; s/.* 5.*/Buzz/g; s/.* 3.*/Fizz/g; s/:.*//g'
+$ seq 100 | factor | sed 's/.*3 * 5.*/FizzBuzz/g; s/.* 5\( .*\|$\)/Buzz/g; s/.* 3\( .*\|$\)/Fizz/g; s/:.*//g'
 1
 2
 Fizz
