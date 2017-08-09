@@ -12,7 +12,7 @@ The only thing I really want now was an actual [Pac-Man](https://en.wikipedia.or
 Of course, that is an option:
 
 <p align="center">
-    <img src="../assets/images/pacman.gif" alt="Screenshot of the Pac-Man script"/>
+    <img src="../assets/images/Pacman.gif" alt="Screenshot of the Pac-Man script"/>
 </p>
 
 Notice the cute little yellow guy on the download progress bar section.
