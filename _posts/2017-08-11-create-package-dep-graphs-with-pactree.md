@@ -32,7 +32,7 @@ $ pactree -g bash | dot -T png > bash.png
 Which generates this picture:
 
 <p align="center">
-    <img src="../assets/images/bash.PNG" alt="Output of Bash dependencies"/>
+    <img src="../assets/images/bash.png" alt="Output of Bash dependencies"/>
 </p>
 
 This can be use on any package. Use the following to see all installed packages:
@@ -80,7 +80,7 @@ $ pactree -gr iana-etc | dot -T png > iana.png
 Which generates this crazy picture:
 
 <p align="center">
-    <img src="../assets/images/iana.PNG" alt="Output of packages that depend on iana-etc"/>
+    <img src="../assets/images/iana.png" alt="Output of packages that depend on iana-etc"/>
 </p>
 
 Conclusion
