@@ -77,10 +77,12 @@ It looks like [`iana-etc`](https://www.archlinux.org/packages/core/any/iana-etc/
 $ pactree -gr iana-etc | dot -T png > iana.png
 ```
 
-Which generates this crazy picture:
+Which generates this picture (Click on it to see the full craziness):
 
 <p align="center">
-    <img src="../assets/images/iana.png" alt="Output of packages that depend on iana-etc"/>
+    <a href="../assets/images/iana.png">
+        <img src="../assets/images/iana.png" alt="Output of packages that depend on iana-etc"/>
+    </a>
 </p>
 
 Conclusion
