@@ -36,7 +36,9 @@ Which generates this picture:
     <img src="../assets/images/bash.png" alt="Output of Bash dependencies"/>
 </p>
 
-This can be use on any package and several different output formats. Use the following to see all installed packages:
+This can be used on any package and there are several different output formats (`man dot` for more).
+
+Use the following to see all installed packages:
 
 ```bash
 $ pacman -Q
@@ -51,9 +53,7 @@ Another interesting option is to reverse the output:
 >
 > Show packages that depend on the named package
 
-With that in mind, let's find what package on our system is the most relied on.
-
-Here is a dirty script to find it (I'm sure there is a better way/`pacman` option I don't know):
+Here is a dirty script to find what package on our system is the most relied on (I'm sure there is a better way/`pacman` option I don't know):
 
 ```bash
 $ pacman -Q | cut -f 1 -d " " | xargs -I % sh -c 'pactree -r -u % | echo "$(wc -l) %";' | sort -nr
@@ -78,7 +78,7 @@ It looks like [`iana-etc`](https://www.archlinux.org/packages/core/any/iana-etc/
 $ pactree -gr iana-etc | dot -T png > iana.png
 ```
 
-Which generates a 11.5 MB, 22805px x 2267px image. I won't embed it here to save people's data usage. <a href="../assets/images/iana.png">Click here to see the full craziness.</a>
+Which generates a 11.5 MB, 22,805px x 2,267px image. I won't embed it here to save people's data usage. <a href="../assets/images/iana.png">Click here to see the full craziness.</a>
 
 
 Conclusion
