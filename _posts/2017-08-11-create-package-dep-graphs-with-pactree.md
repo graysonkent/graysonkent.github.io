@@ -38,12 +38,6 @@ Which generates this picture:
 
 This can be used on any package and there are several different output formats (`man dot` for more).
 
-Use the following to see all installed packages:
-
-```bash
-$ pacman -Q
-```
-
 Reverse it
 --------------
 
@@ -53,7 +47,7 @@ Another interesting option is to reverse the output:
 >
 > Show packages that depend on the named package
 
-Here is a dirty script to find what package on our system is the most relied on (I'm sure there is a better way/`pacman` option I don't know):
+I'm sure there is a better way or a `pacman` option I don't know of, but here is a dirty script to find the most relied on package:
 
 ```bash
 $ pacman -Q | cut -f 1 -d " " | xargs -I % sh -c 'pactree -r -u % | echo "$(wc -l) %";' | sort -nr
@@ -70,7 +64,7 @@ $ pacman -Q | cut -f 1 -d " " | xargs -I % sh -c 'pactree -r -u % | echo "$(wc -
 #### Continues for 460 lines ####
 ```
 
-We are just using `pacman` to display all packages, passing it to `pactree` to display all the packages that depend on it, then parsing out to a sorted list.
+> **Note:** We are just using `pacman` to display all packages, passing it to `pactree` to display all the packages that depend on it, then parsing out to a sorted list.
 
 It looks like [`iana-etc`](https://www.archlinux.org/packages/core/any/iana-etc/) is the most depended on package in my system, so let's see what that graph looks like:
 
@@ -78,7 +72,7 @@ It looks like [`iana-etc`](https://www.archlinux.org/packages/core/any/iana-etc/
 $ pactree -gr iana-etc | dot -T png > iana.png
 ```
 
-Which generates a 11.5 MB, 22,805px x 2,267px image. I won't embed it here to save people's data usage. <a href="../assets/images/iana.png">Click here to see the full craziness.</a>
+Which generates a huge 11.5 MB, 22,805px x 2,267px image, but I won't embed it here to save people's data usage. <a href="../assets/images/iana.png">Click here to see the full craziness.</a>
 
 
 Conclusion
