@@ -16,6 +16,7 @@ Here is a quick description:
 What really interested me though was the `-g` switch:
 
 > -g, --graph
+>
 > Generate a Graphviz description. If this option is given, the --color and --linear options are ignored.
 
 I like this because now I can use it to generate dependency graphs with [`GraphViz`](https://linux.die.net/man/3/graphviz).
@@ -46,9 +47,9 @@ Reverse it
 
 Another interesting option is to reverse the output:
 
-    -r, --reverse
-
-    Show packages that depend on the named package
+> -r, --reverse
+>
+> Show packages that depend on the named package
 
 With that in mind, let's find what package on our system is the most relied on.
 
