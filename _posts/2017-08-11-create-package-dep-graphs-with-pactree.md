@@ -36,7 +36,7 @@ Which generates this picture:
     <img src="../assets/images/bash.png" alt="Output of Bash dependencies"/>
 </p>
 
-This can be use on any package. Use the following to see all installed packages:
+This can be use on any package and several different output formats. Use the following to see all installed packages:
 
 ```bash
 $ pacman -Q
@@ -78,13 +78,8 @@ It looks like [`iana-etc`](https://www.archlinux.org/packages/core/any/iana-etc/
 $ pactree -gr iana-etc | dot -T png > iana.png
 ```
 
-Which generates this picture (Click on it to see the full craziness):
+Which generates a 11.5 MB, 22805px x 2267px image. I won't embed it here to save people's data usage. <a href="../assets/images/iana.png">Click here to see the full craziness.</a>
 
-<p align="center">
-    <a href="../assets/images/iana.png">
-        <img src="../assets/images/iana.png" alt="Output of packages that depend on iana-etc"/>
-    </a>
-</p>
 
 Conclusion
 ---------------
