@@ -3,7 +3,7 @@ layout: post
 date: 2017-08-09 23:00
 title:  "Adding an actual Pacman to the Pacman Package Manager"
 category: blog
-tags: Arch
+tags: ['Arch Linux']
 ---
 After recently switching over a few dozen dev tool servers to Arch Linux, I have embraced how amazing its package manager [Pacman](https://wiki.archlinux.org/index.php/pacman) really is. With Arch being a rolling release, it obviously needs to be very good at handling complex packaging situations and I haven't found anything it doesn't excel at yet.
 
