@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'OperatorMono-Medium';
+  src: url('OperatorMono-Medium.woff') format('woff'),
+       url('OperatorMono-Medium.ttf') format('truetype'),
+       url('OperatorMono-Medium.svg#OperatorMono-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
