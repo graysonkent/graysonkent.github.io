@@ -36,6 +36,17 @@
         font-weight: normal;
         font-style: normal;
     }
+    @font-face {
+        font-family: 'OperatorMono-BookItalic';
+        src: url('/assets/fonts/Operator-Mono-Book-Italic/OperatorMono-BookItalic.eot');
+        src: url('/assets/fonts/Operator-Mono-Book-Italic/OperatorMono-BookItalic.woff') format('woff'),
+        url('/assets/fonts/Operator-Mono-Book-Italic/OperatorMono-BookItalic.ttf') format('truetype'),
+        url('/assets/fonts/Operator-Mono-Book-Italic/OperatorMono-BookItalic.svg#OperatorMono-BookItalic') format('svg'),
+        url('/assets/fonts/Operator-Mono-Book-Italic/OperatorMono-BookItalic.eot?#iefix') format('embedded-opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
 
     body {
         background-color: #f9f9f9;
@@ -506,8 +517,12 @@
     .highlight .nx {
         color:#D3D3D3;
     }
+    .highlight .c {
+        color:#97abb1;
+        font: "OperatorMono-BookItalic";
+    }
 
-    .highlight .c,.highlight .cm,.highlight .c1,.highlight .sb {
+    .highlight .cm,.highlight .c1,.highlight .sb {
         color:#97abb1;
     }
 
