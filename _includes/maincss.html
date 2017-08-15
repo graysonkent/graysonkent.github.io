@@ -35,10 +35,20 @@
         font-weight: normal;
         font-style: normal;
     }
+    @font-face {
+        font-family: 'OperatorMono-XLightItalic';
+        src: url('/assets/fonts/Operator-Mono-xlight-italic/OperatorMono-XLightItalic.eot');
+        src: url('/assets/fonts/Operator-Mono-xlight-italic/OperatorMono-XLightItalic.woff') format('woff'),
+        url('/assets/fonts/Operator-Mono-xlight-italic/OperatorMono-XLightItalic.ttf') format('truetype'),
+        url('/assets/fonts/Operator-Mono-xlight-italic/OperatorMono-XLightItalic.svg#OperatorMono-XLightItalic') format('svg'),
+        url('/assets/fonts/Operator-Mono-xlight-italic/OperatorMono-XLightItalic.eot?#iefix') format('embedded-opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
     body {
         background-color: #f9f9f9;
-        font: 18px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 18px/1.5 "OperatorMono-Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 400;
         padding: 50px;
         width: auto;
@@ -125,7 +135,7 @@
 
     code,
         pre {
-        font-family: "OperatorMono-Medium", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+        font-family: "OperatorMono-XLightItalic", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
         background-color: #eff0f1;
         font-size: 16px;
         white-space: pre-wrap;
