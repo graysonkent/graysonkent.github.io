@@ -42,7 +42,7 @@ With that in mind, let me introduce `factor`:
 Since 3 and 5 are both prime, then we can skate by using `factor` on each number, like in this shorter example:
 
 ```bash
-seq 10 | factor
+$ seq 10 | factor
 1:
 2: 2
 3: 3
