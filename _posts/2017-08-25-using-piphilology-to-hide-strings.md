@@ -43,7 +43,7 @@ You found a good man
 ```
 You can [try it online](https://tio.run/##bVNLa@QwDL77V4hSmvYUdv/B7G0OhYUWykIYcGJN7B3HmvWjITD/fSrZ7baHYuL4Iel7KBl1stcrTpag6zr1gt7DHtZIGWGjEiHoBUEHA2OJAQ24rJ4JEiJkizCRpwh0rJuj51i1CxL0EU4l17vVkkdIZ5xyLIvaJXBHAYAVIwK@YtyydWFWjy4g/C3pf4WZvFE7CBQX7d8x9qAXPslM7D2twmomn63OrCDigsuIUe1T44boOU6orvokq3JWLxYDE2gcTs6kT0aSk0oQrat1k4VlA9wwwUrFm4ZthKb6pgobqBNoOFIJWbug/nDZqSWKVDDRhRNgoDJb9Sz5U7W58kcYaUviGKQVz7mSYra/vd7Yj0lH9Jg4wGXbemRRx9wsqE5CcLOtvjOjRiXgCrOLXj25nEX@iMkZBEZ1QcRxWfVEC1Y7wTiRKsQEfI60AreB7fxVGh9DjSmmtp90UK0ts9fmy0qkiw/cHW4lGVg4kj81uECO0MkYguwSxcyvEtw/uChgUDzDzcHQ7XCJG0@slOeDvr2p94m96FKv@30/1/y2P5jet4PPmANKCX76diPAAirjS6nhnoYHGO5fh4d@@DH8lOC7O5Cf43p9Aw), or I can spoil the surprise and tell you that it outputs "I love you".
 
-That was sweet, but I wanted to respond with an even more cryptic script, so I decided to combine a few of my hobbies into the application of an idea that I have been playing with for a while.
+That was sweet, but I wanted to respond with an even more cryptic script, so I decided to combine a few of my hobbies into the application of an idea that I have been playing with for a while. You can read through my process or <a href="#the-actual-script">jump to my final solution</a>.
 
 What is Piphilology?
 --------------------
