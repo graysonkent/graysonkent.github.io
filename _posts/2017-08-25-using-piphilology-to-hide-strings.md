@@ -380,4 +380,4 @@ Since you don't have to worry about other commands messing up your output like i
 
 Conclusion
 ----------
-This is a very fun method of hiding things in plain sight and I am curious to see what other possible applications/methods there could be for this. Please send me an email if you find one!
+This is a very fun method of hiding things in plain sight and I am curious to see what other possible applications/methods there could be for this. Please send me an email if you know of one!
