@@ -3,11 +3,11 @@ layout: post
 date: 2017-06-09 21:00
 title:  "Faking dependencies with the equivs package"
 category: blog
-tags: Linux
+tags: Linux/Bash
 ---
 Let's say a package you are trying to install has a crazy list of dependencies that you know it doesn't need, or you don't want to/can't install for various reasons. Maybe you even have a newer version of package and you don't want to downgrade. How do you get everything running?
 
-One way to get around these requirements is to create a dummy package using [`equivs`](https://packages.ubuntu.com/trusty/equivs). 
+One way to get around these requirements is to create a dummy package using [`equivs`](https://packages.ubuntu.com/trusty/equivs).
 
 Creating a dummy package
 ---------------------------------------
@@ -35,11 +35,11 @@ Package: <package name; defaults to equivs-dummy>
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>
 # Files: <pair of space-separated paths; First is file to include, second is destination>
-#  <more pairs, if there's more than one file to include. Notice the starting space>  
+#  <more pairs, if there's more than one file to include. Notice the starting space>
 
 Description: <short description; defaults to some wise words>
-   long description and info     
-   .     
+   long description and info
+   .
    second paragraph
 ```
 
@@ -58,6 +58,6 @@ Architecture: all
 Description: fake package
 ```
 
-Please note that the Package name has to match what you are trying to replace, and the Version should be higher than the real package. The 1 in "1:50" refers to the [epoch number](http://www.fifi.org/doc/debian-policy/policy.html/ch-versions.html), which defaults to 0. 
+Please note that the Package name has to match what you are trying to replace, and the Version should be higher than the real package. The 1 in "1:50" refers to the [epoch number](http://www.fifi.org/doc/debian-policy/policy.html/ch-versions.html), which defaults to 0.
 
 Now you just need to build the dummy package with `equivs-build packageToFake`. This will generate your `packagetofake_1.5_all.deb` which you can now install like normal with `dpkg -i`.

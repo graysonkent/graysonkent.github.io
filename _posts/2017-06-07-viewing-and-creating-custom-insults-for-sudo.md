@@ -3,17 +3,17 @@ layout: post
 date: 2017-06-07 21:00
 title:  "Viewing and creating custom insults for sudo"
 category: blog
-tags: Linux
+tags: Linux/Bash
 ---
 You can spice up your day a little bit with `sudo`'s option to insult you when you enter a password wrong. You can set this by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:
 
 ```bash
 $ sudo su
-[sudo] password for gkent: 
+[sudo] password for gkent:
 No soap, honkie-lips.
-[sudo] password for gkent: 
+[sudo] password for gkent:
 You speak an infinite deal of nothing
-[sudo] password for gkent: 
+[sudo] password for gkent:
 Take a stress pill and think things over.
 ```
 
@@ -38,7 +38,7 @@ Works but that is still 1594 lines of messy output to read through. For a cleane
 $ apt-get source sudo
 $ cat sudo*/plugins/sudoers/ins_*.h
 ```
-    
+
 And you can see all of the insults:
 
 **HAL Insults:**
@@ -107,49 +107,49 @@ Building your own insults
 You can make your own insults by modifying `plugins/sudoers/insults.h` to include the following section in the `insults[]` array where your insults are called `glados`:
 
     char *insults[] = {
-    
+
     # ifdef HAL_INSULTS
     #  include "ins_2001.h"
     # endif
-    
+
     # ifdef GOONS_INSULTS
     #  include "ins_goons.h"
     # endif
-    
+
     # ifdef CLASSIC_INSULTS
     #  include "ins_classic.h"
     # endif
-    
+
     # ifdef CSOPS_INSULTS
     #  include "ins_csops.h"
     # endif
-    
+
     # ifdef GLADOS_INSULTS
     #  include "ins_glados.h"
     # endif
-    
+
         (char *) 0
-    
+
     };
 
- 
+
 Then make the file `plugins/sudoers/ins_glados.h` look something like this with some insults from GLaDOS:
 
 
     #ifndef _SUDO_INS_GLADOS_H
     #define _SUDO_INS_GLADOS_H
-    
+
         /*
          * Custom Insult Examples from GLaDOS and Portal 2
          */
-    
+
     "Science has now validated your birth mother's decision to abandon you on a doorstep.",
     "Well done. Here come the test results: 'You are a horrible person.' That's what it says. We weren't even testing for that.",
     "Remember before when I was talking about smelly garbage standing around being useless? That was a metaphor. I was actually talking about you. And I'm sorry. You didn't react at the time so I was worried it sailed right over your head. That's why I had to call you garbage a second time just now.",
     "I honestly, truly didn't think you'd fall for that trap. In fact, I designed a much more elaborate trap further ahead for when you got through with this easy one. If I'd known you'd let yourself get captured this easily, I'd have dangled a turkey leg on a rope from the ceiling.",
     "He's not just a regular moron. He's the product of the greatest minds of a generation working together with the express purpose of building the dumbest moron who ever lived.",
-    
-        
+
+
     #endif /* _SUDO_INS_GLADOS_H */
 
 

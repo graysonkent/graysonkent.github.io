@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-26 21:00
 title:  "Generating a random list of Linux commands for A-Z"
 category: blog
-tags: Linux
+tags: Linux/Bash
 redirect_from:
   - /archive/2017/03/generating-a-random-list-of-linux-commands-for-a-to-z.html
 ---
@@ -50,8 +50,8 @@ validlocale
 wmctrl
 xzcat
 yelp
-zgrep      
-```                            
+zgrep
+```
 I would have preferred to stick to only built-ins, but you wouldn't have been able to complete the problem that way:
 
 ```bash

@@ -3,7 +3,7 @@ layout: post
 date: 2017-06-16 23:00
 title:  "How to get the exit status of a failed pipe in Bash"
 category: blog
-tags: Linux
+tags: Linux/Bash
 ---
 The traditional method of accessing the exit status of a command in Bash is through the `$?` [internal variable](http://tldp.org/LDP/abs/html/internalvariables.html#XSTATVARREF) like so :
 
@@ -28,7 +28,7 @@ Thankfully, there are a few different ways to handle accessing the exit code for
 
 Via $PIPESTATUS
 ---------------
-The `$PIPESTATUS` array is made up of the exit status of each command in a pipe. Learn more on the [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/internalvariables.html). 
+The `$PIPESTATUS` array is made up of the exit status of each command in a pipe. Learn more on the [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/internalvariables.html).
 
 You can use:
 
@@ -39,7 +39,7 @@ $ echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 ```
 You can also use `${PIPESTATUS[*]}` or `${PIPESTATUS[@]}`.
 
-**Note:** `$PIPESTATUS` suffers from the usual issue of misbehaving when you pipe `ls` (which is why I never pipe `ls` when possible),  so `$PIPEFAIL` may be a better option in those cases. 
+**Note:** `$PIPESTATUS` suffers from the usual issue of misbehaving when you pipe `ls` (which is why I never pipe `ls` when possible),  so `$PIPEFAIL` may be a better option in those cases.
 
 Via $PIPEFAIL
 ------
@@ -47,9 +47,9 @@ In Bash version 3 and beyond, you can use `set -o pipefail` to set the exit stat
 
 Via mispipe
 ------
-The [`moreutils`](http://joeyh.name/code/moreutils/) package includes a command named `mispipe` that has similar functionality to `${PIPESTATUS[0]}`.  
+The [`moreutils`](http://joeyh.name/code/moreutils/) package includes a command named `mispipe` that has similar functionality to `${PIPESTATUS[0]}`.
 
-I don't personally like installing extra software when I can just use Bash functionality, but not every user or OS has that option. 
+I don't personally like installing extra software when I can just use Bash functionality, but not every user or OS has that option.
 
 `mispipe` works by taking two arguments and returning the exit status of the first:
 
@@ -58,8 +58,8 @@ $ mispipe true false
 $ echo $?
 0
 ```
-This has the advantage of only returning the exit status of the first command instead of triggering on any failure of the pipe sequence. 
+This has the advantage of only returning the exit status of the first command instead of triggering on any failure of the pipe sequence.
 
 Conclusion
 -----
-There are a variety of different ways to recover the exit status of a failed pipe in the sequence, and there are a lot more that I didn't cover like creating your own named pipes with `mkfifo` or a tmp file with `mktemp` that stores the array of each exit status. These aren't typically needed on a standard Linux/Bash install that you aren't too worried about being POSIX compliant though. 
+There are a variety of different ways to recover the exit status of a failed pipe in the sequence, and there are a lot more that I didn't cover like creating your own named pipes with `mkfifo` or a tmp file with `mktemp` that stores the array of each exit status. These aren't typically needed on a standard Linux/Bash install that you aren't too worried about being POSIX compliant though.

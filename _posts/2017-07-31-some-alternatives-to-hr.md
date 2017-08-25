@@ -3,7 +3,7 @@ layout: post
 date: 2017-07-31 23:00
 title:  "Some alternatives to the terminal hr"
 category: blog
-tags: Linux
+tags: Linux/Bash
 ---
 I was helping my friend track down a bug in their spider webs of Bash scripts when I ran across a library named [hr](https://github.com/LuRsT/hr). I had never heard of it, but it bills itself as  "A horizontal ruler for your terminal". This works by outputting characters (default is #) to the length of your terminal screen. Not something I see the need for, but apparently over 1,000 people on Github do.
 
@@ -41,13 +41,13 @@ hrs() {
 [ "$0" == "$BASH_SOURCE" ] && hrs "$@"
 ```
 
-I would personally just output 80 #'s and call it a day, but those loops looked really inefficient so I decided to have some fun with it. 
+I would personally just output 80 #'s and call it a day, but those loops looked really inefficient so I decided to have some fun with it.
 
 Stress Testing
 -------------------
-Since `hr` just uses `tput cols` to grab the screen width, then lets feed `tput` some fake values. 
+Since `hr` just uses `tput cols` to grab the screen width, then lets feed `tput` some fake values.
 
-Without boring your head off, `tput` grabs its values from the `terminfo` file and outputs them. 
+Without boring your head off, `tput` grabs its values from the `terminfo` file and outputs them.
 
 A back-handed way to confuse `tput` is by adjusting `stty` values like so:
 
@@ -79,9 +79,9 @@ Ouch, almost 26 whole seconds to fill my fake screen with #'s. The audience watc
 
 Restrictions:
 -----------------
-I am trying to keep feature-parity with `hr` so my program needs to print the 32767 required characters. It will default to the `#` character to fill the screen if no other character is supplied as the first argument. 
+I am trying to keep feature-parity with `hr` so my program needs to print the 32767 required characters. It will default to the `#` character to fill the screen if no other character is supplied as the first argument.
 
-I am trying for speed, not readability or maintainability. I will use `Bash time` with an average of 3 tries to control for the I/O cache. 
+I am trying for speed, not readability or maintainability. I will use `Bash time` with an average of 3 tries to control for the I/O cache.
 
 My first (naive) one-liner attempt
 ---------------------------------
@@ -89,7 +89,7 @@ My first (naive) one-liner attempt
 printf -v LINES '%*s' "$(tput cols)";echo "${LINES// /${*:-#}}"
 ```
 
-I tried to avoid the loops entirely and went for an approach combining `echo` and `printf`. 
+I tried to avoid the loops entirely and went for an approach combining `echo` and `printf`.
 
 ```bash
 $ time ./naive
@@ -132,7 +132,7 @@ user	0m0.000s
 sys	0m0.003s
 ```
 
-Great! Saving that crucial .009s of runtime. Critics might point out that this isn't POSIX because of the `head -c` part, so let's fix that. 
+Great! Saving that crucial .009s of runtime. Critics might point out that this isn't POSIX because of the `head -c` part, so let's fix that.
 
 POSIX-ish Way
 ----------------
@@ -239,12 +239,12 @@ $ hr 20 \*
 ********************
 ```
 
-This is now closer to feature-parity with the actual `hr` library. And I could actually see using this for error messages. 
+This is now closer to feature-parity with the actual `hr` library. And I could actually see using this for error messages.
 
-Thanks again for the examples and the code, [whetu](https://www.reddit.com/user/whetu). And shoutout to [/r/bash](https://www.reddit.com/r/bash/). 
+Thanks again for the examples and the code, [whetu](https://www.reddit.com/user/whetu). And shoutout to [/r/bash](https://www.reddit.com/r/bash/).
 
 Conclusion
 ---------------
-This is obviously just me being stupid and having fun pushing software where it wasn't intended to go. I appreciate all the `hr` devs do for the community, and their script works great on any normal sized screen. 
+This is obviously just me being stupid and having fun pushing software where it wasn't intended to go. I appreciate all the `hr` devs do for the community, and their script works great on any normal sized screen.
 
 Now time to get back to actual work :(

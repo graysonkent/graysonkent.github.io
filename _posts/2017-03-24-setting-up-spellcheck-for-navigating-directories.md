@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-24 20:00
 title:  "Setting up spell check for navigating directories"
 category: blog
-tags: Linux
+tags: Linux/Bash
 redirect_from:
   - /archive/2017/03/setting-up-spellcheck-for-navigating-directories.html
 ---
@@ -28,5 +28,5 @@ This only works in the interactive shell (for good reason) and I wish there was 
 
 Further Reading:
 ----------------
- - [`shopt` builtin man page](http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html) 
+ - [`shopt` builtin man page](http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
  - [Other Example Usages -cyberciti (Mar 2016)](https://bash.cyberciti.biz/guide/Shopt)

@@ -3,7 +3,7 @@ layout: post
 date: 2017-07-25 23:00
 title:  "Changing the default lecture prompt"
 category: blog
-tags: Linux
+tags: Linux/Bash
 ---
 If you have used `sudo` on a new system, you have probably been greeted with this message:
 
@@ -11,7 +11,7 @@ If you have used `sudo` on a new system, you have probably been greeted with thi
 $ sudo -i
 We trust you have received the usual lecture from the local System
 Administrator. It usually boils down to these three things:
-    #1) Respect the privacy of others. 
+    #1) Respect the privacy of others.
     #2) Think before you type.
     #3) With great power comes great responsibility.
 ```
@@ -20,7 +20,7 @@ This is `sudo`'s lecture prompt that typically runs the first time you use `sudo
 
 Preparing to change your lecture
 --------------------------------
-First you need to create your lecture prompt file (default of `/etc/sudoers.lecture`). This where your wildest ASCII dreams can come true. 
+First you need to create your lecture prompt file (default of `/etc/sudoers.lecture`). This where your wildest ASCII dreams can come true.
 
 Here is one I like to use:
 
@@ -48,7 +48,7 @@ If nothing is found, then the lecture prompt is easily changed:
 
  1. Edit the `sudoers` file with the `visudo` command.
  2. Add the following lines into the Defaults section:
- 
+
 
     ```bash
     Defaults    lecture = always
@@ -66,7 +66,7 @@ Assuming your `sudo` was built with `--without-lecture`, then your quest for imp
 To rebuild `sudo` without the `--without-lecture` flag:
 
  1. Copy out your current `sudo` build configuration:
- 
+
 
     ```bash
     $ sudo -V | sed -n -e 's/  --without-lecture //g; s/^.*Configure options: //p' | tee sudo.options
@@ -82,9 +82,9 @@ To rebuild `sudo` without the `--without-lecture` flag:
     $ make install
     ```
  3. Follow the steps from the Easy Method above to finish the process.
- 
+
  Now you can re-alias your new `sudo` and proudly display your work!
-	
+
 The Hardest Way
 ---------------
 If you read the above method and scoffed at my lavish wasting of tens of kilobytes, then this method is for you.
@@ -97,10 +97,10 @@ Since you have to rebuild `sudo` anyway, you can override the default lecture wi
     $ apt-get source sudo
     $ cd sudo*
     ```
-    
+
  2. Edit the file containing the default lecture prompt. (Hint: `grep -nR lecture .`)(Further hint: `plugins/sudoers/check.c`)
  3. Change the following block to your desired message:
- 
+
     ```c
      #define DEFAULT_LECTURE "\n" \
         "We trust you have received the usual lecture from the local System\n" \
@@ -111,10 +111,10 @@ Since you have to rebuild `sudo` anyway, you can override the default lecture wi
     ```
 
  4. Make `sudo`
- 
+
     ```bash
     $ make
     $ make install
     ```
-    
+
 Voilà! You are ready to take some nice screenshots of your terminal!

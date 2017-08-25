@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-27 21:00
 title:  "Find which Linux commands can make words out of their options"
 category: blog
-tags: Linux
+tags: Linux/Bash
 redirect_from:
   - /archive/2017/03/find-which-linux-commands-can-make-words-with-their-options.html
 ---
@@ -17,7 +17,7 @@ I noticed that I always prefer using commands with options that spell out common
 # Pull in a list of common Linux commands
 commandList=(tar grep find ssh sed awk vim diff sort export xargs ls pwd cd gzip bzip2 unzip ftp crontab service ps free top df du cp mv cat mount chmod chown mkdir ifconfig uname whereis whatis locate man tail less su apt yum rpm ping date finger wget);
 
-# Pipe successful "$command -$option" pairs to 'an' to generate anagrams 
+# Pipe successful "$command -$option" pairs to 'an' to generate anagrams
 for command in ${commandList[@]} ; do
         (for option in {a..z} ; do
                 if timeout -k 5 5 "$command" -$option &> /dev/null; then
@@ -68,7 +68,7 @@ So I guess the lesson here is that `ls` can take pretty much any option.
 
 How it works
 ------------
-It starts by pulling in a list of common Linux commands and storing them in `commandList`. 
+It starts by pulling in a list of common Linux commands and storing them in `commandList`.
 
 Then it iterates through the `commandList` and tries each command with every letter as an option. It has 5 seconds to run before SIGKILL is sent:
 
@@ -86,8 +86,8 @@ fi
 At the end of that, output successful options to [`an`](http://manpages.ubuntu.com/manpages/trusty/man6/an.6.html), a tool for generating anagrams. I allow only words over 3 characters and use a custom dictionary I made:
 
 ```bash
-xargs an -w -d saneWordlist -m 3 2> /dev/null  
-```                    
+xargs an -w -d saneWordlist -m 3 2> /dev/null
+```
 Here is how I made my custom dictionary:
 
 ```bash
@@ -120,5 +120,5 @@ if (($? == 0)); then
     | sed -ne 's/.*\(-[A-Za-z],\).*/\1/p' \
     | sort -u \
     | tr -d ',-' \
-    | tr -d '\n')                  
+    | tr -d '\n')
 ```

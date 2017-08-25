@@ -3,7 +3,7 @@ layout: post
 date: 2017-03-24 21:00
 title:  "How to get the last argument of any previous command"
 category: blog
-tags: Linux
+tags: Linux/Bash
 redirect_from:
   - /archive/2017/03/how-to-get-the-last-argument-of-a-previous-command.html
 ---
@@ -21,11 +21,11 @@ Similarly, `!!` recalls the entirety of the last command and `!-2` recalls the n
 $ touch example1
 $ touch example2
 $ !-2
-touch example1    
-```                         
+touch example1
+```
 This can be extended out with negative integers to go back lines in Bash history, or a positive integer to start from beginning.
 
-> **Note:** If you need more functionality, you should really learn the [`fc` builtin command](https://www.systutorials.com/docs/linux/man/1p-fc/).  
+> **Note:** If you need more functionality, you should really learn the [`fc` builtin command](https://www.systutorials.com/docs/linux/man/1p-fc/).
 > It lets you yank a range of commands from history like `fc -2 -4`, throws it
 > in your `$EDITOR` for review, and then execute the command on exit.
 
@@ -36,23 +36,23 @@ $ touch example1
 $ touch example2
 $ vim !$-2
 vim example2-2
-```                           
+```
 As you can see, that expands the last argument and then just inserts -2 instead of interpreting it as a negative line number as I want. I thought this was odd so I researched more and realized that I had a fundamental misunderstanding of how `!$` works.
 
 The [Bash Manual](https://www.gnu.org/software/bash/manual/bashref.html#Word-Designators) says:
 
-> `!!:$` designates the last argument of the preceding command.  
+> `!!:$` designates the last argument of the preceding command.
 > This may be shortened to `!$`.
 
-                    
+
 So `$` is actually an event specification on `!!` and thus `!$` is **not** a completely separate word designator from `!!` as I thought. Knowing that, we just need to use `!-2$` like so:
 
 ```bash
 $ touch example1
 $ touch example2
 $ vim !-2$
-vim example1      
-```         
+vim example1
+```
 This gets us the last argument of the next to last command and can also be modified to grab different lines like the !-2 command.
 
 > **Note:** `$_` is another beast entirely as it works on executed commands and not entered commands like `!$` who needs something to be

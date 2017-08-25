@@ -3,7 +3,7 @@ layout: post
 date: 2017-08-07 23:00
 title:  "FizzBuzz in Bash with no Modulus or for/while loops"
 category: blog
-tags: Linux
+tags: Linux/Bash
 ---
 A few days ago on #bash, people were sharing their least favorite interview questions. During that discussion, FizzBuzz inevitably came up. If you don't know what that is, here are the rules:
 

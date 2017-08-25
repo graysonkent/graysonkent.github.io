@@ -3,7 +3,7 @@ layout: post
 date: 2017-04-17 21:00
 title:  "What is the 'bash: cd: too many arguments' error?"
 category: blog
-tags: Linux
+tags: Linux/Bash
 redirect_from:
   - /archive/2017/04/bash.4.4.cd.pattern.matching.regression.html
 ---
@@ -27,7 +27,7 @@ Looking through the Bash Source Code, I noticed one interesting commit that adde
 ```c
 /* Define CD_COMPLAINS if you want the non-standard, but sometimes-desired
    error messages about multiple directory arguments to `cd'. */
- 
+
 #define CD_COMPLAINS
 ```
 And the specific error message from the question is mentioned in [`builtins/cd.def`](http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/cd.def#n326):
@@ -51,18 +51,18 @@ Bash 4.4 Beta where it still works:
 $ wget https://ftp.gnu.org/gnu/bash/bash-4.4-beta.tar.gz
 $ tar -xzvf bash-4.4-beta.tar.gz
 $ cd bash-4.4-beta
- 
+
 #Building, go grab something to drink. It's gonna be a while.
 ~/bash-4.4-beta$ ./configure
 ~/bash-4.4-beta$ make
- 
+
 #Check Version
 ~/bash-4.4-beta$ ./bash --version
 GNU bash, version 4.4.0(1)-beta (x86_64-unknown-linux-gnu)
- 
+
 #Enter a clean interactive prompt
 ~/bash-4.4-beta$ env -i PATH="$PWD:$PATH" ./bash --noprofile --norc
- 
+
 #Test example
 bash-4.4$ mkdir album-0{1..2}
 bash-4.4$ cd album* && pwd
@@ -75,18 +75,18 @@ Bash 4.4 Stable Release where it doesn't work:
 $ wget https://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz
 $ tar -zxvf bash-4.4.tar.gz
 $ cd bash-4.4/
- 
+
 #Building, go grab something to drink. It's gonna be a while.
 ~/bash-4.4$ ./configure
 ~/bash-4.4$ make
- 
+
 #Check Version
 ~/bash-4.4$ ./bash -version
 GNU bash, version 4.4.0(1)-release (x86_64-unknown-linux-gnu)
- 
+
 #Enter a clean interactive prompt
 ~/bash-4.4$ env -i PATH="$PWD:$PATH" ./bash --noprofile --norc
- 
+
 #Test example
 bash-4.4$ mkdir album-0{1..2}
 bash-4.4$ cd album*
