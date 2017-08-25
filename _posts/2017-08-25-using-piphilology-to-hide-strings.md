@@ -205,23 +205,23 @@ Here, `awk` is counting the amount of characters (`{print length}`) on each line
 This is the updated version of what `awk` sees:
 
 ```bash
-			    #!/bin/bash
-			    #
+(             ) #!/bin/bash
+(             ) #
 (59 Characters) # Simple script to respond to the nice declarations of love
 
 (15 Characters) set poems=loved
-			    se=ls
+(             ) se=ls
 
 (75 Characters) # First, we need to get some inputs to convert to choose our letters out of
 (20 Characters) head -c 71 /dev/zero
 
-			    # Clean it
+(             ) # Clean it
 (74 Characters) awk '(length>11){print length}' $0 |tr '\n' ' '| sed 's/15/6f/g'|xxd -p -r
 
-			    # Parse it
+(             ) # Parse it
 (15 Characters) : grep -q "new"
 
-			    # Show it
+(             ) # Show it
 (15 Characters) : echo "Finish"
 
 (21 Characters) # I love Batch a lot!
