@@ -235,13 +235,13 @@ The lines with no character counts don't matter at all and are just misdirection
 
 You might be tempted to go ahead and throw the sequence (59 15 75 20 74 15 15 21) into a hex converter now, but it would be gibberish (Yu t!), so hold off for a little bit longer.
 
-<strong>Remove the new tabs</strong>
+<strong>Remove the new lines</strong>
 
 ```bash
 |tr '\n' ' '
 ```
 
- Since `awk` prints out a tab (`\n`) delimited list, let's switch to spaces so that the next commands will be easier. I'm sure you could do this in `awk` itself. But I needed to bump the character count of this line to 74 anyway since it counts itself for the script.
+ Since `awk` prints out a new line (`\n`) delimited list, let's switch to spaces so that the next commands will be easier. I'm sure you could do this in `awk` itself. But I needed to bump the character count of this line to 74 anyway since it counts itself for the script.
 
 <strong>Inject the alpha characters</strong>
 
@@ -364,8 +364,6 @@ Here is a proof of concept script that triggers `init 0` (69 6e 69 74 20 30) to 
 
 eval $(awk '$0 ~ /# [A-Z]/ {print length}' $0|tr '\n' ' '| sed 's/10/6e/g'|xxd -p -r)
 ```
-
-> **Note:** I'll leave creating a `systemd` compatible version as an exercise for the reader
 
 The only difference here is that `awk` just looks for any line that starts with a # then a space and a capitalized alphabetical character to count the total.
 
