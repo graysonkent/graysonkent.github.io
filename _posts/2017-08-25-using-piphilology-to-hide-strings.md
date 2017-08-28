@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-08-25 23:00
-title:  "Using a variant of Piphilology to hide strings in your Bash scripts"
+title:  "Using Piphilology with Bash to hide magic commands"
 category: blog
 tags: Linux/Bash
 ---
