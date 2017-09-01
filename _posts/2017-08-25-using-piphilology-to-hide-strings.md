@@ -365,6 +365,8 @@ Here is a proof of concept script that triggers `init 0` (69 6e 69 74 20 30) to 
 eval $(awk '$0 ~ /# [A-Z]/ {print length}' $0|tr '\n' ' '| sed 's/10/6e/g'|xxd -p -r)
 ```
 
+> **Note: ** This won't work on a `systemd` system if it was built with the `-SYSVINIT` compatibility flag like newer Arch installs are. You can (sometimes) check with  `init --version`
+
 The only difference here is that `awk` just looks for any line that starts with a # then a space and a capitalized alphabetical character to count the total.
 
 Since you don't have to worry about other commands messing up your output like in my previous example, you could easily hide this in a bigger script that actually does real things at the same time. Most people also ignore comments because they don't do anything in Bash scripts, so you would just need to obfuscate the actual command part. Possibly with some misdirection by assigning parts to variables or multi-line pipes with a \ sign.
