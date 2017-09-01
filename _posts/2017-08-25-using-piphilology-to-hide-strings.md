@@ -233,7 +233,7 @@ The lines with no character counts don't matter at all and are just misdirection
 > needed to get rid of the shebang line and it ended up working
 > well with the characters that I needed.
 
-You might be tempted to go ahead and throw the sequence (59 15 75 20 74 15 15 21) into a hex converter now, but it would be gibberish (Yu t!), so hold off for a little bit longer.
+You might be tempted to go ahead and throw the sequence (59 15 75 20 74 15 15 21) into a hex converter now, but it would be gibberish, so hold off for a little bit longer.
 
 <strong>Remove the new lines</strong>
 
