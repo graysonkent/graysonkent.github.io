@@ -50,9 +50,9 @@ What is Piphilology?
 First off, we need some background on Piphilology.  [Wikipedia](https://en.wikipedia.org/wiki/Piphilology) gives a good summary:
 
 > Piphilology comprises the creation and use of mnemonic techniques to
-> remember a span of digits of the mathematical constant π.
+> remember a span of digits of the mathematical constant pi.
 
-I know this because I spent way too long memorizing digits of π to impress the girls back in middle school and this is a very helpful trick for the difficult sections.
+I know this because I spent way too long memorizing digits of pi to impress the girls back in middle school and this is a very helpful trick for the difficult sections.
 
 Here is a fun example of the first 20 digits:
 
@@ -86,7 +86,7 @@ How does this relate to Bash?
 ---------------------
 There is probably a better word to describe what I am really doing, but Piphilology sounds cool and it is the closest term I know of. So let's stick with that.
 
-I don't need Bash to remember the digits of π,  but I *am* going to use a similar method to encode my message.
+I don't need Bash to remember the digits of pi,  but I *am* going to use a similar method to encode my message.
 
 Instead of the using the characters of each word to represent a digit, let's use the amount of characters on each line to represent a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) number that we can concatenate and convert into a human-readable string.
 
