@@ -245,4 +245,4 @@ Conclusion
 ----------
 Although I don't like that my final solution doesn't actually calculate anything, it *was* the only one to properly handle large matrices.
 
-[Here it is online with 100 digits](https://tio.run/##FcoxDoAgDEDRqzQE08SFMnsVBzRC7FKUMnL3ivnbyz8Pvc1KbcDAAknzCz6m7arwNJZeAJdVd8GpozfAP8Kh@QKngUIMnt3cJZtZJPoA "Bash – Try It Online"), and I have also tested it on my machine with `10000` and it took 1 minute and 28 seconds. So keep this script in mind if you ever need your laptop to heat up your coffee or look busy. 
+[Here it is online with 100 digits](https://tio.run/##FcoxDoAgDEDRqzQE08SFMnsVBzRC7FKUMnL3ivnbyz8Pvc1KbcDAAknzCz6m7arwNJZeAJdVd8GpozfAP8Kh@QKngUIMnt3cJZtZJPoA "Bash – Try It Online"), and I have also tested it on my machine with `10000` and it took 1 minute and 28 seconds. So keep this script in mind if you ever need your laptop to heat up your coffee or look busy.
