@@ -195,7 +195,7 @@ awk '(length>11){print length}' $0 |tr '\n' ' '| sed 's/15/6f/g'|xxd -p -r
 
 It's not as cool as Sir Michael Caine when he delivers "The Prestige" line in the movie, but there is a lot going on here so I will break it down some more.
 
-<strong>Counting the characters</strong>
+### Counting the characters
 ```bash
 awk '(length>11){print length}' $0
 ```
@@ -235,7 +235,7 @@ The lines with no character counts don't matter at all and are just misdirection
 
 You might be tempted to go ahead and throw the sequence (59 15 75 20 74 15 15 21) into a hex converter now, but it would be gibberish, so hold off for a little bit longer.
 
-<strong>Remove the new lines</strong>
+### Remove the new lines
 
 ```bash
 |tr '\n' ' '
@@ -243,7 +243,7 @@ You might be tempted to go ahead and throw the sequence (59 15 75 20 74 15 15 21
 
  Since `awk` prints out a new line (`\n`) delimited list, let's switch to spaces so that the next commands will be easier. I'm sure you could do this in `awk` itself. But I needed to bump the character count of this line to 74 anyway since it counts itself for the script.
 
-<strong>Inject the alpha characters</strong>
+### Inject the alpha characters
 
 We are only counting lines by decimal, and hexadecimal also uses alpha characters, so I need to add the proper characters:
 
@@ -278,7 +278,7 @@ E: . > N ^ n ~
 F: / ? O _ o DEL
 ```
 
-<strong>Convert to hex</strong>
+### Convert to hex
 
 ```bash
 |xxd -p -r
@@ -299,7 +299,7 @@ F: / ? O _ o DEL
 
 Which finally outputs the needed string "You too!"
 
-<strong>Bonus: Explaining the other commands</strong>
+### Bonus: Explaining the other commands
 
 Just in case you were wondering how the other commands didn't interfere with my output even though they were executed, here is a quick summary:
 
@@ -371,7 +371,7 @@ The only difference here is that `awk` just looks for any line that starts with 
 
 Since you don't have to worry about other commands messing up your output like in my previous example, you could easily hide this in a bigger script that actually does real things at the same time. Most people also ignore comments because they don't do anything in Bash scripts, so you would just need to obfuscate the actual command part. Possibly with some misdirection by assigning parts to variables or multi-line pipes with a \ sign.
 
-<strong>Other Fun Ideas:</strong>
+### Other Fun Ideas
 
  - `mv ~ /dev/null` is 6d 76 20 2f 20 2f 64 65 76 2f 6e 75 6c 6c
  - `:(){:|:&};:` is 3a 28 29 7b 3a 7c 3a 26 7d 3b 3a
