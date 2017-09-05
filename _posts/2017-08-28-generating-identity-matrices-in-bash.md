@@ -278,7 +278,7 @@ done
 ```
 Oh, and shellcheck would prefer `printf '%s' $((i==j))` instead of` printf $((i==j))`. Fair enough. (Interestingly, it doesn’t complain about the unquoted `$(())` – it seems to know that arithmetic expansion can never produce multiple words. But unless I’m missing something, it can’t produce a `%` sign that would be interpreted in a format string either, can it?)"
 
-<strong>Their second solution</strong>
+### Their second solution
 
 The above was already a huge improvement on my loops, but they bested themselves again with a [faster version](https://www.reddit.com/r/bash/comments/6x8oni/generating_identity_matrices_in_bash/dmebj30/):
 
@@ -366,13 +366,13 @@ Slower, but it ***is*** pure `bash` so it gets extra points for that. I may have
 <strong>ray_gun's final bc method</strong>
 ```bash
 $ time BC_LINE_LENGTH=0 bc <<< 'scale=10000; 10^-1; while ( last != 0 ) last/10' | sed '$d;s/^\.//'
-real    0m17.071s
-user    0m2.009s
-sys     0m0.340s
+real	0m17.071s
+user	0m2.009s
+sys	    0m0.340s
 ```
 
 Much faster than any other method! So use this one if you need to quickly generate huge matrices.
 
 Conclusion
 ----------
-This was an interesting look at just how many methods there are for generating matrices. I especially enjoyed all the community feedback (thanks /r/bash and #bash), and I learned a ton from it.
+This was an interesting look at just how many methods there are for generating matrices. I especially enjoyed all the community feedback (thanks /r/bash and #bash), and I learned a ton from it. 
