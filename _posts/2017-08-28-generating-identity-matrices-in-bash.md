@@ -295,11 +295,11 @@ for ((i=0;i<n;i++)); do
 done
 ```
 
-But it’s still fairly slow. But hey, it’s pure bash ¯\\_(ツ)_/¯"
+But it’s still fairly slow. But hey, it’s pure bash ¯\\\_(ツ)_/¯"
 
 Update: ray_gun's wizardry with bc/dc
 ---------------------------
-I was also beaten on the `bc` front with [/u/ray_gun's](https://www.reddit.com/user/ray_gun) inventive `bc` method:
+I was also beaten on the `bc` front with [/u/ray_gun's](https://www.reddit.com/user/ray_gun) inventive `bc` and `dc` [methods](https://www.reddit.com/r/bash/comments/6x8oni/generating_identity_matrices_in_bash/dme8eqy/):
 
 "Another way of getting repeated 0s is multiplying a power of 10 by a number and removing that number with `sed` later (here, by 2):
 
@@ -342,7 +342,7 @@ Benchmarking All Methods:
 --------------------------
 Using a very unscientific method, let's benchmark all the solutions to 10,000 digits on my machine. The methods that can't go above 20 are obviously disqualified, so let's test the others:
 
-<strong>My sed method</strong>
+### My sed method
 
 ```bash
 $ time for i in `seq 10000`;do printf '%*s\n' 10000|tr ' ' '0'|sed "s/0/1/$i";done
@@ -353,7 +353,7 @@ sys	0m4.848s
 
 Ouch. Not looking great so far.
 
-<strong>Galaktos's Pure Bash Method<strong>
+### Galaktos's Pure Bash Method
 ```bash
 $ time ./purebash 10000
 real	15m50.447s
@@ -363,7 +363,7 @@ sys	0m0.421s
 
 Slower, but it ***is*** pure `bash` so it gets extra points for that. I may have also needed to test it in a different way to be fair.
 
-<strong>ray_gun's final bc method</strong>
+### ray_gun's final bc method
 ```bash
 $ time BC_LINE_LENGTH=0 bc <<< 'scale=10000; 10^-1; while ( last != 0 ) last/10' | sed '$d;s/^\.//'
 real	0m17.071s
@@ -375,4 +375,4 @@ Much faster than any other method! So use this one if you need to quickly genera
 
 Conclusion
 ----------
-This was an interesting look at just how many methods there are for generating matrices. I especially enjoyed all the community feedback (thanks /r/bash and #bash), and I learned a ton from it. 
+This was an interesting look at just how many methods there are for generating matrices. I especially enjoyed all the community feedback (thanks /r/bash and #bash), and I learned a ton from it.
