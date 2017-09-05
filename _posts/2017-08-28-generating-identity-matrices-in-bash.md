@@ -368,7 +368,7 @@ Slower, but it ***is*** pure `bash` so it gets extra points for that. I may have
 $ time BC_LINE_LENGTH=0 bc <<< 'scale=10000; 10^-1; while ( last != 0 ) last/10' | sed '$d;s/^\.//'
 real	0m17.071s
 user	0m2.009s
-sys	    0m0.340s
+sys 0m0.340s
 ```
 
 Much faster than any other method! So use this one if you need to quickly generate huge matrices.
