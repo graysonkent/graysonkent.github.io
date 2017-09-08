@@ -33,7 +33,7 @@
     <section itemscope itemtype ="http://schema.org/Blog" class="scroll-content">
         {% assign words = content | strip_html | number_of_words %}
         <h1> {{ page.title }}</h1>
-        <h4> {{ page.date | date: "%m/%d/%Y"}} • {% include readtime.html %}</h4>
+        <span class="blurb"> {{ page.date | date: "%m/%d/%Y"}} • {% include readtime.html %}</span>
         <hr>
         {{ content }}
         <hr>
