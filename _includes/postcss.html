@@ -1,40 +1,12 @@
 <style>
     blockquote {
-        border-left: 12px solid #B22222;
+        border-left: 6px solid #B22222;
         background-color: #f9f9f9;
-        padding: 15px 20px 15px 15px;
-        -moz-box-shadow: 2px 2px 15px #ccc;
-        -webkit-box-shadow: 2px 2px 15px #ccc;
-        box-shadow: 2px 2px 15px #ccc;
-        position: relative;
+        padding: 3px 0 0 20px;
     }
-
+    
     blockquote a {
         color: #004f89;
-    }
-
-    blockquote::before{
-        content: "\201C"; /*Unicode for Left Double Quote*/
-
-        /*Font*/
-        font-family: Georgia, serif;
-        font-size: 60px;
-        font-weight: bold;
-        color: #999;
-
-        /*Positioning*/
-        position: absolute;
-        left: 10px;
-        top:5px;
-    }
-
-    blockquote::after{
-        /*Reset to make sure*/
-        content: "";
-    }
-
-    blockquote p {
-        text-align: justify;
     }
 
     code,
