@@ -9,6 +9,26 @@
         color: #004f89;
     }
 
+    blockquote::before{
+        content: "\201C"; /*Unicode for Left Double Quote*/
+
+        /*Font*/
+        font-family: Georgia, serif;
+        font-size: 60px;
+        font-weight: bold;
+        color: #999;
+
+        /*Positioning*/
+        position: absolute;
+        left: 10px;
+        top:5px;
+    }
+
+    blockquote::after{
+        /*Reset to make sure*/
+        content: "";
+    }
+
     code,
     pre {
         font-family: "Courier New", monospace;
