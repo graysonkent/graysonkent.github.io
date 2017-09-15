@@ -20,7 +20,7 @@ Identity Matrixes
 And here is an example ([Source](https://en.wikipedia.org/wiki/Identity_matrix)):
 
 <p align="center">
-    <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e1a4218ab6975ad1809415aa168ab6371b91bafc" alt="Picture of an Identity Matrix'"/>
+    <img src="https://grayson.sh/assets/images/matrix.SVG" alt="Picture of an Identity Matrix'"/>
 </p>
 
 Alright, let's get to generating them, or you can <a href="#the-dirty-sed-way">jump to my final solution</a>
