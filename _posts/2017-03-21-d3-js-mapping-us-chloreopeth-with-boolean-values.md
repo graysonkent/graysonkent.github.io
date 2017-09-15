@@ -18,10 +18,6 @@ Below are selected code snippets and [here](https://gist.github.com/graysonkent/
 <script src="\assets\js\d3\usmap.js"></script>
 </div>
 
-<blockquote class="mobile-note">
-<p><strong>Note: </strong>Mobile users can scroll left/right to see whole image</p>
-</blockquote>
-
 > **Note:** This normally wouldn't be so blinding, because counties tend to group together.
 
 County Fill Portion
@@ -63,16 +59,16 @@ var color = ["saddlebrown", "green", "mediumpurple"];
 var steps = [];
 for (var i = 0; i < legend_labels.length; i++) {
         steps.push(legend_labels[i]);
-}                  
- 
+}
+
 var legend = svg.selectAll("g.legend")
     .data(steps)
     .enter().append("g")
     .attr("class", "legend");
- 
+
 var ls_w = 20 * printMultiplier,
     ls_h = 20 * printMultiplier;
- 
+
 legend.append("rect")
     .attr("x", width - 240 * printMultiplier)
     .attr("y", function(d, i) {

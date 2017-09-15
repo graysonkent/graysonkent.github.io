@@ -20,16 +20,13 @@ This famously counter-intuitive paradox states that in a room of 23 people there
 
 It's probably up there with the [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) for most argued about popular probability puzzle, but it actually makes a lot of sense when you break it down.
 
-The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of not getting a match in a pair, of which we have 
+The confusion usually comes from the fact that we are thinking about 1/365 odds for each of the 23 people instead of the odds of not getting a match in a pair, of which we have
 $$\frac{23\times22}{2}=253 $$ combinations.
 
 Ignoring messy, real-world statistics like how birthdays tend to group together:
 
 <div class="chart"></div>
 <script async type="text/javascript" src="/assets/js/d3/births.js"></script>
-<blockquote class="mobile-note">
-<p><strong>Note: </strong>Mobile users can scroll left/right to see whole image</p>
-</blockquote>
 
 Then, you can calculate the probability of two people not having the same birthday with:
 
@@ -44,7 +41,7 @@ Secure Hash Algorithm 1 (SHA-1) was developed by the NSA in 1995 and it is used 
 
 In a **very** simplified way it works by padding, appending, expanding, compressing, and splitting the input data into blocks and then adding the result to a hash state that generates the 160-bit final hash known as a Message Digest.
 
-This hash is often represented as a 40 digit hexadecimal number. 
+This hash is often represented as a 40 digit hexadecimal number.
 
 You can read the [full RFC](https://tools.ietf.org/html/rfc3174) if you want to dive deeper into the internals of SHA-1
 
@@ -92,7 +89,7 @@ Q&A
 > Code Contest](http://www.ioccc.org/), clone an evil Andrew Morton or
 > work on exploits for [Intel's hidden
 > CPU](https://boingboing.net/2017/06/15/intel-x86-processors-ship-with.html).
-> 
+>
 > That's not to say that they shouldn't migrate to a better algorithm,
 > but it isn't a dire situation.
 
