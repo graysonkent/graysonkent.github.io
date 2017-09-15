@@ -93,13 +93,9 @@
 
     code,
     pre {
-        font-family: Courier New, monospace;
+        font-family: "Courier New", monospace;
         background-color: #eff0f1;
         font-size: 16px;
-        white-space: pre-wrap;
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
         word-wrap: break-word;
     }
     .highlighter-rouge {
@@ -170,7 +166,6 @@
         float: left;
         position: fixed;
         bottom: 50px;
-        -webkit-font-smoothing: subpixel-antialiased;
     }
 
     .tabbar {
@@ -190,20 +185,10 @@
         z-index: 0;
         display: block;
         overflow: hidden;
-        -webkit-flex: 1;
-        -ms-flex: 1;
         flex: 1;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
         flex-direction: column;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
         align-items: center;
-        -webkit-align-self: center;
-        -ms-flex-item-align: center;
         align-self: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
         justify-content: center;
         margin: 0;
         border: 0;
@@ -212,18 +197,11 @@
         text-decoration: none;
         background: none;
         cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
     }
 
     .tab-button-text {
         overflow: hidden;
         font-size: 80%;
-        -webkit-align-self: center;
-        -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
         align-self: center;
         min-width: 26px;
         display: block;
@@ -335,18 +313,11 @@
         vertical-align: middle;
     }
 
-    .user-profile ul li a svg * {
-        fill: white;
-    }
-
     .user-profile ul li a img {
         display: inline-block;
         vertical-align: middle;
     }
 
-    .user-profile ul li a img * {
-        fill: white;
-    }
     .scroll-content {
         overflow-x: hidden;
     }
@@ -407,8 +378,6 @@
         }
 
         .tabbar {
-            display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
         }
         .scroll-content {
@@ -425,7 +394,6 @@
             display: block;
             overflow-x: hidden;
             overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
             will-change: scroll-position;
             contain: size style layout;
             border: none;

@@ -147,7 +147,7 @@ While reading through the `sed` manual for the earlier script, I stumbled upon t
 Without having to use `factor` at all, I am left with this:
 
 ```bash
-$ seq 100|sed '0~5s/.*/Buzz/g;0~3s/.*/Fizz/g;0~15s/.*/FizzBuzz/g'
+$ seq 100|sed '0~5s/.*/Buzz/;0~3s/.*/Fizz/;0~15s/.*/FizzBuzz/'
 1
 2
 Fizz
@@ -169,7 +169,7 @@ Instead of a find and replace based on prime factors, I am running through line 
 
 The `sed` section differs only slightly from my other solution in that the search for 15 happens last so it doesn't get overwritten by the 3 or 5 replacements.
 
-This is only 64 characters, but I called this somewhat cheating because I don't really feel that it is in the spirit of the question to just hard-code values, but it works.
+This is only ~~64~~ 60 characters, but I called this somewhat cheating because I don't really feel that it is in the spirit of the question to just hard-code values, but it works.
 
 Conclusion
 ---------------
