@@ -282,7 +282,9 @@ Oh, and shellcheck would prefer `printf '%s' $((i==j))` instead of` printf $((i=
 
 The above was already a huge improvement on my loops, but they bested themselves again with a [faster version](https://www.reddit.com/r/bash/comments/6x8oni/generating_identity_matrices_in_bash/dmebj30/):
 
- "Oh, I missed the part where we’re timing this. Here’s a slightly faster version:
+<blockquote>
+ Oh, I missed the part where we’re timing this. Here’s a slightly faster version:
+
 ```bash
 #!/bin/bash
 n=${1:-10}
@@ -295,7 +297,8 @@ for ((i=0;i<n;i++)); do
 done
 ```
 
-But it’s still fairly slow. But hey, it’s pure bash ¯\\\_(ツ)_/¯"
+But it’s still fairly slow. But hey, it’s pure bash ¯\\\_(ツ)_/¯
+</blockquote>
 
 Update: ray_gun's wizardry with bc/dc
 ---------------------------
