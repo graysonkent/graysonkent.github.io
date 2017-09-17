@@ -7,7 +7,7 @@ tags: Linux/Bash
 ---
 This post is inspired by another blog post called "[How do I modify a variable in Haskell?](http://www.michaelburge.us/2017/08/15/how-do-i-modify-a-variable-in-haskell.html)" by Michael Burge.
 
-It got me thinking about different methods of printing Identity Matrices in Bash (because I am not smart enough to do it in Haskell), and because [Rosetta Code](http://rosettacode.org/wiki/Identity_matrix) was missing a Bash solution.
+It got me thinking about different methods of printing Identity Matrices in Bash (because I am not smart enough to do it in Haskell), and because [Rosetta Code](http://rosettacode.org/wiki/Identity_matrix) was missing a Bash solution. (Update from 9/17/2017: they accepted my solution)
 
 But first off, what is an Identity Matrix?
 
@@ -15,7 +15,7 @@ Identity Matrices
 -----------------
 > A square matrix in which all the main diagonal elements are 1’s and
 > all the remaining elements are 0’s is called an Identity Matrix.
-> - [web-formulas.com](http://www.web-formulas.com/Math_Formulas/Linear_Algebra_Definition_of_Identity_Matrix.aspx)
+> [Source](http://www.web-formulas.com/Math_Formulas/Linear_Algebra_Definition_of_Identity_Matrix.aspx)
 
 And here is an example ([Source](https://en.wikipedia.org/wiki/Identity_matrix)):
 
@@ -247,36 +247,47 @@ As always, [/u/galaktos](https://www.reddit.com/user/galaktos) proposed a much c
 
 Here is their [reproduced solution](https://www.reddit.com/r/bash/comments/6x8oni/generating_identity_matrices_in_bash/dmeb6to/):
 
-"I wouldn’t even think of doing all that bit shifting or multiplication… here’s my take:
-
-```bash
-for i in {1..20}; do for j in {1..20}; do printf $((i==j)); done; printf '\n'; done
-```
-
-Or, in more lines:
-
-```bash
-for i in {1..20}; do
-    for j in {1..20}; do
-        printf $((i==j))
-    done
-    printf '\n'
-done
-```
-If you don’t like the implicit boolean-to-int conversion, you can also use `$((i==j?1:0))`. Or `$((i==j ? 1 : 0))` if you’re not golfing.
-
-Unfortunately, brace expansion happens before parameter and variable expansion, so just substituting 20 for `$n` doesn’t work if you want to make the size variable. But we can use Bash’s alternative for syntax for that:
-
-```bash
-n=${1:-10}
-for ((i=0;i<n;i++)); do
-    for ((j=0;j<n;j++)); do
-        printf $((i==j))
-    done
-    printf '\n'
-done
-```
-Oh, and shellcheck would prefer `printf '%s' $((i==j))` instead of` printf $((i==j))`. Fair enough. (Interestingly, it doesn’t complain about the unquoted `$(())` – it seems to know that arithmetic expansion can never produce multiple words. But unless I’m missing something, it can’t produce a `%` sign that would be interpreted in a format string either, can it?)"
+> I wouldn’t even think of doing all that bit shifting or
+> multiplication… here’s my take:
+>
+>
+>     for i in {1..20}; do for j in {1..20}; do printf $((i==j)); done; printf '\n'; done
+>
+>
+> Or, in more lines:
+>
+>
+>     for i in {1..20}; do
+>         for j in {1..20}; do
+>             printf $((i==j))
+>         done
+>         printf '\n'
+>     done
+>
+>
+> If you don’t like the implicit boolean-to-int conversion, you can also
+> use `$((i==j?1:0))`. Or `$((i==j ? 1 : 0))` if you’re not golfing.
+>
+> Unfortunately, brace expansion happens before parameter and variable
+> expansion, so just substituting 20 for `$n` doesn’t work if you want
+> to make the size variable. But we can use Bash’s alternative for
+> syntax for that:
+>
+>
+>     n=${1:-10}
+>     for ((i=0;i<n;i++)); do
+>         for ((j=0;j<n;j++)); do
+>             printf $((i==j))
+>         done
+>         printf '\n'
+>     done
+>
+> Oh, and shellcheck would prefer `printf '%s' $((i==j))` instead of`
+> printf $((i==j))`. Fair enough. (Interestingly, it doesn’t complain
+> about the unquoted `$(())` – it seems to know that arithmetic
+> expansion can never produce multiple words. But unless I’m missing
+> something, it can’t produce a `%` sign that would be interpreted in a
+> format string either, can it?)
 
 ### Their second solution
 
@@ -301,42 +312,46 @@ Update: ray_gun's wizardry with bc/dc
 ---------------------------
 I was also beaten on the `bc` front with [/u/ray_gun's](https://www.reddit.com/user/ray_gun) inventive `bc` and `dc` [methods](https://www.reddit.com/r/bash/comments/6x8oni/generating_identity_matrices_in_bash/dme8eqy/):
 
-"Another way of getting repeated 0s is multiplying a power of 10 by a number and removing that number with `sed` later (here, by 2):
+> Another way of getting repeated 0s is multiplying a power of 10 by a
+> number and removing that number with `sed` later (here, by 2):
+>
+>
+>     time BC_LINE_LENGTH=0 bc <<< 'r=10000; for ( a = 0; a < r; a++ ) { print 2 * 10^a, 1, 2 * 10^(r - a - 1), "\n" }' | sed 's/2//g'
+>     real    0m6.236s
+>     user    0m6.415s
+>     sys 0m0.476s
+>
+> 6 seconds instead of the author's 1 minute and 28 seconds.
+>
+> Here's a faster one (ab)using `bc'`s `scale` and using `sed` to remove
+> the leading dot:
+>
+>
+>     time BC_LINE_LENGTH=10050 bc <<< 'scale=10000; 10^-1; for ( a = 0; a < scale-1; a++ ) last/10' | sed 's/^\.//'
+>     real    0m1.855s
+>     user    0m1.903s
+>     sys 0m0.382s
+>
+>
+> `bc` and `dc` can also check if the number they just calculated became
+> 0 because internally it won't be more precise than `scale`, e.g. with
+> `dc`:
+>
+>
+>     time DC_LINE_LENGTH=10050 dc <<< '10000k [10/ d0=q p ldx]Sd [q]Sq 1 ldx' | sed 's/^\.//'
+>     real    0m1.719s
+>     user    0m1.716s
+>     sys 0m0.404s
+>
+>
+> Edit: `bc` equivalent of the above, it needs `sed` to remove the last
+> line (0):
+>
+>     time BC_LINE_LENGTH=0 bc <<< 'scale=10000; 10^-1; while ( last != 0 ) last/10' | sed '$d;s/^\.//' >/dev/null
+>     real    0m1.504s
+>     user    0m1.523s
+>     sys 0m0.066s
 
-```bash
-time BC_LINE_LENGTH=0 bc <<< 'r=10000; for ( a = 0; a < r; a++ ) { print 2 * 10^a, 1, 2 * 10^(r - a - 1), "\n" }' | sed 's/2//g'
-real    0m6.236s
-user    0m6.415s
-sys 0m0.476s
-```
-6 seconds instead of the author's 1 minute and 28 seconds.
-
-Here's a faster one (ab)using `bc'`s `scale` and using `sed` to remove the leading dot:
-
-```bash
-time BC_LINE_LENGTH=10050 bc <<< 'scale=10000; 10^-1; for ( a = 0; a < scale-1; a++ ) last/10' | sed 's/^\.//'
-real    0m1.855s
-user    0m1.903s
-sys 0m0.382s
-```
-
-`bc` and `dc` can also check if the number they just calculated became 0 because internally it won't be more precise than `scale`, e.g. with `dc`:
-
-```bash
-time DC_LINE_LENGTH=10050 dc <<< '10000k [10/ d0=q p ldx]Sd [q]Sq 1 ldx' | sed 's/^\.//'
-real    0m1.719s
-user    0m1.716s
-sys 0m0.404s
-```
-
-Edit: `bc` equivalent of the above, it needs `sed` to remove the last line (0):
-
-```bash
-time BC_LINE_LENGTH=0 bc <<< 'scale=10000; 10^-1; while ( last != 0 ) last/10' | sed '$d;s/^\.//' >/dev/null
-real    0m1.504s
-user    0m1.523s
-sys 0m0.066s
-```
 
 Benchmarking All Methods:
 --------------------------
