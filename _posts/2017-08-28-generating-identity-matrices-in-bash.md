@@ -11,7 +11,7 @@ It got me thinking about different methods of printing Identity Matrices in Bash
 
 But first off, what is an Identity Matrix?
 
-Identity Matrixes
+Identity Matrices
 -----------------
 > A square matrix in which all the main diagonal elements are 1’s and
 > all the remaining elements are 0’s is called an Identity Matrix.
