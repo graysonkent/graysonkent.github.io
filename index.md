@@ -1,7 +1,7 @@
 ---
 layout: index
 date: 2016-04-26 22:00
-title:  "Index"
+title:  "About Grayson Kent"
 category:
 tags:
 permalink: /
