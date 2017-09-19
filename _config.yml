@@ -8,12 +8,9 @@ job_title: Linux Systems Engineer
 email: grayson@linux.com
 description:  Grayson Kent's blog focusing on Linux, Networking, Security, Virtualization
 avatar: /assets/images/face.jpg
-analytics_code:
-google_analytics:
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title
-
 
 # Social Accounts for SEO tags
 social:
