@@ -1,7 +1,7 @@
 ---
 layout: about
 date: 2016-04-26 22:00
-title:  "About"
+title:  "Index"
 category:
 tags:
 permalink: /
