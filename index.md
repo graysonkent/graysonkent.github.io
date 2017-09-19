@@ -1,6 +1,6 @@
 ---
 layout: index
-date: 2016-04-26 22:00
+date: 2016-04-26 21:00
 title:  "About Grayson Kent"
 category:
 tags:
