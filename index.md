@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: index
 date: 2016-04-26 22:00
 title:  "Index"
 category:
