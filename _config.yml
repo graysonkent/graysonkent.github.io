@@ -14,11 +14,6 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title
 
-# Social Accounts for sidebar
-social_networks:
--  { name: linkedin, url: 'https://www.linkedin.com/in/graysonkent ' }
--  { name: github, url: 'https://github.com/graysonkent' }
--  { name: stack-overflow, url: 'http://stackexchange.com/users/8499248/grayson-kent?tab=accounts' }
 
 # Social Accounts for SEO tags
 social:
@@ -33,8 +28,6 @@ webmaster_verifications:
   google: 2b2yT0SglsoaAwDhn8EZ6nM6DRWdlvjpYcJuPfFC8iE
 
 # Modules Settings
-show_email: 1
-show_rss: 1
 show_menu: 1
 fixed_sidebar: 1
 
@@ -54,29 +47,3 @@ defaults:
       path: ""
     values:
       image: /assets/images/branch.png
-
-# Not currently used
-#
-# disqus: your_disqus_site
-# twitter_handler: your_handler
-#
-# social_networks:
-# -  { name: dribbble, url: '' }
-# -  { name: behance, url: '' }
-# -  { name: pinterest, url: '' }
-# -  { name: tumblr, url: '' }
-# -  { name: youtube, url: '' }
-# -  { name: vimeo, url: '' }
-# -  { name: vine, url: '' }
-# -  { name: 500px, url: '' }
-# -  { name: flickr, url: '' }
-# -  { name: spotify, url: '' }
-# -  { name: steam, url: '' }
-# -  { name: wordpress, url: '' }
-# -  { name: xing, url: '' }
-# -  { name: facebook, url: '' }
-# -  { name: twitter, url: '' }
-# -  { name: instagram, url: '' }
-# -  { name: google-plus, url: '' }
-# -  { name: skype, url: '' }
-# -  { name: codepen, url: '' }
