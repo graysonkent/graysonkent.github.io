@@ -31,8 +31,8 @@ I live in Tallahassee, FL with my girlfriend and our zoo of a house. It is easie
  - [Swiffer](../assets/images/swiffer.jpg) is a [Yorkipoo](https://en.wikipedia.org/wiki/Yorkipoo) and our craziest dog
  - [Peeps](../assets/images/peeps2.jpeg) is a sweetheart [Cavachon](http://dogs.lovetoknow.com/wiki/Cavachon) dog
  - [Calvin](../assets/images/calvin.jpg) is a very easily frightened Cockatiel
- - [Charlotte](../assets/images/charlotte.jpeg) is a ferocious Parakeet
- - [Kiva](../assets/images/kiva.jpeg) is a [Green Cheek Conure](https://en.wikipedia.org/wiki/Green-cheeked_parakeet) who now rules my mother's house
+ - [Charlotte](../assets/images/charlotte.jpg) is a ferocious Parakeet
+ - [Kiva](../assets/images/kiva.jpg) is a [Green Cheek Conure](https://en.wikipedia.org/wiki/Green-cheeked_parakeet) who now rules my mother's house
  - Too many fish and shrimp to count
 
 [Here are all the mammals together](../assets/images/family.jpeg)
