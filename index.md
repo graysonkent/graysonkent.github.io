@@ -10,7 +10,7 @@ Blog
 ------
 This is a personal blog that I mostly use as a reference for myself. I try to write about things I would want to read and I am always happy to hear about new blog ideas, or any way I could improve my posts.
 
-My main topics of interest are broadly Linux, Security, Networking, and Virtualization. Look at my [Archive](/archive) for a full list of blog posts.
+My main topics of interest are broadly Linux, Security, Networking, and Virtualization. Look at my [archive](/archive) for a full list of blog posts.
 
 ### Disclaimer
 
