@@ -17,7 +17,7 @@ Professional
 -----------------
 I currently work as a **Systems Engineer** at [Corporation Services Company](https://www.cscglobal.com/cscglobal/home/).
 
-I also do some consulting work. Usually code review for books or reviewing technical interview questions. Feel free to email me if you think I would be a good fit for something you are working on. I love to help out on interesting projects any way I can.
+I also do some consulting work. Usually code review for books or creating technical interview questions. Feel free to email me if you think I would be a good fit for something you are working on. I love to help out on interesting projects any way I can.
 
 
 Personal
