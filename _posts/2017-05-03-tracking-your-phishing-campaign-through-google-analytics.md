@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-03 2:00
-title:  "Using Google Analytics to the track the spread of your worms"
+title:  "Tracking your phishing campaign through Google Analytics"
 category: blog
 tags: Security
 ---
