@@ -309,15 +309,10 @@
         .blurb {
             display: none;
         }
-        a {
-            font-weight: bolder;
-            text-decoration: none;
+        a:link:after,
+        a:visited:after {
+            content: " (" attr(href) ") ";
+            font-size: 90%;
         }
-        a[href^=http]:after {
-            content:" <" attr(href) "> ";
-        }
-        $a:after > img {
-         content: "";
-     }
     }
 </style>
