@@ -309,13 +309,15 @@
         .blurb {
             display: none;
         }
-        pre,code {
-            word-break: break-all; /* webkit /
-            word-wrap: break-word;
-            white-space: pre;
-            white-space: -moz-pre-wrap; / fennec /
-            white-space: pre-wrap;
-            white-space: pre\9; / IE7+ */
+        a {
+            font-weight: bolder;
+            text-decoration: none;
         }
+        a[href^=http]:after {
+            content:" <" attr(href) "> ";
+        }
+        $a:after > img {
+         content: "";
+     }
     }
 </style>
