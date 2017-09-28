@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-03-27 21:00
-title:  "Find which Linux commands can make words out of their options"
+title:  "Which commands can make words out of their options?"
 category: blog
 tags: Linux/Bash
 redirect_from:
