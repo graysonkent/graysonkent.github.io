@@ -15,7 +15,7 @@ My main topics of interest are Linux, Security, Networking, and Virtualization. 
 
 Professional
 -----------------
-I currently work as a **Systems Engineer** at [Corporation Services Company](https://www.cscglobal.com/cscglobal/home/).
+I currently work as a **Linux Systems Engineer** at [Corporation Services Company](https://www.cscglobal.com/cscglobal/home/) on the UNIX Infrastructure Team.
 
 I also do some consulting work. Usually code review for books or creating technical interview questions. Feel free to email me if you think I would be a good fit for something you are working on. I love to help out on interesting projects any way I can.
 
