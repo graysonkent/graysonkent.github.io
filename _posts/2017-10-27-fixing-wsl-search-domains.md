@@ -55,7 +55,7 @@ I can't really give a fair review yet as one the first issues I ran into is its 
                                             example6.com
    
 
-    Note down the Search List section. The `more` tool is helpful if you have a lot of information to scroll through.
+    Mark down the Search List section. The `more` tool is helpful if you have a lot of information to scroll through.
 
  6. Add the Search List to your `/etc/resolv.conf`. It should look something like this at the end of your file:
  
