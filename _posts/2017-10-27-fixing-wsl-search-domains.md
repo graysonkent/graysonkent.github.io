@@ -13,37 +13,36 @@ I can't really give a fair review yet as one the first issues I ran into is its 
 
  1. On your WSL prompt, make a copy of your existing `/etc/resolv.conf`:
  
- ```bash
- $ sudo cp /etc/resolv.conf /etc/resolv.conf.new
- ```
+  ```bash
+  $ sudo cp /etc/resolv.conf /etc/resolv.conf.new
+  ```
  
  2.  Unlink the existing `/etc/resolv.conf`
  
- ```bash
- $ sudo unlink /etc/resolv.conf
- ```
+  ```bash
+  $ sudo unlink /etc/resolv.conf
+  ```
 
  3. Move the copied version back
 
- ```bash
- $ sudo mv /etc/resolv.conf.new /etc/resolv.conf
- ``` 
+  ```bash
+  $ sudo mv /etc/resolv.conf.new /etc/resolv.conf
+  ``` 
 
  4. Delete the first line in the file mentioning WSL auto-generation using your text editor or:
 
- ```bash
- $ sed -i '1d' /etc/resolv.conf
- ``` 
-  
+  ```bash
+  $ sed -i '1d' /etc/resolv.conf
+  ``` 
 
  5. Now on a Windows Command Prompt, run the following:
  
- ```bash
- > ipconfig /all
- ``` 
+  ```bash
+  > ipconfig /all
+  ``` 
   and you should get an output like the following:
   
- ```bash
+  ```bash
 > ipconfig /all
 Windows IP Configuration
 
@@ -58,14 +57,14 @@ Windows IP Configuration
                                         example4.com
                                         example5.com
                                         example6.com
- ```
+  ```
   Note down the Search List section. The `more` tool is helpful if you have a lot of information to scroll through.
 
  6. Add the Search List to your `/etc/resolv.conf`. It should look something like this at the end of your file:
  
- ```bash
- search example1.com example2.com example3.com example4.com example5.com example6.com
- ``` 
+  ```bash
+  search example1.com example2.com example3.com example4.com example5.com example6.com
+  ``` 
 
  > **Note:** Place all your Search Domains on one line with the word "search" at the start. You can have up to 6 domains.
 
