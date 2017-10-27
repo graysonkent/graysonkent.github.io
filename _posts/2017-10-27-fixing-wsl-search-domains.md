@@ -11,13 +11,13 @@ I can't really give a fair review yet as one the first issues I ran into is its 
 
 [Microsoft is aware of this issue](https://github.com/Microsoft/WSL/issues/1986) but doesn't seem able/willing to fix it, so here is a workaround:
 
- 1. On your WSL prompt, make a copy of your existing `/etc/resolv.conf`:
+ 1. On your WSL prompt, make a copy of your existing `/etc/resolv.conf`
  
 
         $ sudo cp /etc/resolv.conf /etc/resolv.conf.new
 
  
- 2.  Unlink the existing `/etc/resolv.conf`
+ 2. Unlink the existing `/etc/resolv.conf`
 
  
         $ sudo unlink /etc/resolv.conf
@@ -36,7 +36,7 @@ I can't really give a fair review yet as one the first issues I ran into is its 
  
         > ipconfig /all
 
-    and you should get an output like the following:
+    and you should get an output like this:
   
 
         > ipconfig /all
