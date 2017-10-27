@@ -1,4 +1,5 @@
-yout: post
+---
+layout: post
 date: 2017-10-27 23:00
 title:  "Broken Search Domain Resolving on Windows Subsystem for Linux"
 category: blog
