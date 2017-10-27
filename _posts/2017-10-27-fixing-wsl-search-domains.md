@@ -39,7 +39,6 @@ I can't really give a fair review yet as one the first issues I ran into is its 
     and you should get an output like this:
   
 
-        > ipconfig /all
         Windows IP Configuration
     
         Host Name . . . . . . . . . . . . : hostname
