@@ -18,10 +18,12 @@ I can't really give a fair review yet as one the first issues I ran into is its 
 
  
  2.  Unlink the existing `/etc/resolv.conf`
+
  
         $ sudo unlink /etc/resolv.conf
 
  3. Move the copied version back
+
 
         $ sudo mv /etc/resolv.conf.new /etc/resolv.conf
 
@@ -33,7 +35,7 @@ I can't really give a fair review yet as one the first issues I ran into is its 
  
         > ipconfig /all
 
-  and you should get an output like the following:
+    and you should get an output like the following:
   
 
         > ipconfig /all
@@ -51,12 +53,12 @@ I can't really give a fair review yet as one the first issues I ran into is its 
                                               example5.com
                                               example6.com
 
- Note down the Search List section. The `more` tool is helpful if you have a lot of information to scroll through.
+    Note down the Search List section. The `more` tool is helpful if you have a lot of information to scroll through.
 
  6. Add the Search List to your `/etc/resolv.conf`. It should look something like this at the end of your file:
  
         search example1.com example2.com example3.com example4.com example5.com example6.com
 
-  Place all your Search Domains on one line with the word "search" at the start. You can have up to 6 domains.
+    Place all your Search Domains on one line with the word "search" at the start. You can have up to 6 domains.
 
 Now save your `/etc/resolv.conf` and you should be good to go!
