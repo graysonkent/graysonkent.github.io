@@ -22,6 +22,7 @@ I can't really give a fair review yet as one the first issues I ran into is its 
  
         $ sudo unlink /etc/resolv.conf
 
+
  3. Move the copied version back
 
 
@@ -41,17 +42,18 @@ I can't really give a fair review yet as one the first issues I ran into is its 
         > ipconfig /all
         Windows IP Configuration
     
-           Host Name . . . . . . . . . . . . : hostname
-           Primary Dns Suffix  . . . . . . . : example.com
-           Node Type . . . . . . . . . . . . : Hybrid
-           IP Routing Enabled. . . . . . . . : No
-           WINS Proxy Enabled. . . . . . . . : No
-          DNS Suffix Search List. . . . . . : example1.com
-                                              example2.com
-                                              example3.com
-                                              example4.com
-                                              example5.com
-                                              example6.com
+        Host Name . . . . . . . . . . . . : hostname
+        Primary Dns Suffix  . . . . . . . : example.com
+        Node Type . . . . . . . . . . . . : Hybrid
+        IP Routing Enabled. . . . . . . . : No
+        WINS Proxy Enabled. . . . . . . . : No
+        DNS Suffix Search List. . . . . . : example1.com
+                                            example2.com
+                                            example3.com
+                                            example4.com
+                                            example5.com
+                                            example6.com
+   
 
     Note down the Search List section. The `more` tool is helpful if you have a lot of information to scroll through.
 
