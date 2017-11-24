@@ -187,13 +187,13 @@ $ dpkg-architecture -q DEB_BUILD_ARCH_ENDIAN
 little
 ```
 
-> **Note:** You can even set a list to match using the `-E` option:
+Endian variables were introduced in [`dpkg-dev 1.15.4`](https://manpages.debian.org/wheezy/dpkg-dev/dpkg-architecture.1.en.html), so this method has the same issue as the `lscpu` one. 
+
+> **Note:** You can even set a list of options to match using the `-E` option:
 > 
 >     -E, --match-endian <arch-endian>
 >                 restrict architecture list matching <arch-endian>.
 
-
-One thing to note is that [endian variables were introduced in](https://manpages.debian.org/wheezy/dpkg-dev/dpkg-architecture.1.en.html) `dpkg-dev 1.15.4`. 
 
 ### Breaking it down
 
@@ -207,32 +207,31 @@ use Dpkg::Arch qw(get_raw_build_arch get_raw_host_arch get_gcc_host_gnu_type
                   debarch_to_multiarch);
 ```
 
-So there is a `DPKG::Arch` module that handles the real details. Let's look at `scripts/Dpkg/Arch.pm`:
+So there is a `DPKG::Arch` module that handles the real details in `scripts/Dpkg/Arch.pm`:
 
 ```perl
-sub read_cputable
-{
-    return if ($cputable_loaded);
+sub read_cputable {
+    return
+        if ($cputable_loaded);
 
     local $_;
-    local $/ = "\n";
+    local $ / = "\n";
 
     open my $cputable_fh, '<', "$Dpkg::DATADIR/cputable"
-  or syserr(_g('cannot open %s'), 'cputable');
-    while (<$cputable_fh>) {
-  if (m/^(?!\#)(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)/) {
-      $cputable{$1} = $2;
-      $cputable_re{$1} = $3;
-      $cpubits{$1} = $4;
-      $cpuendian{$1} = $5;
-      push @cpu, $1;
-  }
+    or syserr(_g('cannot open %s'), 'cputable');
+    while ( < $cputable_fh > ) {
+        if (m / ^ ( ? !\#)(\S + )\ s + (\S + )\ s + (\S + )\ s + (\S + )\ s + (\S + ) / ) {
+            $cputable {$1} = $2;
+            $cputable_re {$1} = $3;
+            $cpubits {$1} = $4;
+            $cpuendian {$1} = $5;
+            push@ cpu, $1;
+        }
     }
     close $cputable_fh;
 
     $cputable_loaded = 1;
 }
-
 ```
 
 The important part to note here is that the `$cpuendian` is simply set by doing a regex lookup of the CPU type in the `cputable` file.
@@ -274,7 +273,7 @@ If you aren't too worried about precision, then this might be a good method to s
 Perl Config Method
 ------------------------
 
-Sequeing nicely from the last `perl` approach, we are instead going to use the core `Config` module. Here is my modified version of this lookup:
+Segueing nicely from the last `perl` approach, we are instead going to use the core `Config` module. Here is my modified version of this lookup:
 
 ```perl
 $ perl -MConfig -e 'if ($Config{byteorder} =~ /^1/) {print "Little-Endianness\n"} else {print "Big-Endianness\n"};'
@@ -302,7 +301,7 @@ $ grep -r "byteorder='*'" . | sort -t= -k2
 
 Notice how the `byteorder` variables are different depending on the folder they are in. This is usually a pretty good indication that a script will set the config path at build time. 
 
-Sure enough, take a look at `Makefile.PL` that sets the `$hw` variable:
+Sure enough, `Makefile.PL` sets the `$hw` variable:
 
 ```perl
 my $hw = $arch;
