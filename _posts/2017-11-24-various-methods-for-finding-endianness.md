@@ -94,8 +94,6 @@ $ lscpu | sed -ne  's/^.*Byte Order:\s*//p'
 Little Endian
 ```
 
-Perfect! But there are a few issues with this approach.
-
 This method works great if your version of [`util-linux`](https://www.kernel.org/pub/linux/utils/util-linux/) is [v2.19](https://www.kernel.org/pub/linux/utils/util-linux/v2.19/) or above (released Feb 2011). That was when they added the following section to [`/sys-utils/lscpu.c`](https://github.com/karelzak/util-linux/blob/aabe2441765c632bba697945491e3e0ac29ac886/sys-utils/lscpu.c#L821):
 
 ```c
@@ -106,10 +104,10 @@ This method works great if your version of [`util-linux`](https://www.kernel.org
 #endif
 ```
 
-Generally, any system past 2012 will have this package, but if you have to live with your old system you can compile the new version of `util-linux`, or move on to my more portable method below. 
+Generally, any system past 2012 will have this package. If you have to live with your old system, then you can compile the new version of `util-linux` or move on to my more portable method below. 
 
 ### Breaking it down
-The previous code section looks for Autoconf's [`WORDS_BIGENDIAN`](http://gnu.huihoo.org/autoconf-2.13/html_node/autoconf_36.html) macro. Autoconf in turn tries to check your `sys/types.h` and `sys/param.h` to see if they define a `BYTE_ORDER` macro:
+The previous code section looks for [Autoconf](https://www.gnu.org/software/autoconf/autoconf.html)'s [`WORDS_BIGENDIAN`](http://gnu.huihoo.org/autoconf-2.13/html_node/autoconf_36.html) macro. Autoconf in turn tries to check your `sys/types.h` and `sys/param.h` to see if they define a `BYTE_ORDER` macro:
 
 ```c
 [AC_LANG_PROGRAM(
@@ -125,7 +123,7 @@ The previous code section looks for Autoconf's [`WORDS_BIGENDIAN`](http://gnu.hu
 )]
 ```
 
-This is just the relevant snippet, [`autoconf/lib/autoconf/c.m4`](https://ftp.gnu.org/gnu/autoconf/) goes on to check a lot more and is worth a read anyway. 
+This is just the relevant snippet, but [`autoconf/lib/autoconf/c.m4`](https://ftp.gnu.org/gnu/autoconf/) actually goes on to check a lot more and is worth a read for anyone looking to write their own method.. 
 
 > **Note:** Autoconf defines 4 types of endianness. Here is a snippet from `autoconf/test/semantics.at`:
 > 
@@ -139,7 +137,8 @@ This is just the relevant snippet, [`autoconf/lib/autoconf/c.m4`](https://ftp.gn
 On my system, `/usr/include/sys/param.h` includes this line:
 
 ```c
-#include <endian.h>                     /* Define BYTE_ORDER et al.  */
+/* Define BYTE_ORDER et al.  */
+#include <endian.h>
 ```
 
 Looking at `/usr/include/endian.h`, we get a nice writeup of byte order:
@@ -179,8 +178,8 @@ Almost done, `/usr/include/bits/endian.h` is a small file containing this:
 
 Alright, so now we have gone as far as I want to. If you are interested in learning more, [check out this gcc dev thread that covers a lot of the same issues in detecting endianness that I mention here](https://gcc.gnu.org/ml/gcc-help/2007-07/msg00342.html).
 
-An easy dpkg Method
------------------------------
+Dpkg Method
+------------
 If you are using Debian/Ubuntu, then this might be even easier to use:
 
 ```bash
@@ -188,14 +187,13 @@ $ dpkg-architecture -q DEB_BUILD_ARCH_ENDIAN
 little
 ```
 
-You can even set a list it has to match using the `-E` option:
+> **Note:** You can even set a list to match using the `-E` option:
+> 
+>     -E, --match-endian <arch-endian>
+>                 restrict architecture list matching <arch-endian>.
 
-```bash
--E, --match-endian <arch-endian>
-            restrict architecture list matching <arch-endian>.
-```
 
-One thing to note is that [endian variables were introduced in `dpkg-dev 1.13.2`](https://manpages.debian.org/wheezy/dpkg-dev/dpkg-architecture.1.en.html). 
+One thing to note is that [endian variables were introduced in](https://manpages.debian.org/wheezy/dpkg-dev/dpkg-architecture.1.en.html) `dpkg-dev 1.15.4`. 
 
 ### Breaking it down
 
@@ -209,7 +207,7 @@ use Dpkg::Arch qw(get_raw_build_arch get_raw_host_arch get_gcc_host_gnu_type
                   debarch_to_multiarch);
 ```
 
-So there is a `DPKG::Arch` module that handles the real details, so let's go look at `scripts/Dpkg/Arch.pm`:
+So there is a `DPKG::Arch` module that handles the real details. Let's look at `scripts/Dpkg/Arch.pm`:
 
 ```perl
 sub read_cputable
@@ -238,8 +236,6 @@ sub read_cputable
 ```
 
 The important part to note here is that the `$cpuendian` is simply set by doing a regex lookup of the CPU type in the `cputable` file.
-
-This is an interesting approach as they entirely avoid the issues with trying to detect endiannes and just hard-code the values they know the CPU will be.
 
 Here is an (edited) version of its lookup:
 
@@ -275,17 +271,17 @@ sh4:little
 
 If you aren't too worried about precision, then this might be a good method to steal the lookup table from. 
 
-The Perl Config Method
+Perl Config Method
 ------------------------
 
-Sequeing nicely from the last `Perl` approach, we are instead going to use the core `Config` module. Here is my modified version of this lookup:
+Sequeing nicely from the last `perl` approach, we are instead going to use the core `Config` module. Here is my modified version of this lookup:
 
 ```perl
 $ perl -MConfig -e 'if ($Config{byteorder} =~ /^1/) {print "Little-Endianness\n"} else {print "Big-Endianness\n"};'
 Little-Endianness
 ```
 
-You can read more about this module on the [`Config Documentation Page`](https://perldoc.perl.org/Config.html#b). It is definitely worth knowing about for things beyond determining endianness as well. 
+You can read more about this valuable module on the [`Config Documentation Page`](https://perldoc.perl.org/Config.html#b).
 
 ### Breaking it down
 I pulled the source for Sun's version of the `Config` module, just to spice things up some, but sadly it seems to follow the same pattern as `dpkg-architecture` in that it performs a lookup based on CPU type. 
@@ -321,19 +317,19 @@ And then defines the config path:
 my $configpm = "config/$]/$rel/$hw/Config.pm";
 ```
 
-The Perl Unpacking Method
+Perl Unpacking Method
 -----------------------
-Modified from [my trusty ol' Camel book](https://docstore.mik.ua/orelly/perl3/prog/ch25_02.htm), here is another `Perl` method:
+Modified from [my trusty ol' Camel book](https://docstore.mik.ua/orelly/perl3/prog/ch25_02.htm), here is another `perl` method:
 
 ```perl
-$ perl -e 'if (unpack("h*", pack("s", 1)) =~ /^1/) {print "Little-Endian\n"} else { print "Big-Endian\n"};'
+$ perl -e 'if (unpack("h*", pack("s", 1)) =~ /^1/) {print "Little-Endian\n"} else {print "Big-Endian\n"};'
 Little-Endian
 ```
 
-This is similar to the `od` method above in that it just interprets the letter "I" in binary format and then checks the orientation of the leading bit to see if it is a 1. Else it considers it Big-Endian.
+This is similar to the `od` method above in that it just interprets the letter "I" in binary format and then checks the orientation of the bits.
 
-The (Supposedly) Most Portable Method
--------------------------------------
+Portable C Method
+-----------------
 This method claims to be the most portable way to test for endianness. It works on my platforms, but I also don't have Sparc/ARM platforms to test on so take that with a grain of salt.
 
 Here is a modified version of [/u/panzi's](https://gist.github.com/panzi/6856583) program:
@@ -507,4 +503,6 @@ Pretty simple all-around. I would be interested to see how it does on other plat
 
 Conclusion
 ---------------
-This is probably more than any sane person would want to know about CPU endianness, but I still think it is an interesting topic. If you want to contribute another method, please email it to me!
+This is probably more than any sane person would want to know about CPU endianness, but I still think it is an interesting topic. 
+
+If you want to contribute another method, please email it to me with the name you want for attribution.
