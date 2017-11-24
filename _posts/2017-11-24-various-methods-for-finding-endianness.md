@@ -5,13 +5,11 @@ title:  "Various methods for determining CPU Endianness"
 category: blog
 tags: Linux/Bash
 ---
-In very simplified terms, a CPU's endianness refers to the order in which sequential bytes are stored. There are two main types, Big-Endian (most important part of sequence is stored first) and Little-Endian (most important part of sequence is stored last). 
+In very simplified terms, a CPU's endianness refers to the order in which sequential bytes are stored. There are two main types, Big-Endian (most important part of sequence is stored first) and Little-Endian (most important part of sequence is stored last). The distinction is much less important nowadays though as the both Intel x86 and AMD64/x86-64 have converged on Little-Endian and they dominate the market.
 
-For a more in-depth overview, check out [University of Maryland's Endian Notes Page](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html). To go even lower, [you can dive into the wonderful micro-operation breakdown tables by Agner](https://web.archive.org/web/20170831203628/http://www.agner.org/optimize/instruction_tables.pdf), although be prepared to cry over the waste that occurs between translating Big-Endian Network protocol bytestreams to mostly Little-Endian CPUs, and then back on every packet. It's only 1 clock cycle per word, but just imagine the colossal scale of these translations.
+For a more in-depth overview, check out [University of Maryland's Endian Notes Page](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html). To go even lower, [you can dive into the wonderful micro-operation breakdown tables](https://web.archive.org/web/20170831203628/http://www.agner.org/optimize/instruction_tables.pdf) by Agner, although be prepared to cry over the waste that occurs between translating Big-Endian Network protocol bytestreams to mostly Little-Endian CPUs, and then back on every packet. It's only 1 clock cycle per word, but just imagine the colossal scale of these translations.
 
-Although less important nowadays as the both Intel x86 and AMD64/x86-64 have converged on Little-Endian; you can still find yourself in situations where you need to determine your CPU's endianness. There are a surprising amount of methods to achieve this, so I have compiled a few here for future reference. 
-
-There are essentially two camps of thought when it comes to determining endianness: referencing a lookup table based on CPU name, and actually determining bit orientation on the fly by transforming a string. I am a purist at heart so I prefer the bit method, but you can decide for yourself what works better.
+There are essentially two camps of thought when it comes to determining endianness: referencing a lookup table based on CPU name, and actually determining bit orientation on the fly by transforming a string. I am a purist at heart so I prefer the bit method, but you can decide what works better for your situation.
 
 Od to Awk Method
 ----------------
@@ -36,7 +34,7 @@ Simple enough, `echo` outputs the letter "I" with no trailing newline.
 | od -to2
 ```
 
-Then, `od` translates "I" into octal 2-byte units using its `-t` flag to output in octal 2-byte units via the `-o2` flag.
+Then, `od` translates "I" into octal 2-byte units with the `-o2` flag.
 
 Here is what the current output looks like on my system:
 
