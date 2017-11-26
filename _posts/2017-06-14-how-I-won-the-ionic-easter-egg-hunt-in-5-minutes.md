@@ -2,8 +2,9 @@
 layout: post
 date: 2017-06-14 21:00
 title:  "How I won the Ionic 2017 Easter Egg hunt in under 5 minutes"
-category: blogs
-tags: Miscellaneous
+category: hobbies 
+tags: "Easter Egg Hunting"
+
 image: ../assets/images/easteregg.PNG
 ---
 On March 9th, Ionic announced their [new beta and an easter egg hunt](http://blog.ionic.io/ionic-cli-v3-beta/). I didn't see it until the 13th and I love puzzles, so the hunt was on.
