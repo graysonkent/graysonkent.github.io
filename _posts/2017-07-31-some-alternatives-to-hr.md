@@ -2,7 +2,7 @@
 layout: post
 date: 2017-07-31 23:00
 title:  "Some alternatives to the terminal hr"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 I was helping my friend track down a bug in their spider webs of Bash scripts when I ran across a library named [hr](https://github.com/LuRsT/hr). I had never heard of it, but it bills itself as  "A horizontal ruler for your terminal". This works by outputting characters (default is #) to the length of your terminal screen. Not something I see the need for, but apparently over 1,000 people on Github do.

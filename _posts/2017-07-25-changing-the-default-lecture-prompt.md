@@ -2,7 +2,7 @@
 layout: post
 date: 2017-07-25 23:00
 title:  "Changing the default lecture prompt"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 If you have used `sudo` on a new system, you have probably been greeted with this message:

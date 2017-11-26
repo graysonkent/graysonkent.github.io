@@ -2,7 +2,7 @@
 layout: post
 date: 2017-03-13 20:00
 title:  "Calculating the odds of a SHA-1 Collision"
-category: blog
+category: blogs
 tags: Security
 d3Load: true
 math: true

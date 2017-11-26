@@ -2,7 +2,7 @@
 layout: post
 date: 2017-06-14 21:00
 title:  "How I won the Ionic 2017 Easter Egg hunt in under 5 minutes"
-category: blog
+category: blogs
 tags: Miscellaneous
 image: ../assets/images/easteregg.PNG
 ---

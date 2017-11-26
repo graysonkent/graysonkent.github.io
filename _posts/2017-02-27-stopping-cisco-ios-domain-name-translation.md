@@ -2,7 +2,7 @@
 layout: post
 date: 2017-02-27 20:00
 title:  "Stopping Accidental Cisco IOS Domain Name Translation"
-category: blog
+category: blogs
 tags: Networking
 redirect_from:
   - /archive/2017/02/stopping-cisco-ios-domain-name-translation.html

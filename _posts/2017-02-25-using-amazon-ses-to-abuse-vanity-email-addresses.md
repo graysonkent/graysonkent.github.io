@@ -2,7 +2,7 @@
 layout: post
 date: 2017-02-25 22:00
 title:  "Using Amazon SES to abuse Vanity Email Addresses Forwarding Addresses"
-category: blog
+category: blogs
 tags: AWS
 redirect_from:
   - /archive/2017/02/how-to-use-amazon-ses-to-abuse-vanity-email-addresses.html

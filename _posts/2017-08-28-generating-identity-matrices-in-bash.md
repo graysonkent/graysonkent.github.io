@@ -2,7 +2,7 @@
 layout: post
 date: 2017-08-28 23:00
 title:  "Generating Identity Matrices in Bash"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 This post is inspired by another blog post called "[How do I modify a variable in Haskell?](http://www.michaelburge.us/2017/08/15/how-do-i-modify-a-variable-in-haskell.html)" by Michael Burge.

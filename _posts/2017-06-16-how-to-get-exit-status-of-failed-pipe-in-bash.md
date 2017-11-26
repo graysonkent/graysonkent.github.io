@@ -2,7 +2,7 @@
 layout: post
 date: 2017-06-16 23:00
 title:  "How to get the exit status of a failed pipe in Bash"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 The traditional method of accessing the exit status of a command in Bash is through the `$?` [internal variable](http://tldp.org/LDP/abs/html/internalvariables.html#XSTATVARREF) like so :

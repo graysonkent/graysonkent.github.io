@@ -2,7 +2,7 @@
 layout: post
 date: 2017-06-07 21:00
 title:  "Viewing and creating custom insults for sudo"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 You can spice up your day a little bit with `sudo`'s option to insult you when you enter a password wrong. You can set this by adding `Defaults insults` to the `/etc/sudoers` with `sudo visudo`. This tells `sudo` to print responses like this when you enter your password wrong:

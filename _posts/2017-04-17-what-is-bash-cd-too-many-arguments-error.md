@@ -2,7 +2,7 @@
 layout: post
 date: 2017-04-17 21:00
 title:  "What is the 'bash: cd: too many arguments' error?"
-category: blog
+category: blogs
 tags: Linux/Bash
 redirect_from:
   - /archive/2017/04/bash.4.4.cd.pattern.matching.regression.html

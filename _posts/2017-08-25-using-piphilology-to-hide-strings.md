@@ -2,7 +2,7 @@
 layout: post
 date: 2017-08-25 23:00
 title:  "Using Piphilology with Bash to hide magic commands"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 A few days ago, [/u/-where_am_i](https://www.reddit.com/user/-where_am_i-) posted [this declaration](https://www.reddit.com/r/bash/comments/6vf8yi/i_have_to_find_a_hobby_other_then_bash/) on [/r/bash](https://www.reddit.com/r/bash/):

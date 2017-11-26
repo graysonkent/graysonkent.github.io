@@ -2,7 +2,7 @@
 layout: post
 date: 2017-08-11 23:00
 title:  "Increasing your salary 8.6% with Vim's :expandtab"
-category: blog
+category: blogs
 tags: Vim
 ---
 Recently, Stack Overflow published a [blog post claiming that Developers who use spaces make 8.6% more than those who use tabs](https://stackoverflow.blog/2017/06/15/developers-use-spaces-make-money-use-tabs/).

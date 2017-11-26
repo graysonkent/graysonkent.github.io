@@ -2,7 +2,7 @@
 layout: post
 date: 2017-06-09 21:00
 title:  "Faking dependencies with the equivs package"
-category: blog
+category: blogs
 tags: Linux/Bash
 ---
 Let's say a package you are trying to install has a crazy list of dependencies that you know it doesn't need, or you don't want to/can't install for various reasons. Maybe you even have a newer version of package and you don't want to downgrade. How do you get everything running?

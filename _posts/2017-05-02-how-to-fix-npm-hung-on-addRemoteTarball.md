@@ -2,7 +2,7 @@
 layout: post
 date: 2017-05-02 21:00
 title:  "How to fix an npm install that is hung on addRemoteTarball"
-category: blog
+category: blogs
 tags: npm
 ---
 I was trying to install a package today and `npm` just kept spinning and never finished. It is usually slow at work, but not this bad. I ran it with `--verbose` and got a line like the following:

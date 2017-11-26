@@ -2,7 +2,7 @@
 layout: post
 date: 2017-08-11 23:00
 title:  "Creating package dependency graphs with Pactree and Graphviz"
-category: blog
+category: blogs
 tags: ['Arch Linux']
 ---
 While learning more about [`pacman`](https://www.archlinux.org/pacman/pacman.8.html), I found the [`pactree`](https://www.archlinux.org/pacman/pactree.8.html) command.

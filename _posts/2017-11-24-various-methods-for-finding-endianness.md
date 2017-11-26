@@ -2,7 +2,7 @@
 layout: post
 date: 2017-11-24 21:00
 title:  "Various methods for determining CPU Endianness"
-category: blog
+category: blogss
 tags: Linux/Bash
 ---
 In very simplified terms, a CPU's endianness refers to the order in which sequential bytes are stored. There are two main types, Big-Endian (most important part of sequence is stored first) and Little-Endian (most important part of sequence is stored last). The distinction is much less important nowadays though as the both Intel x86 and AMD64/x86-64 have converged on Little-Endian and they dominate the market.
