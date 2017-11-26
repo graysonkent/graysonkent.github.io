@@ -25,7 +25,7 @@ First you need to create your lecture prompt file (default of `/etc/sudoers.lect
 Here is one I like to use:
 
 <p align="center">
-    <img src="../assets/images/beecareful.PNG" alt="Picture of ASCII art that says 'Bee careful with sudo'"/>
+    <img src="../assets/images/beecareful.png" alt="Picture of ASCII art that says 'Bee careful with sudo'"/>
 </p>
 
 Which you can grab with this:

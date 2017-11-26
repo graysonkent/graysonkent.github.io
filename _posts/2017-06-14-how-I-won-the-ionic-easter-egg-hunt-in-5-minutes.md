@@ -5,7 +5,7 @@ title:  "How I won the Ionic 2017 Easter Egg hunt in under 5 minutes"
 category: hobbies 
 tags: ['Easter Egg Hunting']
 
-image: ../assets/images/easteregg.PNG
+image: ../assets/images/easteregg.png
 ---
 On March 9th, Ionic announced their [new beta and an easter egg hunt](http://blog.ionic.io/ionic-cli-v3-beta/). I didn't see it until the 13th and I love puzzles, so the hunt was on.
 
@@ -60,7 +60,7 @@ Now, I can't convert hexadecimal in my head on the fly, but I have participated 
 Sure enough, if I try `ionic ionitron`, I get the following: 
 
 <p align="center">
-    <img src="../assets/images/easteregg.PNG" alt="Picture of the final easter egg with the Ionic Robot"/>
+    <img src="../assets/images/easteregg.png" alt="Picture of the final easter egg with the Ionic Robot"/>
 </p>
 
 Conclusion
