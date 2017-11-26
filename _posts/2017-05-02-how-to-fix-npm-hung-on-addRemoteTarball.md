@@ -8,7 +8,7 @@ tags: npm
 I was trying to install a package today and `npm` just kept spinning and never finished. It is usually slow at work, but not this bad. I ran it with `--verbose` and got a line like the following:
 
 ```bash
-> npm install -g gulp --verbose
+> npm isntall -g gulp --verbose
 npm verb addRemoteTarball   'xxxx' 
 ```
 
