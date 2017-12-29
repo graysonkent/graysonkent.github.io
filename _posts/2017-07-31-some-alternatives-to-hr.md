@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-07-31 23:00
-title:  "Some alternatives to the terminal hr"
+title:  "Alternatives to the 'hr' library"
 category: blogs
 tags: Linux/Bash
 ---
