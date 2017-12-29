@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2017-10-27 23:00
-title:  "Broken Search Domain Resolving on Windows Subsystem for Linux"
+title:  "Fixing Search Domain Resolving on WSL"
 category: blogs
-tags: WSL 
+tags: Networking 
 ---
 I have recently been playing with Microsoft's newest attempt at "[embrace, extend, and extinguish](https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish)" called [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/about). 
 
