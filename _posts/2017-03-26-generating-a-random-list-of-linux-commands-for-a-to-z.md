@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-03-26 21:00
-title:  "Generating a random list of Linux commands for A-Z"
+title:  "Generating a alphabetical list of Linux commands"
 category: blogs
 tags: Linux/Bash
 redirect_from:

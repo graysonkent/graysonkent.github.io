@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-08-25 23:00
-title:  "Using Piphilology with Bash to hide magic commands"
+title:  "Hiding Bash commands in comments"
 category: blogs
 tags: Linux/Bash
 ---
