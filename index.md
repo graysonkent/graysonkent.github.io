@@ -36,4 +36,4 @@ I live in Tallahassee, FL with my girlfriend and our zoo of a house. It is easie
 
 Hobbies
 -----------
-I enjoy mountain biking, racquetball & handball, and writing about Linux & Bash minutiae.
+I enjoy mountain biking, racquetball, kayaking, and writing about Linux & Bash minutiae.
