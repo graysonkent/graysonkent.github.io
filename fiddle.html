@@ -10,9 +10,9 @@
 
 <script src="http://momentjs.com/downloads/moment.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
   <style id="compiled-css" type="text/css">
@@ -43,6 +43,8 @@
 //<![CDATA[
 
     $(window).load(function(){
+	
+
       
 var dynamicTable = (function() {
     
@@ -150,7 +152,7 @@ $(document).ready(function(e) {
         { field1: 'value', field2: '4', field3: '4.00, 4.01, 4.02, 4.03' },
         { field1: 'value', field2: '5', field3: '4.04, 4.05, 4.06' },
         { field1: 'value', field2: '6', field3: '4.07, 4.08, 4.09' },
-	{ field1: '', field2: '7', field3: '4.10, Segment Two Exam' }
+		{ field1: 'value', field2: '7', field3: '4.10, Segment Two Exam' }
         ];
     
     var dt = dynamicTable.config('data-table', 
@@ -160,32 +162,70 @@ $(document).ready(function(e) {
 
 
 
-								 
+	var pickerdate = null;
+
+    $( "#datepicker" ).datepicker();
+
+  
+
+  $("#datepicker").datepicker({
+    onSelect: function(dateText) {
+      $(this).change();
+    }
+  }).on("change", function() {
+	var selecteddate = $( "#datepicker" ).datepicker("getDate");
+	pickerdate = $.datepicker.formatDate( "yy-mm-dd", selecteddate );
+
+	dateupdate();
+	dateupdate2();
+	dt.load(data1);
+	console.log(pickerdate);
+  });
+
+
+function dateupdate(){
+ if (pickerdate == null){								 
 	for (var i = 0; i < data1.length; i++) {
-	if (data1[i].field1 === 'value') {
+	if (data1[i].field1.length > 1) {
 			data1[i].field1 = moment().add(0 + i, 'weeks').isoWeekday(7).format("L");;
 	
 		}
 	}
-	
+} else {
 	for (var i = 0; i < data1.length; i++) {
-	if (data2[i].field1 === 'value') {
+	if (data1[i].field1.length > 1) {
+		data1[i].field1 = moment(pickerdate).add(0 + i, 'weeks').isoWeekday(7).format("L");
+		console.log(pickerdate);
+		}
+	}
+}
+};
+
+function dateupdate2(){
+ if (pickerdate == null){								 
+	for (var i = 0; i < data2.length; i++) {
+	if (data2[i].field1.length > 1) {
 			data2[i].field1 = moment().add(0 + i, 'weeks').isoWeekday(7).format("L");;
 	
 		}
 	}
-	
-    function saveTable() {
-		var table = $('#data-table')[0].outerHTML;
-		alert(table);
-    }
-	
+} else {
+	for (var i = 0; i < data2.length; i++) {
+	if (data2[i].field1.length > 1) {
+		data2[i].field1 = moment(pickerdate).add(0 + i, 'weeks').isoWeekday(7).format("L");
+		console.log(pickerdate);
+		}
+	}
+}
+};
+
     
     $('#btn-load').click(function(e) {
+		dateupdate();
         dt.load(data1);
     });
-    
     $('#btn-update').click(function(e) {
+		dateupdate2();
         dt.load(data2);
     });
     
@@ -195,8 +235,7 @@ $(document).ready(function(e) {
 
 	$('#btn-save').click(function(event) {
 		var table = $('#data-table')[0].outerHTML;
-		$('.export').remove();
-		
+		$('.export').remove();		
 	
 	
 		$('<div class="export"></br><b>Copy/Paste this:</b></br><textarea  rows="4" cols="60">'+table+'</textarea></div>').appendTo('body');        
@@ -215,7 +254,7 @@ $(document).ready(function(e) {
 
     });
 
-//]]></script>
+</script>
 
 </head>
 <body>
@@ -227,6 +266,7 @@ $(document).ready(function(e) {
 <button id="btn-update">Session 2</button>&nbsp;
 <button id="btn-save">Export</button>&nbsp;
 <button id="btn-clear">Clear Table</button>&nbsp;
+<p>Date: <input type="text" id="datepicker"></p>
 
 
 
