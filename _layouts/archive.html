@@ -27,7 +27,7 @@
                             <li><b><span class="tag">{{ tag[0] }}</span></b>
                                 <ul style="margin: 0 35px; padding: 2px;">
                                     {% for p in zz %}
-                                        <li><span class="blurb">{{ p.date |  date: "%m/%d/%Y" }} - <a href="{{ p.url }}">{{ p.title }}</a></span></li>
+                                        <li><span class="blurb"><a href="{{ p.url }}">{{ p.title }}</a></span></li>
                                     {% endfor %}
                                 </ul>
                            </li>
