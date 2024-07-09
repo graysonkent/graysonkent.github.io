@@ -4,8 +4,6 @@ date: 2024-07-09 20:00
 title:  "Limagito Rule to check for recently disabled rules using Pascal"
 category: blogs
 tags: Pascal
-redirect_from:
-  - /archive/2024/limagito-check-for-disabled-rules.html
 ---
 
 I am writing this post to help the one other poor soul stuck using this technology. Limagito is a job scheduler/file mover/general purpose scripting engine. At work we recently ran into the issue where we have hundreds of rules and multiple admins in the web gui at once and it was impossible to tell when a rule was disabled (which you have to do to edit or inspect rules) and admins forgot to re-enable the rule after. I looked into normal ways to check for this but didn't find anything so here is my hacked together Pascal solution that calls Powershell:
