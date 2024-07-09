@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2024-07-09 20:00
+date: 2024-07-09 00:00
 title:  "Limagito Rule to check for recently disabled rules using Pascal"
 category: blogs
 tags: Pascal
