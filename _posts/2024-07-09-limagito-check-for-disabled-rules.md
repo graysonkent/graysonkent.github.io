@@ -5,9 +5,11 @@ title:  "Limagito Rule to check for recently disabled rules using Pascal"
 category: blogs
 tags: Pascal
 ---
+I am writing this post to help the one other poor soul stuck using this technology. Limagito is a job scheduler/file mover/general purpose scripting engine. At work we recently ran into the issue where we have hundreds of rules and it was impossible to tell when a rule was disabled (which you have to do to edit or inspect rules) and admins forgot to re-enable the rule after. I looked into normal ways to check for this but didn't find anything so here is my hacked together Pascal solution that calls Powershell:
 
-I am writing this post to help the one other poor soul stuck using this technology. Limagito is a job scheduler/file mover/general purpose scripting engine. At work we recently ran into the issue where we have hundreds of rules and multiple admins in the web gui at once and it was impossible to tell when a rule was disabled (which you have to do to edit or inspect rules) and admins forgot to re-enable the rule after. I looked into normal ways to check for this but didn't find anything so here is my hacked together Pascal solution that calls Powershell:
 
+Pascal Script
+------------
 ```pascal
 Var
   tmpInfo: String;
@@ -71,7 +73,7 @@ Begin
   If FileExists(ctWorkingDir + ctOutFileName) Then
     Begin
     // Set rule variable for Email
-      tmpEmailRuleFile := ctWorkingDir + ctOutFileName;
+    tmpEmailRuleFile := ctWorkingDir + ctOutFileName;
     tmpEmailRuleList := TStringList.Create;
     tmpEmailRuleList.LoadFromFile(tmpEmailRuleFile);
     psVSB := tmpEmailRuleList.Text;
@@ -90,6 +92,16 @@ Begin
   //tmpEmailRuleList.Free;
   End;
 End.
+```
+
+Powershell Script (On server)
+------------
+```powershell
+$diffcheck = Compare-Object $(Get-content Current_Disabled_Rules.txt) $(Get-Content Old_Disabled_Rules.txt) | ?{$_.SideIndicator -eq '<='} | select -ExpandProperty inputobject  
+if ($diffcheck -ne $null){  
+	Write-Output "New Rule Found: '$diffcheck'"
+	$diffcheck | Out-File RulesFound.txt	 	
+}
 ```
 
 Alert
