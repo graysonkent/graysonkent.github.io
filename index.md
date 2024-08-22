@@ -14,7 +14,7 @@ My main topics of interest are Linux, Security, Networking, and Virtualization. 
 
 Professional
 -----------------
-I currently work as a **Linux Systems Engineer** at [Corporation Services Company](https://www.cscglobal.com/cscglobal/home/) on the Unix Infrastructure Team.
+I currently work as a **Linux Systems Engineer** at [The National High Magnetic Field Laboratory](https://nationalmaglab.org/), home to the largest magnet in the world.
 
 I also do some consulting work. Usually code review for books or creating technical interview questions. Feel free to email me if you think I would be a good fit for something you are working on. 
 
