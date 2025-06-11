@@ -45,9 +45,9 @@ idracadm7 techsupreport collect -t sysinfo,ttylog | awk '/^JID_/ {print $3}'
 ```
 Using the Job ID from the first command you can check on the progress:
 ```bash
-racadm jobqueue view -i JID_XXXXXXX
+idracadm7 jobqueue view -i JID_XXXXXXX
 ```
-When finished, export the logs to send to Dell:
+When finished, export the logs:
 ```bash
 idracadm7 techsupreport export -f /tmp/tsrlogs.zip
 ```
